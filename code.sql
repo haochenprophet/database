@@ -1,10 +1,10 @@
-CREATE DATABASE  IF NOT EXISTS `code` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `code`;
--- MySQL dump 10.13  Distrib 5.7.13, for linux-glibc2.5 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `knowledge` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `knowledge`;
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: code
+-- Host: 127.0.0.1    Database: knowledge
 -- ------------------------------------------------------
--- Server version	5.7.17-0ubuntu0.16.04.1
+-- Server version	8.0.0-dmr-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -18,64 +18,56 @@ USE `code`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `string`
+-- Table structure for table `k_links`
 --
 
-DROP TABLE IF EXISTS `string`;
+DROP TABLE IF EXISTS `k_links`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `string` (
-  `idstring` int(11) NOT NULL AUTO_INCREMENT,
-  `name` text NOT NULL,
-  `value` text NOT NULL,
-  `lang` varchar(45) NOT NULL,
-  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `who` varchar(45) DEFAULT NULL COMMENT 'Who is the author',
-  `where` text,
+CREATE TABLE `k_links` (
+  `idbooklink` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
+  `what_type` varchar(45) DEFAULT NULL,
+  `where` text NOT NULL COMMENT 'where the URL address',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
+  `status` varchar(45) DEFAULT NULL,
   `remark` text,
-  PRIMARY KEY (`idstring`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`idbooklink`)
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `string`
+-- Dumping data for table `k_links`
 --
 
-LOCK TABLES `string` WRITE;
-/*!40000 ALTER TABLE `string` DISABLE KEYS */;
-INSERT INTO `string` VALUES (1,'HOME','Home','en','2017-04-09 16:26:20','hunter','china','Home'),(2,'PROJECT','Project','en','2017-04-09 16:38:59','hunter','china','project'),(3,'KNOWLEDGE','Knowledge','en','2017-04-09 16:43:15','hunter','china','Knowledge'),(4,'TEST','Test','en','2017-04-09 16:47:37','hunter','china','test'),(5,'CODE','Code','en','2017-04-09 17:00:46','hunter','china','code'),(6,'HOME','ä¸»é¡µ','cn','2017-04-09 19:03:33','hunter','china','cn_home'),(7,'HOME','é¡¹ç›®','cn','2017-04-09 19:05:42','hunter','china','cn_home');
-/*!40000 ALTER TABLE `string` ENABLE KEYS */;
+LOCK TABLES `k_links` WRITE;
+/*!40000 ALTER TABLE `k_links` DISABLE KEYS */;
+INSERT INTO `k_links` VALUES (1,'hunter','translate.google.cn','translate','http://translate.google.cn/','2017-04-05 02:30:57','',''),(2,'hunter','bing.com','search','http://www.bing.com/','2017-04-05 02:32:03','',''),(3,'hunter','google.com','search','http://www.google.com/','2017-04-05 02:32:41','',''),(4,'hunter','msdn.microsoft','doc','https://msdn.microsoft.com','2017-04-05 02:33:16','',''),(5,'hunter','IBM Knowledge Center','doc','http://www.ibm.com/support/knowledgecenter/en/','2017-04-05 02:34:30','',''),(6,'hunter','Apple Developers Center','doc','https://developer.apple.com/','2017-04-05 02:36:48','',''),(7,'hunter','Apple API Reference','doc','https://developer.apple.com/reference/','2017-04-05 02:39:27','',''),(8,'hunter','Apple Guides and Sample Code','doc','https://developer.apple.com/library/prerelease/content/navigation/','2017-04-05 02:40:10','',''),(9,'hunter','VirtualBox Technical documentation','doc','https://www.virtualbox.org/wiki/Technical_documentation','2017-04-05 02:40:35','',''),(10,'hunter','Git Documentation','doc','https://git-scm.com/doc','2017-04-05 02:40:58','',''),(11,'hunter','Lean-x','doc','http://www.tutorialspoint.com/','2017-04-05 02:41:21','',''),(12,'hunter','perldoc.perl.org','doc','http://perldoc.perl.org/','2017-04-05 02:41:41','',''),(13,'hunter','GNU C Reference Manual','doc','http://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html','2017-04-05 02:42:06','',''),(14,'hunter','Linux C++ Software Development','doc','http://www.yolinux.com/TUTORIALS/LinuxTutorialC%2B%2B.html','2017-04-05 02:42:32','',''),(15,'hunter','C++  keyword','doc','http://en.cppreference.com/w/cpp/keyword','2017-04-05 02:42:55','',''),(16,'hunter','C++ STL Tutorial','doc technical','http://www.tutorialspoint.com/cplusplus/cpp_stl_tutorial.htm','2017-04-05 02:44:49','',''),(17,'hunter','My SQL documentation','doc technical','http://dev.mysql.com/doc/','2017-04-05 02:45:12','',''),(18,'hunter','PHP Manual','doc technical','http://www.php.net/manual/en/index.php','2017-04-05 02:45:34','',''),(19,'hunter','w3.standards','doc technical','https://www.w3.org/standards/','2017-04-05 02:45:55','',''),(20,'hunter','w3school.cn','doc technical','http://www.w3school.com.cn/','2017-04-05 02:46:16','',''),(21,'hunter','w3school.bootcss','doc technical','http://w3schools.bootcss.com/html/default.html','2017-04-05 02:46:38','',''),(22,'hunter','HTTP protocols','doc technical protocol','https://www.w3.org/Protocols/','2017-04-05 02:47:22','',''),(23,'hunter','html.com','doc technical','http://html.com/','2017-04-05 02:48:03','',''),(24,'hunter','java','doc technical language develop','https://www.oracle.com/java/index.html','2017-04-05 02:48:48','',''),(25,'hunter','fileformat.book','doc technical','http://www.fileformat.info/resource/book/index.htm','2017-04-05 02:52:07','',''),(26,'hunter','U-Boot.manual','doc technical','http://www.denx.de/wiki/DULG/Manual','2017-04-05 02:53:45','',''),(27,'hunter','yoctoproject.doc','doc technical','https://www.yoctoproject.org/documentation','2017-04-05 02:54:11','',''),(28,'hunter','openembedded.org','doc technical','http://www.openembedded.org/wiki/Main_Page','2017-04-05 02:54:35','',''),(29,'hunter','bitbake-user-manual','doc technical','https://www.yoctoproject.org/docs/1.6/bitbake-user-manual/bitbake-user-manual.html','2017-04-05 02:54:56','',''),(30,'hunter','Windows driver development','doc technical develop','https://msdn.microsoft.com/en-us/windows/hardware/ff960953.aspx','2017-04-05 02:55:27','',''),(31,'hunter','linux-man-pages','doc technical linux ','https://linux.die.net/man/','2017-04-05 02:56:01','',''),(32,'hunter','centos.doc','doc technical linux ','https://www.centos.org/docs/','2017-04-05 02:56:26','',''),(33,'hunter','IEEE-POSIX','doc technical','http://get.posixcertified.ieee.org/','2017-04-05 02:56:54','',''),(34,'hunter','i2c-bus','doc technical','http://www.i2c-bus.org/i2c-bus/','2017-04-05 02:57:18','',''),(35,'hunter','docker-library','doc technical','https://github.com/docker-library','2017-04-05 02:58:53','',''),(36,'hunter','python3-doc','doc technical','https://docs.python.org/3/','2017-04-05 02:59:13','',''),(37,'hunter','lamp-web','doc technical','http://www.lampweb.org/','2017-04-05 02:59:29','',''),(38,'hunter','nginx-docs','doc technical','http://nginx.org/en/docs/','2017-04-05 02:59:56','',''),(39,'hunter','gitlabhq','doc technical','https://github.com/gitlabhq','2017-04-05 03:00:20','',''),(40,'hunter','gnu-make','doc technical','http://www.gnu.org/software/make/manual/make.html','2017-04-05 03:00:40','',''),(41,'hunter','iso639-2:language code','doc technical','https://www.loc.gov/standards/iso639-2/php/code_list.php','2017-04-05 03:01:02','',''),(42,'hunter','countrycode','doc technical','https://countrycode.org/','2017-04-05 03:01:28','',''),(43,'hunter','multi-language php','doc technical','http://www.bitrepository.com/php-how-to-add-multi-language-support-to-a-website.html','2017-04-05 03:01:58','',''),(44,'hunter','GNU/Linux Command-Line Tools Summary','doc technical','https://linux.die.net/Linux-CLI/','2017-04-05 03:02:23','',''),(45,'hunter','css color ','doc technical','http://www.w3school.com.cn/cssref/css_colornames.asp','2017-04-06 08:04:40','',''),(46,'hunter','PHP class','doc technical','http://php.net/manual/en/language.oop5.php','2017-04-07 03:03:53','','');
+/*!40000 ALTER TABLE `k_links` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `temp`
+-- Table structure for table `k_type`
 --
 
-DROP TABLE IF EXISTS `temp`;
+DROP TABLE IF EXISTS `k_type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `temp` (
-  `idtemp` int(11) NOT NULL AUTO_INCREMENT,
-  `who` varchar(45) NOT NULL COMMENT 'Who is the author',
-  `where` text NOT NULL,
-  `name` text NOT NULL,
-  `temp` text NOT NULL,
-  `time` datetime NOT NULL,
-  `code_type` varchar(45) NOT NULL,
-  `comment` text,
-  `remark` text,
-  `status` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idtemp`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `k_type` (
+  `idk_type` int(11) NOT NULL AUTO_INCREMENT,
+  `what` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idk_type`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `temp`
+-- Dumping data for table `k_type`
 --
 
-LOCK TABLES `temp` WRITE;
-/*!40000 ALTER TABLE `temp` DISABLE KEYS */;
-/*!40000 ALTER TABLE `temp` ENABLE KEYS */;
+LOCK TABLES `k_type` WRITE;
+/*!40000 ALTER TABLE `k_type` DISABLE KEYS */;
+/*!40000 ALTER TABLE `k_type` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -87,4 +79,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-09 22:55:49
+-- Dump completed on 2017-04-10 18:32:40
