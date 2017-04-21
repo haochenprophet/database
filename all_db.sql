@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: code
+-- Host: 127.0.0.1    Database: code
 -- ------------------------------------------------------
 -- Server version	8.0.0-dmr-log
 
@@ -65,7 +65,7 @@ CREATE TABLE `string` (
   `where` text,
   `remark` text,
   PRIMARY KEY (`idstring`)
-) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,7 +74,7 @@ CREATE TABLE `string` (
 
 LOCK TABLES `string` WRITE;
 /*!40000 ALTER TABLE `string` DISABLE KEYS */;
-INSERT INTO `string` VALUES (1,'HOME','Home','en','2017-04-09 16:26:20','hunter','china','utf8'),(2,'PROJECT','Project','en','2017-04-09 16:38:59','hunter','china','utf8'),(3,'KNOWLEDGE','Knowledge','en','2017-04-09 16:43:15','hunter','china','utf8'),(4,'TEST','Test','en','2017-04-09 16:47:37','hunter','china','utf8'),(5,'CODE','Code','en','2017-04-09 17:00:46','hunter','china','utf8'),(6,'HOME','主页','cn','2017-04-10 14:05:51','hunter','china','utf8'),(7,'PROJECT','项目','cn','2017-04-10 14:19:08','hunter','china','utf8'),(8,'BOOKMARK','BookMark','en','2017-04-10 14:20:45','hunter','china','utf8'),(9,'BOOKMARK','书签','cn','2017-04-10 14:22:02','hunter','china','utf8'),(10,'KNOWLEDGE','知识','cn','2017-04-10 15:24:30','hunter','china','utf8'),(11,'TRANSLATE','翻译','cn','2017-04-10 15:27:12','hunter','china','utf8'),(12,'TRANSLATE','Translate','en','2017-04-10 15:33:59','hunter','china','utf8'),(13,'TEST','测试','cn','2017-04-10 15:37:41','hunter','china','utf8'),(14,'LAYOUT','Layout','en','2017-04-10 15:38:48','hunter','china','utf8'),(15,'LAYOUT','布局','cn','2017-04-10 15:39:45','hunter','china','utf8'),(16,'FILE','File','en','2017-04-10 15:41:06','hunter','china','utf8'),(17,'FILE','文件','cn','2017-04-10 15:41:22','hunter','china','utf8'),(18,'DOWNLOAD','Download','en','2017-04-10 15:41:49','hunter','china','utf8'),(19,'DOWNLOAD','下载','cn','2017-04-10 15:42:05','hunter','china','utf8'),(20,'GITTEST','GitTest','en','2017-04-10 15:42:28','hunter','china','utf8'),(21,'GITTEST','Git测试','cn','2017-04-10 15:46:45','hunter','china','utf8'),(22,'CODE','代码','cn','2017-04-10 15:47:17','hunter','china','utf8'),(23,'LOGIN','登录','cn','2017-04-10 15:47:47','hunter','china','utf8'),(24,'LOGIN','Login','en','2017-04-10 15:47:59','hunter','china','utf8'),(25,'REGISTER','Register','en','2017-04-10 15:48:33','hunter','china','utf8'),(26,'REGISTER','注册','cn','2017-04-10 15:48:49','hunter','china','utf8'),(27,'MAIL','邮件','cn','2017-04-10 15:49:13','hunter','china','utf8'),(28,'MAIL','Mail','en','2017-04-10 15:49:35','hunter','china','utf8'),(29,'PATENT_SYS','Patent_SYS','en','2017-04-10 15:50:19','hunter','china','utf8'),(30,'PATENT_SYS','专利系统','cn','2017-04-10 15:50:36','hunter','china','utf8'),(31,'LANGUAGE','语言','cn','2017-04-10 18:27:30','hunter','china','utf8'),(32,'LANGUAGE','Language','en','2017-04-10 18:28:13','hunter','china','utf8'),(33,'USER_NAME','Username','en','2017-04-13 10:34:53','hunter','china','utf8'),(34,'USER_NAME','用户名','cn','2017-04-13 10:35:14','hunter','china','utf8'),(35,'PASSWORD','密码','cn','2017-04-13 10:35:41','hunter','china','utf8'),(36,'PASSWORD','Password','en','2017-04-13 10:35:56','hunter','china','utf8'),(37,'CONFIRM_PASSWORD','Confirm Password','en','2017-04-13 10:47:29','hunter','china','utf8'),(38,'CONFIRM_PASSWORD','确认密码','cn','2017-04-13 10:48:07','hunter','china','utf8'),(39,'EMAIL','Email','en','2017-04-13 10:49:43','hunter','china','utf8'),(40,'EMAIL','电子邮件','cn','2017-04-13 10:50:13','hunter','china','utf8'),(41,'PASSWORD_RECOVER_QUESTION','Password recover question','en','2017-04-13 10:52:18','hunter','china','utf8'),(42,'PASSWORD_RECOVER_QUESTION','密码恢复问题','cn','2017-04-13 10:52:32','hunter','china','utf8'),(43,'PASSWORD_RECOVER_ANSWER','Password recover answer','en','2017-04-13 10:54:21','hunter','china','utf8'),(44,'PASSWORD_RECOVER_ANSWER','密码恢复答案','cn','2017-04-13 10:54:36','hunter','china','utf8'),(45,'PASSWORD_RECOVER_MAIL','Password recover mail','en','2017-04-13 10:55:45','hunter','china','utf8'),(46,'PASSWORD_RECOVER_MAIL','密码恢复邮箱','cn','2017-04-13 10:56:14','hunter','china','utf8'),(47,'COMMIT','提交','cn','2017-04-13 11:07:59','hunter','china','utf8'),(48,'COMMIT','Commit','en','2017-04-13 11:08:14','hunter','china','utf8'),(49,'COMMIT_MESSAGE','提交信息','cn','2017-04-13 17:34:52','hunter','china','utf8'),(50,'COMMIT_MESSAGE','Commit Message','en','2017-04-13 17:35:20','hunter','china','utf8'),(51,'OPTIONS','选项','cn','2017-04-13 17:36:25','hunter','china','utf8'),(52,'OPTIONS','Options','en','2017-04-13 17:36:40','hunter','china','utf8'),(53,'TITLE','标题','cn','2017-04-14 13:39:45','hunter','china','utf8'),(54,'TITLE','Title','en','2017-04-14 13:39:59','hunter','china','utf8'),(55,'URL','URL','en','2017-04-14 13:40:33','hunter','china','utf8'),(56,'URL','URL','cn','2017-04-14 13:40:39','hunter','china','utf8'),(57,'TYPE','Type','en','2017-04-14 13:41:12','hunter','china','utf8'),(58,'TYPE','类型','cn','2017-04-14 13:41:24','hunter','china','utf8'),(59,'STATUS','状态','cn','2017-04-14 13:41:51','hunter','china','utf8'),(60,'STATUS','Status','en','2017-04-14 13:42:25','hunter','china','utf8'),(61,'REMARK','备注','cn','2017-04-14 13:42:59','hunter','china','utf8'),(62,'REMARK','Remark','en','2017-04-14 13:43:17','hunter','china','utf8'),(63,'AUTHOR','Author','en','2017-04-14 13:43:41','hunter','china','utf8'),(64,'AUTHOR','作者','cn','2017-04-14 13:43:57','hunter','china','utf8'),(65,'FILENAME','Filename','en','2017-04-14 14:45:50','hunter','china','utf8'),(66,'FILENAME','文件名','cn','2017-04-14 14:46:08','hunter','china','utf8'),(67,'INDIVIDUAL_CENTER','IndividualCenter','en','2017-04-14 17:02:17','hunter','china','utf8'),(68,'INDIVIDUAL_CENTER','个人中心','cn','2017-04-14 17:02:34','hunter','china','utf8'),(69,'EXIT','退出','cn','2017-04-14 17:02:59','hunter','china','utf8'),(70,'EXIT','Exit','en','2017-04-14 17:03:10','hunter','china','utf8'),(71,'MENU','菜单','cn','2017-04-14 19:53:59','hunter','china','utf8'),(72,'MENU','Menu','en','2017-04-14 19:54:13','hunter','china','utf8');
+INSERT INTO `string` VALUES (1,'HOME','Home','en','2017-04-09 16:26:20','hunter','china','utf8'),(2,'PROJECT','Project','en','2017-04-09 16:38:59','hunter','china','utf8'),(3,'KNOWLEDGE','Knowledge','en','2017-04-09 16:43:15','hunter','china','utf8'),(4,'TEST','Test','en','2017-04-09 16:47:37','hunter','china','utf8'),(5,'CODE','Code','en','2017-04-09 17:00:46','hunter','china','utf8'),(6,'HOME','主页','cn','2017-04-10 14:05:51','hunter','china','utf8'),(7,'PROJECT','项目','cn','2017-04-10 14:19:08','hunter','china','utf8'),(8,'BOOKMARK','BookMark','en','2017-04-10 14:20:45','hunter','china','utf8'),(9,'BOOKMARK','书签','cn','2017-04-10 14:22:02','hunter','china','utf8'),(10,'KNOWLEDGE','知识','cn','2017-04-10 15:24:30','hunter','china','utf8'),(11,'TRANSLATE','翻译','cn','2017-04-10 15:27:12','hunter','china','utf8'),(12,'TRANSLATE','Translate','en','2017-04-10 15:33:59','hunter','china','utf8'),(13,'TEST','测试','cn','2017-04-10 15:37:41','hunter','china','utf8'),(14,'LAYOUT','Layout','en','2017-04-10 15:38:48','hunter','china','utf8'),(15,'LAYOUT','布局','cn','2017-04-10 15:39:45','hunter','china','utf8'),(16,'FILE','File','en','2017-04-10 15:41:06','hunter','china','utf8'),(17,'FILE','文件','cn','2017-04-10 15:41:22','hunter','china','utf8'),(18,'DOWNLOAD','Download','en','2017-04-10 15:41:49','hunter','china','utf8'),(19,'DOWNLOAD','下载','cn','2017-04-10 15:42:05','hunter','china','utf8'),(20,'GITTEST','GitTest','en','2017-04-10 15:42:28','hunter','china','utf8'),(21,'GITTEST','Git测试','cn','2017-04-10 15:46:45','hunter','china','utf8'),(22,'CODE','代码','cn','2017-04-10 15:47:17','hunter','china','utf8'),(23,'LOGIN','登录','cn','2017-04-10 15:47:47','hunter','china','utf8'),(24,'LOGIN','Login','en','2017-04-10 15:47:59','hunter','china','utf8'),(25,'REGISTER','Register','en','2017-04-10 15:48:33','hunter','china','utf8'),(26,'REGISTER','注册','cn','2017-04-10 15:48:49','hunter','china','utf8'),(27,'MAIL','邮件','cn','2017-04-10 15:49:13','hunter','china','utf8'),(28,'MAIL','Mail','en','2017-04-10 15:49:35','hunter','china','utf8'),(29,'PATENT_SYS','Patent_SYS','en','2017-04-10 15:50:19','hunter','china','utf8'),(30,'PATENT_SYS','专利系统','cn','2017-04-10 15:50:36','hunter','china','utf8'),(31,'LANGUAGE','语言','cn','2017-04-10 18:27:30','hunter','china','utf8'),(32,'LANGUAGE','Language','en','2017-04-10 18:28:13','hunter','china','utf8'),(33,'USER_NAME','Username','en','2017-04-13 10:34:53','hunter','china','utf8'),(34,'USER_NAME','用户名','cn','2017-04-13 10:35:14','hunter','china','utf8'),(35,'PASSWORD','密码','cn','2017-04-13 10:35:41','hunter','china','utf8'),(36,'PASSWORD','Password','en','2017-04-13 10:35:56','hunter','china','utf8'),(37,'CONFIRM_PASSWORD','Confirm Password','en','2017-04-13 10:47:29','hunter','china','utf8'),(38,'CONFIRM_PASSWORD','确认密码','cn','2017-04-13 10:48:07','hunter','china','utf8'),(39,'EMAIL','Email','en','2017-04-13 10:49:43','hunter','china','utf8'),(40,'EMAIL','电子邮件','cn','2017-04-13 10:50:13','hunter','china','utf8'),(41,'PASSWORD_RECOVER_QUESTION','Password recover question','en','2017-04-13 10:52:18','hunter','china','utf8'),(42,'PASSWORD_RECOVER_QUESTION','密码恢复问题','cn','2017-04-13 10:52:32','hunter','china','utf8'),(43,'PASSWORD_RECOVER_ANSWER','Password recover answer','en','2017-04-13 10:54:21','hunter','china','utf8'),(44,'PASSWORD_RECOVER_ANSWER','密码恢复答案','cn','2017-04-13 10:54:36','hunter','china','utf8'),(45,'PASSWORD_RECOVER_MAIL','Password recover mail','en','2017-04-13 10:55:45','hunter','china','utf8'),(46,'PASSWORD_RECOVER_MAIL','密码恢复邮箱','cn','2017-04-13 10:56:14','hunter','china','utf8'),(47,'COMMIT','提交','cn','2017-04-13 11:07:59','hunter','china','utf8'),(48,'COMMIT','Commit','en','2017-04-13 11:08:14','hunter','china','utf8'),(49,'COMMIT_MESSAGE','提交信息','cn','2017-04-13 17:34:52','hunter','china','utf8'),(50,'COMMIT_MESSAGE','Commit Message','en','2017-04-13 17:35:20','hunter','china','utf8'),(51,'OPTIONS','选项','cn','2017-04-13 17:36:25','hunter','china','utf8'),(52,'OPTIONS','Options','en','2017-04-13 17:36:40','hunter','china','utf8'),(53,'TITLE','标题','cn','2017-04-14 13:39:45','hunter','china','utf8'),(54,'TITLE','Title','en','2017-04-14 13:39:59','hunter','china','utf8'),(55,'URL','URL','en','2017-04-14 13:40:33','hunter','china','utf8'),(56,'URL','URL','cn','2017-04-14 13:40:39','hunter','china','utf8'),(57,'TYPE','Type','en','2017-04-14 13:41:12','hunter','china','utf8'),(58,'TYPE','类型','cn','2017-04-14 13:41:24','hunter','china','utf8'),(59,'STATUS','状态','cn','2017-04-14 13:41:51','hunter','china','utf8'),(60,'STATUS','Status','en','2017-04-14 13:42:25','hunter','china','utf8'),(61,'REMARK','备注','cn','2017-04-14 13:42:59','hunter','china','utf8'),(62,'REMARK','Remark','en','2017-04-14 13:43:17','hunter','china','utf8'),(63,'AUTHOR','Author','en','2017-04-14 13:43:41','hunter','china','utf8'),(64,'AUTHOR','作者','cn','2017-04-14 13:43:57','hunter','china','utf8'),(65,'FILENAME','Filename','en','2017-04-14 14:45:50','hunter','china','utf8'),(66,'FILENAME','文件名','cn','2017-04-14 14:46:08','hunter','china','utf8'),(67,'INDIVIDUAL_CENTER','IndividualCenter','en','2017-04-14 17:02:17','hunter','china','utf8'),(68,'INDIVIDUAL_CENTER','个人中心','cn','2017-04-14 17:02:34','hunter','china','utf8'),(69,'EXIT','退出','cn','2017-04-14 17:02:59','hunter','china','utf8'),(70,'EXIT','Exit','en','2017-04-14 17:03:10','hunter','china','utf8'),(71,'MENU','菜单','cn','2017-04-14 19:53:59','hunter','china','utf8'),(72,'MENU','Menu','en','2017-04-14 19:54:13','hunter','china','utf8'),(73,'PROJECT_NAME','项目名称','cn','2017-04-20 22:06:31','hunter','china','utf8'),(74,'PROJECT_NAME','ProjectName','en','2017-04-20 22:06:50','hunter','china','utf8'),(75,'SUBMIT','提交','cn','2017-04-20 22:14:15','hunter','china','utf8'),(76,'SUBMIT','Submit','en','2017-04-20 22:14:34','hunter','china','utf8');
 /*!40000 ALTER TABLE `string` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -171,49 +171,80 @@ LOCK TABLES `k_type` WRITE;
 UNLOCK TABLES;
 
 --
--- Current Database: `patent`
+-- Current Database: `bookmark`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `patent` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `bookmark` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
-USE `patent`;
+USE `bookmark`;
 
 --
--- Table structure for table `project`
+-- Table structure for table `patent_law`
 --
 
-DROP TABLE IF EXISTS `project`;
+DROP TABLE IF EXISTS `patent_law`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `project` (
-  `idproject` int(11) NOT NULL AUTO_INCREMENT,
-  `name` text NOT NULL,
-  `serial_number` varchar(45) DEFAULT NULL,
-  `item` longtext,
-  `infor` blob,
-  `type` varchar(45) DEFAULT NULL,
-  `owner` varchar(45) DEFAULT NULL,
-  `apply_time` datetime DEFAULT NULL,
-  `start_time` datetime DEFAULT NULL,
-  `end_time` datetime DEFAULT NULL,
-  `depend_id` int(11) DEFAULT NULL,
-  `schedule` int(11) DEFAULT NULL,
-  `position` tinytext,
-  `source` blob,
-  `url` longtext,
-  `status` varchar(45) DEFAULT NULL,
-  `remark` longtext,
-  PRIMARY KEY (`idproject`)
+CREATE TABLE `patent_law` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `original` text NOT NULL,
+  `translation` text,
+  `mark` text,
+  `comment` text,
+  `remark` text,
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `location` text,
+  `author` text,
+  `device` text,
+  `image` text COMMENT 'image URL',
+  `audio` text COMMENT 'audio URL',
+  `vedio` text COMMENT 'audio URL',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `patent_law`
+--
+
+LOCK TABLES `patent_law` WRITE;
+/*!40000 ALTER TABLE `patent_law` DISABLE KEYS */;
+INSERT INTO `patent_law` VALUES (1,'中华人民共和国专利法','中华人民共和国专利法','中华人民共和国专利法','中华人民共和国专利法','中华人民共和国专利法','2017-04-21 01:25:06','china','','','','',''),(2,'中华人民共和国专利法','中华人民共和国专利法','中华人民共和国专利法','中华人民共和国专利法','中华人民共和国专利法','2017-04-21 01:25:14','china','','','','','');
+/*!40000 ALTER TABLE `patent_law` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `patent_law_implementation_rules`
+--
+
+DROP TABLE IF EXISTS `patent_law_implementation_rules`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `patent_law_implementation_rules` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `original` text NOT NULL,
+  `translation` text,
+  `mark` text,
+  `comment` text,
+  `remark` text,
+  `time` datetime NOT NULL,
+  `location` text,
+  `author` text,
+  `device` text,
+  `image` text COMMENT 'image URL',
+  `audio` text COMMENT 'audio URL',
+  `vedio` text COMMENT 'vedio URL',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `project`
+-- Dumping data for table `patent_law_implementation_rules`
 --
 
-LOCK TABLES `project` WRITE;
-/*!40000 ALTER TABLE `project` DISABLE KEYS */;
-/*!40000 ALTER TABLE `project` ENABLE KEYS */;
+LOCK TABLES `patent_law_implementation_rules` WRITE;
+/*!40000 ALTER TABLE `patent_law_implementation_rules` DISABLE KEYS */;
+/*!40000 ALTER TABLE `patent_law_implementation_rules` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -249,7 +280,7 @@ CREATE TABLE `account` (
   `receipt` blob COMMENT 'Transaction credentials',
   `remark` text COMMENT 'Place of the transaction',
   PRIMARY KEY (`idaccount`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -284,7 +315,7 @@ CREATE TABLE `attendance` (
   `status` varchar(45) DEFAULT NULL,
   `remark` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idattendance`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -316,7 +347,7 @@ CREATE TABLE `code` (
   `status` varchar(45) DEFAULT NULL COMMENT 'Verification passed, unauthenticated, under development, published, debug',
   `remark` text,
   PRIMARY KEY (`idcode`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -344,7 +375,7 @@ CREATE TABLE `commit` (
   `what_time` datetime NOT NULL,
   `remark` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idcommit`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -374,7 +405,7 @@ CREATE TABLE `creative` (
   `status` varchar(45) DEFAULT NULL COMMENT 'Has been achieved, Is being realized, Plan to achieve ,can not achieve',
   `remark` text,
   PRIMARY KEY (`idcreative`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -406,7 +437,7 @@ CREATE TABLE `customer` (
   `tel` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idcustomer`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -444,7 +475,7 @@ CREATE TABLE `device` (
   `sell_price` text COMMENT 'Shipping or monopoly prices',
   `remark` text,
   PRIMARY KEY (`iddevice`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -476,7 +507,7 @@ CREATE TABLE `feedback` (
   `status` varchar(45) DEFAULT NULL COMMENT 'Has responded, has not replied, has responded, has been processed, has not yet been processed, processed',
   `remark` varchar(45) DEFAULT NULL COMMENT 'How to respond to or process feedback',
   PRIMARY KEY (`idfeedback`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -506,7 +537,7 @@ CREATE TABLE `idea` (
   `remark` text,
   `status` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`ididea`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -538,7 +569,7 @@ CREATE TABLE `issue` (
   `status` varchar(45) DEFAULT NULL COMMENT 'Processing ,Has been resolved,unsolved,Has been revoked',
   `remark` text,
   PRIMARY KEY (`idissue`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -570,7 +601,7 @@ CREATE TABLE `market` (
   `status` varchar(45) DEFAULT NULL,
   `remark` text,
   PRIMARY KEY (`idmarket`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -618,7 +649,7 @@ CREATE TABLE `person` (
   `status` text,
   `remark` text,
   PRIMARY KEY (`idperson`,`worker_number`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -648,7 +679,7 @@ CREATE TABLE `plan` (
   `status` varchar(45) DEFAULT NULL,
   `remark` text,
   PRIMARY KEY (`idplan`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -679,7 +710,7 @@ CREATE TABLE `production` (
   `status` varchar(45) DEFAULT NULL COMMENT 'complete,processing,has not started',
   `remark` text,
   PRIMARY KEY (`idproduction`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -709,7 +740,7 @@ CREATE TABLE `release` (
   `status` varchar(45) DEFAULT NULL,
   `remark` text,
   PRIMARY KEY (`idrelease`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -741,7 +772,7 @@ CREATE TABLE `repair` (
   `status` varchar(45) DEFAULT NULL,
   `remark` text,
   PRIMARY KEY (`idrepair`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -774,7 +805,7 @@ CREATE TABLE `request` (
   `status` varchar(45) DEFAULT NULL COMMENT 'In the request, In response,finish ,break',
   `feedback` text COMMENT 'feed back information ',
   PRIMARY KEY (`idrequest`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -805,7 +836,7 @@ CREATE TABLE `review` (
   `status` varchar(45) DEFAULT NULL,
   `remark` text,
   PRIMARY KEY (`idreview`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -839,7 +870,7 @@ CREATE TABLE `service` (
   `feedback` text,
   `remark` text,
   PRIMARY KEY (`idservice`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -872,7 +903,7 @@ CREATE TABLE `source` (
   `status` varchar(45) DEFAULT NULL COMMENT 'How is the resource state?Available, not available ,Normal, damaged, occupied, does not exist',
   `remark` text COMMENT 'how much is it',
   PRIMARY KEY (`idsource`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -902,7 +933,7 @@ CREATE TABLE `test` (
   `status` varchar(45) DEFAULT NULL,
   `remark` text,
   PRIMARY KEY (`idtest`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -932,7 +963,7 @@ CREATE TABLE `work` (
   `status` varchar(45) DEFAULT NULL COMMENT 'Finish,Hang,suspend,Doing Running,Stop,Abolished . ',
   `remark` text COMMENT 'ower job_number',
   PRIMARY KEY (`idwork`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3133,80 +3164,49 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
--- Current Database: `bookmark`
+-- Current Database: `patent`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `bookmark` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `patent` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
-USE `bookmark`;
+USE `patent`;
 
 --
--- Table structure for table `patent_law`
+-- Table structure for table `project`
 --
 
-DROP TABLE IF EXISTS `patent_law`;
+DROP TABLE IF EXISTS `project`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `patent_law` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `original` text NOT NULL,
-  `translation` text,
-  `mark` text,
-  `comment` text,
-  `remark` text,
-  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `location` text,
-  `author` text,
-  `device` text,
-  `image` text COMMENT 'image URL',
-  `aadio` text COMMENT 'radio URL',
-  `vedio` text COMMENT 'audio URL',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+CREATE TABLE `project` (
+  `idproject` int(11) NOT NULL AUTO_INCREMENT,
+  `name` text NOT NULL,
+  `serial_number` varchar(45) DEFAULT NULL,
+  `item` longtext,
+  `infor` blob,
+  `type` varchar(45) DEFAULT NULL,
+  `owner` varchar(45) DEFAULT NULL,
+  `apply_time` datetime DEFAULT NULL,
+  `start_time` datetime DEFAULT NULL,
+  `end_time` datetime DEFAULT NULL,
+  `depend_id` int(11) DEFAULT NULL,
+  `schedule` int(11) DEFAULT NULL,
+  `position` tinytext,
+  `source` blob,
+  `url` longtext,
+  `status` varchar(45) DEFAULT NULL,
+  `remark` longtext,
+  PRIMARY KEY (`idproject`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `patent_law`
+-- Dumping data for table `project`
 --
 
-LOCK TABLES `patent_law` WRITE;
-/*!40000 ALTER TABLE `patent_law` DISABLE KEYS */;
-INSERT INTO `patent_law` VALUES (1,'ä¸­åŽäººæ°‘å…±å’Œå›½ä¸“åˆ©æ³•\r\n\r\nï¼ˆ1984å¹´3æœˆ12æ—¥ç¬¬å…­å±Šå…¨å›½äººæ°‘ä»£è¡¨å¤§ä¼šå¸¸åŠ¡å§”å‘˜ä¼šç¬¬å››æ¬¡ä¼šè®®é€šè¿‡æ ¹æ®1992å¹´9æœˆ4æ—¥ç¬¬ä¸ƒå±Šå…¨å›½äººæ°‘ä»£è¡¨å¤§ä¼šå¸¸åŠ¡å§”å‘˜ä¼šç¬¬äºŒåä¸ƒæ¬¡ä¼šè®®ã€Šå…³äºŽä¿®æ”¹ã€ˆä¸­åŽäººæ°‘å…±å’Œå›½ä¸“åˆ©æ³•ã€‰çš„å†³å®šã€‹ç¬¬ä¸€æ¬¡ä¿®æ­£æ ¹æ®2000å¹´8æœˆ25æ—¥ç¬¬ä¹å±Šå…¨å›½äººæ°‘ä»£è¡¨å¤§ä¼šå¸¸åŠ¡å§”å‘˜ä¼šç¬¬åä¸ƒæ¬¡ä¼šè®®ã€Šå…³äºŽä¿®æ”¹ã€ˆä¸­åŽäººæ°‘å…±å’Œå›½ä¸“åˆ©æ³•ã€‰çš„å†³å®šã€‹ç¬¬äºŒæ¬¡ä¿®æ­£æ ¹æ®2008å¹´12æœˆ27æ—¥ç¬¬åä¸€å±Šå…¨å›½äººæ°‘ä»£è¡¨å¤§ä¼šå¸¸åŠ¡å§”å‘˜ä¼šç¬¬å…­æ¬¡ä¼šè®®ã€Šå…³äºŽä¿®æ”¹ã€ˆä¸­åŽäººæ°‘å…±å’Œå›½ä¸“åˆ©æ³•ã€‰çš„å†³å®šã€‹ç¬¬ä¸‰æ¬¡ä¿®æ­£ï¼‰\r\n','','','','','2017-04-16 21:16:30','china','','','','',''),(2,'\r\nç›® å½•\r\n\r\nç¬¬ä¸€ç«  æ€»åˆ™\r\n\r\nç¬¬äºŒç«  æŽˆäºˆä¸“åˆ©æƒçš„æ¡ä»¶\r\n\r\nç¬¬ä¸‰ç«  ä¸“åˆ©çš„ç”³è¯·\r\n\r\nç¬¬å››ç« ä¸“åˆ©ç”³è¯·çš„å®¡æŸ¥å’Œæ‰¹å‡†\r\n\r\nç¬¬äº”ç« ä¸“åˆ©æƒçš„æœŸé™ã€ç»ˆæ­¢å’Œæ— æ•ˆ\r\n\r\nç¬¬å…­ç« ä¸“åˆ©å®žæ–½çš„å¼ºåˆ¶è®¸å¯\r\n\r\nç¬¬ä¸ƒç«  ä¸“åˆ©æƒçš„ä¿æŠ¤\r\n\r\nç¬¬å…«ç«  é™„åˆ™','','','','','2017-04-16 21:23:15','china','','','','',''),(3,'ç¬¬ä¸€ç«  æ€» åˆ™','','','','','2017-04-16 21:26:51','china','','','','',''),(4,'ç¬¬ä¸€æ¡ä¸ºäº†ä¿æŠ¤ä¸“åˆ©æƒäººçš„åˆæ³•æƒç›Šï¼Œé¼“åŠ±å‘æ˜Žåˆ›é€ ï¼ŒæŽ¨åŠ¨å‘æ˜Žåˆ›é€ çš„åº”ç”¨ï¼Œæé«˜åˆ›æ–°èƒ½åŠ›ï¼Œä¿ƒè¿›ç§‘å­¦æŠ€æœ¯è¿›æ­¥å’Œç»æµŽç¤¾ä¼šå‘å±•ï¼Œåˆ¶å®šæœ¬æ³•ã€‚','','å‘æ˜Žåˆ›é€ +åº”ç”¨+åˆ›æ–°+ç§‘å­¦æŠ€æœ¯+ç»æµŽ','','','2017-04-16 21:29:06','china','','','','',''),(5,'ç¬¬äºŒæ¡æœ¬æ³•æ‰€ç§°çš„å‘æ˜Žåˆ›é€ æ˜¯æŒ‡å‘æ˜Žã€å®žç”¨æ–°åž‹å’Œå¤–è§‚è®¾è®¡ã€‚å‘æ˜Žï¼Œæ˜¯æŒ‡å¯¹äº§å“ã€æ–¹æ³•æˆ–è€…å…¶æ”¹è¿›æ‰€æå‡ºçš„æ–°çš„æŠ€æœ¯æ–¹æ¡ˆã€‚\r\nå®žç”¨æ–°åž‹ï¼Œæ˜¯æŒ‡å¯¹äº§å“çš„å½¢çŠ¶ã€æž„é€ æˆ–è€…å…¶ç»“åˆæ‰€æå‡ºçš„é€‚äºŽå®žç”¨çš„æ–°çš„æŠ€æœ¯æ–¹æ¡ˆã€‚å¤–è§‚è®¾è®¡ï¼Œæ˜¯æŒ‡å¯¹äº§å“çš„å½¢çŠ¶ã€å›¾æ¡ˆæˆ–è€…å…¶ç»“åˆä»¥åŠè‰²å½©ä¸Žå½¢çŠ¶ã€å›¾æ¡ˆçš„ç»“åˆæ‰€ä½œå‡ºçš„å¯Œæœ‰ç¾Žæ„Ÿå¹¶é€‚äºŽå·¥ä¸šåº”ç”¨çš„æ–°è®¾è®¡ã€‚\r\n','','å‘æ˜Žåˆ›é€ æ˜¯æŒ‡å‘æ˜Žã€å®žç”¨æ–°åž‹å’Œå¤–è§‚è®¾è®¡. \r\npatent type:å‘æ˜Ž+å®žç”¨æ–°åž‹+å¤–è§‚è®¾.','','','2017-04-16 21:38:43','china','','','','',''),(6,'ç¬¬ä¸‰æ¡å›½åŠ¡é™¢ä¸“åˆ©è¡Œæ”¿éƒ¨é—¨è´Ÿè´£ç®¡ç†å…¨å›½çš„ä¸“åˆ©å·¥ä½œï¼›ç»Ÿä¸€å—ç†å’Œå®¡æŸ¥ä¸“åˆ©ç”³è¯·ï¼Œä¾æ³•æŽˆäºˆä¸“åˆ©æƒã€‚\r\nçœã€è‡ªæ²»åŒºã€ç›´è¾–å¸‚äººæ°‘æ”¿åºœç®¡ç†ä¸“åˆ©å·¥ä½œçš„éƒ¨é—¨è´Ÿè´£æœ¬è¡Œæ”¿åŒºåŸŸå†…çš„ä¸“åˆ©ç®¡ç†å·¥ä½œã€‚','','å›½åŠ¡é™¢.çœã€è‡ªæ²»åŒºã€ç›´è¾–å¸‚äººæ°‘æ”¿åºœ,ä¸“åˆ©è¡Œæ”¿éƒ¨é—¨,','','','2017-04-16 21:45:01','china','','','','','');
-/*!40000 ALTER TABLE `patent_law` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `patent_law_implementation_rules`
---
-
-DROP TABLE IF EXISTS `patent_law_implementation_rules`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `patent_law_implementation_rules` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `original` text NOT NULL,
-  `translation` text,
-  `mark` text,
-  `comment` text,
-  `remark` text,
-  `time` datetime NOT NULL,
-  `location` text,
-  `author` varchar(45) DEFAULT NULL,
-  `device` text,
-  `image` text COMMENT 'image URL',
-  `radio` text COMMENT 'audio URL',
-  `vedio` text COMMENT 'vedio URL',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `patent_law_implementation_rules`
---
-
-LOCK TABLES `patent_law_implementation_rules` WRITE;
-/*!40000 ALTER TABLE `patent_law_implementation_rules` DISABLE KEYS */;
-/*!40000 ALTER TABLE `patent_law_implementation_rules` ENABLE KEYS */;
+LOCK TABLES `project` WRITE;
+/*!40000 ALTER TABLE `project` DISABLE KEYS */;
+/*!40000 ALTER TABLE `project` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -3311,10 +3311,10 @@ USE `code`;
 USE `knowledge`;
 
 --
--- Current Database: `patent`
+-- Current Database: `bookmark`
 --
 
-USE `patent`;
+USE `bookmark`;
 
 --
 -- Current Database: `company`
@@ -5135,10 +5135,10 @@ USE `sys`;
 /*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
--- Current Database: `bookmark`
+-- Current Database: `patent`
 --
 
-USE `bookmark`;
+USE `patent`;
 
 --
 -- Current Database: `iwant`
@@ -5167,4 +5167,4 @@ USE `user`;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-18 11:49:07
+-- Dump completed on 2017-04-21 17:29:09
