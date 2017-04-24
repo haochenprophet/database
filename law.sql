@@ -32,7 +32,6 @@ CREATE TABLE `law` (
   `content` text NOT NULL,
   `remark` text COMMENT 'who : author',
   `type` varchar(45) DEFAULT NULL,
-  `size` int(11) NOT NULL DEFAULT '0',
   `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'create time',
   `where` varchar(45) DEFAULT NULL COMMENT 'create location',
   `who` varchar(45) DEFAULT NULL,
@@ -48,6 +47,10 @@ LOCK TABLES `law` WRITE;
 /*!40000 ALTER TABLE `law` DISABLE KEYS */;
 /*!40000 ALTER TABLE `law` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'law'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -58,4 +61,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-24 17:27:06
+-- Dump completed on 2017-04-24 17:44:20

@@ -26,12 +26,13 @@ DROP TABLE IF EXISTS `infor`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `infor` (
   `idinfor` int(11) NOT NULL AUTO_INCREMENT,
-  `where` text COMMENT 'where: the file URL path  ',
-  `name` varchar(45) DEFAULT NULL COMMENT 'file name',
-  `what` varchar(45) DEFAULT NULL COMMENT 'what ,type,comment,',
+  `where` text NOT NULL COMMENT 'where: the file URL path  ',
+  `name` text NOT NULL COMMENT 'file name',
+  `what` varchar(45) NOT NULL COMMENT 'what ,type,comment,',
   `who` varchar(45) DEFAULT NULL,
-  `when` datetime DEFAULT NULL,
-  `depend_id` int(11) DEFAULT NULL COMMENT 'like project ID',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `depend_id` int(11) NOT NULL DEFAULT '0' COMMENT 'like project ID',
+  `how` int(11) NOT NULL DEFAULT '0' COMMENT 'how long size',
   PRIMARY KEY (`idinfor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -44,6 +45,10 @@ LOCK TABLES `infor` WRITE;
 /*!40000 ALTER TABLE `infor` DISABLE KEYS */;
 /*!40000 ALTER TABLE `infor` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'file'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -54,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-24 17:26:08
+-- Dump completed on 2017-04-24 17:43:43
