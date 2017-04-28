@@ -60,11 +60,15 @@ CREATE TABLE `url` (
   `idurl` int(11) NOT NULL AUTO_INCREMENT,
   `what` text NOT NULL COMMENT 'law name',
   `url` text NOT NULL COMMENT 'law file/link  path',
+  `type` varchar(45) NOT NULL DEFAULT 'local' COMMENT 'local,file,http,https,ssh',
   `status` varchar(45) NOT NULL DEFAULT 'normal' COMMENT 'normal ,abnormal',
   `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'create time ',
+  `where` varchar(45) NOT NULL DEFAULT 'china',
+  `who` varchar(45) NOT NULL DEFAULT 'hunter',
+  `priority` int(11) NOT NULL DEFAULT '0',
   `remark` text,
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,6 +77,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (1,'中华人民共和国宪法-2004','law/中华人民共和国宪法-2004.txt','local','normal','2017-04-27 11:53:15','china','patent_sys',0,'宪法'),(2,'中华人民共和国专利法-2008','law/中华人民共和国专利法-2008.txt','local','normal','2017-04-27 11:55:05','china','patent_sys',0,'专利法'),(3,'中华人民共和国专利法实施细则-2003','law/中华人民共和国专利法实施细则-2003.txt','local','normal','2017-04-27 11:55:49','china','patent_sys',0,'专利法实施细则'),(4,'中华人民共和国民事诉讼法-2012','law/中华人民共和国民事诉讼法-2012.txt','local','normal','2017-04-27 11:56:33','china','patent_sys',0,'民事诉讼法');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -85,4 +90,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-27 18:19:47
+-- Dump completed on 2017-04-28 13:08:54
