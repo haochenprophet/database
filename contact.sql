@@ -68,7 +68,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `remark` text,
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -77,7 +77,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'WeChat','https://web.wechat.com/','local','normal','2017-06-03 20:50:12','china','patent_sys',0,'utf8'),(2,'QQ','http://w.qq.com/','local','normal','2017-06-03 20:52:29','china','patent_sys',0,'utf8'),(3,'Skype','https://login.skype.com','local','normal','2017-06-03 20:55:34','china','patent_sys',0,'utf8'),(4,'qq-Weibo','http://t.qq.com/','local','normal','2017-06-03 21:02:55','china','patent_sys',0,'utf8'),(5,'facebook','https://www.facebook.com','local','normal','2017-06-03 21:06:08','china','patent_sys',0,'utf8');
+INSERT INTO `url` VALUES (1,'WeChat','https://web.wechat.com/','local','normal','2017-06-03 20:50:12','china','patent_sys',0,'utf8'),(2,'QQ','http://w.qq.com/','local','normal','2017-06-03 20:52:29','china','patent_sys',0,'utf8'),(3,'Skype','https://login.skype.com','local','normal','2017-06-03 20:55:34','china','patent_sys',0,'utf8'),(4,'qq-Weibo','http://t.qq.com/','local','normal','2017-06-03 21:02:55','china','patent_sys',0,'utf8'),(5,'facebook','https://www.facebook.com','local','normal','2017-06-03 21:06:08','china','patent_sys',0,'utf8'),(6,'MSN','https://www.msn.com/','local','normal','2017-06-03 21:18:41','china','patent_sys',0,'utf8');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -90,4 +90,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-03 21:10:28
+-- Dump completed on 2017-06-03 21:27:40
