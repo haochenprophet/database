@@ -1,3 +1,6 @@
+CREATE DATABASE  IF NOT EXISTS `audio` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `audio`;
+
 -- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
 --
 -- Host: localhost    Database: audio
