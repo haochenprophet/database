@@ -1,1 +1,1 @@
-UPDATE `search`.`method` SET `base`='http://www.cplusplus.com/search.do?q=' WHERE `name`='C++' ;
+UPDATE `search`.`method` SET `base`='http://www.cplusplus.com/search.do?q=1' WHERE `idmethod`='18' and `name`='C++';
