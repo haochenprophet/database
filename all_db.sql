@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: code
+-- Host: 127.0.0.1    Database: code
 -- ------------------------------------------------------
 -- Server version	8.0.0-dmr-log
 
@@ -65,7 +65,7 @@ CREATE TABLE `string` (
   `where` text,
   `remark` text,
   PRIMARY KEY (`idstring`)
-) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=147 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,7 +74,7 @@ CREATE TABLE `string` (
 
 LOCK TABLES `string` WRITE;
 /*!40000 ALTER TABLE `string` DISABLE KEYS */;
-INSERT INTO `string` VALUES (1,'HOME','Home','en','2017-04-09 16:26:20','hunter','china','utf8'),(2,'PROJECT','Project','en','2017-04-09 16:38:59','hunter','china','utf8'),(3,'KNOWLEDGE','Knowledge','en','2017-04-09 16:43:15','hunter','china','utf8'),(4,'TEST','Test','en','2017-04-09 16:47:37','hunter','china','utf8'),(5,'CODE','Code','en','2017-04-09 17:00:46','hunter','china','utf8'),(6,'HOME','主页','cn','2017-04-10 14:05:51','hunter','china','utf8'),(7,'PROJECT','项目','cn','2017-04-10 14:19:08','hunter','china','utf8'),(8,'BOOKMARK','BookMark','en','2017-04-10 14:20:45','hunter','china','utf8'),(9,'BOOKMARK','书签','cn','2017-04-10 14:22:02','hunter','china','utf8'),(10,'KNOWLEDGE','知识','cn','2017-04-10 15:24:30','hunter','china','utf8'),(11,'TRANSLATE','翻译','cn','2017-04-10 15:27:12','hunter','china','utf8'),(12,'TRANSLATE','Translate','en','2017-04-10 15:33:59','hunter','china','utf8'),(13,'TEST','测试','cn','2017-04-10 15:37:41','hunter','china','utf8'),(14,'LAYOUT','Layout','en','2017-04-10 15:38:48','hunter','china','utf8'),(15,'LAYOUT','布局','cn','2017-04-10 15:39:45','hunter','china','utf8'),(16,'FILE','File','en','2017-04-10 15:41:06','hunter','china','utf8'),(17,'FILE','文件','cn','2017-04-10 15:41:22','hunter','china','utf8'),(18,'DOWNLOAD','Download','en','2017-04-10 15:41:49','hunter','china','utf8'),(19,'DOWNLOAD','下载','cn','2017-04-10 15:42:05','hunter','china','utf8'),(20,'GITTEST','GitTest','en','2017-04-10 15:42:28','hunter','china','utf8'),(21,'GITTEST','Git测试','cn','2017-04-10 15:46:45','hunter','china','utf8'),(22,'CODE','代码','cn','2017-04-10 15:47:17','hunter','china','utf8'),(23,'LOGIN','登录','cn','2017-04-10 15:47:47','hunter','china','utf8'),(24,'LOGIN','Login','en','2017-04-10 15:47:59','hunter','china','utf8'),(25,'REGISTER','Register','en','2017-04-10 15:48:33','hunter','china','utf8'),(26,'REGISTER','注册','cn','2017-04-10 15:48:49','hunter','china','utf8'),(27,'MAIL','邮件','cn','2017-04-10 15:49:13','hunter','china','utf8'),(28,'MAIL','Mail','en','2017-04-10 15:49:35','hunter','china','utf8'),(29,'PATENT_SYS','Patent_SYS','en','2017-04-10 15:50:19','hunter','china','utf8'),(30,'PATENT_SYS','专利系统','cn','2017-04-10 15:50:36','hunter','china','utf8'),(31,'LANGUAGE','语言','cn','2017-04-10 18:27:30','hunter','china','utf8'),(32,'LANGUAGE','Language','en','2017-04-10 18:28:13','hunter','china','utf8'),(33,'USER_NAME','Username','en','2017-04-13 10:34:53','hunter','china','utf8'),(34,'USER_NAME','用户名','cn','2017-04-13 10:35:14','hunter','china','utf8'),(35,'PASSWORD','密码','cn','2017-04-13 10:35:41','hunter','china','utf8'),(36,'PASSWORD','Password','en','2017-04-13 10:35:56','hunter','china','utf8'),(37,'CONFIRM_PASSWORD','Confirm Password','en','2017-04-13 10:47:29','hunter','china','utf8'),(38,'CONFIRM_PASSWORD','确认密码','cn','2017-04-13 10:48:07','hunter','china','utf8'),(39,'EMAIL','Email','en','2017-04-13 10:49:43','hunter','china','utf8'),(40,'EMAIL','电子邮件','cn','2017-04-13 10:50:13','hunter','china','utf8'),(41,'PASSWORD_RECOVER_QUESTION','Password recover question','en','2017-04-13 10:52:18','hunter','china','utf8'),(42,'PASSWORD_RECOVER_QUESTION','密码恢复问题','cn','2017-04-13 10:52:32','hunter','china','utf8'),(43,'PASSWORD_RECOVER_ANSWER','Password recover answer','en','2017-04-13 10:54:21','hunter','china','utf8'),(44,'PASSWORD_RECOVER_ANSWER','密码恢复答案','cn','2017-04-13 10:54:36','hunter','china','utf8'),(45,'PASSWORD_RECOVER_MAIL','Password recover mail','en','2017-04-13 10:55:45','hunter','china','utf8'),(46,'PASSWORD_RECOVER_MAIL','密码恢复邮箱','cn','2017-04-13 10:56:14','hunter','china','utf8'),(47,'COMMIT','提交','cn','2017-04-13 11:07:59','hunter','china','utf8'),(48,'COMMIT','Commit','en','2017-04-13 11:08:14','hunter','china','utf8'),(49,'COMMIT_MESSAGE','提交信息','cn','2017-04-13 17:34:52','hunter','china','utf8'),(50,'COMMIT_MESSAGE','Commit Message','en','2017-04-13 17:35:20','hunter','china','utf8'),(51,'OPTIONS','选项','cn','2017-04-13 17:36:25','hunter','china','utf8'),(52,'OPTIONS','Options','en','2017-04-13 17:36:40','hunter','china','utf8'),(53,'TITLE','标题','cn','2017-04-14 13:39:45','hunter','china','utf8'),(54,'TITLE','Title','en','2017-04-14 13:39:59','hunter','china','utf8'),(55,'URL','URL','en','2017-04-14 13:40:33','hunter','china','utf8'),(56,'URL','URL','cn','2017-04-14 13:40:39','hunter','china','utf8'),(57,'TYPE','Type','en','2017-04-14 13:41:12','hunter','china','utf8'),(58,'TYPE','类型','cn','2017-04-14 13:41:24','hunter','china','utf8'),(59,'STATUS','状态','cn','2017-04-14 13:41:51','hunter','china','utf8'),(60,'STATUS','Status','en','2017-04-14 13:42:25','hunter','china','utf8'),(61,'REMARK','备注','cn','2017-04-14 13:42:59','hunter','china','utf8'),(62,'REMARK','Remark','en','2017-04-14 13:43:17','hunter','china','utf8'),(63,'AUTHOR','Author','en','2017-04-14 13:43:41','hunter','china','utf8'),(64,'AUTHOR','作者','cn','2017-04-14 13:43:57','hunter','china','utf8'),(65,'FILENAME','Filename','en','2017-04-14 14:45:50','hunter','china','utf8'),(66,'FILENAME','文件名','cn','2017-04-14 14:46:08','hunter','china','utf8'),(67,'INDIVIDUAL_CENTER','IndividualCenter','en','2017-04-14 17:02:17','hunter','china','utf8'),(68,'INDIVIDUAL_CENTER','个人中心','cn','2017-04-14 17:02:34','hunter','china','utf8'),(69,'EXIT','退出','cn','2017-04-14 17:02:59','hunter','china','utf8'),(70,'EXIT','Exit','en','2017-04-14 17:03:10','hunter','china','utf8'),(71,'MENU','菜单','cn','2017-04-14 19:53:59','hunter','china','utf8'),(72,'MENU','Menu','en','2017-04-14 19:54:13','hunter','china','utf8'),(73,'PROJECT_NAME','项目名称','cn','2017-04-20 22:06:31','hunter','china','utf8'),(74,'PROJECT_NAME','ProjectName','en','2017-04-20 22:06:50','hunter','china','utf8'),(75,'SUBMIT','提交','cn','2017-04-20 22:14:15','hunter','china','utf8'),(76,'SUBMIT','Submit','en','2017-04-20 22:14:34','hunter','china','utf8'),(77,'LAW','法律法规','cn','2017-04-23 16:04:30','hunter','china','utf8'),(78,'LAW','Law','en','2017-04-23 16:05:00','hunter','china','utf8'),(79,'BOOK_NAME','BookName','en','2017-04-23 16:47:22','hunter','china','utf8'),(80,'BOOK_NAME','书名','cn','2017-04-23 16:47:43','hunter','china','utf8'),(81,'ORIGINAL','Original','en','2017-04-23 16:49:38','hunter','china','utf8'),(82,'ORIGINAL','原文','cn','2017-04-23 16:49:54','hunter','china','utf8'),(83,'MARK','标注','cn','2017-04-23 16:50:29','hunter','china','utf8'),(84,'MARK','Mark','en','2017-04-23 16:50:46','hunter','china','utf8'),(85,'COMMENT','Comment','en','2017-04-23 16:52:13','hunter','china','utf8'),(86,'COMMENT','评注','cn','2017-04-23 16:53:08','hunter','china','utf8'),(87,'LOCATION','Location','en','2017-04-23 16:54:21','hunter','china','utf8'),(88,'LOCATION','区位','cn','2017-04-23 16:54:54','hunter','china','utf8'),(89,'DEVICE','Device','en','2017-04-23 16:55:32','hunter','china','utf8'),(90,'DEVICE','设备','cn','2017-04-23 16:55:45','hunter','china','utf8'),(91,'IMAGE','Image','en','2017-04-23 16:56:29','hunter','china','utf8'),(92,'IMAGE','图片','cn','2017-04-23 16:56:52','hunter','china','utf8'),(93,'AUDIO','Audio','en','2017-04-23 16:57:35','hunter','china','utf8'),(94,'AUDIO','音频','cn','2017-04-23 16:57:52','hunter','china','utf8'),(95,'VIDEO','Video','en','2017-04-23 16:58:22','hunter','china','utf8'),(96,'VIDEO','视频','cn','2017-04-23 16:58:37','hunter','china','utf8'),(97,'ADD','增加','cn','2017-04-27 02:12:34','hunter','china','utf8'),(98,'ADD','Add','en','2017-04-27 02:12:49','hunter','china','utf8'),(99,'INQUIRY','Inquiry','en','2017-04-27 02:15:55','hunter','china','utf8'),(100,'INQUIRY','查询','cn','2017-04-27 02:16:06','hunter','china','utf8'),(101,'SERVER_NAME','localhost','en','2017-06-01 22:27:14','hunter','china','utf8'),(102,'SERVER_NAME','localhost','cn','2017-06-01 22:27:24','hunter','china','utf8'),(103,'USER_NAME_DB','patent','en','2017-06-01 22:28:45','hunter','china','utf8'),(104,'USER_NAME_DB','patent','cn','2017-06-01 22:28:52','hunter','china','utf8'),(105,'USER_PSW_DB','patent','cn','2017-06-01 22:29:55','hunter','china','utf8'),(106,'USER_PSW_DB','patent','en','2017-06-01 22:30:01','hunter','china','utf8'),(107,'SERVER_NAME_DB','localhost','cn','2017-06-01 22:31:17','hunter','china','utf8'),(108,'SERVER_NAME_DB','localhost','en','2017-06-01 22:31:24','hunter','china','utf8');
+INSERT INTO `string` VALUES (1,'HOME','Home','en','2017-04-09 16:26:20','hunter','china','utf8'),(2,'PROJECT','Project','en','2017-04-09 16:38:59','hunter','china','utf8'),(3,'KNOWLEDGE','Knowledge','en','2017-04-09 16:43:15','hunter','china','utf8'),(4,'TEST','Test','en','2017-04-09 16:47:37','hunter','china','utf8'),(5,'CODE','Code','en','2017-04-09 17:00:46','hunter','china','utf8'),(6,'HOME','主页','cn','2017-04-10 14:05:51','hunter','china','utf8'),(7,'PROJECT','项目','cn','2017-04-10 14:19:08','hunter','china','utf8'),(8,'BOOKMARK','BookMark','en','2017-04-10 14:20:45','hunter','china','utf8'),(9,'BOOKMARK','书签','cn','2017-04-10 14:22:02','hunter','china','utf8'),(10,'KNOWLEDGE','知识','cn','2017-04-10 15:24:30','hunter','china','utf8'),(11,'TRANSLATE','翻译','cn','2017-04-10 15:27:12','hunter','china','utf8'),(12,'TRANSLATE','Translate','en','2017-04-10 15:33:59','hunter','china','utf8'),(13,'TEST','测试','cn','2017-04-10 15:37:41','hunter','china','utf8'),(14,'LAYOUT','Layout','en','2017-04-10 15:38:48','hunter','china','utf8'),(15,'LAYOUT','布局','cn','2017-04-10 15:39:45','hunter','china','utf8'),(16,'FILE','File','en','2017-04-10 15:41:06','hunter','china','utf8'),(17,'FILE','文件','cn','2017-04-10 15:41:22','hunter','china','utf8'),(18,'DOWNLOAD','Download','en','2017-04-10 15:41:49','hunter','china','utf8'),(19,'DOWNLOAD','下载','cn','2017-04-10 15:42:05','hunter','china','utf8'),(20,'GITTEST','GitTest','en','2017-04-10 15:42:28','hunter','china','utf8'),(21,'GITTEST','Git测试','cn','2017-04-10 15:46:45','hunter','china','utf8'),(22,'CODE','代码','cn','2017-04-10 15:47:17','hunter','china','utf8'),(23,'LOGIN','登录','cn','2017-04-10 15:47:47','hunter','china','utf8'),(24,'LOGIN','Login','en','2017-04-10 15:47:59','hunter','china','utf8'),(25,'REGISTER','Register','en','2017-04-10 15:48:33','hunter','china','utf8'),(26,'REGISTER','注册','cn','2017-04-10 15:48:49','hunter','china','utf8'),(27,'MAIL','邮件','cn','2017-04-10 15:49:13','hunter','china','utf8'),(28,'MAIL','Mail','en','2017-04-10 15:49:35','hunter','china','utf8'),(29,'PATENT_SYS','Patent_SYS','en','2017-04-10 15:50:19','hunter','china','utf8'),(30,'PATENT_SYS','专利系统','cn','2017-04-10 15:50:36','hunter','china','utf8'),(31,'LANGUAGE','语言','cn','2017-04-10 18:27:30','hunter','china','utf8'),(32,'LANGUAGE','Language','en','2017-04-10 18:28:13','hunter','china','utf8'),(33,'USER_NAME','Username','en','2017-04-13 10:34:53','hunter','china','utf8'),(34,'USER_NAME','用户名','cn','2017-04-13 10:35:14','hunter','china','utf8'),(35,'PASSWORD','密码','cn','2017-04-13 10:35:41','hunter','china','utf8'),(36,'PASSWORD','Password','en','2017-04-13 10:35:56','hunter','china','utf8'),(37,'CONFIRM_PASSWORD','Confirm Password','en','2017-04-13 10:47:29','hunter','china','utf8'),(38,'CONFIRM_PASSWORD','确认密码','cn','2017-04-13 10:48:07','hunter','china','utf8'),(39,'EMAIL','Email','en','2017-04-13 10:49:43','hunter','china','utf8'),(40,'EMAIL','电子邮件','cn','2017-04-13 10:50:13','hunter','china','utf8'),(41,'PASSWORD_RECOVER_QUESTION','Password recover question','en','2017-04-13 10:52:18','hunter','china','utf8'),(42,'PASSWORD_RECOVER_QUESTION','密码恢复问题','cn','2017-04-13 10:52:32','hunter','china','utf8'),(43,'PASSWORD_RECOVER_ANSWER','Password recover answer','en','2017-04-13 10:54:21','hunter','china','utf8'),(44,'PASSWORD_RECOVER_ANSWER','密码恢复答案','cn','2017-04-13 10:54:36','hunter','china','utf8'),(45,'PASSWORD_RECOVER_MAIL','Password recover mail','en','2017-04-13 10:55:45','hunter','china','utf8'),(46,'PASSWORD_RECOVER_MAIL','密码恢复邮箱','cn','2017-04-13 10:56:14','hunter','china','utf8'),(47,'COMMIT','提交','cn','2017-04-13 11:07:59','hunter','china','utf8'),(48,'COMMIT','Commit','en','2017-04-13 11:08:14','hunter','china','utf8'),(49,'COMMIT_MESSAGE','提交信息','cn','2017-04-13 17:34:52','hunter','china','utf8'),(50,'COMMIT_MESSAGE','Commit Message','en','2017-04-13 17:35:20','hunter','china','utf8'),(51,'OPTIONS','选项','cn','2017-04-13 17:36:25','hunter','china','utf8'),(52,'OPTIONS','Options','en','2017-04-13 17:36:40','hunter','china','utf8'),(53,'TITLE','标题','cn','2017-04-14 13:39:45','hunter','china','utf8'),(54,'TITLE','Title','en','2017-04-14 13:39:59','hunter','china','utf8'),(55,'URL','URL','en','2017-04-14 13:40:33','hunter','china','utf8'),(56,'URL','URL','cn','2017-04-14 13:40:39','hunter','china','utf8'),(57,'TYPE','Type','en','2017-04-14 13:41:12','hunter','china','utf8'),(58,'TYPE','类型','cn','2017-04-14 13:41:24','hunter','china','utf8'),(59,'STATUS','状态','cn','2017-04-14 13:41:51','hunter','china','utf8'),(60,'STATUS','Status','en','2017-04-14 13:42:25','hunter','china','utf8'),(61,'REMARK','备注','cn','2017-04-14 13:42:59','hunter','china','utf8'),(62,'REMARK','Remark','en','2017-04-14 13:43:17','hunter','china','utf8'),(63,'AUTHOR','Author','en','2017-04-14 13:43:41','hunter','china','utf8'),(64,'AUTHOR','作者','cn','2017-04-14 13:43:57','hunter','china','utf8'),(65,'FILENAME','Filename','en','2017-04-14 14:45:50','hunter','china','utf8'),(66,'FILENAME','文件名','cn','2017-04-14 14:46:08','hunter','china','utf8'),(67,'INDIVIDUAL_CENTER','IndividualCenter','en','2017-04-14 17:02:17','hunter','china','utf8'),(68,'INDIVIDUAL_CENTER','个人中心','cn','2017-04-14 17:02:34','hunter','china','utf8'),(69,'EXIT','退出','cn','2017-04-14 17:02:59','hunter','china','utf8'),(70,'EXIT','Exit','en','2017-04-14 17:03:10','hunter','china','utf8'),(71,'MENU','菜单','cn','2017-04-14 19:53:59','hunter','china','utf8'),(72,'MENU','Menu','en','2017-04-14 19:54:13','hunter','china','utf8'),(73,'PROJECT_NAME','项目名称','cn','2017-04-20 22:06:31','hunter','china','utf8'),(74,'PROJECT_NAME','ProjectName','en','2017-04-20 22:06:50','hunter','china','utf8'),(75,'SUBMIT','提交','cn','2017-04-20 22:14:15','hunter','china','utf8'),(76,'SUBMIT','Submit','en','2017-04-20 22:14:34','hunter','china','utf8'),(77,'LAW','法律法规','cn','2017-04-23 16:04:30','hunter','china','utf8'),(78,'LAW','Law','en','2017-04-23 16:05:00','hunter','china','utf8'),(79,'BOOK_NAME','BookName','en','2017-04-23 16:47:22','hunter','china','utf8'),(80,'BOOK_NAME','书名','cn','2017-04-23 16:47:43','hunter','china','utf8'),(81,'ORIGINAL','Original','en','2017-04-23 16:49:38','hunter','china','utf8'),(82,'ORIGINAL','原文','cn','2017-04-23 16:49:54','hunter','china','utf8'),(83,'MARK','标注','cn','2017-04-23 16:50:29','hunter','china','utf8'),(84,'MARK','Mark','en','2017-04-23 16:50:46','hunter','china','utf8'),(85,'COMMENT','Comment','en','2017-04-23 16:52:13','hunter','china','utf8'),(86,'COMMENT','评注','cn','2017-04-23 16:53:08','hunter','china','utf8'),(87,'LOCATION','Location','en','2017-04-23 16:54:21','hunter','china','utf8'),(88,'LOCATION','区位','cn','2017-04-23 16:54:54','hunter','china','utf8'),(89,'DEVICE','Device','en','2017-04-23 16:55:32','hunter','china','utf8'),(90,'DEVICE','设备','cn','2017-04-23 16:55:45','hunter','china','utf8'),(91,'IMAGE','Image','en','2017-04-23 16:56:29','hunter','china','utf8'),(92,'IMAGE','图片','cn','2017-04-23 16:56:52','hunter','china','utf8'),(93,'AUDIO','Audio','en','2017-04-23 16:57:35','hunter','china','utf8'),(94,'AUDIO','音频','cn','2017-04-23 16:57:52','hunter','china','utf8'),(95,'VEDIO','Vedio','en','2017-04-23 16:58:22','hunter','china','utf8'),(96,'VEDIO','视频','cn','2017-04-23 16:58:37','hunter','china','utf8'),(97,'ADD','增加','cn','2017-04-27 02:12:34','hunter','china','utf8'),(98,'ADD','Add','en','2017-04-27 02:12:49','hunter','china','utf8'),(99,'INQUIRY','Inquiry','en','2017-04-27 02:15:55','hunter','china','utf8'),(100,'INQUIRY','查询','cn','2017-04-27 02:16:06','hunter','china','utf8'),(101,'SERVER_NAME','localhost','en','2017-06-01 22:27:14','hunter','china','utf8'),(102,'SERVER_NAME','localhost','cn','2017-06-01 22:27:24','hunter','china','utf8'),(103,'USER_NAME_DB','patent','en','2017-06-01 22:28:45','hunter','china','utf8'),(104,'USER_NAME_DB','patent','cn','2017-06-01 22:28:52','hunter','china','utf8'),(105,'USER_PSW_DB','patent','cn','2017-06-01 22:29:55','hunter','china','utf8'),(106,'USER_PSW_DB','patent','en','2017-06-01 22:30:01','hunter','china','utf8'),(107,'SERVER_NAME_DB','localhost','cn','2017-06-01 22:31:17','hunter','china','utf8'),(108,'SERVER_NAME_DB','localhost','en','2017-06-01 22:31:24','hunter','china','utf8'),(109,'NEWS','新闻','cn','2017-12-14 15:40:52','hunter','china','null'),(110,'NEWS','NEWS','en','2017-12-14 15:41:15','hunter','china','null'),(111,'MAP','地图','cn','2017-12-14 17:26:46','hunter','china','null'),(112,'MAP','MAP','en','2017-12-14 17:27:07','hunter','china','null'),(113,'INFO','信息','cn','2017-12-14 17:29:27','hunter','china','null'),(114,'INFO','info','en','2017-12-14 17:29:43','hunter','china','null'),(115,'CONTACT','Contact','en','2017-12-14 17:30:37','hunter','china','null'),(116,'CONTACT','联系人','cn','2017-12-14 17:30:54','hunter','china','null'),(117,'LIFE','生活','cn','2017-12-14 17:45:52','hunter','china','null'),(118,'LIFE','Life','en','2017-12-14 17:46:07','hunter','china','null'),(119,'TEMPLATE','Template','en','2017-12-15 16:32:03','hunter','china','null'),(120,'TEMPLATE','示例','cn','2017-12-15 16:32:58','hunter','china','null'),(121,'EDUCATION','教育','cn','2017-12-18 12:02:21','hunter','china','utf8'),(122,'EDUCATION','Education','en','2017-12-18 12:02:33','hunter','china','utf8'),(123,'MEDICAL','医疗','cn','2017-12-19 16:32:52','hunter','china','utf8'),(124,'MEDICAL','Medical','en','2017-12-19 16:33:12','hunter','china','utf8'),(125,'AI','AI','en','2017-12-19 16:33:47','hunter','china','utf8'),(126,'AI','人工智能','cn','2017-12-19 16:34:01','hunter','china','utf8'),(127,'LOGO','图标','cn','2017-12-20 19:41:58','hunter','china','utf8'),(128,'LOGO','Logo','en','2017-12-20 19:42:17','hunter','china','utf8'),(129,'CHIP','Chip','en','2017-12-22 17:31:03','hunter','china','utf8'),(130,'AIPROJECT','AI-Prohect','en','2017-12-22 17:31:33','hunter','china','utf8'),(131,'AIPROJECT','人工智能项目','cn','2017-12-22 17:31:51','hunter','china','utf8'),(132,'CHIP','芯片','cn','2017-12-22 17:32:09','hunter','china','utf8'),(133,'DEBT_WAGES','讨工资','cn','2017-12-23 10:59:15','hunter','china','utf8'),(134,'DEBT_WAGES','DebtWages','en','2017-12-23 10:59:27','hunter','china','utf8'),(135,'QUESTION','问题','cn','2017-12-24 23:14:13','hunter','china','utf8'),(136,'QUESTION','Question','en','2017-12-24 23:14:46','hunter','china','utf8'),(137,'BEFORE_KEY','键值前','cn','2017-12-27 14:53:28','hunter','china','utf8'),(138,'BEFORE_KEY','BeforeKey','en','2017-12-27 14:53:50','hunter','china','utf8'),(139,'AFTER_KEY','键值后','cn','2017-12-27 14:54:14','hunter','china','utf8'),(140,'AFTER_KEY','AfterKey','en','2017-12-27 14:54:33','hunter','china','utf8'),(141,'NAME','Name','en','2017-12-27 14:54:53','hunter','china','utf8'),(142,'NAME','名称','cn','2017-12-27 14:55:02','hunter','china','utf8'),(143,'SEARCH','搜索','cn','2017-12-27 14:55:28','hunter','china','utf8'),(144,'SEARCH','Search','en','2017-12-27 14:55:46','hunter','china','utf8'),(145,'VIDEO','Video','en','2017-12-28 15:02:07','hunter','china','utf8'),(146,'VIDEO','视频','cn','2017-12-28 15:02:23','hunter','china','utf8');
 /*!40000 ALTER TABLE `string` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -107,6 +107,1037 @@ CREATE TABLE `temp` (
 LOCK TABLES `temp` WRITE;
 /*!40000 ALTER TABLE `temp` DISABLE KEYS */;
 /*!40000 ALTER TABLE `temp` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `chip`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `chip` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `chip`;
+
+--
+-- Table structure for table `url`
+--
+
+DROP TABLE IF EXISTS `url`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `url` (
+  `idurl` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
+  `what_type` varchar(45) DEFAULT NULL,
+  `where` varchar(45) NOT NULL COMMENT 'where the URL address',
+  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idurl`)
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `url`
+--
+
+LOCK TABLES `url` WRITE;
+/*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (61,'hunter','AMD','chip','https://www.amd.com','img/amd.jpeg','2017-12-22 16:57:47','normal','utf8'),(62,'hunter','Intel','chip','https://www.intel.com','img/intel.jpeg','2017-12-22 16:59:14','normal','utf8'),(63,'hunter','ARM','chip','https://www.arm.com','img/arm.jpeg','2017-12-22 17:00:28','normal','utf8'),(64,'hunter','IBM','chip','https://www.ibm.com','img/ibm.jpeg','2017-12-22 17:02:22','normal','utf8'),(65,'hunter','NVIDIA','chip','http://www.nvidia.com','img/nvidia.jpeg','2017-12-22 17:05:34','normal','utf8'),(66,'hunter','xilinx','chip','http://www.xilinx.com/','img/xilinx.jpeg','2017-12-22 17:09:33','normal','utf8'),(67,'hunter','aspeedtech','chip','https://www.aspeedtech.com/','img/aspeed.jpeg','2017-12-22 17:14:40','normal','utf8');
+/*!40000 ALTER TABLE `url` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `bluetooth`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `bluetooth` /*!40100 DEFAULT CHARACTER SET utf16 */;
+
+USE `bluetooth`;
+
+--
+-- Table structure for table `cost`
+--
+
+DROP TABLE IF EXISTS `cost`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cost` (
+  `idcost` int(11) NOT NULL AUTO_INCREMENT,
+  `idobject` int(11) DEFAULT NULL,
+  `object` varchar(45) DEFAULT NULL,
+  `relegation` varchar(45) DEFAULT NULL,
+  `region` varchar(45) DEFAULT NULL,
+  `unitprice` double DEFAULT NULL,
+  `quantity` double DEFAULT NULL,
+  `total` varchar(45) DEFAULT NULL,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idcost`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cost`
+--
+
+LOCK TABLES `cost` WRITE;
+/*!40000 ALTER TABLE `cost` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cost` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `customer`
+--
+
+DROP TABLE IF EXISTS `customer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `customer` (
+  `idcustomer` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'Who is the customer?',
+  `type` varchar(45) NOT NULL DEFAULT 'ordinary' COMMENT 'Customer type:ordinary.special;personal,company,government,community,organization,hospital,school',
+  `country` varchar(45) DEFAULT NULL,
+  `planet` varchar(45) NOT NULL DEFAULT 'earth',
+  `area` varchar(45) DEFAULT NULL,
+  `where` varchar(45) DEFAULT NULL COMMENT 'Where is the customer?\n',
+  `l_l` varchar(45) DEFAULT NULL COMMENT 'Latitude and longitude',
+  `contact` varchar(45) DEFAULT NULL COMMENT 'Contact information',
+  `mail` varchar(45) DEFAULT NULL,
+  `url` varchar(45) DEFAULT NULL COMMENT 'Customer URL\n',
+  `entry` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data entry data time',
+  `start` datetime DEFAULT NULL COMMENT 'Cooperation start time\n',
+  `end` datetime DEFAULT NULL COMMENT 'Cooperation end time',
+  `what` varchar(45) DEFAULT NULL COMMENT 'What is the cooperation?',
+  `introduction` varchar(45) DEFAULT NULL COMMENT 'Introduction ',
+  `level` int(11) NOT NULL DEFAULT '0' COMMENT 'Credit accumulated',
+  `group` varchar(45) DEFAULT NULL COMMENT 'Customer working group',
+  `credit` int(11) NOT NULL DEFAULT '100' COMMENT 'Credit points',
+  `remark` varchar(45) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL COMMENT 'Customer status:new,old;stable,unstable,big,small ',
+  `pioneer` varchar(45) DEFAULT NULL COMMENT 'Customer pioneer',
+  `file` varchar(45) DEFAULT NULL COMMENT 'About the customer''s file path. (url)',
+  `logo` varchar(45) DEFAULT NULL COMMENT 'About the customer''s logo file name.',
+  `image` varchar(45) DEFAULT NULL COMMENT 'About the customer''s picture file name.\n',
+  `audio` varchar(45) DEFAULT NULL COMMENT 'About the customer''s audio file name.\n',
+  `vedio` varchar(45) DEFAULT NULL COMMENT 'About the customer''s video file name .',
+  PRIMARY KEY (`idcustomer`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customer`
+--
+
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `devicetype`
+--
+
+DROP TABLE IF EXISTS `devicetype`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `devicetype` (
+  `iddevicetype` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  `author` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`iddevicetype`),
+  UNIQUE KEY `iddevicetype_UNIQUE` (`iddevicetype`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `devicetype`
+--
+
+LOCK TABLES `devicetype` WRITE;
+/*!40000 ALTER TABLE `devicetype` DISABLE KEYS */;
+INSERT INTO `devicetype` VALUES (1,'scales','2017-07-30 04:51:33',NULL),(2,'PCBA','2017-07-30 12:07:06',NULL),(3,'product','2017-07-30 12:07:06',NULL);
+/*!40000 ALTER TABLE `devicetype` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `fail`
+--
+
+DROP TABLE IF EXISTS `fail`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `fail` (
+  `idfail` int(11) NOT NULL AUTO_INCREMENT,
+  `mac` bigint(20) NOT NULL,
+  `s_mac` text NOT NULL,
+  `chip` varchar(45) DEFAULT NULL,
+  `order_from` text,
+  `type` text,
+  `weight` text,
+  `resistance` text,
+  `voltage` text,
+  `rssi` text,
+  `version` text,
+  `name` text,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  `line` text,
+  `who` text,
+  `result` text,
+  `remark` text,
+  PRIMARY KEY (`idfail`),
+  UNIQUE KEY `idproduct_UNIQUE` (`idfail`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `fail`
+--
+
+LOCK TABLES `fail` WRITE;
+/*!40000 ALTER TABLE `fail` DISABLE KEYS */;
+/*!40000 ALTER TABLE `fail` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `line`
+--
+
+DROP TABLE IF EXISTS `line`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `line` (
+  `idline` int(11) NOT NULL AUTO_INCREMENT,
+  `guid` varchar(45) NOT NULL,
+  `number` varchar(45) NOT NULL COMMENT 'Production line number',
+  `name` varchar(45) DEFAULT NULL COMMENT 'Production line name',
+  `who` varchar(45) DEFAULT NULL COMMENT 'Who is the owner of the line',
+  `what` varchar(45) DEFAULT NULL COMMENT 'What product name\n',
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Record creation time',
+  `start` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Start time\n',
+  `end` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'End Time',
+  `where` varchar(45) DEFAULT NULL COMMENT 'WHERE: Production line address and location\n',
+  `capacity` varchar(45) DEFAULT NULL COMMENT 'Production capacity',
+  `status` varchar(45) DEFAULT NULL,
+  `contact` varchar(45) DEFAULT NULL COMMENT 'Contact information',
+  `level` int(11) DEFAULT NULL COMMENT 'The overall level of production lines',
+  PRIMARY KEY (`idline`,`guid`),
+  UNIQUE KEY `idline_UNIQUE` (`idline`),
+  UNIQUE KEY `guid_UNIQUE` (`guid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `line`
+--
+
+LOCK TABLES `line` WRITE;
+/*!40000 ALTER TABLE `line` DISABLE KEYS */;
+/*!40000 ALTER TABLE `line` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mac`
+--
+
+DROP TABLE IF EXISTS `mac`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `mac` (
+  `idmac` int(11) NOT NULL AUTO_INCREMENT,
+  `mac` bigint(20) unsigned NOT NULL,
+  PRIMARY KEY (`mac`),
+  UNIQUE KEY `mac_UNIQUE` (`mac`),
+  UNIQUE KEY `idmac_UNIQUE` (`idmac`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mac`
+--
+
+LOCK TABLES `mac` WRITE;
+/*!40000 ALTER TABLE `mac` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mac` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `materiel`
+--
+
+DROP TABLE IF EXISTS `materiel`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `materiel` (
+  `idmateriel` bigint(64) NOT NULL AUTO_INCREMENT,
+  `type` varchar(45) DEFAULT NULL,
+  `what` varchar(45) DEFAULT NULL,
+  `when` varchar(45) DEFAULT NULL,
+  `where` varchar(45) DEFAULT NULL COMMENT 'Planet ,coordinate {latitude,Longitude}',
+  `who` varchar(45) DEFAULT NULL,
+  `quantity` double DEFAULT NULL COMMENT 'What quantity',
+  `status` varchar(45) DEFAULT NULL COMMENT 'How the state\n',
+  `how` varchar(45) DEFAULT NULL COMMENT 'How much value',
+  `remark` varchar(45) DEFAULT NULL,
+  `entry` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Entry Time\n',
+  `security` varchar(45) DEFAULT NULL COMMENT 'Security Level',
+  `excute` varchar(45) DEFAULT NULL COMMENT 'Excuting operate \n',
+  `time` datetime DEFAULT NULL COMMENT 'excute time',
+  PRIMARY KEY (`idmateriel`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `materiel`
+--
+
+LOCK TABLES `materiel` WRITE;
+/*!40000 ALTER TABLE `materiel` DISABLE KEYS */;
+/*!40000 ALTER TABLE `materiel` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `order`
+--
+
+DROP TABLE IF EXISTS `order`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `order` (
+  `idorder` int(11) NOT NULL AUTO_INCREMENT,
+  `idstatus` int(11) NOT NULL,
+  `devicetype` int(11) DEFAULT NULL,
+  `number` varchar(45) NOT NULL COMMENT 'order number',
+  `name` varchar(45) DEFAULT NULL COMMENT 'product name',
+  `quantity` int(11) NOT NULL,
+  `deliverytime` datetime NOT NULL,
+  `starttime` datetime DEFAULT NULL,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  `who` varchar(45) NOT NULL COMMENT 'Order owner\n',
+  `unitprice` double DEFAULT NULL,
+  `total` double DEFAULT NULL COMMENT 'total amount~= up*quantity',
+  `status` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idorder`,`number`),
+  KEY `index` (`idstatus`,`deliverytime`,`idorder`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `order`
+--
+
+LOCK TABLES `order` WRITE;
+/*!40000 ALTER TABLE `order` DISABLE KEYS */;
+/*!40000 ALTER TABLE `order` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `orderstatus`
+--
+
+DROP TABLE IF EXISTS `orderstatus`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `orderstatus` (
+  `idorderstatus` int(11) NOT NULL AUTO_INCREMENT,
+  `what` text COMMENT 'what contents',
+  `when` datetime DEFAULT CURRENT_TIMESTAMP COMMENT 'when create time',
+  PRIMARY KEY (`idorderstatus`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orderstatus`
+--
+
+LOCK TABLES `orderstatus` WRITE;
+/*!40000 ALTER TABLE `orderstatus` DISABLE KEYS */;
+/*!40000 ALTER TABLE `orderstatus` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `product`
+--
+
+DROP TABLE IF EXISTS `product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `product` (
+  `idproduct` int(11) NOT NULL AUTO_INCREMENT,
+  `mac` bigint(20) NOT NULL,
+  `s_mac` text NOT NULL,
+  `chip` varchar(45) DEFAULT NULL,
+  `order_from` text,
+  `type` text,
+  `weight` text,
+  `resistance` text,
+  `voltage` text,
+  `rssi` text,
+  `version` text,
+  `name` text,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  `line` text,
+  `who` text,
+  `result` text,
+  `remark` text,
+  PRIMARY KEY (`mac`),
+  UNIQUE KEY `idproduct_UNIQUE` (`idproduct`),
+  UNIQUE KEY `mac_UNIQUE` (`mac`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product`
+--
+
+LOCK TABLES `product` WRITE;
+/*!40000 ALTER TABLE `product` DISABLE KEYS */;
+/*!40000 ALTER TABLE `product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `role`
+--
+
+DROP TABLE IF EXISTS `role`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `role` (
+  `idrole` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idrole`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `role`
+--
+
+LOCK TABLES `role` WRITE;
+/*!40000 ALTER TABLE `role` DISABLE KEYS */;
+INSERT INTO `role` VALUES (1,'root','2017-07-30 12:21:16'),(2,'admin','2017-07-30 12:21:16'),(3,'user','2017-07-30 12:21:16');
+/*!40000 ALTER TABLE `role` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `test`
+--
+
+DROP TABLE IF EXISTS `test`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `test` (
+  `idtest` int(11) NOT NULL AUTO_INCREMENT,
+  `guid` varchar(45) NOT NULL,
+  `when` datetime DEFAULT CURRENT_TIMESTAMP,
+  `where` varchar(45) DEFAULT NULL,
+  `who` varchar(45) DEFAULT NULL,
+  `what` text,
+  `how` varchar(45) DEFAULT NULL COMMENT 'resut',
+  PRIMARY KEY (`idtest`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `test`
+--
+
+LOCK TABLES `test` WRITE;
+/*!40000 ALTER TABLE `test` DISABLE KEYS */;
+/*!40000 ALTER TABLE `test` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `testitem`
+--
+
+DROP TABLE IF EXISTS `testitem`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `testitem` (
+  `idtestitem` int(11) NOT NULL AUTO_INCREMENT,
+  `type` int(11) unsigned DEFAULT '1' COMMENT 'Deveiice  Type : ',
+  `item` text,
+  `sel` varchar(4) DEFAULT 'YES' COMMENT 'YES==test  ,NO ==NA test',
+  `min` text,
+  `max` text,
+  `must` text,
+  `mask` text,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  `author` text,
+  `remark` text,
+  PRIMARY KEY (`idtestitem`),
+  UNIQUE KEY `idtestitem_UNIQUE` (`idtestitem`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `testitem`
+--
+
+LOCK TABLES `testitem` WRITE;
+/*!40000 ALTER TABLE `testitem` DISABLE KEYS */;
+INSERT INTO `testitem` VALUES (1,1,'Name','YES',NULL,NULL,'FLYCO FH7001/2/3 ',NULL,'2017-07-29 17:28:04','hunter',NULL),(2,1,'Version','YES',NULL,NULL,'1.0.39.1',NULL,'2017-07-29 17:28:04','hunter',NULL),(3,1,'MAC','YES',NULL,NULL,NULL,NULL,'2017-07-29 17:28:04','hunter',NULL),(4,1,'RSSI','YES','-99','-1',NULL,NULL,'2017-07-29 17:19:30','hunter',NULL),(5,1,'Voltage','YES','0','20',NULL,NULL,'2017-07-29 17:28:04','hunter',NULL),(6,1,'Resistance','YES','0','1000',NULL,NULL,'2017-07-29 17:28:04','hunter',NULL),(7,1,'Weight','YES','0','300',NULL,NULL,'2017-07-29 17:28:04','hunter',NULL);
+/*!40000 ALTER TABLE `testitem` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user` (
+  `iduser` int(11) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  `role` int(11) DEFAULT NULL,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`iduser`),
+  UNIQUE KEY `iduser_UNIQUE` (`iduser`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `worker`
+--
+
+DROP TABLE IF EXISTS `worker`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `worker` (
+  `idworker` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` varchar(45) NOT NULL,
+  `idstatus` int(11) NOT NULL,
+  PRIMARY KEY (`idworker`),
+  UNIQUE KEY `idworker_UNIQUE` (`idworker`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `worker`
+--
+
+LOCK TABLES `worker` WRITE;
+/*!40000 ALTER TABLE `worker` DISABLE KEYS */;
+/*!40000 ALTER TABLE `worker` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `radar`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `radar` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `radar`;
+
+--
+-- Table structure for table `data`
+--
+
+DROP TABLE IF EXISTS `data`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `data` (
+  `iddata` int(11) NOT NULL AUTO_INCREMENT,
+  `device_id` int(11) NOT NULL DEFAULT '0',
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `millisecond` int(11) NOT NULL DEFAULT '0',
+  `microsecond` int(11) NOT NULL DEFAULT '0',
+  `nanosecond` int(11) NOT NULL DEFAULT '0',
+  `data` longblob COMMENT 'radar data form Radar information collection system\n',
+  `data_type` varchar(45) NOT NULL DEFAULT 'General' COMMENT 'radar data type :General data,Meteorological data ,Flight control information,\n',
+  `data_grade` int(11) NOT NULL DEFAULT '0',
+  `status` varchar(45) NOT NULL DEFAULT 'Normal' COMMENT 'normal, error , ... ',
+  `source_from` varchar(45) DEFAULT NULL COMMENT 'data come from like device ID,IP Addr,',
+  `source_to` varchar(45) DEFAULT NULL COMMENT 'source from ,to ,source stream .',
+  `location` varchar(60) NOT NULL DEFAULT '0,0,0' COMMENT 'like GPS, Coordinate System,Geographic coordinate system ,Projection coordinate system,''x,y,z-0,0,0''',
+  `creator` varchar(45) DEFAULT NULL COMMENT 'data creator ',
+  `remark` text,
+  PRIMARY KEY (`iddata`),
+  UNIQUE KEY `iddata_UNIQUE` (`iddata`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `data`
+--
+
+LOCK TABLES `data` WRITE;
+/*!40000 ALTER TABLE `data` DISABLE KEYS */;
+/*!40000 ALTER TABLE `data` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `iwant`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `iwant` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `iwant`;
+
+--
+-- Table structure for table `demand`
+--
+
+DROP TABLE IF EXISTS `demand`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `demand` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `who` text NOT NULL,
+  `type` text NOT NULL,
+  `object` text NOT NULL,
+  `location` text NOT NULL,
+  `price` int(11) NOT NULL,
+  `count` int(11) NOT NULL,
+  `start_date` datetime DEFAULT NULL,
+  `end_date` datetime DEFAULT NULL,
+  `submit_time` datetime DEFAULT NULL,
+  `image` longblob,
+  `remark` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `demand`
+--
+
+LOCK TABLES `demand` WRITE;
+/*!40000 ALTER TABLE `demand` DISABLE KEYS */;
+INSERT INTO `demand` VALUES (1,'lulu','hource','paik-666','shang hai',99999,999,'2017-02-21 15:40:36','2017-02-21 15:40:36','2017-02-21 15:40:36',NULL,'888888'),(2,'hao','house','paik-666','shang hai',666666,666,'2016-11-27 18:00:00','2016-11-27 18:00:00','2017-02-21 15:40:54',NULL,'666666');
+/*!40000 ALTER TABLE `demand` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `video`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `video` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `video`;
+
+--
+-- Table structure for table `url`
+--
+
+DROP TABLE IF EXISTS `url`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `url` (
+  `idurl` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
+  `what_type` varchar(45) DEFAULT NULL,
+  `where` varchar(45) NOT NULL COMMENT 'where the URL address',
+  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idurl`)
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `url`
+--
+
+LOCK TABLES `url` WRITE;
+/*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (61,'hunter','youtube','video','https://www.youtube.com/','img/youtube.jpg','2017-12-20 19:00:05','normal','utf8'),(62,'hunter','youku','video','http://www.youku.com/','img/youku.jpg','2017-12-20 19:15:41','normal','utf8'),(63,'hunter','tudou','video','http://www.tudou.com/','img/tudou.jpg','2017-12-20 19:16:52','normal','utf8'),(64,'hunter','sina','video','http://video.sina.com.cn/','img/sina_vedio.jpg','2017-12-20 19:17:48','normal','utf8'),(65,'hunter','iqiyi','video','http://www.iqiyi.com/','img/qq_vedio.jpg','2017-12-20 19:18:38','normal','utf8'),(66,'hunter','ifeng','video','http://v.ifeng.com/','img/ifeng_vedio.jpg','2017-12-20 19:19:45','normal','utf8'),(67,'hunter','baidu','video','http://video.baidu.com/','img/baidu_vedio.jpg','2017-12-20 19:21:13','normal','utf8'),(68,'hunter','CCTV','video','http://tv.cctv.com/','img/cctv-video.jpg','2017-12-21 16:16:17','normal','utf8');
+/*!40000 ALTER TABLE `url` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `file`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `file` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `file`;
+
+--
+-- Table structure for table `infor`
+--
+
+DROP TABLE IF EXISTS `infor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `infor` (
+  `idinfor` int(11) NOT NULL AUTO_INCREMENT,
+  `where` text NOT NULL COMMENT 'where: the file URL path  ',
+  `name` text NOT NULL COMMENT 'file name',
+  `what` varchar(45) NOT NULL COMMENT 'what ,type,comment,',
+  `who` varchar(45) DEFAULT NULL,
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `depend_id` int(11) NOT NULL DEFAULT '0' COMMENT 'like project ID',
+  `how` int(11) NOT NULL DEFAULT '0' COMMENT 'how long size',
+  PRIMARY KEY (`idinfor`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `infor`
+--
+
+LOCK TABLES `infor` WRITE;
+/*!40000 ALTER TABLE `infor` DISABLE KEYS */;
+/*!40000 ALTER TABLE `infor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `debt`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `debt` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `debt`;
+
+--
+-- Table structure for table `creditor`
+--
+
+DROP TABLE IF EXISTS `creditor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `creditor` (
+  `idcreditor` int(11) NOT NULL AUTO_INCREMENT,
+  `idnumber` varchar(45) NOT NULL COMMENT 'ID number 身份证号',
+  `name` varchar(45) NOT NULL COMMENT 'creditor name 债权人姓名',
+  `gender` varchar(45) NOT NULL DEFAULT 'M' COMMENT 'creditor M:F male and female\n	\n\n',
+  `country` varchar(45) NOT NULL DEFAULT 'china' COMMENT 'country 国家',
+  `province` varchar(45) NOT NULL COMMENT 'province level :省,直辖市 ,特区',
+  `city` varchar(45) NOT NULL COMMENT 'city: 地级市',
+  `county` varchar(45) NOT NULL COMMENT 'county 县,区',
+  `town` varchar(45) DEFAULT NULL COMMENT 'town 乡镇',
+  `street` varchar(45) DEFAULT NULL COMMENT 'street 街、道',
+  `village` varchar(45) DEFAULT NULL COMMENT 'village 村庄屯寨\n	\n',
+  `address` varchar(200) DEFAULT NULL COMMENT 'address=country+province+city+county+town+street+village',
+  `phone` varchar(45) DEFAULT NULL COMMENT 'phone number 手机号',
+  `real` varchar(45) DEFAULT NULL COMMENT 'real：真实性 ，Real name',
+  `IPA` varchar(45) DEFAULT NULL COMMENT 'Internet payment account ：债权人网络支付账户',
+  `debtor` varchar(45) DEFAULT NULL COMMENT 'Debtor''s name 负债人姓名',
+  `organization` varchar(45) DEFAULT NULL COMMENT 'Debt organization ：负债人单位名称',
+  `d_address` varchar(200) DEFAULT NULL,
+  `project` varchar(100) DEFAULT NULL COMMENT 'Engaged in the project name ,债务发生项目名称',
+  `amount` double DEFAULT NULL COMMENT 'Debt amount 债务金额',
+  `start` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Debt start time',
+  `entry` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `end` datetime DEFAULT NULL,
+  `audio` varchar(45) NOT NULL COMMENT 'Recording evidence URL.Upload voice\n',
+  `image` varchar(45) NOT NULL COMMENT 'image URL ,Upload voice',
+  `video` varchar(45) NOT NULL COMMENT 'Video evidence ,Upload video path',
+  `file` varchar(45) DEFAULT NULL COMMENT 'Evidence document, path:URL',
+  `status` varchar(45) DEFAULT NULL COMMENT 'status 状态： 未结案,结案,',
+  `is_agent` tinyint(4) NOT NULL DEFAULT '0',
+  `agent_name` varchar(45) DEFAULT NULL COMMENT 'Name of agent',
+  `agent_id` varchar(45) DEFAULT NULL COMMENT 'agent_id ',
+  `agent_tel` varchar(45) DEFAULT NULL,
+  `agent_mail` varchar(45) DEFAULT NULL,
+  `agent_address` varchar(45) DEFAULT NULL,
+  `agent_relationship` varchar(45) DEFAULT NULL COMMENT 'Relationship between agent and agent',
+  `is_debt_agent` tinyint(4) NOT NULL DEFAULT '0',
+  `d_agent_name` varchar(45) DEFAULT NULL,
+  `d_agent_id` varchar(45) DEFAULT NULL,
+  `d_agent_tel` varchar(45) DEFAULT NULL,
+  `d_agent_mail` varchar(45) DEFAULT NULL,
+  `d_agent_address` varchar(45) DEFAULT NULL,
+  `d_agent_relationship` varchar(45) DEFAULT NULL,
+  `debtor_status` varchar(45) DEFAULT NULL,
+  `bank` varchar(45) DEFAULT NULL,
+  `bank_card` varchar(45) DEFAULT NULL COMMENT 'Bank card number',
+  `payee` varchar(45) DEFAULT NULL COMMENT 'Payee Name',
+  `remark` text,
+  PRIMARY KEY (`idcreditor`,`idnumber`),
+  UNIQUE KEY `idcreditor_UNIQUE` (`idcreditor`),
+  UNIQUE KEY `idnumber_UNIQUE` (`idnumber`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='creditor';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `creditor`
+--
+
+LOCK TABLES `creditor` WRITE;
+/*!40000 ALTER TABLE `creditor` DISABLE KEYS */;
+/*!40000 ALTER TABLE `creditor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `knowledge`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `knowledge` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `knowledge`;
+
+--
+-- Table structure for table `k_links`
+--
+
+DROP TABLE IF EXISTS `k_links`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `k_links` (
+  `idbooklink` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` text NOT NULL COMMENT 'what the link item information ?',
+  `what_type` varchar(45) DEFAULT NULL,
+  `where` text NOT NULL COMMENT 'where the URL address',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` text,
+  PRIMARY KEY (`idbooklink`)
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `k_links`
+--
+
+LOCK TABLES `k_links` WRITE;
+/*!40000 ALTER TABLE `k_links` DISABLE KEYS */;
+INSERT INTO `k_links` VALUES (1,'hunter','translate.google.cn','translate','http://translate.google.cn/','2017-04-05 02:30:57','',''),(2,'hunter','bing.com','search','http://www.bing.com/','2017-04-05 02:32:03','',''),(3,'hunter','google.com','search','http://www.google.com/','2017-04-05 02:32:41','',''),(4,'hunter','msdn.microsoft','doc','https://msdn.microsoft.com','2017-04-05 02:33:16','',''),(5,'hunter','IBM Knowledge Center','doc','http://www.ibm.com/support/knowledgecenter/en/','2017-04-05 02:34:30','',''),(6,'hunter','Apple Developers Center','doc','https://developer.apple.com/','2017-04-05 02:36:48','',''),(7,'hunter','Apple API Reference','doc','https://developer.apple.com/reference/','2017-04-05 02:39:27','',''),(8,'hunter','Apple Guides and Sample Code','doc','https://developer.apple.com/library/prerelease/content/navigation/','2017-04-05 02:40:10','',''),(9,'hunter','VirtualBox Technical documentation','doc','https://www.virtualbox.org/wiki/Technical_documentation','2017-04-05 02:40:35','',''),(10,'hunter','Git Documentation','doc','https://git-scm.com/doc','2017-04-05 02:40:58','',''),(11,'hunter','Lean-x','doc','http://www.tutorialspoint.com/','2017-04-05 02:41:21','',''),(12,'hunter','perldoc.perl.org','doc','http://perldoc.perl.org/','2017-04-05 02:41:41','',''),(13,'hunter','GNU C Reference Manual','doc','http://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html','2017-04-05 02:42:06','',''),(14,'hunter','Linux C++ Software Development','doc','http://www.yolinux.com/TUTORIALS/LinuxTutorialC%2B%2B.html','2017-04-05 02:42:32','',''),(15,'hunter','C++  keyword','doc','http://en.cppreference.com/w/cpp/keyword','2017-04-05 02:42:55','',''),(16,'hunter','C++ STL Tutorial','doc technical','http://www.tutorialspoint.com/cplusplus/cpp_stl_tutorial.htm','2017-04-05 02:44:49','',''),(17,'hunter','My SQL documentation','doc technical','http://dev.mysql.com/doc/','2017-04-05 02:45:12','',''),(18,'hunter','PHP Manual','doc technical','http://www.php.net/manual/en/index.php','2017-04-05 02:45:34','',''),(19,'hunter','w3.standards','doc technical','https://www.w3.org/standards/','2017-04-05 02:45:55','',''),(20,'hunter','w3school.cn','doc technical','http://www.w3school.com.cn/','2017-04-05 02:46:16','',''),(21,'hunter','w3school.bootcss','doc technical','http://w3schools.bootcss.com/html/default.html','2017-04-05 02:46:38','',''),(22,'hunter','HTTP protocols','doc technical protocol','https://www.w3.org/Protocols/','2017-04-05 02:47:22','',''),(23,'hunter','html.com','doc technical','http://html.com/','2017-04-05 02:48:03','',''),(24,'hunter','java','doc technical language develop','https://www.oracle.com/java/index.html','2017-04-05 02:48:48','',''),(25,'hunter','fileformat.book','doc technical','http://www.fileformat.info/resource/book/index.htm','2017-04-05 02:52:07','',''),(26,'hunter','U-Boot.manual','doc technical','http://www.denx.de/wiki/DULG/Manual','2017-04-05 02:53:45','',''),(27,'hunter','yoctoproject.doc','doc technical','https://www.yoctoproject.org/documentation','2017-04-05 02:54:11','',''),(28,'hunter','openembedded.org','doc technical','http://www.openembedded.org/wiki/Main_Page','2017-04-05 02:54:35','',''),(29,'hunter','bitbake-user-manual','doc technical','https://www.yoctoproject.org/docs/1.6/bitbake-user-manual/bitbake-user-manual.html','2017-04-05 02:54:56','',''),(30,'hunter','Windows driver development','doc technical develop','https://msdn.microsoft.com/en-us/windows/hardware/ff960953.aspx','2017-04-05 02:55:27','',''),(31,'hunter','linux-man-pages','doc technical linux ','https://linux.die.net/man/','2017-04-05 02:56:01','',''),(32,'hunter','centos.doc','doc technical linux ','https://www.centos.org/docs/','2017-04-05 02:56:26','',''),(33,'hunter','IEEE-POSIX','doc technical','http://get.posixcertified.ieee.org/','2017-04-05 02:56:54','',''),(34,'hunter','i2c-bus','doc technical','http://www.i2c-bus.org/i2c-bus/','2017-04-05 02:57:18','',''),(35,'hunter','docker-library','doc technical','https://github.com/docker-library','2017-04-05 02:58:53','',''),(36,'hunter','python3-doc','doc technical','https://docs.python.org/3/','2017-04-05 02:59:13','',''),(37,'hunter','lamp-web','doc technical','http://www.lampweb.org/','2017-04-05 02:59:29','',''),(38,'hunter','nginx-docs','doc technical','http://nginx.org/en/docs/','2017-04-05 02:59:56','',''),(39,'hunter','gitlabhq','doc technical','https://github.com/gitlabhq','2017-04-05 03:00:20','',''),(40,'hunter','gnu-make','doc technical','http://www.gnu.org/software/make/manual/make.html','2017-04-05 03:00:40','',''),(41,'hunter','iso639-2:language code','doc technical','https://www.loc.gov/standards/iso639-2/php/code_list.php','2017-04-05 03:01:02','',''),(42,'hunter','countrycode','doc technical','https://countrycode.org/','2017-04-05 03:01:28','',''),(43,'hunter','multi-language php','doc technical','http://www.bitrepository.com/php-how-to-add-multi-language-support-to-a-website.html','2017-04-05 03:01:58','',''),(44,'hunter','GNU/Linux Command-Line Tools Summary','doc technical','https://linux.die.net/Linux-CLI/','2017-04-05 03:02:23','',''),(45,'hunter','css color ','doc technical','http://www.w3school.com.cn/cssref/css_colornames.asp','2017-04-06 08:04:40','',''),(46,'hunter','PHP class','doc technical','http://php.net/manual/en/language.oop5.php','2017-04-07 03:03:53','',''),(47,'hunter','pop3_blog_cn','doc technical','http://blog.csdn.net/bripengandre/article/details/2192111','2017-04-11 18:18:06','',''),(48,'hunter','IBM Advance Toolchain for PowerLinux Documentation','doc technical','https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/W51a7ffcf4dfd_4b40_9d82_446ebc23c550/page/IBM%20Advance%20Toolchain%20for%20PowerLinux%20Documentation','2017-04-14 10:13:36','normal','IBM developerworks'),(49,'hunter',' IBM Software Development Kit for Linux on Power (SDK) ','doc technical','https://developer.ibm.com/linuxonpower/sdk/','2017-04-14 10:18:51','normal','IBM developerworks'),(50,'hunter','cscript','doc technical','http://originaldll.com/file/cscript.exe/24146.html','2017-04-26 21:46:03','normal','utf8'),(51,'hunter','software.intel.com/en-us/html5','doc technical','https://software.intel.com/en-us/html5','2017-04-26 22:21:01','normal','utf8'),(52,'hunter','intel-software-technical-documentation','doc technical','https://software.intel.com/en-us/intel-software-technical-documentation','2017-04-26 22:21:34','normal','utf8'),(53,'hunter','intel-AI','doc technical','https://software.intel.com/en-us/ai','2017-04-26 22:23:47','normal','utf8'),(54,'hunter','PHP PDF Functions','doc technical','http://phptutorial.info/?pdf','2017-04-27 16:01:12','normal','utf8'),(55,'hunter','pdflib','doc technical','http://www.pdflib.com/','2017-04-27 16:13:39','normal','utf8'),(56,'hunter','php packages','doc technical','http://pecl.php.net/packages.php','2017-04-28 17:02:31','normal','utf8'),(57,'hunter','excel-easy VBA','doc technical','http://www.excel-easy.com/vba.html','2017-05-02 09:43:58','normal','utf8'),(58,'hunter','webkit','doc technical develop','https://webkit.org/','2017-05-02 23:08:18','normal','utf8'),(59,'patent_sys','linux kernel doc','doc technical','https://www.kernel.org/doc/','2017-12-26 12:00:42','normal','utf8'),(60,'hunter','microsoft .net for linux ','tech','https://www.microsoft.com/net/download/linux','2017-12-26 13:54:48','normal','utf8');
+/*!40000 ALTER TABLE `k_links` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `k_type`
+--
+
+DROP TABLE IF EXISTS `k_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `k_type` (
+  `idk_type` int(11) NOT NULL AUTO_INCREMENT,
+  `what` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idk_type`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `k_type`
+--
+
+LOCK TABLES `k_type` WRITE;
+/*!40000 ALTER TABLE `k_type` DISABLE KEYS */;
+/*!40000 ALTER TABLE `k_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `patent`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `patent` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `patent`;
+
+--
+-- Table structure for table `project`
+--
+
+DROP TABLE IF EXISTS `project`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `project` (
+  `idproject` int(11) NOT NULL AUTO_INCREMENT,
+  `name` text NOT NULL,
+  `serial_number` varchar(45) DEFAULT NULL,
+  `item` longtext,
+  `infor` blob,
+  `type` varchar(45) DEFAULT NULL,
+  `owner` varchar(45) DEFAULT NULL,
+  `apply_time` datetime DEFAULT NULL,
+  `start_time` datetime DEFAULT NULL,
+  `end_time` datetime DEFAULT NULL,
+  `depend_id` int(11) DEFAULT NULL,
+  `schedule` int(11) DEFAULT NULL,
+  `position` tinytext,
+  `source` blob,
+  `url` longtext,
+  `status` varchar(45) DEFAULT NULL,
+  `remark` longtext,
+  PRIMARY KEY (`idproject`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `project`
+--
+
+LOCK TABLES `project` WRITE;
+/*!40000 ALTER TABLE `project` DISABLE KEYS */;
+/*!40000 ALTER TABLE `project` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `question`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `question` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `question`;
+
+--
+-- Table structure for table `question`
+--
+
+DROP TABLE IF EXISTS `question`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `question` (
+  `id` int(30) NOT NULL,
+  `type` varchar(50) NOT NULL,
+  `sQ` text NOT NULL,
+  `sA` text NOT NULL,
+  `sR` text NOT NULL,
+  `sF` text,
+  `sD` text,
+  `depend` int(30) DEFAULT '0',
+  `result` int(11) DEFAULT '0',
+  `status` int(30) DEFAULT '0',
+  `action` int(30) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `question`
+--
+
+LOCK TABLES `question` WRITE;
+/*!40000 ALTER TABLE `question` DISABLE KEYS */;
+/*!40000 ALTER TABLE `question` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `template`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `template` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `template`;
+
+--
+-- Table structure for table `url`
+--
+
+DROP TABLE IF EXISTS `url`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `url` (
+  `idurl` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
+  `what_type` varchar(45) DEFAULT NULL,
+  `where` varchar(45) NOT NULL COMMENT 'where the URL address',
+  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idurl`)
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `url`
+--
+
+LOCK TABLES `url` WRITE;
+/*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (61,'patent_sys','深圳市鸿鹏进出口有限公司','website','http://www.szhongpeng.com/','template/img/szhongpeng.jpg','2017-12-26 07:42:01','normal','utf8'),(62,'patent_sys','室内专修设计网站参考模板','website','template/Interior-design/index.html','template/img/shineisheji.jpg','2017-12-26 07:47:46','normal','utf8'),(63,'patent_sys','台州辰泽自动化设备有限公司','website','http://czautomation.com/','template/img/czautomation.jpg','2017-12-26 07:51:06','normal','utf8');
+/*!40000 ALTER TABLE `url` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `life`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `life` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `life`;
+
+--
+-- Table structure for table `url`
+--
+
+DROP TABLE IF EXISTS `url`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `url` (
+  `idurl` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
+  `what_type` varchar(45) DEFAULT NULL,
+  `where` varchar(45) NOT NULL COMMENT 'where the URL address',
+  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idurl`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `url`
+--
+
+LOCK TABLES `url` WRITE;
+/*!40000 ALTER TABLE `url` DISABLE KEYS */;
+/*!40000 ALTER TABLE `url` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `vedio`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `vedio` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `vedio`;
+
+--
+-- Table structure for table `url`
+--
+
+DROP TABLE IF EXISTS `url`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `url` (
+  `idurl` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
+  `what_type` varchar(45) DEFAULT NULL,
+  `where` varchar(45) NOT NULL COMMENT 'where the URL address',
+  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idurl`)
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `url`
+--
+
+LOCK TABLES `url` WRITE;
+/*!40000 ALTER TABLE `url` DISABLE KEYS */;
+/*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -838,93 +1869,6 @@ LOCK TABLES `work` WRITE;
 UNLOCK TABLES;
 
 --
--- Current Database: `radar`
---
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `radar` /*!40100 DEFAULT CHARACTER SET utf8 */;
-
-USE `radar`;
-
---
--- Table structure for table `data`
---
-
-DROP TABLE IF EXISTS `data`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `data` (
-  `iddata` int(11) NOT NULL AUTO_INCREMENT,
-  `device_id` int(11) NOT NULL DEFAULT '0',
-  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `millisecond` int(11) NOT NULL DEFAULT '0',
-  `microsecond` int(11) NOT NULL DEFAULT '0',
-  `nanosecond` int(11) NOT NULL DEFAULT '0',
-  `data` longblob COMMENT 'radar data form Radar information collection system\n',
-  `data_type` varchar(45) NOT NULL DEFAULT 'General' COMMENT 'radar data type :General data,Meteorological data ,Flight control information,\n',
-  `data_grade` int(11) NOT NULL DEFAULT '0',
-  `status` varchar(45) NOT NULL DEFAULT 'Normal' COMMENT 'normal, error , ... ',
-  `source_from` varchar(45) DEFAULT NULL COMMENT 'data come from like device ID,IP Addr,',
-  `source_to` varchar(45) DEFAULT NULL COMMENT 'source from ,to ,source stream .',
-  `location` varchar(60) NOT NULL DEFAULT '0,0,0' COMMENT 'like GPS, Coordinate System,Geographic coordinate system ,Projection coordinate system,''x,y,z-0,0,0''',
-  `creator` varchar(45) DEFAULT NULL COMMENT 'data creator ',
-  `remark` text,
-  PRIMARY KEY (`iddata`),
-  UNIQUE KEY `iddata_UNIQUE` (`iddata`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `data`
---
-
-LOCK TABLES `data` WRITE;
-/*!40000 ALTER TABLE `data` DISABLE KEYS */;
-/*!40000 ALTER TABLE `data` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Current Database: `iwant`
---
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `iwant` /*!40100 DEFAULT CHARACTER SET utf8 */;
-
-USE `iwant`;
-
---
--- Table structure for table `demand`
---
-
-DROP TABLE IF EXISTS `demand`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `demand` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `who` text NOT NULL,
-  `type` text NOT NULL,
-  `object` text NOT NULL,
-  `location` text NOT NULL,
-  `price` int(11) NOT NULL,
-  `count` int(11) NOT NULL,
-  `start_date` datetime DEFAULT NULL,
-  `end_date` datetime DEFAULT NULL,
-  `submit_time` datetime DEFAULT NULL,
-  `image` longblob,
-  `remark` text,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `demand`
---
-
-LOCK TABLES `demand` WRITE;
-/*!40000 ALTER TABLE `demand` DISABLE KEYS */;
-INSERT INTO `demand` VALUES (1,'lulu','hource','paik-666','shang hai',99999,999,'2017-02-21 15:40:36','2017-02-21 15:40:36','2017-02-21 15:40:36',NULL,'888888'),(2,'hao','house','paik-666','shang hai',666666,666,'2016-11-27 18:00:00','2016-11-27 18:00:00','2017-02-21 15:40:54',NULL,'666666');
-/*!40000 ALTER TABLE `demand` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Current Database: `user`
 --
 
@@ -961,43 +1905,6 @@ LOCK TABLES `login` WRITE;
 /*!40000 ALTER TABLE `login` DISABLE KEYS */;
 INSERT INTO `login` VALUES (1,'Dan-dan_Xue','dan-dan_xue@asus.com','b03c6e18072db193c9a91d33e84e09e4','dan-dan_xue@asus.com','My OA?','ffb4513f2a3a46ad17d19ff6b56f9a2d',0,'2012-02-26'),(2,'Hubert','Hubert_Zhang@asus.com','5c613856b215b68999efb8eed5755b74','Hubert_Zhang@asus.com','Name','dc647eb65e6711e155375218212b3964',0,'2012-02-26'),(3,'Hunter_Chen','Hunter_Chen@asus.com','d1071878263c8e3aa1de4a863d40b62d','Hunter_Chen@asus.com','My name is?','6f7f62ba4458f067cfc7afa32b3c7b8a',0,'2012-02-26'),(4,'Hao__Chen','xhfch@126.com','d1071878263c8e3aa1de4a863d40b62d','xhfch@126.com','My name is?','02839ed514749f635038586b1846c6b5',0,'2012-02-26');
 /*!40000 ALTER TABLE `login` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Current Database: `file`
---
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `file` /*!40100 DEFAULT CHARACTER SET utf8 */;
-
-USE `file`;
-
---
--- Table structure for table `infor`
---
-
-DROP TABLE IF EXISTS `infor`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `infor` (
-  `idinfor` int(11) NOT NULL AUTO_INCREMENT,
-  `where` text NOT NULL COMMENT 'where: the file URL path  ',
-  `name` text NOT NULL COMMENT 'file name',
-  `what` varchar(45) NOT NULL COMMENT 'what ,type,comment,',
-  `who` varchar(45) DEFAULT NULL,
-  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `depend_id` int(11) NOT NULL DEFAULT '0' COMMENT 'like project ID',
-  `how` int(11) NOT NULL DEFAULT '0' COMMENT 'how long size',
-  PRIMARY KEY (`idinfor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `infor`
---
-
-LOCK TABLES `infor` WRITE;
-/*!40000 ALTER TABLE `infor` DISABLE KEYS */;
-/*!40000 ALTER TABLE `infor` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1059,7 +1966,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `remark` text,
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1068,8 +1975,48 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'中华人民共和国宪法-2004','law/中华人民共和国宪法-2004.txt','local','normal','2017-04-27 11:53:15','china','patent_sys',0,'宪法'),(2,'中华人民共和国专利法-2008','law/中华人民共和国专利法-2008.txt','local','normal','2017-04-27 11:55:05','china','patent_sys',0,'专利法'),(3,'中华人民共和国专利法实施细则-2003','law/中华人民共和国专利法实施细则-2003.txt','local','normal','2017-04-27 11:55:49','china','patent_sys',0,'专利法实施细则'),(4,'中华人民共和国民事诉讼法-2012','law/中华人民共和国民事诉讼法-2012.txt','local','normal','2017-04-27 11:56:33','china','patent_sys',0,'民事诉讼法'),(5,'中华人民共和国专利法实施细则-2010','law/中华人民共和国专利法实施细则-2010.txt','local','normal','2017-06-01 19:48:17','china','patent_sys',0,'');
+INSERT INTO `url` VALUES (1,'中华人民共和国宪法-2004','law/中华人民共和国宪法-2004.pdf','local','normal','2017-04-27 11:53:15','china','patent_sys',0,'宪法'),(2,'中华人民共和国专利法-2008','law/中华人民共和国专利法-2008.pdf','local','normal','2017-04-27 11:55:05','china','patent_sys',0,'专利法'),(3,'中华人民共和国专利法实施细则-2003','law/中华人民共和国专利法实施细则-2003.pdf','local','normal','2017-04-27 11:55:49','china','patent_sys',0,'专利法实施细则'),(4,'中华人民共和国民事诉讼法-2012','law/中华人民共和国民事诉讼法-2012.pdf','local','normal','2017-04-27 11:56:33','china','patent_sys',0,'民事诉讼法'),(5,'中华人民共和国专利法实施细则-2010','law/中华人民共和国专利法实施细则-2010.pdf','local','normal','2017-06-01 19:48:17','china','patent_sys',0,''),(6,'中华人民共和国劳动法','law/中华人民共和国劳动法.pdf','local','normal','2017-12-24 22:38:17','china','patent_sys',0,'');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `search`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `search` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `search`;
+
+--
+-- Table structure for table `method`
+--
+
+DROP TABLE IF EXISTS `method`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `method` (
+  `idmethod` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL COMMENT 'submit name:$XXXX ',
+  `priority` int(11) NOT NULL DEFAULT '0',
+  `type` varchar(45) NOT NULL,
+  `base` varchar(200) NOT NULL COMMENT 'URL= base+before_key+key+after_key.',
+  `before` varchar(45) DEFAULT NULL,
+  `after` varchar(45) DEFAULT NULL,
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `author` varchar(45) NOT NULL,
+  PRIMARY KEY (`idmethod`,`name`,`base`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COMMENT='Different websites search method\n';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `method`
+--
+
+LOCK TABLES `method` WRITE;
+/*!40000 ALTER TABLE `method` DISABLE KEYS */;
+INSERT INTO `method` VALUES (1,'Google',100,'search','http://www.google.com/search?q=+','','&ie=UTF-8+&oe=UTF-8','2017-12-27 06:18:14','hunter'),(2,'Bing',99,'search','https://www.bing.com/search?q=','','','2017-12-27 06:19:27','hunter'),(3,'ZhiHu',98,'search','https://www.zhihu.com/search?type=content&q=','','','2017-12-27 06:20:52','hunter'),(4,'Baidu',97,'search','https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&wd=','','','2017-12-27 06:27:42','hunter'),(5,'Github',96,'code','https://github.com/search?utf8=%E2%9C%93&q=','','&type=','2017-12-27 06:38:08','hunter'),(6,'Sina',0,'news','http://search.sina.com.cn/?q=','','&c=news&from=index','2017-12-27 16:03:10','hunter'),(7,'Tmail',0,'shopping','https://list.tmall.com/search_product.htm?q=','','','2017-12-27 16:10:42','hunter'),(8,'JingDong',0,'shopping','https://search.jd.com/Search?keyword=','','&enc=utf-8','2017-12-27 16:13:34','hunter'),(9,'Taobao',0,'shopping','https://s.taobao.com/search?q=','','','2017-12-27 16:16:31','hunter'),(10,'Vip',0,'shopping','https://category.vip.com/suggest.php?keyword=','','','2017-12-27 16:18:26','hunter'),(11,'Yahoo',99,'search','https://search.yahoo.com/search?p=','','','2017-12-27 17:43:45','hunter'),(12,'CSDN',0,'technology','http://so.csdn.net/so/search/s.do?q=','','','2017-12-27 16:19:49','hunter'),(13,'Amazon',0,'shopping','https://www.amazon.cn/s/field-keywords=','','','2017-12-27 16:22:15','hunter'),(14,'MSDN_CN',0,'technology','https://social.msdn.microsoft.com/Search/zh-CN?query=','','','2017-12-27 16:32:03','hunter'),(15,'PHP',0,'technology','http://php.net/manual-lookup.php?pattern=','','','2017-12-27 16:34:34','hunter'),(16,'Oracle',0,'technology','https://www.oracle.com/search/results?Nty=1&Ntk=S3&Ntt=','','','2017-12-27 16:39:46','hunter'),(17,'Mysql',0,'technology','https://www.oracle.com/search/results?cat=mysql&Ntk=SI-ALL5&Ntt=','','','2017-12-27 16:42:01','hunter'),(18,'C++',0,'technology','http://www.cplusplus.com/search.do?q=','','','2017-12-27 16:44:24','hunter'),(19,'Java',0,'technology','https://docs.oracle.com/apps/search/search.jsp?q=','','&category=all','2017-12-27 17:31:33','hunter'),(20,'Python',0,'technology','https://www.python.org/search/?q=','','','2017-12-27 17:35:06','hunter'),(21,'Amap',0,'map','http://ditu.amap.com/search?query=','','','2017-12-27 10:32:02','hunter');
+/*!40000 ALTER TABLE `method` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1081,64 +2028,79 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ `task` /*!40100 DEFAULT CHARACTER SET u
 USE `task`;
 
 --
--- Current Database: `knowledge`
+-- Current Database: `aiproject`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `knowledge` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `aiproject` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
-USE `knowledge`;
+USE `aiproject`;
 
 --
--- Table structure for table `k_links`
+-- Table structure for table `url`
 --
 
-DROP TABLE IF EXISTS `k_links`;
+DROP TABLE IF EXISTS `url`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `k_links` (
-  `idbooklink` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `url` (
+  `idurl` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
-  `what` text NOT NULL COMMENT 'what the link item information ?',
+  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
   `what_type` varchar(45) DEFAULT NULL,
-  `where` text NOT NULL COMMENT 'where the URL address',
+  `where` varchar(45) NOT NULL COMMENT 'where the URL address',
+  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
   `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
   `status` varchar(45) DEFAULT NULL,
-  `remark` text,
-  PRIMARY KEY (`idbooklink`)
-) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
+  `remark` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idurl`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `k_links`
+-- Dumping data for table `url`
 --
 
-LOCK TABLES `k_links` WRITE;
-/*!40000 ALTER TABLE `k_links` DISABLE KEYS */;
-INSERT INTO `k_links` VALUES (1,'hunter','translate.google.cn','translate','http://translate.google.cn/','2017-04-05 02:30:57','',''),(2,'hunter','bing.com','search','http://www.bing.com/','2017-04-05 02:32:03','',''),(3,'hunter','google.com','search','http://www.google.com/','2017-04-05 02:32:41','',''),(4,'hunter','msdn.microsoft','doc','https://msdn.microsoft.com','2017-04-05 02:33:16','',''),(5,'hunter','IBM Knowledge Center','doc','http://www.ibm.com/support/knowledgecenter/en/','2017-04-05 02:34:30','',''),(6,'hunter','Apple Developers Center','doc','https://developer.apple.com/','2017-04-05 02:36:48','',''),(7,'hunter','Apple API Reference','doc','https://developer.apple.com/reference/','2017-04-05 02:39:27','',''),(8,'hunter','Apple Guides and Sample Code','doc','https://developer.apple.com/library/prerelease/content/navigation/','2017-04-05 02:40:10','',''),(9,'hunter','VirtualBox Technical documentation','doc','https://www.virtualbox.org/wiki/Technical_documentation','2017-04-05 02:40:35','',''),(10,'hunter','Git Documentation','doc','https://git-scm.com/doc','2017-04-05 02:40:58','',''),(11,'hunter','Lean-x','doc','http://www.tutorialspoint.com/','2017-04-05 02:41:21','',''),(12,'hunter','perldoc.perl.org','doc','http://perldoc.perl.org/','2017-04-05 02:41:41','',''),(13,'hunter','GNU C Reference Manual','doc','http://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html','2017-04-05 02:42:06','',''),(14,'hunter','Linux C++ Software Development','doc','http://www.yolinux.com/TUTORIALS/LinuxTutorialC%2B%2B.html','2017-04-05 02:42:32','',''),(15,'hunter','C++  keyword','doc','http://en.cppreference.com/w/cpp/keyword','2017-04-05 02:42:55','',''),(16,'hunter','C++ STL Tutorial','doc technical','http://www.tutorialspoint.com/cplusplus/cpp_stl_tutorial.htm','2017-04-05 02:44:49','',''),(17,'hunter','My SQL documentation','doc technical','http://dev.mysql.com/doc/','2017-04-05 02:45:12','',''),(18,'hunter','PHP Manual','doc technical','http://www.php.net/manual/en/index.php','2017-04-05 02:45:34','',''),(19,'hunter','w3.standards','doc technical','https://www.w3.org/standards/','2017-04-05 02:45:55','',''),(20,'hunter','w3school.cn','doc technical','http://www.w3school.com.cn/','2017-04-05 02:46:16','',''),(21,'hunter','w3school.bootcss','doc technical','http://w3schools.bootcss.com/html/default.html','2017-04-05 02:46:38','',''),(22,'hunter','HTTP protocols','doc technical protocol','https://www.w3.org/Protocols/','2017-04-05 02:47:22','',''),(23,'hunter','html.com','doc technical','http://html.com/','2017-04-05 02:48:03','',''),(24,'hunter','java','doc technical language develop','https://www.oracle.com/java/index.html','2017-04-05 02:48:48','',''),(25,'hunter','fileformat.book','doc technical','http://www.fileformat.info/resource/book/index.htm','2017-04-05 02:52:07','',''),(26,'hunter','U-Boot.manual','doc technical','http://www.denx.de/wiki/DULG/Manual','2017-04-05 02:53:45','',''),(27,'hunter','yoctoproject.doc','doc technical','https://www.yoctoproject.org/documentation','2017-04-05 02:54:11','',''),(28,'hunter','openembedded.org','doc technical','http://www.openembedded.org/wiki/Main_Page','2017-04-05 02:54:35','',''),(29,'hunter','bitbake-user-manual','doc technical','https://www.yoctoproject.org/docs/1.6/bitbake-user-manual/bitbake-user-manual.html','2017-04-05 02:54:56','',''),(30,'hunter','Windows driver development','doc technical develop','https://msdn.microsoft.com/en-us/windows/hardware/ff960953.aspx','2017-04-05 02:55:27','',''),(31,'hunter','linux-man-pages','doc technical linux ','https://linux.die.net/man/','2017-04-05 02:56:01','',''),(32,'hunter','centos.doc','doc technical linux ','https://www.centos.org/docs/','2017-04-05 02:56:26','',''),(33,'hunter','IEEE-POSIX','doc technical','http://get.posixcertified.ieee.org/','2017-04-05 02:56:54','',''),(34,'hunter','i2c-bus','doc technical','http://www.i2c-bus.org/i2c-bus/','2017-04-05 02:57:18','',''),(35,'hunter','docker-library','doc technical','https://github.com/docker-library','2017-04-05 02:58:53','',''),(36,'hunter','python3-doc','doc technical','https://docs.python.org/3/','2017-04-05 02:59:13','',''),(37,'hunter','lamp-web','doc technical','http://www.lampweb.org/','2017-04-05 02:59:29','',''),(38,'hunter','nginx-docs','doc technical','http://nginx.org/en/docs/','2017-04-05 02:59:56','',''),(39,'hunter','gitlabhq','doc technical','https://github.com/gitlabhq','2017-04-05 03:00:20','',''),(40,'hunter','gnu-make','doc technical','http://www.gnu.org/software/make/manual/make.html','2017-04-05 03:00:40','',''),(41,'hunter','iso639-2:language code','doc technical','https://www.loc.gov/standards/iso639-2/php/code_list.php','2017-04-05 03:01:02','',''),(42,'hunter','countrycode','doc technical','https://countrycode.org/','2017-04-05 03:01:28','',''),(43,'hunter','multi-language php','doc technical','http://www.bitrepository.com/php-how-to-add-multi-language-support-to-a-website.html','2017-04-05 03:01:58','',''),(44,'hunter','GNU/Linux Command-Line Tools Summary','doc technical','https://linux.die.net/Linux-CLI/','2017-04-05 03:02:23','',''),(45,'hunter','css color ','doc technical','http://www.w3school.com.cn/cssref/css_colornames.asp','2017-04-06 08:04:40','',''),(46,'hunter','PHP class','doc technical','http://php.net/manual/en/language.oop5.php','2017-04-07 03:03:53','',''),(47,'hunter','pop3_blog_cn','doc technical','http://blog.csdn.net/bripengandre/article/details/2192111','2017-04-11 18:18:06','',''),(48,'hunter','IBM Advance Toolchain for PowerLinux Documentation','doc technical','https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/W51a7ffcf4dfd_4b40_9d82_446ebc23c550/page/IBM%20Advance%20Toolchain%20for%20PowerLinux%20Documentation','2017-04-14 10:13:36','normal','IBM developerworks'),(49,'hunter',' IBM Software Development Kit for Linux on Power (SDK) ','doc technical','https://developer.ibm.com/linuxonpower/sdk/','2017-04-14 10:18:51','normal','IBM developerworks'),(50,'hunter','cscript','doc technical','http://originaldll.com/file/cscript.exe/24146.html','2017-04-26 21:46:03','normal','utf8'),(51,'hunter','software.intel.com/en-us/html5','doc technical','https://software.intel.com/en-us/html5','2017-04-26 22:21:01','normal','utf8'),(52,'hunter','intel-software-technical-documentation','doc technical','https://software.intel.com/en-us/intel-software-technical-documentation','2017-04-26 22:21:34','normal','utf8'),(53,'hunter','intel-AI','doc technical','https://software.intel.com/en-us/ai','2017-04-26 22:23:47','normal','utf8'),(54,'hunter','PHP PDF Functions','doc technical','http://phptutorial.info/?pdf','2017-04-27 16:01:12','normal','utf8'),(55,'hunter','pdflib','doc technical','http://www.pdflib.com/','2017-04-27 16:13:39','normal','utf8'),(56,'hunter','php packages','doc technical','http://pecl.php.net/packages.php','2017-04-28 17:02:31','normal','utf8'),(57,'hunter','excel-easy VBA','doc technical','http://www.excel-easy.com/vba.html','2017-05-02 09:43:58','normal','utf8'),(58,'hunter','webkit','doc technical develop','https://webkit.org/','2017-05-02 23:08:18','normal','utf8');
-/*!40000 ALTER TABLE `k_links` ENABLE KEYS */;
+LOCK TABLES `url` WRITE;
+/*!40000 ALTER TABLE `url` DISABLE KEYS */;
+/*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `k_type`
+-- Current Database: `medical`
 --
 
-DROP TABLE IF EXISTS `k_type`;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `medical` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `medical`;
+
+--
+-- Table structure for table `url`
+--
+
+DROP TABLE IF EXISTS `url`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `k_type` (
-  `idk_type` int(11) NOT NULL AUTO_INCREMENT,
-  `what` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idk_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `url` (
+  `idurl` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
+  `what_type` varchar(45) DEFAULT NULL,
+  `where` varchar(45) NOT NULL COMMENT 'where the URL address',
+  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idurl`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `k_type`
+-- Dumping data for table `url`
 --
 
-LOCK TABLES `k_type` WRITE;
-/*!40000 ALTER TABLE `k_type` DISABLE KEYS */;
-/*!40000 ALTER TABLE `k_type` ENABLE KEYS */;
+LOCK TABLES `url` WRITE;
+/*!40000 ALTER TABLE `url` DISABLE KEYS */;
+/*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1169,7 +2131,7 @@ CREATE TABLE `patent_law` (
   `device` text,
   `image` text COMMENT 'image URL',
   `audio` text COMMENT 'audio URL',
-  `video` text COMMENT 'audio URL',
+  `vedio` text COMMENT 'audio URL',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1204,7 +2166,7 @@ CREATE TABLE `patent_law_implementation_rules` (
   `device` text,
   `image` text COMMENT 'image URL',
   `audio` text COMMENT 'audio URL',
-  `video` text COMMENT 'video URL',
+  `vedio` text COMMENT 'vedio URL',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1220,89 +2182,306 @@ INSERT INTO `patent_law_implementation_rules` VALUES (1,'中华人民共和国�
 UNLOCK TABLES;
 
 --
--- Current Database: `question`
+-- Current Database: `audio`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `question` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `audio` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
-USE `question`;
+USE `audio`;
 
 --
--- Table structure for table `question`
+-- Table structure for table `url`
 --
 
-DROP TABLE IF EXISTS `question`;
+DROP TABLE IF EXISTS `url`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `question` (
-  `id` int(30) NOT NULL,
-  `type` varchar(50) NOT NULL,
-  `sQ` text NOT NULL,
-  `sA` text NOT NULL,
-  `sR` text NOT NULL,
-  `sF` text,
-  `sD` text,
-  `depend` int(30) DEFAULT '0',
-  `result` int(11) DEFAULT '0',
-  `status` int(30) DEFAULT '0',
-  `action` int(30) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `url` (
+  `idurl` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
+  `what_type` varchar(45) DEFAULT NULL,
+  `where` varchar(45) NOT NULL COMMENT 'where the URL address',
+  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idurl`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `question`
+-- Dumping data for table `url`
 --
 
-LOCK TABLES `question` WRITE;
-/*!40000 ALTER TABLE `question` DISABLE KEYS */;
-/*!40000 ALTER TABLE `question` ENABLE KEYS */;
+LOCK TABLES `url` WRITE;
+/*!40000 ALTER TABLE `url` DISABLE KEYS */;
+/*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Current Database: `patent`
+-- Current Database: `hwdc`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `patent` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `hwdc` /*!40100 DEFAULT CHARACTER SET utf16 */;
 
-USE `patent`;
+USE `hwdc`;
 
 --
--- Table structure for table `project`
+-- Table structure for table `capacitance`
 --
 
-DROP TABLE IF EXISTS `project`;
+DROP TABLE IF EXISTS `capacitance`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `project` (
-  `idproject` int(11) NOT NULL AUTO_INCREMENT,
-  `name` text NOT NULL,
-  `serial_number` varchar(45) DEFAULT NULL,
-  `item` longtext,
-  `infor` blob,
-  `type` varchar(45) DEFAULT NULL,
-  `owner` varchar(45) DEFAULT NULL,
-  `apply_time` datetime DEFAULT NULL,
-  `start_time` datetime DEFAULT NULL,
-  `end_time` datetime DEFAULT NULL,
-  `depend_id` int(11) DEFAULT NULL,
-  `schedule` int(11) DEFAULT NULL,
-  `position` tinytext,
-  `source` blob,
-  `url` longtext,
-  `status` varchar(45) DEFAULT NULL,
-  `remark` longtext,
-  PRIMARY KEY (`idproject`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `capacitance` (
+  `idcapacitance` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `shape` blob,
+  `power` varchar(45) DEFAULT NULL,
+  `position` varchar(45) DEFAULT NULL COMMENT 'capacitance position,like in PCB',
+  `point` varchar(45) DEFAULT NULL COMMENT 'Measuring point',
+  `nominal` double DEFAULT NULL COMMENT 'Nominal value\n',
+  `min` double DEFAULT NULL COMMENT 'Minimum value',
+  `max` double DEFAULT NULL COMMENT 'maximum value',
+  `value` double DEFAULT NULL COMMENT 'current value',
+  `func` varchar(45) DEFAULT NULL COMMENT 'function',
+  `desc` varchar(45) DEFAULT NULL COMMENT 'description',
+  `ascription` varchar(45) DEFAULT NULL,
+  `temperature` varchar(45) DEFAULT NULL COMMENT 'Ambient temperature',
+  `status` varchar(45) DEFAULT NULL COMMENT 'status:PASS,FAIL,NA',
+  PRIMARY KEY (`idcapacitance`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `project`
+-- Dumping data for table `capacitance`
 --
 
-LOCK TABLES `project` WRITE;
-/*!40000 ALTER TABLE `project` DISABLE KEYS */;
-/*!40000 ALTER TABLE `project` ENABLE KEYS */;
+LOCK TABLES `capacitance` WRITE;
+/*!40000 ALTER TABLE `capacitance` DISABLE KEYS */;
+/*!40000 ALTER TABLE `capacitance` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `chipset`
+--
+
+DROP TABLE IF EXISTS `chipset`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `chipset` (
+  `idchipset` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `shape` blob,
+  `position` varchar(45) DEFAULT NULL COMMENT 'chipset position,like in PCB',
+  `power` varchar(45) DEFAULT NULL,
+  `clock` varchar(45) DEFAULT NULL COMMENT 'Measuring clock',
+  `reset` varchar(45) DEFAULT NULL COMMENT 'chip reset\n',
+  `enable` varchar(45) DEFAULT NULL COMMENT 'Minimum value',
+  `configs` varchar(45) DEFAULT NULL COMMENT 'configs is ok ,pin  ,R O C',
+  `link` double DEFAULT NULL COMMENT 'like tx,rx ',
+  `firmware` varchar(45) DEFAULT NULL COMMENT 'firmware: if or not exist , an version ,and has been writed',
+  `func` varchar(45) DEFAULT NULL COMMENT 'function',
+  `desc` varchar(45) DEFAULT NULL COMMENT 'description',
+  `weld` varchar(45) DEFAULT NULL COMMENT 'weld check',
+  `ascription` varchar(45) DEFAULT NULL,
+  `temperature` varchar(45) DEFAULT NULL COMMENT 'Ambient temperature',
+  `status` varchar(45) DEFAULT NULL COMMENT 'status:PASS,FAIL,NA',
+  PRIMARY KEY (`idchipset`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `chipset`
+--
+
+LOCK TABLES `chipset` WRITE;
+/*!40000 ALTER TABLE `chipset` DISABLE KEYS */;
+/*!40000 ALTER TABLE `chipset` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `clock`
+--
+
+DROP TABLE IF EXISTS `clock`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `clock` (
+  `idclock` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `position` varchar(45) DEFAULT NULL,
+  `src_point` varchar(45) DEFAULT NULL COMMENT 'Source test point',
+  `src_vale` double DEFAULT NULL,
+  `dest_point` varchar(45) DEFAULT NULL,
+  `dest_value` double DEFAULT NULL,
+  `min` double DEFAULT NULL,
+  `max` double DEFAULT NULL,
+  `func` varchar(45) DEFAULT NULL COMMENT 'function ',
+  `desc` varchar(45) DEFAULT NULL COMMENT 'description',
+  `ascription` varchar(45) DEFAULT NULL COMMENT 'ascription project name',
+  `temperature` double DEFAULT NULL COMMENT 'Ambient temperature\n',
+  `status` varchar(45) DEFAULT NULL COMMENT 'status:PASS,FAIL,NA',
+  PRIMARY KEY (`idclock`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `clock`
+--
+
+LOCK TABLES `clock` WRITE;
+/*!40000 ALTER TABLE `clock` DISABLE KEYS */;
+/*!40000 ALTER TABLE `clock` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `inductance`
+--
+
+DROP TABLE IF EXISTS `inductance`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `inductance` (
+  `idinductance` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `shape` blob,
+  `power` varchar(45) DEFAULT NULL,
+  `position` varchar(45) DEFAULT NULL COMMENT 'inductance position,like in PCB',
+  `point` varchar(45) DEFAULT NULL COMMENT 'Measuring point',
+  `nominal` double DEFAULT NULL COMMENT 'Nominal value\n',
+  `min` double DEFAULT NULL COMMENT 'Minimum value',
+  `max` double DEFAULT NULL COMMENT 'maximum value',
+  `value` double DEFAULT NULL COMMENT 'current value',
+  `func` varchar(45) DEFAULT NULL COMMENT 'function',
+  `desc` varchar(45) DEFAULT NULL COMMENT 'description',
+  `ascription` varchar(45) DEFAULT NULL,
+  `temperature` varchar(45) DEFAULT NULL COMMENT 'Ambient temperature',
+  `status` varchar(45) DEFAULT NULL COMMENT 'status:PASS,FAIL,NA',
+  PRIMARY KEY (`idinductance`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `inductance`
+--
+
+LOCK TABLES `inductance` WRITE;
+/*!40000 ALTER TABLE `inductance` DISABLE KEYS */;
+/*!40000 ALTER TABLE `inductance` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pin`
+--
+
+DROP TABLE IF EXISTS `pin`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pin` (
+  `idpin` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `power` varchar(45) DEFAULT NULL,
+  `position` varchar(45) DEFAULT NULL COMMENT 'pin position,like in PCB',
+  `point` varchar(45) DEFAULT NULL COMMENT 'Measuring point',
+  `nominal_len` double DEFAULT NULL COMMENT 'Nominal length value\n',
+  `min_len` double DEFAULT NULL COMMENT 'Minimum length value',
+  `max_len` double DEFAULT NULL COMMENT 'maximum length value',
+  `len_value` double DEFAULT NULL COMMENT 'current  length value',
+  `func` varchar(45) DEFAULT NULL COMMENT 'function',
+  `desc` varchar(45) DEFAULT NULL COMMENT 'description',
+  `ascription` varchar(45) DEFAULT NULL,
+  `temperature` varchar(45) DEFAULT NULL COMMENT 'Ambient temperature',
+  `src` varchar(45) DEFAULT NULL COMMENT 'Source',
+  `dest` varchar(45) DEFAULT NULL COMMENT 'destination',
+  `min_wid` double DEFAULT NULL COMMENT 'min width value',
+  `max_wid` double DEFAULT NULL COMMENT 'max width value',
+  `wid_value` double DEFAULT NULL COMMENT 'current  width value',
+  `nominal_wid` double DEFAULT NULL COMMENT 'Nominal width value\n',
+  `status` varchar(45) DEFAULT NULL COMMENT 'status:PASS,FAIL,NA',
+  PRIMARY KEY (`idpin`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pin`
+--
+
+LOCK TABLES `pin` WRITE;
+/*!40000 ALTER TABLE `pin` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pin` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `resistance`
+--
+
+DROP TABLE IF EXISTS `resistance`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `resistance` (
+  `idresistance` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `shape` blob,
+  `power` varchar(45) DEFAULT NULL,
+  `position` varchar(45) DEFAULT NULL COMMENT 'Resistance position,like in PCB',
+  `point` varchar(45) DEFAULT NULL COMMENT 'Measuring point',
+  `nominal` double DEFAULT NULL COMMENT 'Nominal value\n',
+  `min` double DEFAULT NULL COMMENT 'Minimum value',
+  `max` double DEFAULT NULL COMMENT 'maximum value',
+  `value` double DEFAULT NULL COMMENT 'current value',
+  `func` varchar(45) DEFAULT NULL COMMENT 'function',
+  `desc` varchar(45) DEFAULT NULL COMMENT 'description',
+  `ascription` varchar(45) DEFAULT NULL,
+  `temperature` varchar(45) DEFAULT NULL COMMENT 'Ambient temperature',
+  `status` varchar(45) DEFAULT NULL COMMENT 'status:PASS,FAIL,NA',
+  PRIMARY KEY (`idresistance`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `resistance`
+--
+
+LOCK TABLES `resistance` WRITE;
+/*!40000 ALTER TABLE `resistance` DISABLE KEYS */;
+/*!40000 ALTER TABLE `resistance` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `voltage`
+--
+
+DROP TABLE IF EXISTS `voltage`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `voltage` (
+  `idvoltage` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `position` varchar(45) DEFAULT NULL,
+  `src_point` varchar(45) DEFAULT NULL COMMENT 'Source test point',
+  `src_vale` double DEFAULT NULL,
+  `dest_point` varchar(45) DEFAULT NULL,
+  `dest_value` double DEFAULT NULL,
+  `min` double DEFAULT NULL,
+  `max` double DEFAULT NULL,
+  `func` varchar(45) DEFAULT NULL COMMENT 'function ',
+  `desc` varchar(45) DEFAULT NULL COMMENT 'description',
+  `ascription` varchar(45) DEFAULT NULL COMMENT 'ascription project name',
+  `temperature` double DEFAULT NULL COMMENT 'Ambient temperature\n',
+  `status` varchar(45) DEFAULT NULL COMMENT 'status:PASS,FAIL,NA',
+  PRIMARY KEY (`idvoltage`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `voltage`
+--
+
+LOCK TABLES `voltage` WRITE;
+/*!40000 ALTER TABLE `voltage` DISABLE KEYS */;
+/*!40000 ALTER TABLE `voltage` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -1314,4 +2493,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-02 15:16:29
+-- Dump completed on 2017-12-28 15:39:52

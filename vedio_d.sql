@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
 --
--- Host: localhost    Database: vedio
+-- Host: localhost    Database: video
 -- ------------------------------------------------------
 -- Server version	5.7.20-0ubuntu0.16.04.1
 
@@ -42,7 +42,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (61,'hunter','youtube','vedio','https://www.youtube.com/','img/youtube.jpg','2017-12-20 19:00:05','normal','utf8'),(62,'hunter','youku','vedio','http://www.youku.com/','img/youku.jpg','2017-12-20 19:15:41','normal','utf8'),(63,'hunter','tudou','vedio','http://www.tudou.com/','img/tudou.jpg','2017-12-20 19:16:52','normal','utf8'),(64,'hunter','sina','vedio','http://video.sina.com.cn/','img/sina_vedio.jpg','2017-12-20 19:17:48','normal','utf8'),(65,'hunter','iqiyi','vedio','http://www.iqiyi.com/','img/qq_vedio.jpg','2017-12-20 19:18:38','normal','utf8'),(66,'hunter','ifeng','vedio','http://v.ifeng.com/','img/ifeng_vedio.jpg','2017-12-20 19:19:45','normal','utf8'),(67,'hunter','baidu','vedio','http://video.baidu.com/','img/baidu_vedio.jpg','2017-12-20 19:21:13','normal','utf8'),(68,'hunter','CCTV','vedio','http://tv.cctv.com/','img/cctv-vedio.jpg','2017-12-21 16:16:17','normal','utf8');
+INSERT INTO `url` VALUES (61,'hunter','youtube','video','https://www.youtube.com/','img/youtube.jpg','2017-12-20 19:00:05','normal','utf8'),(62,'hunter','youku','video','http://www.youku.com/','img/youku.jpg','2017-12-20 19:15:41','normal','utf8'),(63,'hunter','tudou','video','http://www.tudou.com/','img/tudou.jpg','2017-12-20 19:16:52','normal','utf8'),(64,'hunter','sina','video','http://video.sina.com.cn/','img/sina_vedio.jpg','2017-12-20 19:17:48','normal','utf8'),(65,'hunter','iqiyi','video','http://www.iqiyi.com/','img/qq_vedio.jpg','2017-12-20 19:18:38','normal','utf8'),(66,'hunter','ifeng','video','http://v.ifeng.com/','img/ifeng_vedio.jpg','2017-12-20 19:19:45','normal','utf8'),(67,'hunter','baidu','video','http://video.baidu.com/','img/baidu_vedio.jpg','2017-12-20 19:21:13','normal','utf8'),(68,'hunter','CCTV','video','http://tv.cctv.com/','img/cctv-video.jpg','2017-12-21 16:16:17','normal','utf8');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
