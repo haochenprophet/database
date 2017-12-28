@@ -37,7 +37,7 @@ CREATE TABLE `patent_law` (
   `device` text,
   `image` text COMMENT 'image URL',
   `audio` text COMMENT 'audio URL',
-  `vedio` text COMMENT 'audio URL',
+  `video` text COMMENT 'audio URL',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -72,7 +72,7 @@ CREATE TABLE `patent_law_implementation_rules` (
   `device` text,
   `image` text COMMENT 'image URL',
   `audio` text COMMENT 'audio URL',
-  `vedio` text COMMENT 'vedio URL',
+  `video` text COMMENT 'video URL',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;

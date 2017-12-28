@@ -1,9 +1,9 @@
-CREATE DATABASE  IF NOT EXISTS `vedio` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `vedio`;
+CREATE DATABASE  IF NOT EXISTS `video` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `video`;
 
 -- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
 --
--- Host: localhost    Database: vedio
+-- Host: localhost    Database: video
 -- ------------------------------------------------------
 -- Server version	5.7.20-0ubuntu0.16.04.1
 
