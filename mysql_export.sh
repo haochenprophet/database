@@ -1,5 +1,5 @@
 echo all_databases
-mysqldump --all-databases >all_db_d.sql
+mysqldump -u root -p --all-databases >all_db_d.sql
 echo aiproject
 mysqldump -u root -p aiproject >aiproject_d.sql
 echo audio
