@@ -1,3 +1,21 @@
-mysqldump -u root -p audio >audio.sql
-mysqldump -u root -p medical >medical.sql
-mysqldump -u root -p -n video >video.sql
+mysqldump -u root -p aiproject >aiproject_d.sql
+mysqldump -u root -p audio >audio_d.sql
+mysqldump -u root -p bookmark >bookmark_d.sql
+mysqldump -u root -p chip >chip_d.sql
+mysqldump -u root -p code >code_d.sql
+mysqldump -u root -p company >company_d.sql
+mysqldump -u root -p file >file_d.sql
+mysqldump -u root -p iwant >iwant_d.sql
+mysqldump -u root -p knowledge >knowledge_d.sql
+mysqldump -u root -p law >law_d.sql
+mysqldump -u root -p life >life_d.sql
+mysqldump -u root -p medical >medical_d.sql
+mysqldump -u root -p mysql >mysql_d.sql
+mysqldump -u root -p patent >patent_d.sql
+mysqldump -u root -p question >question_d.sql
+mysqldump -u root -p radar >radar_d.sql
+mysqldump -u root -p search >search_d.sql
+mysqldump -u root -p task >task_d.sql
+mysqldump -u root -p template >template_d.sql
+mysqldump -u root -p user >user_d.sql
+mysqldump -u root -p vedio >vedio_d.sql
