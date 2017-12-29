@@ -78,6 +78,7 @@ CREATE TABLE `url` (
   `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
   `status` varchar(45) DEFAULT NULL,
   `remark` varchar(45) DEFAULT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idurl`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -89,6 +90,495 @@ CREATE TABLE `url` (
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `bluetooth`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `bluetooth` /*!40100 DEFAULT CHARACTER SET utf16 */;
+
+USE `bluetooth`;
+
+--
+-- Table structure for table `cost`
+--
+
+DROP TABLE IF EXISTS `cost`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cost` (
+  `idcost` int(11) NOT NULL AUTO_INCREMENT,
+  `idobject` int(11) DEFAULT NULL,
+  `object` varchar(45) DEFAULT NULL,
+  `relegation` varchar(45) DEFAULT NULL,
+  `region` varchar(45) DEFAULT NULL,
+  `unitprice` double DEFAULT NULL,
+  `quantity` double DEFAULT NULL,
+  `total` varchar(45) DEFAULT NULL,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idcost`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cost`
+--
+
+LOCK TABLES `cost` WRITE;
+/*!40000 ALTER TABLE `cost` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cost` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `customer`
+--
+
+DROP TABLE IF EXISTS `customer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `customer` (
+  `idcustomer` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'Who is the customer?',
+  `type` varchar(45) NOT NULL DEFAULT 'ordinary' COMMENT 'Customer type:ordinary.special;personal,company,government,community,organization,hospital,school',
+  `country` varchar(45) DEFAULT NULL,
+  `planet` varchar(45) NOT NULL DEFAULT 'earth',
+  `area` varchar(45) DEFAULT NULL,
+  `where` varchar(45) DEFAULT NULL COMMENT 'Where is the customer?\n',
+  `l_l` varchar(45) DEFAULT NULL COMMENT 'Latitude and longitude',
+  `contact` varchar(45) DEFAULT NULL COMMENT 'Contact information',
+  `mail` varchar(45) DEFAULT NULL,
+  `url` varchar(45) DEFAULT NULL COMMENT 'Customer URL\n',
+  `entry` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data entry data time',
+  `start` datetime DEFAULT NULL COMMENT 'Cooperation start time\n',
+  `end` datetime DEFAULT NULL COMMENT 'Cooperation end time',
+  `what` varchar(45) DEFAULT NULL COMMENT 'What is the cooperation?',
+  `introduction` varchar(45) DEFAULT NULL COMMENT 'Introduction ',
+  `level` int(11) NOT NULL DEFAULT '0' COMMENT 'Credit accumulated',
+  `group` varchar(45) DEFAULT NULL COMMENT 'Customer working group',
+  `credit` int(11) NOT NULL DEFAULT '100' COMMENT 'Credit points',
+  `remark` varchar(45) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL COMMENT 'Customer status:new,old;stable,unstable,big,small ',
+  `pioneer` varchar(45) DEFAULT NULL COMMENT 'Customer pioneer',
+  `file` varchar(45) DEFAULT NULL COMMENT 'About the customer''s file path. (url)',
+  `logo` varchar(45) DEFAULT NULL COMMENT 'About the customer''s logo file name.',
+  `image` varchar(45) DEFAULT NULL COMMENT 'About the customer''s picture file name.\n',
+  `audio` varchar(45) DEFAULT NULL COMMENT 'About the customer''s audio file name.\n',
+  `vedio` varchar(45) DEFAULT NULL COMMENT 'About the customer''s video file name .',
+  PRIMARY KEY (`idcustomer`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customer`
+--
+
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `devicetype`
+--
+
+DROP TABLE IF EXISTS `devicetype`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `devicetype` (
+  `iddevicetype` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  `author` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`iddevicetype`),
+  UNIQUE KEY `iddevicetype_UNIQUE` (`iddevicetype`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `devicetype`
+--
+
+LOCK TABLES `devicetype` WRITE;
+/*!40000 ALTER TABLE `devicetype` DISABLE KEYS */;
+INSERT INTO `devicetype` VALUES (1,'scales','2017-07-30 04:51:33',NULL),(2,'PCBA','2017-07-30 12:07:06',NULL),(3,'product','2017-07-30 12:07:06',NULL);
+/*!40000 ALTER TABLE `devicetype` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `fail`
+--
+
+DROP TABLE IF EXISTS `fail`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `fail` (
+  `idfail` int(11) NOT NULL AUTO_INCREMENT,
+  `mac` bigint(20) NOT NULL,
+  `s_mac` text NOT NULL,
+  `chip` varchar(45) DEFAULT NULL,
+  `order_from` text,
+  `type` text,
+  `weight` text,
+  `resistance` text,
+  `voltage` text,
+  `rssi` text,
+  `version` text,
+  `name` text,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  `line` text,
+  `who` text,
+  `result` text,
+  `remark` text,
+  PRIMARY KEY (`idfail`),
+  UNIQUE KEY `idproduct_UNIQUE` (`idfail`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `fail`
+--
+
+LOCK TABLES `fail` WRITE;
+/*!40000 ALTER TABLE `fail` DISABLE KEYS */;
+/*!40000 ALTER TABLE `fail` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `line`
+--
+
+DROP TABLE IF EXISTS `line`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `line` (
+  `idline` int(11) NOT NULL AUTO_INCREMENT,
+  `guid` varchar(45) NOT NULL,
+  `number` varchar(45) NOT NULL COMMENT 'Production line number',
+  `name` varchar(45) DEFAULT NULL COMMENT 'Production line name',
+  `who` varchar(45) DEFAULT NULL COMMENT 'Who is the owner of the line',
+  `what` varchar(45) DEFAULT NULL COMMENT 'What product name\n',
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Record creation time',
+  `start` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Start time\n',
+  `end` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'End Time',
+  `where` varchar(45) DEFAULT NULL COMMENT 'WHERE: Production line address and location\n',
+  `capacity` varchar(45) DEFAULT NULL COMMENT 'Production capacity',
+  `status` varchar(45) DEFAULT NULL,
+  `contact` varchar(45) DEFAULT NULL COMMENT 'Contact information',
+  `level` int(11) DEFAULT NULL COMMENT 'The overall level of production lines',
+  PRIMARY KEY (`idline`,`guid`),
+  UNIQUE KEY `idline_UNIQUE` (`idline`),
+  UNIQUE KEY `guid_UNIQUE` (`guid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `line`
+--
+
+LOCK TABLES `line` WRITE;
+/*!40000 ALTER TABLE `line` DISABLE KEYS */;
+/*!40000 ALTER TABLE `line` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mac`
+--
+
+DROP TABLE IF EXISTS `mac`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `mac` (
+  `idmac` int(11) NOT NULL AUTO_INCREMENT,
+  `mac` bigint(20) unsigned NOT NULL,
+  PRIMARY KEY (`mac`),
+  UNIQUE KEY `mac_UNIQUE` (`mac`),
+  UNIQUE KEY `idmac_UNIQUE` (`idmac`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mac`
+--
+
+LOCK TABLES `mac` WRITE;
+/*!40000 ALTER TABLE `mac` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mac` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `materiel`
+--
+
+DROP TABLE IF EXISTS `materiel`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `materiel` (
+  `idmateriel` bigint(64) NOT NULL AUTO_INCREMENT,
+  `type` varchar(45) DEFAULT NULL,
+  `what` varchar(45) DEFAULT NULL,
+  `when` varchar(45) DEFAULT NULL,
+  `where` varchar(45) DEFAULT NULL COMMENT 'Planet ,coordinate {latitude,Longitude}',
+  `who` varchar(45) DEFAULT NULL,
+  `quantity` double DEFAULT NULL COMMENT 'What quantity',
+  `status` varchar(45) DEFAULT NULL COMMENT 'How the state\n',
+  `how` varchar(45) DEFAULT NULL COMMENT 'How much value',
+  `remark` varchar(45) DEFAULT NULL,
+  `entry` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Entry Time\n',
+  `security` varchar(45) DEFAULT NULL COMMENT 'Security Level',
+  `excute` varchar(45) DEFAULT NULL COMMENT 'Excuting operate \n',
+  `time` datetime DEFAULT NULL COMMENT 'excute time',
+  PRIMARY KEY (`idmateriel`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `materiel`
+--
+
+LOCK TABLES `materiel` WRITE;
+/*!40000 ALTER TABLE `materiel` DISABLE KEYS */;
+/*!40000 ALTER TABLE `materiel` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `order`
+--
+
+DROP TABLE IF EXISTS `order`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `order` (
+  `idorder` int(11) NOT NULL AUTO_INCREMENT,
+  `idstatus` int(11) NOT NULL,
+  `devicetype` int(11) DEFAULT NULL,
+  `number` varchar(45) NOT NULL COMMENT 'order number',
+  `name` varchar(45) DEFAULT NULL COMMENT 'product name',
+  `quantity` int(11) NOT NULL,
+  `deliverytime` datetime NOT NULL,
+  `starttime` datetime DEFAULT NULL,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  `who` varchar(45) NOT NULL COMMENT 'Order owner\n',
+  `unitprice` double DEFAULT NULL,
+  `total` double DEFAULT NULL COMMENT 'total amount~= up*quantity',
+  `status` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idorder`,`number`),
+  KEY `index` (`idstatus`,`deliverytime`,`idorder`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `order`
+--
+
+LOCK TABLES `order` WRITE;
+/*!40000 ALTER TABLE `order` DISABLE KEYS */;
+/*!40000 ALTER TABLE `order` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `orderstatus`
+--
+
+DROP TABLE IF EXISTS `orderstatus`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `orderstatus` (
+  `idorderstatus` int(11) NOT NULL AUTO_INCREMENT,
+  `what` text COMMENT 'what contents',
+  `when` datetime DEFAULT CURRENT_TIMESTAMP COMMENT 'when create time',
+  PRIMARY KEY (`idorderstatus`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orderstatus`
+--
+
+LOCK TABLES `orderstatus` WRITE;
+/*!40000 ALTER TABLE `orderstatus` DISABLE KEYS */;
+/*!40000 ALTER TABLE `orderstatus` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `product`
+--
+
+DROP TABLE IF EXISTS `product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `product` (
+  `idproduct` int(11) NOT NULL AUTO_INCREMENT,
+  `mac` bigint(20) NOT NULL,
+  `s_mac` text NOT NULL,
+  `chip` varchar(45) DEFAULT NULL,
+  `order_from` text,
+  `type` text,
+  `weight` text,
+  `resistance` text,
+  `voltage` text,
+  `rssi` text,
+  `version` text,
+  `name` text,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  `line` text,
+  `who` text,
+  `result` text,
+  `remark` text,
+  PRIMARY KEY (`mac`),
+  UNIQUE KEY `idproduct_UNIQUE` (`idproduct`),
+  UNIQUE KEY `mac_UNIQUE` (`mac`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product`
+--
+
+LOCK TABLES `product` WRITE;
+/*!40000 ALTER TABLE `product` DISABLE KEYS */;
+/*!40000 ALTER TABLE `product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `role`
+--
+
+DROP TABLE IF EXISTS `role`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `role` (
+  `idrole` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idrole`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `role`
+--
+
+LOCK TABLES `role` WRITE;
+/*!40000 ALTER TABLE `role` DISABLE KEYS */;
+INSERT INTO `role` VALUES (1,'root','2017-07-30 12:21:16'),(2,'admin','2017-07-30 12:21:16'),(3,'user','2017-07-30 12:21:16');
+/*!40000 ALTER TABLE `role` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `test`
+--
+
+DROP TABLE IF EXISTS `test`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `test` (
+  `idtest` int(11) NOT NULL AUTO_INCREMENT,
+  `guid` varchar(45) NOT NULL,
+  `when` datetime DEFAULT CURRENT_TIMESTAMP,
+  `where` varchar(45) DEFAULT NULL,
+  `who` varchar(45) DEFAULT NULL,
+  `what` text,
+  `how` varchar(45) DEFAULT NULL COMMENT 'resut',
+  PRIMARY KEY (`idtest`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `test`
+--
+
+LOCK TABLES `test` WRITE;
+/*!40000 ALTER TABLE `test` DISABLE KEYS */;
+/*!40000 ALTER TABLE `test` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `testitem`
+--
+
+DROP TABLE IF EXISTS `testitem`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `testitem` (
+  `idtestitem` int(11) NOT NULL AUTO_INCREMENT,
+  `type` int(11) unsigned DEFAULT '1' COMMENT 'Deveiice  Type : ',
+  `item` text,
+  `sel` varchar(4) DEFAULT 'YES' COMMENT 'YES==test  ,NO ==NA test',
+  `min` text,
+  `max` text,
+  `must` text,
+  `mask` text,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  `author` text,
+  `remark` text,
+  PRIMARY KEY (`idtestitem`),
+  UNIQUE KEY `idtestitem_UNIQUE` (`idtestitem`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `testitem`
+--
+
+LOCK TABLES `testitem` WRITE;
+/*!40000 ALTER TABLE `testitem` DISABLE KEYS */;
+INSERT INTO `testitem` VALUES (1,1,'Name','YES',NULL,NULL,'FLYCO FH7001/2/3 ',NULL,'2017-07-29 17:28:04','hunter',NULL),(2,1,'Version','YES',NULL,NULL,'1.0.39.1',NULL,'2017-07-29 17:28:04','hunter',NULL),(3,1,'MAC','YES',NULL,NULL,NULL,NULL,'2017-07-29 17:28:04','hunter',NULL),(4,1,'RSSI','YES','-99','-1',NULL,NULL,'2017-07-29 17:19:30','hunter',NULL),(5,1,'Voltage','YES','0','20',NULL,NULL,'2017-07-29 17:28:04','hunter',NULL),(6,1,'Resistance','YES','0','1000',NULL,NULL,'2017-07-29 17:28:04','hunter',NULL),(7,1,'Weight','YES','0','300',NULL,NULL,'2017-07-29 17:28:04','hunter',NULL);
+/*!40000 ALTER TABLE `testitem` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user` (
+  `iduser` int(11) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  `role` int(11) DEFAULT NULL,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`iduser`),
+  UNIQUE KEY `iduser_UNIQUE` (`iduser`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `worker`
+--
+
+DROP TABLE IF EXISTS `worker`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `worker` (
+  `idworker` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` varchar(45) NOT NULL,
+  `idstatus` int(11) NOT NULL,
+  PRIMARY KEY (`idworker`),
+  UNIQUE KEY `idworker_UNIQUE` (`idworker`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `worker`
+--
+
+LOCK TABLES `worker` WRITE;
+/*!40000 ALTER TABLE `worker` DISABLE KEYS */;
+/*!40000 ALTER TABLE `worker` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -194,6 +684,7 @@ CREATE TABLE `url` (
   `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
   `status` varchar(45) DEFAULT NULL,
   `remark` varchar(45) DEFAULT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idurl`)
 ) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -204,7 +695,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (61,'hunter','AMD','chip','https://www.amd.com','img/amd.jpeg','2017-12-22 16:57:47','normal','utf8'),(62,'hunter','Intel','chip','https://www.intel.com','img/intel.jpeg','2017-12-22 16:59:14','normal','utf8'),(63,'hunter','ARM','chip','https://www.arm.com','img/arm.jpeg','2017-12-22 17:00:28','normal','utf8'),(64,'hunter','IBM','chip','https://www.ibm.com','img/ibm.jpeg','2017-12-22 17:02:22','normal','utf8'),(65,'hunter','NVIDIA','chip','http://www.nvidia.com','img/nvidia.jpeg','2017-12-22 17:05:34','normal','utf8'),(66,'hunter','xilinx','chip','http://www.xilinx.com/','img/xilinx.jpeg','2017-12-22 17:09:33','normal','utf8'),(67,'hunter','aspeedtech','chip','https://www.aspeedtech.com/','img/aspeed.jpeg','2017-12-22 17:14:40','normal','utf8');
+INSERT INTO `url` VALUES (61,'hunter','AMD','chip','https://www.amd.com','img/amd.jpeg','2017-12-22 16:57:47','normal','utf8',0),(62,'hunter','Intel','chip','https://www.intel.com','img/intel.jpeg','2017-12-22 16:59:14','normal','utf8',0),(63,'hunter','ARM','chip','https://www.arm.com','img/arm.jpeg','2017-12-22 17:00:28','normal','utf8',0),(64,'hunter','IBM','chip','https://www.ibm.com','img/ibm.jpeg','2017-12-22 17:02:22','normal','utf8',0),(65,'hunter','NVIDIA','chip','http://www.nvidia.com','img/nvidia.jpeg','2017-12-22 17:05:34','normal','utf8',0),(66,'hunter','xilinx','chip','http://www.xilinx.com/','img/xilinx.jpeg','2017-12-22 17:09:33','normal','utf8',0),(67,'hunter','aspeedtech','chip','https://www.aspeedtech.com/','img/aspeed.jpeg','2017-12-22 17:14:40','normal','utf8',0);
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -258,7 +749,7 @@ CREATE TABLE `string` (
   `where` text,
   `remark` text,
   PRIMARY KEY (`idstring`)
-) ENGINE=InnoDB AUTO_INCREMENT=147 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=149 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -267,7 +758,7 @@ CREATE TABLE `string` (
 
 LOCK TABLES `string` WRITE;
 /*!40000 ALTER TABLE `string` DISABLE KEYS */;
-INSERT INTO `string` VALUES (1,'HOME','Home','en','2017-04-09 16:26:20','hunter','china','utf8'),(2,'PROJECT','Project','en','2017-04-09 16:38:59','hunter','china','utf8'),(3,'KNOWLEDGE','Knowledge','en','2017-04-09 16:43:15','hunter','china','utf8'),(4,'TEST','Test','en','2017-04-09 16:47:37','hunter','china','utf8'),(5,'CODE','Code','en','2017-04-09 17:00:46','hunter','china','utf8'),(6,'HOME','主页','cn','2017-04-10 14:05:51','hunter','china','utf8'),(7,'PROJECT','项目','cn','2017-04-10 14:19:08','hunter','china','utf8'),(8,'BOOKMARK','BookMark','en','2017-04-10 14:20:45','hunter','china','utf8'),(9,'BOOKMARK','书签','cn','2017-04-10 14:22:02','hunter','china','utf8'),(10,'KNOWLEDGE','知识','cn','2017-04-10 15:24:30','hunter','china','utf8'),(11,'TRANSLATE','翻译','cn','2017-04-10 15:27:12','hunter','china','utf8'),(12,'TRANSLATE','Translate','en','2017-04-10 15:33:59','hunter','china','utf8'),(13,'TEST','测试','cn','2017-04-10 15:37:41','hunter','china','utf8'),(14,'LAYOUT','Layout','en','2017-04-10 15:38:48','hunter','china','utf8'),(15,'LAYOUT','布局','cn','2017-04-10 15:39:45','hunter','china','utf8'),(16,'FILE','File','en','2017-04-10 15:41:06','hunter','china','utf8'),(17,'FILE','文件','cn','2017-04-10 15:41:22','hunter','china','utf8'),(18,'DOWNLOAD','Download','en','2017-04-10 15:41:49','hunter','china','utf8'),(19,'DOWNLOAD','下载','cn','2017-04-10 15:42:05','hunter','china','utf8'),(20,'GITTEST','GitTest','en','2017-04-10 15:42:28','hunter','china','utf8'),(21,'GITTEST','Git测试','cn','2017-04-10 15:46:45','hunter','china','utf8'),(22,'CODE','代码','cn','2017-04-10 15:47:17','hunter','china','utf8'),(23,'LOGIN','登录','cn','2017-04-10 15:47:47','hunter','china','utf8'),(24,'LOGIN','Login','en','2017-04-10 15:47:59','hunter','china','utf8'),(25,'REGISTER','Register','en','2017-04-10 15:48:33','hunter','china','utf8'),(26,'REGISTER','注册','cn','2017-04-10 15:48:49','hunter','china','utf8'),(27,'MAIL','邮件','cn','2017-04-10 15:49:13','hunter','china','utf8'),(28,'MAIL','Mail','en','2017-04-10 15:49:35','hunter','china','utf8'),(29,'PATENT_SYS','Patent_SYS','en','2017-04-10 15:50:19','hunter','china','utf8'),(30,'PATENT_SYS','专利系统','cn','2017-04-10 15:50:36','hunter','china','utf8'),(31,'LANGUAGE','语言','cn','2017-04-10 18:27:30','hunter','china','utf8'),(32,'LANGUAGE','Language','en','2017-04-10 18:28:13','hunter','china','utf8'),(33,'USER_NAME','Username','en','2017-04-13 10:34:53','hunter','china','utf8'),(34,'USER_NAME','用户名','cn','2017-04-13 10:35:14','hunter','china','utf8'),(35,'PASSWORD','密码','cn','2017-04-13 10:35:41','hunter','china','utf8'),(36,'PASSWORD','Password','en','2017-04-13 10:35:56','hunter','china','utf8'),(37,'CONFIRM_PASSWORD','Confirm Password','en','2017-04-13 10:47:29','hunter','china','utf8'),(38,'CONFIRM_PASSWORD','确认密码','cn','2017-04-13 10:48:07','hunter','china','utf8'),(39,'EMAIL','Email','en','2017-04-13 10:49:43','hunter','china','utf8'),(40,'EMAIL','电子邮件','cn','2017-04-13 10:50:13','hunter','china','utf8'),(41,'PASSWORD_RECOVER_QUESTION','Password recover question','en','2017-04-13 10:52:18','hunter','china','utf8'),(42,'PASSWORD_RECOVER_QUESTION','密码恢复问题','cn','2017-04-13 10:52:32','hunter','china','utf8'),(43,'PASSWORD_RECOVER_ANSWER','Password recover answer','en','2017-04-13 10:54:21','hunter','china','utf8'),(44,'PASSWORD_RECOVER_ANSWER','密码恢复答案','cn','2017-04-13 10:54:36','hunter','china','utf8'),(45,'PASSWORD_RECOVER_MAIL','Password recover mail','en','2017-04-13 10:55:45','hunter','china','utf8'),(46,'PASSWORD_RECOVER_MAIL','密码恢复邮箱','cn','2017-04-13 10:56:14','hunter','china','utf8'),(47,'COMMIT','提交','cn','2017-04-13 11:07:59','hunter','china','utf8'),(48,'COMMIT','Commit','en','2017-04-13 11:08:14','hunter','china','utf8'),(49,'COMMIT_MESSAGE','提交信息','cn','2017-04-13 17:34:52','hunter','china','utf8'),(50,'COMMIT_MESSAGE','Commit Message','en','2017-04-13 17:35:20','hunter','china','utf8'),(51,'OPTIONS','选项','cn','2017-04-13 17:36:25','hunter','china','utf8'),(52,'OPTIONS','Options','en','2017-04-13 17:36:40','hunter','china','utf8'),(53,'TITLE','标题','cn','2017-04-14 13:39:45','hunter','china','utf8'),(54,'TITLE','Title','en','2017-04-14 13:39:59','hunter','china','utf8'),(55,'URL','URL','en','2017-04-14 13:40:33','hunter','china','utf8'),(56,'URL','URL','cn','2017-04-14 13:40:39','hunter','china','utf8'),(57,'TYPE','Type','en','2017-04-14 13:41:12','hunter','china','utf8'),(58,'TYPE','类型','cn','2017-04-14 13:41:24','hunter','china','utf8'),(59,'STATUS','状态','cn','2017-04-14 13:41:51','hunter','china','utf8'),(60,'STATUS','Status','en','2017-04-14 13:42:25','hunter','china','utf8'),(61,'REMARK','备注','cn','2017-04-14 13:42:59','hunter','china','utf8'),(62,'REMARK','Remark','en','2017-04-14 13:43:17','hunter','china','utf8'),(63,'AUTHOR','Author','en','2017-04-14 13:43:41','hunter','china','utf8'),(64,'AUTHOR','作者','cn','2017-04-14 13:43:57','hunter','china','utf8'),(65,'FILENAME','Filename','en','2017-04-14 14:45:50','hunter','china','utf8'),(66,'FILENAME','文件名','cn','2017-04-14 14:46:08','hunter','china','utf8'),(67,'INDIVIDUAL_CENTER','IndividualCenter','en','2017-04-14 17:02:17','hunter','china','utf8'),(68,'INDIVIDUAL_CENTER','个人中心','cn','2017-04-14 17:02:34','hunter','china','utf8'),(69,'EXIT','退出','cn','2017-04-14 17:02:59','hunter','china','utf8'),(70,'EXIT','Exit','en','2017-04-14 17:03:10','hunter','china','utf8'),(71,'MENU','菜单','cn','2017-04-14 19:53:59','hunter','china','utf8'),(72,'MENU','Menu','en','2017-04-14 19:54:13','hunter','china','utf8'),(73,'PROJECT_NAME','项目名称','cn','2017-04-20 22:06:31','hunter','china','utf8'),(74,'PROJECT_NAME','ProjectName','en','2017-04-20 22:06:50','hunter','china','utf8'),(75,'SUBMIT','提交','cn','2017-04-20 22:14:15','hunter','china','utf8'),(76,'SUBMIT','Submit','en','2017-04-20 22:14:34','hunter','china','utf8'),(77,'LAW','法律法规','cn','2017-04-23 16:04:30','hunter','china','utf8'),(78,'LAW','Law','en','2017-04-23 16:05:00','hunter','china','utf8'),(79,'BOOK_NAME','BookName','en','2017-04-23 16:47:22','hunter','china','utf8'),(80,'BOOK_NAME','书名','cn','2017-04-23 16:47:43','hunter','china','utf8'),(81,'ORIGINAL','Original','en','2017-04-23 16:49:38','hunter','china','utf8'),(82,'ORIGINAL','原文','cn','2017-04-23 16:49:54','hunter','china','utf8'),(83,'MARK','标注','cn','2017-04-23 16:50:29','hunter','china','utf8'),(84,'MARK','Mark','en','2017-04-23 16:50:46','hunter','china','utf8'),(85,'COMMENT','Comment','en','2017-04-23 16:52:13','hunter','china','utf8'),(86,'COMMENT','评注','cn','2017-04-23 16:53:08','hunter','china','utf8'),(87,'LOCATION','Location','en','2017-04-23 16:54:21','hunter','china','utf8'),(88,'LOCATION','区位','cn','2017-04-23 16:54:54','hunter','china','utf8'),(89,'DEVICE','Device','en','2017-04-23 16:55:32','hunter','china','utf8'),(90,'DEVICE','设备','cn','2017-04-23 16:55:45','hunter','china','utf8'),(91,'IMAGE','Image','en','2017-04-23 16:56:29','hunter','china','utf8'),(92,'IMAGE','图片','cn','2017-04-23 16:56:52','hunter','china','utf8'),(93,'AUDIO','Audio','en','2017-04-23 16:57:35','hunter','china','utf8'),(94,'AUDIO','音频','cn','2017-04-23 16:57:52','hunter','china','utf8'),(95,'VEDIO','Vedio','en','2017-04-23 16:58:22','hunter','china','utf8'),(96,'VEDIO','视频','cn','2017-04-23 16:58:37','hunter','china','utf8'),(97,'ADD','增加','cn','2017-04-27 02:12:34','hunter','china','utf8'),(98,'ADD','Add','en','2017-04-27 02:12:49','hunter','china','utf8'),(99,'INQUIRY','Inquiry','en','2017-04-27 02:15:55','hunter','china','utf8'),(100,'INQUIRY','查询','cn','2017-04-27 02:16:06','hunter','china','utf8'),(101,'SERVER_NAME','localhost','en','2017-06-01 22:27:14','hunter','china','utf8'),(102,'SERVER_NAME','localhost','cn','2017-06-01 22:27:24','hunter','china','utf8'),(103,'USER_NAME_DB','patent','en','2017-06-01 22:28:45','hunter','china','utf8'),(104,'USER_NAME_DB','patent','cn','2017-06-01 22:28:52','hunter','china','utf8'),(105,'USER_PSW_DB','patent','cn','2017-06-01 22:29:55','hunter','china','utf8'),(106,'USER_PSW_DB','patent','en','2017-06-01 22:30:01','hunter','china','utf8'),(107,'SERVER_NAME_DB','localhost','cn','2017-06-01 22:31:17','hunter','china','utf8'),(108,'SERVER_NAME_DB','localhost','en','2017-06-01 22:31:24','hunter','china','utf8'),(109,'NEWS','新闻','cn','2017-12-14 15:40:52','hunter','china','null'),(110,'NEWS','NEWS','en','2017-12-14 15:41:15','hunter','china','null'),(111,'MAP','地图','cn','2017-12-14 17:26:46','hunter','china','null'),(112,'MAP','MAP','en','2017-12-14 17:27:07','hunter','china','null'),(113,'INFO','信息','cn','2017-12-14 17:29:27','hunter','china','null'),(114,'INFO','info','en','2017-12-14 17:29:43','hunter','china','null'),(115,'CONTACT','Contact','en','2017-12-14 17:30:37','hunter','china','null'),(116,'CONTACT','联系人','cn','2017-12-14 17:30:54','hunter','china','null'),(117,'LIFE','生活','cn','2017-12-14 17:45:52','hunter','china','null'),(118,'LIFE','Life','en','2017-12-14 17:46:07','hunter','china','null'),(119,'TEMPLATE','Template','en','2017-12-15 16:32:03','hunter','china','null'),(120,'TEMPLATE','示例','cn','2017-12-15 16:32:58','hunter','china','null'),(121,'EDUCATION','教育','cn','2017-12-18 12:02:21','hunter','china','utf8'),(122,'EDUCATION','Education','en','2017-12-18 12:02:33','hunter','china','utf8'),(123,'MEDICAL','医疗','cn','2017-12-19 16:32:52','hunter','china','utf8'),(124,'MEDICAL','Medical','en','2017-12-19 16:33:12','hunter','china','utf8'),(125,'AI','AI','en','2017-12-19 16:33:47','hunter','china','utf8'),(126,'AI','人工智能','cn','2017-12-19 16:34:01','hunter','china','utf8'),(127,'LOGO','图标','cn','2017-12-20 19:41:58','hunter','china','utf8'),(128,'LOGO','Logo','en','2017-12-20 19:42:17','hunter','china','utf8'),(129,'CHIP','Chip','en','2017-12-22 17:31:03','hunter','china','utf8'),(130,'AIPROJECT','AI-Prohect','en','2017-12-22 17:31:33','hunter','china','utf8'),(131,'AIPROJECT','人工智能项目','cn','2017-12-22 17:31:51','hunter','china','utf8'),(132,'CHIP','芯片','cn','2017-12-22 17:32:09','hunter','china','utf8'),(133,'DEBT_WAGES','讨工资','cn','2017-12-23 10:59:15','hunter','china','utf8'),(134,'DEBT_WAGES','DebtWages','en','2017-12-23 10:59:27','hunter','china','utf8'),(135,'QUESTION','问题','cn','2017-12-24 23:14:13','hunter','china','utf8'),(136,'QUESTION','Question','en','2017-12-24 23:14:46','hunter','china','utf8'),(137,'BEFORE_KEY','键值前','cn','2017-12-27 14:53:28','hunter','china','utf8'),(138,'BEFORE_KEY','BeforeKey','en','2017-12-27 14:53:50','hunter','china','utf8'),(139,'AFTER_KEY','键值后','cn','2017-12-27 14:54:14','hunter','china','utf8'),(140,'AFTER_KEY','AfterKey','en','2017-12-27 14:54:33','hunter','china','utf8'),(141,'NAME','Name','en','2017-12-27 14:54:53','hunter','china','utf8'),(142,'NAME','名称','cn','2017-12-27 14:55:02','hunter','china','utf8'),(143,'SEARCH','搜索','cn','2017-12-27 14:55:28','hunter','china','utf8'),(144,'SEARCH','Search','en','2017-12-27 14:55:46','hunter','china','utf8'),(145,'VIDEO','Video','en','2017-12-28 15:02:07','hunter','china','utf8'),(146,'VIDEO','视频','cn','2017-12-28 15:02:23','hunter','china','utf8');
+INSERT INTO `string` VALUES (1,'HOME','Home','en','2017-04-09 16:26:20','hunter','china','utf8'),(2,'PROJECT','Project','en','2017-04-09 16:38:59','hunter','china','utf8'),(3,'KNOWLEDGE','Knowledge','en','2017-04-09 16:43:15','hunter','china','utf8'),(4,'TEST','Test','en','2017-04-09 16:47:37','hunter','china','utf8'),(5,'CODE','Code','en','2017-04-09 17:00:46','hunter','china','utf8'),(6,'HOME','主页','cn','2017-04-10 14:05:51','hunter','china','utf8'),(7,'PROJECT','项目','cn','2017-04-10 14:19:08','hunter','china','utf8'),(8,'BOOKMARK','BookMark','en','2017-04-10 14:20:45','hunter','china','utf8'),(9,'BOOKMARK','书签','cn','2017-04-10 14:22:02','hunter','china','utf8'),(10,'KNOWLEDGE','知识','cn','2017-04-10 15:24:30','hunter','china','utf8'),(11,'TRANSLATE','翻译','cn','2017-04-10 15:27:12','hunter','china','utf8'),(12,'TRANSLATE','Translate','en','2017-04-10 15:33:59','hunter','china','utf8'),(13,'TEST','测试','cn','2017-04-10 15:37:41','hunter','china','utf8'),(14,'LAYOUT','Layout','en','2017-04-10 15:38:48','hunter','china','utf8'),(15,'LAYOUT','布局','cn','2017-04-10 15:39:45','hunter','china','utf8'),(16,'FILE','File','en','2017-04-10 15:41:06','hunter','china','utf8'),(17,'FILE','文件','cn','2017-04-10 15:41:22','hunter','china','utf8'),(18,'DOWNLOAD','Download','en','2017-04-10 15:41:49','hunter','china','utf8'),(19,'DOWNLOAD','下载','cn','2017-04-10 15:42:05','hunter','china','utf8'),(20,'GITTEST','GitTest','en','2017-04-10 15:42:28','hunter','china','utf8'),(21,'GITTEST','Git测试','cn','2017-04-10 15:46:45','hunter','china','utf8'),(22,'CODE','代码','cn','2017-04-10 15:47:17','hunter','china','utf8'),(23,'LOGIN','登录','cn','2017-04-10 15:47:47','hunter','china','utf8'),(24,'LOGIN','Login','en','2017-04-10 15:47:59','hunter','china','utf8'),(25,'REGISTER','Register','en','2017-04-10 15:48:33','hunter','china','utf8'),(26,'REGISTER','注册','cn','2017-04-10 15:48:49','hunter','china','utf8'),(27,'MAIL','邮件','cn','2017-04-10 15:49:13','hunter','china','utf8'),(28,'MAIL','Mail','en','2017-04-10 15:49:35','hunter','china','utf8'),(29,'PATENT_SYS','Patent_SYS','en','2017-04-10 15:50:19','hunter','china','utf8'),(30,'PATENT_SYS','专利系统','cn','2017-04-10 15:50:36','hunter','china','utf8'),(31,'LANGUAGE','语言','cn','2017-04-10 18:27:30','hunter','china','utf8'),(32,'LANGUAGE','Language','en','2017-04-10 18:28:13','hunter','china','utf8'),(33,'USER_NAME','Username','en','2017-04-13 10:34:53','hunter','china','utf8'),(34,'USER_NAME','用户名','cn','2017-04-13 10:35:14','hunter','china','utf8'),(35,'PASSWORD','密码','cn','2017-04-13 10:35:41','hunter','china','utf8'),(36,'PASSWORD','Password','en','2017-04-13 10:35:56','hunter','china','utf8'),(37,'CONFIRM_PASSWORD','Confirm Password','en','2017-04-13 10:47:29','hunter','china','utf8'),(38,'CONFIRM_PASSWORD','确认密码','cn','2017-04-13 10:48:07','hunter','china','utf8'),(39,'EMAIL','Email','en','2017-04-13 10:49:43','hunter','china','utf8'),(40,'EMAIL','电子邮件','cn','2017-04-13 10:50:13','hunter','china','utf8'),(41,'PASSWORD_RECOVER_QUESTION','Password recover question','en','2017-04-13 10:52:18','hunter','china','utf8'),(42,'PASSWORD_RECOVER_QUESTION','密码恢复问题','cn','2017-04-13 10:52:32','hunter','china','utf8'),(43,'PASSWORD_RECOVER_ANSWER','Password recover answer','en','2017-04-13 10:54:21','hunter','china','utf8'),(44,'PASSWORD_RECOVER_ANSWER','密码恢复答案','cn','2017-04-13 10:54:36','hunter','china','utf8'),(45,'PASSWORD_RECOVER_MAIL','Password recover mail','en','2017-04-13 10:55:45','hunter','china','utf8'),(46,'PASSWORD_RECOVER_MAIL','密码恢复邮箱','cn','2017-04-13 10:56:14','hunter','china','utf8'),(47,'COMMIT','提交','cn','2017-04-13 11:07:59','hunter','china','utf8'),(48,'COMMIT','Commit','en','2017-04-13 11:08:14','hunter','china','utf8'),(49,'COMMIT_MESSAGE','提交信息','cn','2017-04-13 17:34:52','hunter','china','utf8'),(50,'COMMIT_MESSAGE','Commit Message','en','2017-04-13 17:35:20','hunter','china','utf8'),(51,'OPTIONS','选项','cn','2017-04-13 17:36:25','hunter','china','utf8'),(52,'OPTIONS','Options','en','2017-04-13 17:36:40','hunter','china','utf8'),(53,'TITLE','标题','cn','2017-04-14 13:39:45','hunter','china','utf8'),(54,'TITLE','Title','en','2017-04-14 13:39:59','hunter','china','utf8'),(55,'URL','URL','en','2017-04-14 13:40:33','hunter','china','utf8'),(56,'URL','URL','cn','2017-04-14 13:40:39','hunter','china','utf8'),(57,'TYPE','Type','en','2017-04-14 13:41:12','hunter','china','utf8'),(58,'TYPE','类型','cn','2017-04-14 13:41:24','hunter','china','utf8'),(59,'STATUS','状态','cn','2017-04-14 13:41:51','hunter','china','utf8'),(60,'STATUS','Status','en','2017-04-14 13:42:25','hunter','china','utf8'),(61,'REMARK','备注','cn','2017-04-14 13:42:59','hunter','china','utf8'),(62,'REMARK','Remark','en','2017-04-14 13:43:17','hunter','china','utf8'),(63,'AUTHOR','Author','en','2017-04-14 13:43:41','hunter','china','utf8'),(64,'AUTHOR','作者','cn','2017-04-14 13:43:57','hunter','china','utf8'),(65,'FILENAME','Filename','en','2017-04-14 14:45:50','hunter','china','utf8'),(66,'FILENAME','文件名','cn','2017-04-14 14:46:08','hunter','china','utf8'),(67,'INDIVIDUAL_CENTER','IndividualCenter','en','2017-04-14 17:02:17','hunter','china','utf8'),(68,'INDIVIDUAL_CENTER','个人中心','cn','2017-04-14 17:02:34','hunter','china','utf8'),(69,'EXIT','退出','cn','2017-04-14 17:02:59','hunter','china','utf8'),(70,'EXIT','Exit','en','2017-04-14 17:03:10','hunter','china','utf8'),(71,'MENU','菜单','cn','2017-04-14 19:53:59','hunter','china','utf8'),(72,'MENU','Menu','en','2017-04-14 19:54:13','hunter','china','utf8'),(73,'PROJECT_NAME','项目名称','cn','2017-04-20 22:06:31','hunter','china','utf8'),(74,'PROJECT_NAME','ProjectName','en','2017-04-20 22:06:50','hunter','china','utf8'),(75,'SUBMIT','提交','cn','2017-04-20 22:14:15','hunter','china','utf8'),(76,'SUBMIT','Submit','en','2017-04-20 22:14:34','hunter','china','utf8'),(77,'LAW','法律法规','cn','2017-04-23 16:04:30','hunter','china','utf8'),(78,'LAW','Law','en','2017-04-23 16:05:00','hunter','china','utf8'),(79,'BOOK_NAME','BookName','en','2017-04-23 16:47:22','hunter','china','utf8'),(80,'BOOK_NAME','书名','cn','2017-04-23 16:47:43','hunter','china','utf8'),(81,'ORIGINAL','Original','en','2017-04-23 16:49:38','hunter','china','utf8'),(82,'ORIGINAL','原文','cn','2017-04-23 16:49:54','hunter','china','utf8'),(83,'MARK','标注','cn','2017-04-23 16:50:29','hunter','china','utf8'),(84,'MARK','Mark','en','2017-04-23 16:50:46','hunter','china','utf8'),(85,'COMMENT','Comment','en','2017-04-23 16:52:13','hunter','china','utf8'),(86,'COMMENT','评注','cn','2017-04-23 16:53:08','hunter','china','utf8'),(87,'LOCATION','Location','en','2017-04-23 16:54:21','hunter','china','utf8'),(88,'LOCATION','区位','cn','2017-04-23 16:54:54','hunter','china','utf8'),(89,'DEVICE','Device','en','2017-04-23 16:55:32','hunter','china','utf8'),(90,'DEVICE','设备','cn','2017-04-23 16:55:45','hunter','china','utf8'),(91,'IMAGE','Image','en','2017-04-23 16:56:29','hunter','china','utf8'),(92,'IMAGE','图片','cn','2017-04-23 16:56:52','hunter','china','utf8'),(93,'AUDIO','Audio','en','2017-04-23 16:57:35','hunter','china','utf8'),(94,'AUDIO','音频','cn','2017-04-23 16:57:52','hunter','china','utf8'),(95,'VEDIO','Vedio','en','2017-04-23 16:58:22','hunter','china','utf8'),(96,'VEDIO','视频','cn','2017-04-23 16:58:37','hunter','china','utf8'),(97,'ADD','增加','cn','2017-04-27 02:12:34','hunter','china','utf8'),(98,'ADD','Add','en','2017-04-27 02:12:49','hunter','china','utf8'),(99,'INQUIRY','Inquiry','en','2017-04-27 02:15:55','hunter','china','utf8'),(100,'INQUIRY','查询','cn','2017-04-27 02:16:06','hunter','china','utf8'),(101,'SERVER_NAME','localhost','en','2017-06-01 22:27:14','hunter','china','utf8'),(102,'SERVER_NAME','localhost','cn','2017-06-01 22:27:24','hunter','china','utf8'),(103,'USER_NAME_DB','patent','en','2017-06-01 22:28:45','hunter','china','utf8'),(104,'USER_NAME_DB','patent','cn','2017-06-01 22:28:52','hunter','china','utf8'),(105,'USER_PSW_DB','patent','cn','2017-06-01 22:29:55','hunter','china','utf8'),(106,'USER_PSW_DB','patent','en','2017-06-01 22:30:01','hunter','china','utf8'),(107,'SERVER_NAME_DB','localhost','cn','2017-06-01 22:31:17','hunter','china','utf8'),(108,'SERVER_NAME_DB','localhost','en','2017-06-01 22:31:24','hunter','china','utf8'),(109,'NEWS','新闻','cn','2017-12-14 15:40:52','hunter','china','null'),(110,'NEWS','NEWS','en','2017-12-14 15:41:15','hunter','china','null'),(111,'MAP','地图','cn','2017-12-14 17:26:46','hunter','china','null'),(112,'MAP','MAP','en','2017-12-14 17:27:07','hunter','china','null'),(113,'INFO','信息','cn','2017-12-14 17:29:27','hunter','china','null'),(114,'INFO','info','en','2017-12-14 17:29:43','hunter','china','null'),(115,'CONTACT','Contact','en','2017-12-14 17:30:37','hunter','china','null'),(116,'CONTACT','联系人','cn','2017-12-14 17:30:54','hunter','china','null'),(117,'LIFE','生活','cn','2017-12-14 17:45:52','hunter','china','null'),(118,'LIFE','Life','en','2017-12-14 17:46:07','hunter','china','null'),(119,'TEMPLATE','Template','en','2017-12-15 16:32:03','hunter','china','null'),(120,'TEMPLATE','示例','cn','2017-12-15 16:32:58','hunter','china','null'),(121,'EDUCATION','教育','cn','2017-12-18 12:02:21','hunter','china','utf8'),(122,'EDUCATION','Education','en','2017-12-18 12:02:33','hunter','china','utf8'),(123,'MEDICAL','医疗','cn','2017-12-19 16:32:52','hunter','china','utf8'),(124,'MEDICAL','Medical','en','2017-12-19 16:33:12','hunter','china','utf8'),(125,'AI','AI','en','2017-12-19 16:33:47','hunter','china','utf8'),(126,'AI','人工智能','cn','2017-12-19 16:34:01','hunter','china','utf8'),(127,'LOGO','图标','cn','2017-12-20 19:41:58','hunter','china','utf8'),(128,'LOGO','Logo','en','2017-12-20 19:42:17','hunter','china','utf8'),(129,'CHIP','Chip','en','2017-12-22 17:31:03','hunter','china','utf8'),(130,'AIPROJECT','AI-Prohect','en','2017-12-22 17:31:33','hunter','china','utf8'),(131,'AIPROJECT','人工智能项目','cn','2017-12-22 17:31:51','hunter','china','utf8'),(132,'CHIP','芯片','cn','2017-12-22 17:32:09','hunter','china','utf8'),(133,'DEBT_WAGES','讨工资','cn','2017-12-23 10:59:15','hunter','china','utf8'),(134,'DEBT_WAGES','DebtWages','en','2017-12-23 10:59:27','hunter','china','utf8'),(135,'QUESTION','问题','cn','2017-12-24 23:14:13','hunter','china','utf8'),(136,'QUESTION','Question','en','2017-12-24 23:14:46','hunter','china','utf8'),(137,'BEFORE_KEY','键值前','cn','2017-12-27 14:53:28','hunter','china','utf8'),(138,'BEFORE_KEY','BeforeKey','en','2017-12-27 14:53:50','hunter','china','utf8'),(139,'AFTER_KEY','键值后','cn','2017-12-27 14:54:14','hunter','china','utf8'),(140,'AFTER_KEY','AfterKey','en','2017-12-27 14:54:33','hunter','china','utf8'),(141,'NAME','Name','en','2017-12-27 14:54:53','hunter','china','utf8'),(142,'NAME','名称','cn','2017-12-27 14:55:02','hunter','china','utf8'),(143,'SEARCH','搜索','cn','2017-12-27 14:55:28','hunter','china','utf8'),(144,'SEARCH','Search','en','2017-12-27 14:55:46','hunter','china','utf8'),(145,'VIDEO','Video','en','2017-12-28 15:02:07','hunter','china','utf8'),(146,'VIDEO','视频','cn','2017-12-28 15:02:23','hunter','china','utf8'),(147,'TOOL','工具','cn','2017-12-29 16:29:41','hunter','china','utf8'),(148,'TOOL','Tool','en','2017-12-29 16:29:53','hunter','china','utf8');
 /*!40000 ALTER TABLE `string` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1031,6 +1522,168 @@ LOCK TABLES `work` WRITE;
 UNLOCK TABLES;
 
 --
+-- Current Database: `debt`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `debt` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `debt`;
+
+--
+-- Table structure for table `creditor`
+--
+
+DROP TABLE IF EXISTS `creditor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `creditor` (
+  `idcreditor` int(11) NOT NULL AUTO_INCREMENT,
+  `idnumber` varchar(45) NOT NULL COMMENT 'ID number 身份证号',
+  `name` varchar(45) NOT NULL COMMENT 'creditor name 债权人姓名',
+  `gender` varchar(45) NOT NULL DEFAULT 'M' COMMENT 'creditor M:F male and female\n	\n\n',
+  `country` varchar(45) NOT NULL DEFAULT 'china' COMMENT 'country 国家',
+  `province` varchar(45) NOT NULL COMMENT 'province level :省,直辖市 ,特区',
+  `city` varchar(45) NOT NULL COMMENT 'city: 地级市',
+  `county` varchar(45) NOT NULL COMMENT 'county 县,区',
+  `town` varchar(45) DEFAULT NULL COMMENT 'town 乡镇',
+  `street` varchar(45) DEFAULT NULL COMMENT 'street 街、道',
+  `village` varchar(45) DEFAULT NULL COMMENT 'village 村庄屯寨\n	\n',
+  `address` varchar(200) DEFAULT NULL COMMENT 'address=country+province+city+county+town+street+village',
+  `phone` varchar(45) DEFAULT NULL COMMENT 'phone number 手机号',
+  `real` varchar(45) DEFAULT NULL COMMENT 'real：真实性 ，Real name',
+  `IPA` varchar(45) DEFAULT NULL COMMENT 'Internet payment account ：债权人网络支付账户',
+  `debtor` varchar(45) DEFAULT NULL COMMENT 'Debtor''s name 负债人姓名',
+  `organization` varchar(45) DEFAULT NULL COMMENT 'Debt organization ：负债人单位名称',
+  `d_address` varchar(200) DEFAULT NULL,
+  `project` varchar(100) DEFAULT NULL COMMENT 'Engaged in the project name ,债务发生项目名称',
+  `amount` double DEFAULT NULL COMMENT 'Debt amount 债务金额',
+  `start` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Debt start time',
+  `entry` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `end` datetime DEFAULT NULL,
+  `audio` varchar(45) NOT NULL COMMENT 'Recording evidence URL.Upload voice\n',
+  `image` varchar(45) NOT NULL COMMENT 'image URL ,Upload voice',
+  `video` varchar(45) NOT NULL COMMENT 'Video evidence ,Upload video path',
+  `file` varchar(45) DEFAULT NULL COMMENT 'Evidence document, path:URL',
+  `status` varchar(45) DEFAULT NULL COMMENT 'status 状态： 未结案,结案,',
+  `is_agent` tinyint(4) NOT NULL DEFAULT '0',
+  `agent_name` varchar(45) DEFAULT NULL COMMENT 'Name of agent',
+  `agent_id` varchar(45) DEFAULT NULL COMMENT 'agent_id ',
+  `agent_tel` varchar(45) DEFAULT NULL,
+  `agent_mail` varchar(45) DEFAULT NULL,
+  `agent_address` varchar(45) DEFAULT NULL,
+  `agent_relationship` varchar(45) DEFAULT NULL COMMENT 'Relationship between agent and agent',
+  `is_debt_agent` tinyint(4) NOT NULL DEFAULT '0',
+  `d_agent_name` varchar(45) DEFAULT NULL,
+  `d_agent_id` varchar(45) DEFAULT NULL,
+  `d_agent_tel` varchar(45) DEFAULT NULL,
+  `d_agent_mail` varchar(45) DEFAULT NULL,
+  `d_agent_address` varchar(45) DEFAULT NULL,
+  `d_agent_relationship` varchar(45) DEFAULT NULL,
+  `debtor_status` varchar(45) DEFAULT NULL,
+  `bank` varchar(45) DEFAULT NULL,
+  `bank_card` varchar(45) DEFAULT NULL COMMENT 'Bank card number',
+  `payee` varchar(45) DEFAULT NULL COMMENT 'Payee Name',
+  `remark` text,
+  `succor` varchar(45) NOT NULL DEFAULT '0' COMMENT 'Whether to start the rescue',
+  `social_help` varchar(45) DEFAULT NULL COMMENT 'Social help',
+  `gov_aid` varchar(45) DEFAULT NULL COMMENT 'Government aid',
+  `court_rescue` varchar(45) DEFAULT NULL COMMENT 'Court rescue',
+  `solution` text,
+  PRIMARY KEY (`idcreditor`,`idnumber`),
+  UNIQUE KEY `idcreditor_UNIQUE` (`idcreditor`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='creditor';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `creditor`
+--
+
+LOCK TABLES `creditor` WRITE;
+/*!40000 ALTER TABLE `creditor` DISABLE KEYS */;
+/*!40000 ALTER TABLE `creditor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `jurisdiction`
+--
+
+DROP TABLE IF EXISTS `jurisdiction`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `jurisdiction` (
+  `idjurisdiction` int(11) NOT NULL AUTO_INCREMENT,
+  `country` varchar(45) NOT NULL COMMENT 'country 国家',
+  `province` varchar(45) NOT NULL COMMENT 'province level :省,直辖市 ,特区',
+  `city` varchar(45) NOT NULL COMMENT 'city: 地级市,市,州',
+  `county` varchar(45) NOT NULL COMMENT 'county 县,区',
+  `town` varchar(45) NOT NULL COMMENT '''town 乡镇',
+  `street` varchar(45) NOT NULL COMMENT 'street 街、道',
+  `village` varchar(45) DEFAULT NULL COMMENT 'village 村庄屯寨',
+  `remark` varchar(45) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `tel` varchar(45) NOT NULL,
+  `mail` varchar(45) NOT NULL,
+  `address` varchar(45) NOT NULL,
+  `comm` varchar(45) NOT NULL COMMENT 'Communication account：QQ web MSI 。。。 ',
+  `name` varchar(45) NOT NULL COMMENT 'Manager''s name',
+  `entry` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `start` datetime NOT NULL,
+  `end` datetime DEFAULT NULL,
+  PRIMARY KEY (`idjurisdiction`),
+  UNIQUE KEY `idjurisdiction_UNIQUE` (`idjurisdiction`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Jurisdiction information 辖区信息';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `jurisdiction`
+--
+
+LOCK TABLES `jurisdiction` WRITE;
+/*!40000 ALTER TABLE `jurisdiction` DISABLE KEYS */;
+/*!40000 ALTER TABLE `jurisdiction` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `education`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `education` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `education`;
+
+--
+-- Table structure for table `url`
+--
+
+DROP TABLE IF EXISTS `url`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `url` (
+  `idurl` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
+  `what_type` varchar(45) DEFAULT NULL,
+  `where` varchar(200) NOT NULL COMMENT 'where the URL address',
+  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`idurl`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `url`
+--
+
+LOCK TABLES `url` WRITE;
+/*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (1,'hunter','imooc','doc technical','https://www.imooc.com/','img/imooc.jpg','2017-12-29 11:59:32','normal','utf8',0),(2,'hunter','open163','website','https://open.163.com/','img/open163.jpg','2017-12-29 13:21:12','normal','utf8',0),(3,'hunter','study163','website','http://study.163.com/','img/yun163.png','2017-12-29 13:22:21','normal','utf8',0),(4,'hunter','xuetangx','website','http://www.xuetangx.com/','img/xuetangx.png','2017-12-29 13:23:09','normal','utf8',0),(5,'hunter','w3school','website','http://www.w3school.com.cn/','img/w3school.jpg','2017-12-29 13:23:53','normal','utf8',0),(6,'hunter','mysql.doc','website','https://dev.mysql.com/doc/','img/mysql.jpg','2017-12-29 13:24:43','normal','utf8',0),(7,'hunter','python.doc','website','https://www.python.org/doc/','img/python.jpg','2017-12-29 13:25:14','normal','utf8',0),(8,'hunter','apple.doc','website','https://developer.apple.com/documentation/','img/apple.jpg','2017-12-29 13:26:02','normal','utf8',0),(9,'hunter','javase','website','https://docs.oracle.com/javase/','img/java.png','2017-12-29 13:26:45','normal','utf8',0),(10,'hunter','tutorialspoint','website','https://www.tutorialspoint.com/','img/tutorial.png','2017-12-29 13:27:28','normal','utf8',0),(11,'hunter','first_edu','website','http://www.aajc.com/','img/first_edu.jpg','2017-12-29 13:28:34','normal','utf8',0),(12,'hunter','icourse','website','http://www.icourses.cn','img/icourse.jpg','2017-12-29 13:29:11','normal','utf8',0),(13,'hunter','php','website','http://php.net/','img/php.jpg','2017-12-29 13:30:10','normal','utf8',0),(14,'hunter','linuxdocs','website','http://linuxdocs.org/','img/linux.png','2017-12-29 15:12:27','normal','utf8',0),(15,'hunter','visualstudio','website','https://www.visualstudio.com/zh-hans/vs/getting-started/','img/microsoft.jpg','2017-12-29 07:27:57','normal','utf8',0),(16,'hunter','w3resource','website','https://www.w3resource.com/index.php','img/w3resource.jpg','2017-12-29 15:37:53','normal','utf8',0),(17,'hunter','CPP','website','http://www.cplusplus.com/reference/','img/cpp.jpg','2017-12-29 15:52:14','normal','utf8',0),(18,'hunter','mongodb','website','http://www.runoob.com/mongodb/mongodb-tutorial.html',' img/mongodb.png','2017-12-29 16:05:49','normal','utf8',0),(19,'hunter','runoob','website','http://www.runoob.com/','img/runoob.jpg','2017-12-29 16:17:29','normal','utf8',0),(20,'hunter','perl','website','https://www.perl.org/','img/perl.jpg','2017-12-29 17:20:29','normal','utf8',0),(21,'hunter','uefi','website','http://www.uefi.org/learning_center','img/uefi.jpg','2017-12-29 17:27:41','normal','utf8',0);
+/*!40000 ALTER TABLE `url` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Current Database: `file`
 --
 
@@ -1065,6 +1718,406 @@ CREATE TABLE `infor` (
 LOCK TABLES `infor` WRITE;
 /*!40000 ALTER TABLE `infor` DISABLE KEYS */;
 /*!40000 ALTER TABLE `infor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `fish_scales`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `fish_scales` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `fish_scales`;
+
+--
+-- Table structure for table `contract`
+--
+
+DROP TABLE IF EXISTS `contract`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `contract` (
+  `idcontract` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`idcontract`),
+  UNIQUE KEY `idcontract_UNIQUE` (`idcontract`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='contract：合约';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contract`
+--
+
+LOCK TABLES `contract` WRITE;
+/*!40000 ALTER TABLE `contract` DISABLE KEYS */;
+/*!40000 ALTER TABLE `contract` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `contractor`
+--
+
+DROP TABLE IF EXISTS `contractor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `contractor` (
+  `idcontractor` bigint(40) NOT NULL,
+  `name` varchar(45) DEFAULT NULL COMMENT 'owner name',
+  `id` varchar(45) DEFAULT NULL,
+  `where` varchar(45) DEFAULT NULL,
+  `area` varchar(45) DEFAULT NULL,
+  `start` datetime NOT NULL,
+  `end` datetime NOT NULL,
+  `entry` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `coordinate` varchar(45) DEFAULT NULL,
+  `shape` varchar(45) DEFAULT NULL,
+  `use` varchar(45) DEFAULT NULL COMMENT 'use as',
+  `type` varchar(45) DEFAULT NULL COMMENT 'Land type:平，洼，山，水域，树林',
+  `level` varchar(45) DEFAULT NULL,
+  `worth` varchar(45) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  `tel` varchar(45) DEFAULT NULL,
+  `mail` varchar(45) DEFAULT NULL,
+  `comm_number` varchar(45) DEFAULT NULL COMMENT 'communication number',
+  PRIMARY KEY (`idcontractor`),
+  UNIQUE KEY `idcontractor_UNIQUE` (`idcontractor`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Contracting rights 承包权';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contractor`
+--
+
+LOCK TABLES `contractor` WRITE;
+/*!40000 ALTER TABLE `contractor` DISABLE KEYS */;
+/*!40000 ALTER TABLE `contractor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `franchise`
+--
+
+DROP TABLE IF EXISTS `franchise`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `franchise` (
+  `idfranchise` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL COMMENT 'owner name',
+  `id` varchar(45) DEFAULT NULL,
+  `where` varchar(45) DEFAULT NULL,
+  `area` varchar(45) DEFAULT NULL,
+  `start` datetime NOT NULL,
+  `end` datetime NOT NULL,
+  `entry` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `coordinate` varchar(45) DEFAULT NULL,
+  `shape` varchar(45) DEFAULT NULL,
+  `use` varchar(45) DEFAULT NULL COMMENT 'use as',
+  `type` varchar(45) DEFAULT NULL COMMENT 'Land type:平，洼，山，水域，树林',
+  `level` varchar(45) DEFAULT NULL,
+  `worth` varchar(45) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  `tel` varchar(45) DEFAULT NULL,
+  `mail` varchar(45) DEFAULT NULL,
+  `comm_number` varchar(45) DEFAULT NULL COMMENT 'communication number',
+  PRIMARY KEY (`idfranchise`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='franchise: 经营权';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `franchise`
+--
+
+LOCK TABLES `franchise` WRITE;
+/*!40000 ALTER TABLE `franchise` DISABLE KEYS */;
+/*!40000 ALTER TABLE `franchise` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `records`
+--
+
+DROP TABLE IF EXISTS `records`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `records` (
+  `idrecords` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`idrecords`),
+  UNIQUE KEY `idrecords_UNIQUE` (`idrecords`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Transfer records';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `records`
+--
+
+LOCK TABLES `records` WRITE;
+/*!40000 ALTER TABLE `records` DISABLE KEYS */;
+/*!40000 ALTER TABLE `records` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `hwdc`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `hwdc` /*!40100 DEFAULT CHARACTER SET utf16 */;
+
+USE `hwdc`;
+
+--
+-- Table structure for table `capacitance`
+--
+
+DROP TABLE IF EXISTS `capacitance`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `capacitance` (
+  `idcapacitance` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `shape` blob,
+  `power` varchar(45) DEFAULT NULL,
+  `position` varchar(45) DEFAULT NULL COMMENT 'capacitance position,like in PCB',
+  `point` varchar(45) DEFAULT NULL COMMENT 'Measuring point',
+  `nominal` double DEFAULT NULL COMMENT 'Nominal value\n',
+  `min` double DEFAULT NULL COMMENT 'Minimum value',
+  `max` double DEFAULT NULL COMMENT 'maximum value',
+  `value` double DEFAULT NULL COMMENT 'current value',
+  `func` varchar(45) DEFAULT NULL COMMENT 'function',
+  `desc` varchar(45) DEFAULT NULL COMMENT 'description',
+  `ascription` varchar(45) DEFAULT NULL,
+  `temperature` varchar(45) DEFAULT NULL COMMENT 'Ambient temperature',
+  `status` varchar(45) DEFAULT NULL COMMENT 'status:PASS,FAIL,NA',
+  PRIMARY KEY (`idcapacitance`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `capacitance`
+--
+
+LOCK TABLES `capacitance` WRITE;
+/*!40000 ALTER TABLE `capacitance` DISABLE KEYS */;
+/*!40000 ALTER TABLE `capacitance` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `chipset`
+--
+
+DROP TABLE IF EXISTS `chipset`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `chipset` (
+  `idchipset` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `shape` blob,
+  `position` varchar(45) DEFAULT NULL COMMENT 'chipset position,like in PCB',
+  `power` varchar(45) DEFAULT NULL,
+  `clock` varchar(45) DEFAULT NULL COMMENT 'Measuring clock',
+  `reset` varchar(45) DEFAULT NULL COMMENT 'chip reset\n',
+  `enable` varchar(45) DEFAULT NULL COMMENT 'Minimum value',
+  `configs` varchar(45) DEFAULT NULL COMMENT 'configs is ok ,pin  ,R O C',
+  `link` double DEFAULT NULL COMMENT 'like tx,rx ',
+  `firmware` varchar(45) DEFAULT NULL COMMENT 'firmware: if or not exist , an version ,and has been writed',
+  `func` varchar(45) DEFAULT NULL COMMENT 'function',
+  `desc` varchar(45) DEFAULT NULL COMMENT 'description',
+  `weld` varchar(45) DEFAULT NULL COMMENT 'weld check',
+  `ascription` varchar(45) DEFAULT NULL,
+  `temperature` varchar(45) DEFAULT NULL COMMENT 'Ambient temperature',
+  `status` varchar(45) DEFAULT NULL COMMENT 'status:PASS,FAIL,NA',
+  PRIMARY KEY (`idchipset`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `chipset`
+--
+
+LOCK TABLES `chipset` WRITE;
+/*!40000 ALTER TABLE `chipset` DISABLE KEYS */;
+/*!40000 ALTER TABLE `chipset` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `clock`
+--
+
+DROP TABLE IF EXISTS `clock`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `clock` (
+  `idclock` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `position` varchar(45) DEFAULT NULL,
+  `src_point` varchar(45) DEFAULT NULL COMMENT 'Source test point',
+  `src_vale` double DEFAULT NULL,
+  `dest_point` varchar(45) DEFAULT NULL,
+  `dest_value` double DEFAULT NULL,
+  `min` double DEFAULT NULL,
+  `max` double DEFAULT NULL,
+  `func` varchar(45) DEFAULT NULL COMMENT 'function ',
+  `desc` varchar(45) DEFAULT NULL COMMENT 'description',
+  `ascription` varchar(45) DEFAULT NULL COMMENT 'ascription project name',
+  `temperature` double DEFAULT NULL COMMENT 'Ambient temperature\n',
+  `status` varchar(45) DEFAULT NULL COMMENT 'status:PASS,FAIL,NA',
+  PRIMARY KEY (`idclock`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `clock`
+--
+
+LOCK TABLES `clock` WRITE;
+/*!40000 ALTER TABLE `clock` DISABLE KEYS */;
+/*!40000 ALTER TABLE `clock` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `inductance`
+--
+
+DROP TABLE IF EXISTS `inductance`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `inductance` (
+  `idinductance` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `shape` blob,
+  `power` varchar(45) DEFAULT NULL,
+  `position` varchar(45) DEFAULT NULL COMMENT 'inductance position,like in PCB',
+  `point` varchar(45) DEFAULT NULL COMMENT 'Measuring point',
+  `nominal` double DEFAULT NULL COMMENT 'Nominal value\n',
+  `min` double DEFAULT NULL COMMENT 'Minimum value',
+  `max` double DEFAULT NULL COMMENT 'maximum value',
+  `value` double DEFAULT NULL COMMENT 'current value',
+  `func` varchar(45) DEFAULT NULL COMMENT 'function',
+  `desc` varchar(45) DEFAULT NULL COMMENT 'description',
+  `ascription` varchar(45) DEFAULT NULL,
+  `temperature` varchar(45) DEFAULT NULL COMMENT 'Ambient temperature',
+  `status` varchar(45) DEFAULT NULL COMMENT 'status:PASS,FAIL,NA',
+  PRIMARY KEY (`idinductance`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `inductance`
+--
+
+LOCK TABLES `inductance` WRITE;
+/*!40000 ALTER TABLE `inductance` DISABLE KEYS */;
+/*!40000 ALTER TABLE `inductance` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pin`
+--
+
+DROP TABLE IF EXISTS `pin`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pin` (
+  `idpin` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `power` varchar(45) DEFAULT NULL,
+  `position` varchar(45) DEFAULT NULL COMMENT 'pin position,like in PCB',
+  `point` varchar(45) DEFAULT NULL COMMENT 'Measuring point',
+  `nominal_len` double DEFAULT NULL COMMENT 'Nominal length value\n',
+  `min_len` double DEFAULT NULL COMMENT 'Minimum length value',
+  `max_len` double DEFAULT NULL COMMENT 'maximum length value',
+  `len_value` double DEFAULT NULL COMMENT 'current  length value',
+  `func` varchar(45) DEFAULT NULL COMMENT 'function',
+  `desc` varchar(45) DEFAULT NULL COMMENT 'description',
+  `ascription` varchar(45) DEFAULT NULL,
+  `temperature` varchar(45) DEFAULT NULL COMMENT 'Ambient temperature',
+  `src` varchar(45) DEFAULT NULL COMMENT 'Source',
+  `dest` varchar(45) DEFAULT NULL COMMENT 'destination',
+  `min_wid` double DEFAULT NULL COMMENT 'min width value',
+  `max_wid` double DEFAULT NULL COMMENT 'max width value',
+  `wid_value` double DEFAULT NULL COMMENT 'current  width value',
+  `nominal_wid` double DEFAULT NULL COMMENT 'Nominal width value\n',
+  `status` varchar(45) DEFAULT NULL COMMENT 'status:PASS,FAIL,NA',
+  PRIMARY KEY (`idpin`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pin`
+--
+
+LOCK TABLES `pin` WRITE;
+/*!40000 ALTER TABLE `pin` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pin` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `resistance`
+--
+
+DROP TABLE IF EXISTS `resistance`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `resistance` (
+  `idresistance` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `shape` blob,
+  `power` varchar(45) DEFAULT NULL,
+  `position` varchar(45) DEFAULT NULL COMMENT 'Resistance position,like in PCB',
+  `point` varchar(45) DEFAULT NULL COMMENT 'Measuring point',
+  `nominal` double DEFAULT NULL COMMENT 'Nominal value\n',
+  `min` double DEFAULT NULL COMMENT 'Minimum value',
+  `max` double DEFAULT NULL COMMENT 'maximum value',
+  `value` double DEFAULT NULL COMMENT 'current value',
+  `func` varchar(45) DEFAULT NULL COMMENT 'function',
+  `desc` varchar(45) DEFAULT NULL COMMENT 'description',
+  `ascription` varchar(45) DEFAULT NULL,
+  `temperature` varchar(45) DEFAULT NULL COMMENT 'Ambient temperature',
+  `status` varchar(45) DEFAULT NULL COMMENT 'status:PASS,FAIL,NA',
+  PRIMARY KEY (`idresistance`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `resistance`
+--
+
+LOCK TABLES `resistance` WRITE;
+/*!40000 ALTER TABLE `resistance` DISABLE KEYS */;
+/*!40000 ALTER TABLE `resistance` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `voltage`
+--
+
+DROP TABLE IF EXISTS `voltage`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `voltage` (
+  `idvoltage` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `position` varchar(45) DEFAULT NULL,
+  `src_point` varchar(45) DEFAULT NULL COMMENT 'Source test point',
+  `src_vale` double DEFAULT NULL,
+  `dest_point` varchar(45) DEFAULT NULL,
+  `dest_value` double DEFAULT NULL,
+  `min` double DEFAULT NULL,
+  `max` double DEFAULT NULL,
+  `func` varchar(45) DEFAULT NULL COMMENT 'function ',
+  `desc` varchar(45) DEFAULT NULL COMMENT 'description',
+  `ascription` varchar(45) DEFAULT NULL COMMENT 'ascription project name',
+  `temperature` double DEFAULT NULL COMMENT 'Ambient temperature\n',
+  `status` varchar(45) DEFAULT NULL COMMENT 'status:PASS,FAIL,NA',
+  PRIMARY KEY (`idvoltage`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `voltage`
+--
+
+LOCK TABLES `voltage` WRITE;
+/*!40000 ALTER TABLE `voltage` DISABLE KEYS */;
+/*!40000 ALTER TABLE `voltage` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1134,7 +2187,7 @@ CREATE TABLE `k_links` (
   `status` varchar(45) DEFAULT NULL,
   `remark` text,
   PRIMARY KEY (`idbooklink`)
-) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1143,7 +2196,7 @@ CREATE TABLE `k_links` (
 
 LOCK TABLES `k_links` WRITE;
 /*!40000 ALTER TABLE `k_links` DISABLE KEYS */;
-INSERT INTO `k_links` VALUES (1,'hunter','translate.google.cn','translate','http://translate.google.cn/','2017-04-05 02:30:57','',''),(2,'hunter','bing.com','search','http://www.bing.com/','2017-04-05 02:32:03','',''),(3,'hunter','google.com','search','http://www.google.com/','2017-04-05 02:32:41','',''),(4,'hunter','msdn.microsoft','doc','https://msdn.microsoft.com','2017-04-05 02:33:16','',''),(5,'hunter','IBM Knowledge Center','doc','http://www.ibm.com/support/knowledgecenter/en/','2017-04-05 02:34:30','',''),(6,'hunter','Apple Developers Center','doc','https://developer.apple.com/','2017-04-05 02:36:48','',''),(7,'hunter','Apple API Reference','doc','https://developer.apple.com/reference/','2017-04-05 02:39:27','',''),(8,'hunter','Apple Guides and Sample Code','doc','https://developer.apple.com/library/prerelease/content/navigation/','2017-04-05 02:40:10','',''),(9,'hunter','VirtualBox Technical documentation','doc','https://www.virtualbox.org/wiki/Technical_documentation','2017-04-05 02:40:35','',''),(10,'hunter','Git Documentation','doc','https://git-scm.com/doc','2017-04-05 02:40:58','',''),(11,'hunter','Lean-x','doc','http://www.tutorialspoint.com/','2017-04-05 02:41:21','',''),(12,'hunter','perldoc.perl.org','doc','http://perldoc.perl.org/','2017-04-05 02:41:41','',''),(13,'hunter','GNU C Reference Manual','doc','http://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html','2017-04-05 02:42:06','',''),(14,'hunter','Linux C++ Software Development','doc','http://www.yolinux.com/TUTORIALS/LinuxTutorialC%2B%2B.html','2017-04-05 02:42:32','',''),(15,'hunter','C++  keyword','doc','http://en.cppreference.com/w/cpp/keyword','2017-04-05 02:42:55','',''),(16,'hunter','C++ STL Tutorial','doc technical','http://www.tutorialspoint.com/cplusplus/cpp_stl_tutorial.htm','2017-04-05 02:44:49','',''),(17,'hunter','My SQL documentation','doc technical','http://dev.mysql.com/doc/','2017-04-05 02:45:12','',''),(18,'hunter','PHP Manual','doc technical','http://www.php.net/manual/en/index.php','2017-04-05 02:45:34','',''),(19,'hunter','w3.standards','doc technical','https://www.w3.org/standards/','2017-04-05 02:45:55','',''),(20,'hunter','w3school.cn','doc technical','http://www.w3school.com.cn/','2017-04-05 02:46:16','',''),(21,'hunter','w3school.bootcss','doc technical','http://w3schools.bootcss.com/html/default.html','2017-04-05 02:46:38','',''),(22,'hunter','HTTP protocols','doc technical protocol','https://www.w3.org/Protocols/','2017-04-05 02:47:22','',''),(23,'hunter','html.com','doc technical','http://html.com/','2017-04-05 02:48:03','',''),(24,'hunter','java','doc technical language develop','https://www.oracle.com/java/index.html','2017-04-05 02:48:48','',''),(25,'hunter','fileformat.book','doc technical','http://www.fileformat.info/resource/book/index.htm','2017-04-05 02:52:07','',''),(26,'hunter','U-Boot.manual','doc technical','http://www.denx.de/wiki/DULG/Manual','2017-04-05 02:53:45','',''),(27,'hunter','yoctoproject.doc','doc technical','https://www.yoctoproject.org/documentation','2017-04-05 02:54:11','',''),(28,'hunter','openembedded.org','doc technical','http://www.openembedded.org/wiki/Main_Page','2017-04-05 02:54:35','',''),(29,'hunter','bitbake-user-manual','doc technical','https://www.yoctoproject.org/docs/1.6/bitbake-user-manual/bitbake-user-manual.html','2017-04-05 02:54:56','',''),(30,'hunter','Windows driver development','doc technical develop','https://msdn.microsoft.com/en-us/windows/hardware/ff960953.aspx','2017-04-05 02:55:27','',''),(31,'hunter','linux-man-pages','doc technical linux ','https://linux.die.net/man/','2017-04-05 02:56:01','',''),(32,'hunter','centos.doc','doc technical linux ','https://www.centos.org/docs/','2017-04-05 02:56:26','',''),(33,'hunter','IEEE-POSIX','doc technical','http://get.posixcertified.ieee.org/','2017-04-05 02:56:54','',''),(34,'hunter','i2c-bus','doc technical','http://www.i2c-bus.org/i2c-bus/','2017-04-05 02:57:18','',''),(35,'hunter','docker-library','doc technical','https://github.com/docker-library','2017-04-05 02:58:53','',''),(36,'hunter','python3-doc','doc technical','https://docs.python.org/3/','2017-04-05 02:59:13','',''),(37,'hunter','lamp-web','doc technical','http://www.lampweb.org/','2017-04-05 02:59:29','',''),(38,'hunter','nginx-docs','doc technical','http://nginx.org/en/docs/','2017-04-05 02:59:56','',''),(39,'hunter','gitlabhq','doc technical','https://github.com/gitlabhq','2017-04-05 03:00:20','',''),(40,'hunter','gnu-make','doc technical','http://www.gnu.org/software/make/manual/make.html','2017-04-05 03:00:40','',''),(41,'hunter','iso639-2:language code','doc technical','https://www.loc.gov/standards/iso639-2/php/code_list.php','2017-04-05 03:01:02','',''),(42,'hunter','countrycode','doc technical','https://countrycode.org/','2017-04-05 03:01:28','',''),(43,'hunter','multi-language php','doc technical','http://www.bitrepository.com/php-how-to-add-multi-language-support-to-a-website.html','2017-04-05 03:01:58','',''),(44,'hunter','GNU/Linux Command-Line Tools Summary','doc technical','https://linux.die.net/Linux-CLI/','2017-04-05 03:02:23','',''),(45,'hunter','css color ','doc technical','http://www.w3school.com.cn/cssref/css_colornames.asp','2017-04-06 08:04:40','',''),(46,'hunter','PHP class','doc technical','http://php.net/manual/en/language.oop5.php','2017-04-07 03:03:53','',''),(47,'hunter','pop3_blog_cn','doc technical','http://blog.csdn.net/bripengandre/article/details/2192111','2017-04-11 18:18:06','',''),(48,'hunter','IBM Advance Toolchain for PowerLinux Documentation','doc technical','https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/W51a7ffcf4dfd_4b40_9d82_446ebc23c550/page/IBM%20Advance%20Toolchain%20for%20PowerLinux%20Documentation','2017-04-14 10:13:36','normal','IBM developerworks'),(49,'hunter',' IBM Software Development Kit for Linux on Power (SDK) ','doc technical','https://developer.ibm.com/linuxonpower/sdk/','2017-04-14 10:18:51','normal','IBM developerworks'),(50,'hunter','cscript','doc technical','http://originaldll.com/file/cscript.exe/24146.html','2017-04-26 21:46:03','normal','utf8'),(51,'hunter','software.intel.com/en-us/html5','doc technical','https://software.intel.com/en-us/html5','2017-04-26 22:21:01','normal','utf8'),(52,'hunter','intel-software-technical-documentation','doc technical','https://software.intel.com/en-us/intel-software-technical-documentation','2017-04-26 22:21:34','normal','utf8'),(53,'hunter','intel-AI','doc technical','https://software.intel.com/en-us/ai','2017-04-26 22:23:47','normal','utf8'),(54,'hunter','PHP PDF Functions','doc technical','http://phptutorial.info/?pdf','2017-04-27 16:01:12','normal','utf8'),(55,'hunter','pdflib','doc technical','http://www.pdflib.com/','2017-04-27 16:13:39','normal','utf8'),(56,'hunter','php packages','doc technical','http://pecl.php.net/packages.php','2017-04-28 17:02:31','normal','utf8'),(57,'hunter','excel-easy VBA','doc technical','http://www.excel-easy.com/vba.html','2017-05-02 09:43:58','normal','utf8'),(58,'hunter','webkit','doc technical develop','https://webkit.org/','2017-05-02 23:08:18','normal','utf8'),(59,'patent_sys','linux kernel doc','doc technical','https://www.kernel.org/doc/','2017-12-26 12:00:42','normal','utf8'),(60,'hunter','microsoft .net for linux ','tech','https://www.microsoft.com/net/download/linux','2017-12-26 13:54:48','normal','utf8');
+INSERT INTO `k_links` VALUES (1,'hunter','translate.google.cn','translate','http://translate.google.cn/','2017-04-05 02:30:57','',''),(2,'hunter','bing.com','search','http://www.bing.com/','2017-04-05 02:32:03','',''),(3,'hunter','google.com','search','http://www.google.com/','2017-04-05 02:32:41','',''),(4,'hunter','msdn.microsoft','doc','https://msdn.microsoft.com','2017-04-05 02:33:16','',''),(5,'hunter','IBM Knowledge Center','doc','http://www.ibm.com/support/knowledgecenter/en/','2017-04-05 02:34:30','',''),(6,'hunter','Apple Developers Center','doc','https://developer.apple.com/','2017-04-05 02:36:48','',''),(7,'hunter','Apple API Reference','doc','https://developer.apple.com/reference/','2017-04-05 02:39:27','',''),(8,'hunter','Apple Guides and Sample Code','doc','https://developer.apple.com/library/prerelease/content/navigation/','2017-04-05 02:40:10','',''),(9,'hunter','VirtualBox Technical documentation','doc','https://www.virtualbox.org/wiki/Technical_documentation','2017-04-05 02:40:35','',''),(10,'hunter','Git Documentation','doc','https://git-scm.com/doc','2017-04-05 02:40:58','',''),(11,'hunter','Lean-x','doc','http://www.tutorialspoint.com/','2017-04-05 02:41:21','',''),(12,'hunter','perldoc.perl.org','doc','http://perldoc.perl.org/','2017-04-05 02:41:41','',''),(13,'hunter','GNU C Reference Manual','doc','http://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html','2017-04-05 02:42:06','',''),(14,'hunter','Linux C++ Software Development','doc','http://www.yolinux.com/TUTORIALS/LinuxTutorialC%2B%2B.html','2017-04-05 02:42:32','',''),(15,'hunter','C++  keyword','doc','http://en.cppreference.com/w/cpp/keyword','2017-04-05 02:42:55','',''),(16,'hunter','C++ STL Tutorial','doc technical','http://www.tutorialspoint.com/cplusplus/cpp_stl_tutorial.htm','2017-04-05 02:44:49','',''),(17,'hunter','My SQL documentation','doc technical','http://dev.mysql.com/doc/','2017-04-05 02:45:12','',''),(18,'hunter','PHP Manual','doc technical','http://www.php.net/manual/en/index.php','2017-04-05 02:45:34','',''),(19,'hunter','w3.standards','doc technical','https://www.w3.org/standards/','2017-04-05 02:45:55','',''),(20,'hunter','w3school.cn','doc technical','http://www.w3school.com.cn/','2017-04-05 02:46:16','',''),(21,'hunter','w3school.bootcss','doc technical','http://w3schools.bootcss.com/html/default.html','2017-04-05 02:46:38','',''),(22,'hunter','HTTP protocols','doc technical protocol','https://www.w3.org/Protocols/','2017-04-05 02:47:22','',''),(23,'hunter','html.com','doc technical','http://html.com/','2017-04-05 02:48:03','',''),(24,'hunter','java','doc technical language develop','https://www.oracle.com/java/index.html','2017-04-05 02:48:48','',''),(25,'hunter','fileformat.book','doc technical','http://www.fileformat.info/resource/book/index.htm','2017-04-05 02:52:07','',''),(26,'hunter','U-Boot.manual','doc technical','http://www.denx.de/wiki/DULG/Manual','2017-04-05 02:53:45','',''),(27,'hunter','yoctoproject.doc','doc technical','https://www.yoctoproject.org/documentation','2017-04-05 02:54:11','',''),(28,'hunter','openembedded.org','doc technical','http://www.openembedded.org/wiki/Main_Page','2017-04-05 02:54:35','',''),(29,'hunter','bitbake-user-manual','doc technical','https://www.yoctoproject.org/docs/1.6/bitbake-user-manual/bitbake-user-manual.html','2017-04-05 02:54:56','',''),(30,'hunter','Windows driver development','doc technical develop','https://msdn.microsoft.com/en-us/windows/hardware/ff960953.aspx','2017-04-05 02:55:27','',''),(31,'hunter','linux-man-pages','doc technical linux ','https://linux.die.net/man/','2017-04-05 02:56:01','',''),(32,'hunter','centos.doc','doc technical linux ','https://www.centos.org/docs/','2017-04-05 02:56:26','',''),(33,'hunter','IEEE-POSIX','doc technical','http://get.posixcertified.ieee.org/','2017-04-05 02:56:54','',''),(34,'hunter','i2c-bus','doc technical','http://www.i2c-bus.org/i2c-bus/','2017-04-05 02:57:18','',''),(35,'hunter','docker-library','doc technical','https://github.com/docker-library','2017-04-05 02:58:53','',''),(36,'hunter','python3-doc','doc technical','https://docs.python.org/3/','2017-04-05 02:59:13','',''),(37,'hunter','lamp-web','doc technical','http://www.lampweb.org/','2017-04-05 02:59:29','',''),(38,'hunter','nginx-docs','doc technical','http://nginx.org/en/docs/','2017-04-05 02:59:56','',''),(39,'hunter','gitlabhq','doc technical','https://github.com/gitlabhq','2017-04-05 03:00:20','',''),(40,'hunter','gnu-make','doc technical','http://www.gnu.org/software/make/manual/make.html','2017-04-05 03:00:40','',''),(41,'hunter','iso639-2:language code','doc technical','https://www.loc.gov/standards/iso639-2/php/code_list.php','2017-04-05 03:01:02','',''),(42,'hunter','countrycode','doc technical','https://countrycode.org/','2017-04-05 03:01:28','',''),(43,'hunter','multi-language php','doc technical','http://www.bitrepository.com/php-how-to-add-multi-language-support-to-a-website.html','2017-04-05 03:01:58','',''),(44,'hunter','GNU/Linux Command-Line Tools Summary','doc technical','https://linux.die.net/Linux-CLI/','2017-04-05 03:02:23','',''),(45,'hunter','css color ','doc technical','http://www.w3school.com.cn/cssref/css_colornames.asp','2017-04-06 08:04:40','',''),(46,'hunter','PHP class','doc technical','http://php.net/manual/en/language.oop5.php','2017-04-07 03:03:53','',''),(47,'hunter','pop3_blog_cn','doc technical','http://blog.csdn.net/bripengandre/article/details/2192111','2017-04-11 18:18:06','',''),(48,'hunter','IBM Advance Toolchain for PowerLinux Documentation','doc technical','https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/W51a7ffcf4dfd_4b40_9d82_446ebc23c550/page/IBM%20Advance%20Toolchain%20for%20PowerLinux%20Documentation','2017-04-14 10:13:36','normal','IBM developerworks'),(49,'hunter',' IBM Software Development Kit for Linux on Power (SDK) ','doc technical','https://developer.ibm.com/linuxonpower/sdk/','2017-04-14 10:18:51','normal','IBM developerworks'),(50,'hunter','cscript','doc technical','http://originaldll.com/file/cscript.exe/24146.html','2017-04-26 21:46:03','normal','utf8'),(51,'hunter','software.intel.com/en-us/html5','doc technical','https://software.intel.com/en-us/html5','2017-04-26 22:21:01','normal','utf8'),(52,'hunter','intel-software-technical-documentation','doc technical','https://software.intel.com/en-us/intel-software-technical-documentation','2017-04-26 22:21:34','normal','utf8'),(53,'hunter','intel-AI','doc technical','https://software.intel.com/en-us/ai','2017-04-26 22:23:47','normal','utf8'),(54,'hunter','PHP PDF Functions','doc technical','http://phptutorial.info/?pdf','2017-04-27 16:01:12','normal','utf8'),(55,'hunter','pdflib','doc technical','http://www.pdflib.com/','2017-04-27 16:13:39','normal','utf8'),(56,'hunter','php packages','doc technical','http://pecl.php.net/packages.php','2017-04-28 17:02:31','normal','utf8'),(57,'hunter','excel-easy VBA','doc technical','http://www.excel-easy.com/vba.html','2017-05-02 09:43:58','normal','utf8'),(58,'hunter','webkit','doc technical develop','https://webkit.org/','2017-05-02 23:08:18','normal','utf8'),(59,'patent_sys','linux kernel doc','doc technical','https://www.kernel.org/doc/','2017-12-26 12:00:42','normal','utf8'),(60,'hunter','microsoft .net for linux ','tech','https://www.microsoft.com/net/download/linux','2017-12-26 13:54:48','normal','utf8'),(61,'hunter','linuxdocs','doc technical','http://linuxdocs.org/','2017-12-28 18:37:42','normal','utf8');
 /*!40000 ALTER TABLE `k_links` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1267,6 +2320,7 @@ CREATE TABLE `url` (
   `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
   `status` varchar(45) DEFAULT NULL,
   `remark` varchar(45) DEFAULT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idurl`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1305,6 +2359,7 @@ CREATE TABLE `url` (
   `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
   `status` varchar(45) DEFAULT NULL,
   `remark` varchar(45) DEFAULT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idurl`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1395,7 +2450,7 @@ CREATE TABLE `db` (
 
 LOCK TABLES `db` WRITE;
 /*!40000 ALTER TABLE `db` DISABLE KEYS */;
-INSERT INTO `db` VALUES ('localhost','performance_schema','mysql.session','Y','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N'),('localhost','sys','mysql.sys','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','Y'),('localhost','bookmark','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','code','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','company','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','file','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','iwant','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','knowledge','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','law','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','patent','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','question','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','radar','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','task','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','user','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','vedio','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','audio','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','medical','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','chip','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','aiproject','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','life','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','template','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','search','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y');
+INSERT INTO `db` VALUES ('localhost','performance_schema','mysql.session','Y','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N'),('localhost','sys','mysql.sys','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','Y'),('localhost','bookmark','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','code','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','company','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','file','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','iwant','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','knowledge','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','law','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','patent','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','question','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','radar','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','task','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','user','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','vedio','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','audio','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','medical','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','chip','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','aiproject','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','life','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','template','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','search','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','video','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','debt','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','education','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y'),('localhost','tool','patent','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y');
 /*!40000 ALTER TABLE `db` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1626,7 +2681,7 @@ CREATE TABLE `innodb_index_stats` (
 
 LOCK TABLES `innodb_index_stats` WRITE;
 /*!40000 ALTER TABLE `innodb_index_stats` DISABLE KEYS */;
-INSERT INTO `innodb_index_stats` VALUES ('aiproject','url','PRIMARY','2017-12-22 09:24:12','n_diff_pfx01',0,1,'idurl'),('aiproject','url','PRIMARY','2017-12-22 09:24:12','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('aiproject','url','PRIMARY','2017-12-22 09:24:12','size',1,NULL,'Number of pages in the index'),('audio','url','PRIMARY','2017-12-21 08:11:26','n_diff_pfx01',0,1,'idurl'),('audio','url','PRIMARY','2017-12-21 08:11:26','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('audio','url','PRIMARY','2017-12-21 08:11:26','size',1,NULL,'Number of pages in the index'),('bookmark','patent_law','PRIMARY','2017-12-14 05:48:43','n_diff_pfx01',82,4,'id'),('bookmark','patent_law','PRIMARY','2017-12-14 05:48:43','n_leaf_pages',4,NULL,'Number of leaf pages in the index'),('bookmark','patent_law','PRIMARY','2017-12-14 05:48:43','size',5,NULL,'Number of pages in the index'),('bookmark','patent_law_implementation_rules','PRIMARY','2017-12-14 05:48:53','n_diff_pfx01',91,5,'id'),('bookmark','patent_law_implementation_rules','PRIMARY','2017-12-14 05:48:53','n_leaf_pages',5,NULL,'Number of leaf pages in the index'),('bookmark','patent_law_implementation_rules','PRIMARY','2017-12-14 05:48:53','size',6,NULL,'Number of pages in the index'),('chip','url','PRIMARY','2017-12-22 09:09:33','n_diff_pfx01',6,1,'idurl'),('chip','url','PRIMARY','2017-12-22 09:09:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('chip','url','PRIMARY','2017-12-22 09:09:33','size',1,NULL,'Number of pages in the index'),('code','lang','PRIMARY','2017-12-14 05:48:21','n_diff_pfx01',2,1,'idlang'),('code','lang','PRIMARY','2017-12-14 05:48:21','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('code','lang','PRIMARY','2017-12-14 05:48:21','size',1,NULL,'Number of pages in the index'),('code','string','PRIMARY','2017-12-14 05:49:03','n_diff_pfx01',108,1,'idstring'),('code','string','PRIMARY','2017-12-14 05:49:03','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('code','string','PRIMARY','2017-12-14 05:49:03','size',1,NULL,'Number of pages in the index'),('code','temp','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idtemp'),('code','temp','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('code','temp','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','account','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idaccount'),('company','account','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','account','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','attendance','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idattendance'),('company','attendance','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','attendance','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','code','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idcode'),('company','code','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','code','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','commit','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idcommit'),('company','commit','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','commit','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','creative','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idcreative'),('company','creative','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','creative','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','customer','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idcustomer'),('company','customer','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','customer','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','device','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'iddevice'),('company','device','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','device','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','feedback','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idfeedback'),('company','feedback','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','feedback','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','idea','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'ididea'),('company','idea','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','idea','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','issue','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idissue'),('company','issue','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','issue','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','market','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idmarket'),('company','market','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','market','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','person','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idperson'),('company','person','PRIMARY','2017-12-14 05:48:22','n_diff_pfx02',0,1,'idperson,worker_number'),('company','person','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','person','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','plan','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idplan'),('company','plan','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','plan','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','production','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idproduction'),('company','production','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','production','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','release','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idrelease'),('company','release','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','release','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','repair','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idrepair'),('company','repair','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','repair','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','request','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idrequest'),('company','request','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','request','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','review','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idreview'),('company','review','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','review','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','service','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idservice'),('company','service','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','service','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','source','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idsource'),('company','source','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','source','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','test','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idtest'),('company','test','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','test','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('company','work','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idwork'),('company','work','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','work','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('file','infor','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'idinfor'),('file','infor','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('file','infor','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('iwant','demand','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',2,1,'id'),('iwant','demand','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('iwant','demand','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('knowledge','k_links','PRIMARY','2017-12-14 05:48:33','n_diff_pfx01',58,1,'idbooklink'),('knowledge','k_links','PRIMARY','2017-12-14 05:48:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('knowledge','k_links','PRIMARY','2017-12-14 05:48:33','size',1,NULL,'Number of pages in the index'),('knowledge','k_type','PRIMARY','2017-12-14 05:48:23','n_diff_pfx01',0,1,'idk_type'),('knowledge','k_type','PRIMARY','2017-12-14 05:48:23','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('knowledge','k_type','PRIMARY','2017-12-14 05:48:23','size',1,NULL,'Number of pages in the index'),('law','law','PRIMARY','2017-12-19 09:08:59','n_diff_pfx01',0,1,'idlaw'),('law','law','PRIMARY','2017-12-19 09:08:59','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('law','law','PRIMARY','2017-12-19 09:08:59','size',1,NULL,'Number of pages in the index'),('law','url','PRIMARY','2017-12-19 09:09:09','n_diff_pfx01',5,1,'idurl'),('law','url','PRIMARY','2017-12-19 09:09:09','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('law','url','PRIMARY','2017-12-19 09:09:09','size',1,NULL,'Number of pages in the index'),('life','url','PRIMARY','2017-12-22 09:38:53','n_diff_pfx01',0,1,'idurl'),('life','url','PRIMARY','2017-12-22 09:38:53','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('life','url','PRIMARY','2017-12-22 09:38:53','size',1,NULL,'Number of pages in the index'),('medical','url','PRIMARY','2017-12-21 10:41:28','n_diff_pfx01',0,1,'idurl'),('medical','url','PRIMARY','2017-12-21 10:41:28','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('medical','url','PRIMARY','2017-12-21 10:41:28','size',1,NULL,'Number of pages in the index'),('mysql','gtid_executed','PRIMARY','2017-12-13 08:38:01','n_diff_pfx01',0,1,'source_uuid'),('mysql','gtid_executed','PRIMARY','2017-12-13 08:38:01','n_diff_pfx02',0,1,'source_uuid,interval_start'),('mysql','gtid_executed','PRIMARY','2017-12-13 08:38:01','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('mysql','gtid_executed','PRIMARY','2017-12-13 08:38:01','size',1,NULL,'Number of pages in the index'),('patent','project','PRIMARY','2017-12-14 05:48:23','n_diff_pfx01',0,1,'idproject'),('patent','project','PRIMARY','2017-12-14 05:48:23','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('patent','project','PRIMARY','2017-12-14 05:48:23','size',1,NULL,'Number of pages in the index'),('question','question','PRIMARY','2017-12-14 05:48:23','n_diff_pfx01',0,1,'id'),('question','question','PRIMARY','2017-12-14 05:48:23','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('question','question','PRIMARY','2017-12-14 05:48:23','size',1,NULL,'Number of pages in the index'),('radar','data','PRIMARY','2017-12-14 05:48:22','n_diff_pfx01',0,1,'iddata'),('radar','data','PRIMARY','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('radar','data','PRIMARY','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('radar','data','iddata_UNIQUE','2017-12-14 05:48:22','n_diff_pfx01',0,1,'iddata'),('radar','data','iddata_UNIQUE','2017-12-14 05:48:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('radar','data','iddata_UNIQUE','2017-12-14 05:48:22','size',1,NULL,'Number of pages in the index'),('search','method','PRIMARY','2017-12-27 10:56:23','n_diff_pfx01',24,1,'idmethod'),('search','method','PRIMARY','2017-12-27 10:56:23','n_diff_pfx02',24,1,'idmethod,name'),('search','method','PRIMARY','2017-12-27 10:56:23','n_diff_pfx03',24,1,'idmethod,name,base'),('search','method','PRIMARY','2017-12-27 10:56:23','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('search','method','PRIMARY','2017-12-27 10:56:23','size',1,NULL,'Number of pages in the index'),('search','method','name_UNIQUE','2017-12-27 10:56:23','n_diff_pfx01',24,1,'name'),('search','method','name_UNIQUE','2017-12-27 10:56:23','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('search','method','name_UNIQUE','2017-12-27 10:56:23','size',1,NULL,'Number of pages in the index'),('sys','sys_config','PRIMARY','2017-12-13 08:38:02','n_diff_pfx01',2,1,'variable'),('sys','sys_config','PRIMARY','2017-12-13 08:38:02','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('sys','sys_config','PRIMARY','2017-12-13 08:38:02','size',1,NULL,'Number of pages in the index'),('template','url','PRIMARY','2017-12-26 07:57:23','n_diff_pfx01',2,1,'idurl'),('template','url','PRIMARY','2017-12-26 07:57:23','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('template','url','PRIMARY','2017-12-26 07:57:23','size',1,NULL,'Number of pages in the index'),('user','login','PRIMARY','2017-12-14 05:48:23','n_diff_pfx01',4,1,'id'),('user','login','PRIMARY','2017-12-14 05:48:23','n_diff_pfx02',4,1,'id,LoginName'),('user','login','PRIMARY','2017-12-14 05:48:23','n_diff_pfx03',4,1,'id,LoginName,LoginMail'),('user','login','PRIMARY','2017-12-14 05:48:23','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('user','login','PRIMARY','2017-12-14 05:48:23','size',1,NULL,'Number of pages in the index'),('vedio','url','PRIMARY','2017-12-21 08:16:17','n_diff_pfx01',8,1,'idurl'),('vedio','url','PRIMARY','2017-12-21 08:16:17','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('vedio','url','PRIMARY','2017-12-21 08:16:17','size',1,NULL,'Number of pages in the index');
+INSERT INTO `innodb_index_stats` VALUES ('aiproject','url','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'idurl'),('aiproject','url','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('aiproject','url','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('audio','url','PRIMARY','2017-12-29 05:40:10','n_diff_pfx01',0,1,'idurl'),('audio','url','PRIMARY','2017-12-29 05:40:10','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('audio','url','PRIMARY','2017-12-29 05:40:10','size',1,NULL,'Number of pages in the index'),('bluetooth','cost','PRIMARY','2017-12-28 07:42:32','n_diff_pfx01',0,1,'idcost'),('bluetooth','cost','PRIMARY','2017-12-28 07:42:32','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','cost','PRIMARY','2017-12-28 07:42:32','size',1,NULL,'Number of pages in the index'),('bluetooth','customer','PRIMARY','2017-12-28 07:42:32','n_diff_pfx01',0,1,'idcustomer'),('bluetooth','customer','PRIMARY','2017-12-28 07:42:32','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','customer','PRIMARY','2017-12-28 07:42:32','size',1,NULL,'Number of pages in the index'),('bluetooth','devicetype','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',3,1,'iddevicetype'),('bluetooth','devicetype','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','devicetype','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('bluetooth','devicetype','iddevicetype_UNIQUE','2017-12-28 07:42:33','n_diff_pfx01',3,1,'iddevicetype'),('bluetooth','devicetype','iddevicetype_UNIQUE','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','devicetype','iddevicetype_UNIQUE','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('bluetooth','fail','PRIMARY','2017-12-28 07:42:32','n_diff_pfx01',0,1,'idfail'),('bluetooth','fail','PRIMARY','2017-12-28 07:42:32','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','fail','PRIMARY','2017-12-28 07:42:32','size',1,NULL,'Number of pages in the index'),('bluetooth','fail','idproduct_UNIQUE','2017-12-28 07:42:32','n_diff_pfx01',0,1,'idfail'),('bluetooth','fail','idproduct_UNIQUE','2017-12-28 07:42:32','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','fail','idproduct_UNIQUE','2017-12-28 07:42:32','size',1,NULL,'Number of pages in the index'),('bluetooth','line','PRIMARY','2017-12-28 07:42:32','n_diff_pfx01',0,1,'idline'),('bluetooth','line','PRIMARY','2017-12-28 07:42:32','n_diff_pfx02',0,1,'idline,guid'),('bluetooth','line','PRIMARY','2017-12-28 07:42:32','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','line','PRIMARY','2017-12-28 07:42:32','size',1,NULL,'Number of pages in the index'),('bluetooth','line','guid_UNIQUE','2017-12-28 07:42:32','n_diff_pfx01',0,1,'guid'),('bluetooth','line','guid_UNIQUE','2017-12-28 07:42:32','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','line','guid_UNIQUE','2017-12-28 07:42:32','size',1,NULL,'Number of pages in the index'),('bluetooth','line','idline_UNIQUE','2017-12-28 07:42:32','n_diff_pfx01',0,1,'idline'),('bluetooth','line','idline_UNIQUE','2017-12-28 07:42:32','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','line','idline_UNIQUE','2017-12-28 07:42:32','size',1,NULL,'Number of pages in the index'),('bluetooth','mac','PRIMARY','2017-12-28 07:42:32','n_diff_pfx01',0,1,'mac'),('bluetooth','mac','PRIMARY','2017-12-28 07:42:32','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','mac','PRIMARY','2017-12-28 07:42:32','size',1,NULL,'Number of pages in the index'),('bluetooth','mac','idmac_UNIQUE','2017-12-28 07:42:32','n_diff_pfx01',0,1,'idmac'),('bluetooth','mac','idmac_UNIQUE','2017-12-28 07:42:32','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','mac','idmac_UNIQUE','2017-12-28 07:42:32','size',1,NULL,'Number of pages in the index'),('bluetooth','mac','mac_UNIQUE','2017-12-28 07:42:32','n_diff_pfx01',0,1,'mac'),('bluetooth','mac','mac_UNIQUE','2017-12-28 07:42:32','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','mac','mac_UNIQUE','2017-12-28 07:42:32','size',1,NULL,'Number of pages in the index'),('bluetooth','materiel','PRIMARY','2017-12-28 07:42:32','n_diff_pfx01',0,1,'idmateriel'),('bluetooth','materiel','PRIMARY','2017-12-28 07:42:32','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','materiel','PRIMARY','2017-12-28 07:42:32','size',1,NULL,'Number of pages in the index'),('bluetooth','order','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',0,1,'idorder'),('bluetooth','order','PRIMARY','2017-12-28 07:42:33','n_diff_pfx02',0,1,'idorder,number'),('bluetooth','order','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','order','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('bluetooth','order','index','2017-12-28 07:42:33','n_diff_pfx01',0,1,'idstatus'),('bluetooth','order','index','2017-12-28 07:42:33','n_diff_pfx02',0,1,'idstatus,deliverytime'),('bluetooth','order','index','2017-12-28 07:42:33','n_diff_pfx03',0,1,'idstatus,deliverytime,idorder'),('bluetooth','order','index','2017-12-28 07:42:33','n_diff_pfx04',0,1,'idstatus,deliverytime,idorder,number'),('bluetooth','order','index','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','order','index','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('bluetooth','orderstatus','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',0,1,'idorderstatus'),('bluetooth','orderstatus','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','orderstatus','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('bluetooth','product','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',0,1,'mac'),('bluetooth','product','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','product','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('bluetooth','product','idproduct_UNIQUE','2017-12-28 07:42:33','n_diff_pfx01',0,1,'idproduct'),('bluetooth','product','idproduct_UNIQUE','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','product','idproduct_UNIQUE','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('bluetooth','product','mac_UNIQUE','2017-12-28 07:42:33','n_diff_pfx01',0,1,'mac'),('bluetooth','product','mac_UNIQUE','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','product','mac_UNIQUE','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('bluetooth','role','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',3,1,'idrole'),('bluetooth','role','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','role','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('bluetooth','test','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',0,1,'idtest'),('bluetooth','test','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','test','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('bluetooth','testitem','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',7,1,'idtestitem'),('bluetooth','testitem','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','testitem','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('bluetooth','testitem','idtestitem_UNIQUE','2017-12-28 07:42:33','n_diff_pfx01',7,1,'idtestitem'),('bluetooth','testitem','idtestitem_UNIQUE','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','testitem','idtestitem_UNIQUE','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('bluetooth','user','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',0,1,'iduser'),('bluetooth','user','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','user','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('bluetooth','user','iduser_UNIQUE','2017-12-28 07:42:33','n_diff_pfx01',0,1,'iduser'),('bluetooth','user','iduser_UNIQUE','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','user','iduser_UNIQUE','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('bluetooth','worker','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',0,1,'idworker'),('bluetooth','worker','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','worker','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('bluetooth','worker','idworker_UNIQUE','2017-12-28 07:42:33','n_diff_pfx01',0,1,'idworker'),('bluetooth','worker','idworker_UNIQUE','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('bluetooth','worker','idworker_UNIQUE','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('bookmark','patent_law','PRIMARY','2017-12-28 07:43:14','n_diff_pfx01',82,4,'id'),('bookmark','patent_law','PRIMARY','2017-12-28 07:43:14','n_leaf_pages',4,NULL,'Number of leaf pages in the index'),('bookmark','patent_law','PRIMARY','2017-12-28 07:43:14','size',5,NULL,'Number of pages in the index'),('bookmark','patent_law_implementation_rules','PRIMARY','2017-12-28 07:43:24','n_diff_pfx01',91,5,'id'),('bookmark','patent_law_implementation_rules','PRIMARY','2017-12-28 07:43:24','n_leaf_pages',5,NULL,'Number of leaf pages in the index'),('bookmark','patent_law_implementation_rules','PRIMARY','2017-12-28 07:43:24','size',6,NULL,'Number of pages in the index'),('chip','url','PRIMARY','2017-12-29 05:40:10','n_diff_pfx01',7,1,'idurl'),('chip','url','PRIMARY','2017-12-29 05:40:10','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('chip','url','PRIMARY','2017-12-29 05:40:10','size',1,NULL,'Number of pages in the index'),('code','lang','PRIMARY','2017-12-28 07:42:32','n_diff_pfx01',2,1,'idlang'),('code','lang','PRIMARY','2017-12-28 07:42:32','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('code','lang','PRIMARY','2017-12-28 07:42:32','size',1,NULL,'Number of pages in the index'),('code','string','PRIMARY','2017-12-28 07:42:54','n_diff_pfx01',146,1,'idstring'),('code','string','PRIMARY','2017-12-28 07:42:54','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('code','string','PRIMARY','2017-12-28 07:42:54','size',1,NULL,'Number of pages in the index'),('code','temp','PRIMARY','2017-12-28 07:42:32','n_diff_pfx01',0,1,'idtemp'),('code','temp','PRIMARY','2017-12-28 07:42:32','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('code','temp','PRIMARY','2017-12-28 07:42:32','size',1,NULL,'Number of pages in the index'),('company','account','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',0,1,'idaccount'),('company','account','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','account','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('company','attendance','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',0,1,'idattendance'),('company','attendance','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','attendance','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('company','code','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',0,1,'idcode'),('company','code','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','code','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('company','commit','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',0,1,'idcommit'),('company','commit','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','commit','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('company','creative','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',0,1,'idcreative'),('company','creative','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','creative','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('company','customer','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',0,1,'idcustomer'),('company','customer','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','customer','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('company','device','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',0,1,'iddevice'),('company','device','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','device','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('company','feedback','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',0,1,'idfeedback'),('company','feedback','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','feedback','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('company','idea','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'ididea'),('company','idea','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','idea','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('company','issue','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'idissue'),('company','issue','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','issue','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('company','market','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'idmarket'),('company','market','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','market','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('company','person','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'idperson'),('company','person','PRIMARY','2017-12-28 07:42:34','n_diff_pfx02',0,1,'idperson,worker_number'),('company','person','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','person','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('company','plan','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'idplan'),('company','plan','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','plan','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('company','production','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'idproduction'),('company','production','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','production','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('company','release','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'idrelease'),('company','release','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','release','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('company','repair','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'idrepair'),('company','repair','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','repair','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('company','request','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'idrequest'),('company','request','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','request','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('company','review','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'idreview'),('company','review','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','review','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('company','service','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'idservice'),('company','service','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','service','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('company','source','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'idsource'),('company','source','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','source','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('company','test','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'idtest'),('company','test','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','test','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('company','work','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'idwork'),('company','work','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('company','work','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('debt','creditor','PRIMARY','2017-12-28 09:03:02','n_diff_pfx01',0,1,'idcreditor'),('debt','creditor','PRIMARY','2017-12-28 09:03:02','n_diff_pfx02',0,1,'idcreditor,idnumber'),('debt','creditor','PRIMARY','2017-12-28 09:03:02','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('debt','creditor','PRIMARY','2017-12-28 09:03:02','size',1,NULL,'Number of pages in the index'),('debt','creditor','idcreditor_UNIQUE','2017-12-28 09:03:02','n_diff_pfx01',0,1,'idcreditor'),('debt','creditor','idcreditor_UNIQUE','2017-12-28 09:03:02','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('debt','creditor','idcreditor_UNIQUE','2017-12-28 09:03:02','size',1,NULL,'Number of pages in the index'),('debt','jurisdiction','PRIMARY','2017-12-28 09:03:02','n_diff_pfx01',0,1,'idjurisdiction'),('debt','jurisdiction','PRIMARY','2017-12-28 09:03:02','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('debt','jurisdiction','PRIMARY','2017-12-28 09:03:02','size',1,NULL,'Number of pages in the index'),('debt','jurisdiction','idjurisdiction_UNIQUE','2017-12-28 09:03:02','n_diff_pfx01',0,1,'idjurisdiction'),('debt','jurisdiction','idjurisdiction_UNIQUE','2017-12-28 09:03:02','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('debt','jurisdiction','idjurisdiction_UNIQUE','2017-12-28 09:03:02','size',1,NULL,'Number of pages in the index'),('education','url','PRIMARY','2017-12-29 08:05:49','n_diff_pfx01',18,1,'idurl'),('education','url','PRIMARY','2017-12-29 08:05:49','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('education','url','PRIMARY','2017-12-29 08:05:49','size',1,NULL,'Number of pages in the index'),('file','infor','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',0,1,'idinfor'),('file','infor','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('file','infor','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('fish_scales','contract','PRIMARY','2017-12-28 09:03:14','n_diff_pfx01',0,1,'idcontract'),('fish_scales','contract','PRIMARY','2017-12-28 09:03:14','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('fish_scales','contract','PRIMARY','2017-12-28 09:03:14','size',1,NULL,'Number of pages in the index'),('fish_scales','contract','idcontract_UNIQUE','2017-12-28 09:03:14','n_diff_pfx01',0,1,'idcontract'),('fish_scales','contract','idcontract_UNIQUE','2017-12-28 09:03:14','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('fish_scales','contract','idcontract_UNIQUE','2017-12-28 09:03:14','size',1,NULL,'Number of pages in the index'),('fish_scales','contractor','PRIMARY','2017-12-28 09:03:14','n_diff_pfx01',0,1,'idcontractor'),('fish_scales','contractor','PRIMARY','2017-12-28 09:03:14','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('fish_scales','contractor','PRIMARY','2017-12-28 09:03:14','size',1,NULL,'Number of pages in the index'),('fish_scales','contractor','idcontractor_UNIQUE','2017-12-28 09:03:14','n_diff_pfx01',0,1,'idcontractor'),('fish_scales','contractor','idcontractor_UNIQUE','2017-12-28 09:03:14','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('fish_scales','contractor','idcontractor_UNIQUE','2017-12-28 09:03:14','size',1,NULL,'Number of pages in the index'),('fish_scales','franchise','PRIMARY','2017-12-28 09:03:14','n_diff_pfx01',0,1,'idfranchise'),('fish_scales','franchise','PRIMARY','2017-12-28 09:03:14','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('fish_scales','franchise','PRIMARY','2017-12-28 09:03:14','size',1,NULL,'Number of pages in the index'),('fish_scales','records','PRIMARY','2017-12-28 09:03:14','n_diff_pfx01',0,1,'idrecords'),('fish_scales','records','PRIMARY','2017-12-28 09:03:14','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('fish_scales','records','PRIMARY','2017-12-28 09:03:14','size',1,NULL,'Number of pages in the index'),('fish_scales','records','idrecords_UNIQUE','2017-12-28 09:03:14','n_diff_pfx01',0,1,'idrecords'),('fish_scales','records','idrecords_UNIQUE','2017-12-28 09:03:14','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('fish_scales','records','idrecords_UNIQUE','2017-12-28 09:03:14','size',1,NULL,'Number of pages in the index'),('hwdc','capacitance','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'idcapacitance'),('hwdc','capacitance','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('hwdc','capacitance','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('hwdc','chipset','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'idchipset'),('hwdc','chipset','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('hwdc','chipset','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('hwdc','clock','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'idclock'),('hwdc','clock','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('hwdc','clock','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('hwdc','inductance','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'idinductance'),('hwdc','inductance','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('hwdc','inductance','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('hwdc','pin','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'idpin'),('hwdc','pin','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('hwdc','pin','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('hwdc','resistance','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'idresistance'),('hwdc','resistance','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('hwdc','resistance','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('hwdc','voltage','PRIMARY','2017-12-28 07:42:35','n_diff_pfx01',0,1,'idvoltage'),('hwdc','voltage','PRIMARY','2017-12-28 07:42:35','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('hwdc','voltage','PRIMARY','2017-12-28 07:42:35','size',1,NULL,'Number of pages in the index'),('iwant','demand','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',2,1,'id'),('iwant','demand','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('iwant','demand','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('knowledge','k_links','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',60,1,'idbooklink'),('knowledge','k_links','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('knowledge','k_links','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('knowledge','k_type','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',0,1,'idk_type'),('knowledge','k_type','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('knowledge','k_type','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('law','law','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',0,1,'idlaw'),('law','law','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('law','law','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('law','url','PRIMARY','2017-12-28 07:42:44','n_diff_pfx01',6,1,'idurl'),('law','url','PRIMARY','2017-12-28 07:42:44','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('law','url','PRIMARY','2017-12-28 07:42:44','size',1,NULL,'Number of pages in the index'),('life','url','PRIMARY','2017-12-29 05:41:52','n_diff_pfx01',0,1,'idurl'),('life','url','PRIMARY','2017-12-29 05:41:52','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('life','url','PRIMARY','2017-12-29 05:41:52','size',1,NULL,'Number of pages in the index'),('medical','url','PRIMARY','2017-12-29 05:41:52','n_diff_pfx01',0,1,'idurl'),('medical','url','PRIMARY','2017-12-29 05:41:52','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('medical','url','PRIMARY','2017-12-29 05:41:52','size',1,NULL,'Number of pages in the index'),('mysql','gtid_executed','PRIMARY','2017-12-13 08:38:01','n_diff_pfx01',0,1,'source_uuid'),('mysql','gtid_executed','PRIMARY','2017-12-13 08:38:01','n_diff_pfx02',0,1,'source_uuid,interval_start'),('mysql','gtid_executed','PRIMARY','2017-12-13 08:38:01','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('mysql','gtid_executed','PRIMARY','2017-12-13 08:38:01','size',1,NULL,'Number of pages in the index'),('patent','project','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',0,1,'idproject'),('patent','project','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('patent','project','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('question','question','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',0,1,'id'),('question','question','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('question','question','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('radar','data','PRIMARY','2017-12-28 07:42:33','n_diff_pfx01',0,1,'iddata'),('radar','data','PRIMARY','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('radar','data','PRIMARY','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('radar','data','iddata_UNIQUE','2017-12-28 07:42:33','n_diff_pfx01',0,1,'iddata'),('radar','data','iddata_UNIQUE','2017-12-28 07:42:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('radar','data','iddata_UNIQUE','2017-12-28 07:42:33','size',1,NULL,'Number of pages in the index'),('search','method','PRIMARY','2017-12-29 08:08:42','n_diff_pfx01',34,1,'idmethod'),('search','method','PRIMARY','2017-12-29 08:08:42','n_diff_pfx02',34,1,'idmethod,name'),('search','method','PRIMARY','2017-12-29 08:08:42','n_diff_pfx03',34,1,'idmethod,name,base'),('search','method','PRIMARY','2017-12-29 08:08:42','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('search','method','PRIMARY','2017-12-29 08:08:42','size',1,NULL,'Number of pages in the index'),('search','method','name_UNIQUE','2017-12-29 08:08:42','n_diff_pfx01',34,1,'name'),('search','method','name_UNIQUE','2017-12-29 08:08:42','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('search','method','name_UNIQUE','2017-12-29 08:08:42','size',1,NULL,'Number of pages in the index'),('sys','sys_config','PRIMARY','2017-12-13 08:38:02','n_diff_pfx01',2,1,'variable'),('sys','sys_config','PRIMARY','2017-12-13 08:38:02','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('sys','sys_config','PRIMARY','2017-12-13 08:38:02','size',1,NULL,'Number of pages in the index'),('template','url','PRIMARY','2017-12-29 05:41:52','n_diff_pfx01',3,1,'idurl'),('template','url','PRIMARY','2017-12-29 05:41:52','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('template','url','PRIMARY','2017-12-29 05:41:52','size',1,NULL,'Number of pages in the index'),('tool','url','PRIMARY','2017-12-29 09:12:35','n_diff_pfx01',2,1,'idurl'),('tool','url','PRIMARY','2017-12-29 09:12:35','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('tool','url','PRIMARY','2017-12-29 09:12:35','size',1,NULL,'Number of pages in the index'),('user','login','PRIMARY','2017-12-28 07:42:34','n_diff_pfx01',4,1,'id'),('user','login','PRIMARY','2017-12-28 07:42:34','n_diff_pfx02',4,1,'id,LoginName'),('user','login','PRIMARY','2017-12-28 07:42:34','n_diff_pfx03',4,1,'id,LoginName,LoginMail'),('user','login','PRIMARY','2017-12-28 07:42:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('user','login','PRIMARY','2017-12-28 07:42:34','size',1,NULL,'Number of pages in the index'),('video','url','PRIMARY','2017-12-29 05:41:52','n_diff_pfx01',9,1,'idurl'),('video','url','PRIMARY','2017-12-29 05:41:52','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('video','url','PRIMARY','2017-12-29 05:41:52','size',1,NULL,'Number of pages in the index');
 /*!40000 ALTER TABLE `innodb_index_stats` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1654,7 +2709,7 @@ CREATE TABLE `innodb_table_stats` (
 
 LOCK TABLES `innodb_table_stats` WRITE;
 /*!40000 ALTER TABLE `innodb_table_stats` DISABLE KEYS */;
-INSERT INTO `innodb_table_stats` VALUES ('aiproject','url','2017-12-22 09:24:12',0,1,0),('audio','url','2017-12-21 08:11:26',0,1,0),('bookmark','patent_law','2017-12-14 05:48:43',82,5,0),('bookmark','patent_law_implementation_rules','2017-12-14 05:48:53',91,6,0),('chip','url','2017-12-22 09:09:33',6,1,0),('code','lang','2017-12-14 05:48:21',2,1,0),('code','string','2017-12-14 05:49:03',108,1,0),('code','temp','2017-12-14 05:48:22',0,1,0),('company','account','2017-12-14 05:48:22',0,1,0),('company','attendance','2017-12-14 05:48:22',0,1,0),('company','code','2017-12-14 05:48:22',0,1,0),('company','commit','2017-12-14 05:48:22',0,1,0),('company','creative','2017-12-14 05:48:22',0,1,0),('company','customer','2017-12-14 05:48:22',0,1,0),('company','device','2017-12-14 05:48:22',0,1,0),('company','feedback','2017-12-14 05:48:22',0,1,0),('company','idea','2017-12-14 05:48:22',0,1,0),('company','issue','2017-12-14 05:48:22',0,1,0),('company','market','2017-12-14 05:48:22',0,1,0),('company','person','2017-12-14 05:48:22',0,1,0),('company','plan','2017-12-14 05:48:22',0,1,0),('company','production','2017-12-14 05:48:22',0,1,0),('company','release','2017-12-14 05:48:22',0,1,0),('company','repair','2017-12-14 05:48:22',0,1,0),('company','request','2017-12-14 05:48:22',0,1,0),('company','review','2017-12-14 05:48:22',0,1,0),('company','service','2017-12-14 05:48:22',0,1,0),('company','source','2017-12-14 05:48:22',0,1,0),('company','test','2017-12-14 05:48:22',0,1,0),('company','work','2017-12-14 05:48:22',0,1,0),('file','infor','2017-12-14 05:48:22',0,1,0),('iwant','demand','2017-12-14 05:48:22',2,1,0),('knowledge','k_links','2017-12-14 05:48:33',58,1,0),('knowledge','k_type','2017-12-14 05:48:23',0,1,0),('law','law','2017-12-19 09:08:59',0,1,0),('law','url','2017-12-19 09:09:09',5,1,0),('life','url','2017-12-22 09:38:53',0,1,0),('medical','url','2017-12-21 10:41:28',0,1,0),('mysql','gtid_executed','2017-12-13 08:38:01',0,1,0),('patent','project','2017-12-14 05:48:23',0,1,0),('question','question','2017-12-14 05:48:23',0,1,0),('radar','data','2017-12-14 05:48:22',0,1,1),('search','method','2017-12-27 10:56:23',24,1,1),('sys','sys_config','2017-12-13 08:38:02',2,1,0),('template','url','2017-12-26 07:57:23',2,1,0),('user','login','2017-12-14 05:48:23',4,1,0),('vedio','url','2017-12-21 08:16:17',8,1,0);
+INSERT INTO `innodb_table_stats` VALUES ('aiproject','url','2017-12-28 07:42:34',0,1,0),('audio','url','2017-12-29 05:40:10',0,1,0),('bluetooth','cost','2017-12-28 07:42:32',0,1,0),('bluetooth','customer','2017-12-28 07:42:32',0,1,0),('bluetooth','devicetype','2017-12-28 07:42:33',3,1,1),('bluetooth','fail','2017-12-28 07:42:32',0,1,1),('bluetooth','line','2017-12-28 07:42:32',0,1,2),('bluetooth','mac','2017-12-28 07:42:32',0,1,2),('bluetooth','materiel','2017-12-28 07:42:32',0,1,0),('bluetooth','order','2017-12-28 07:42:33',0,1,1),('bluetooth','orderstatus','2017-12-28 07:42:33',0,1,0),('bluetooth','product','2017-12-28 07:42:33',0,1,2),('bluetooth','role','2017-12-28 07:42:33',3,1,0),('bluetooth','test','2017-12-28 07:42:33',0,1,0),('bluetooth','testitem','2017-12-28 07:42:33',7,1,1),('bluetooth','user','2017-12-28 07:42:33',0,1,1),('bluetooth','worker','2017-12-28 07:42:33',0,1,1),('bookmark','patent_law','2017-12-28 07:43:14',82,5,0),('bookmark','patent_law_implementation_rules','2017-12-28 07:43:24',91,6,0),('chip','url','2017-12-29 05:40:10',7,1,0),('code','lang','2017-12-28 07:42:32',2,1,0),('code','string','2017-12-28 07:42:54',146,1,0),('code','temp','2017-12-28 07:42:32',0,1,0),('company','account','2017-12-28 07:42:33',0,1,0),('company','attendance','2017-12-28 07:42:33',0,1,0),('company','code','2017-12-28 07:42:33',0,1,0),('company','commit','2017-12-28 07:42:33',0,1,0),('company','creative','2017-12-28 07:42:33',0,1,0),('company','customer','2017-12-28 07:42:33',0,1,0),('company','device','2017-12-28 07:42:33',0,1,0),('company','feedback','2017-12-28 07:42:33',0,1,0),('company','idea','2017-12-28 07:42:34',0,1,0),('company','issue','2017-12-28 07:42:34',0,1,0),('company','market','2017-12-28 07:42:34',0,1,0),('company','person','2017-12-28 07:42:34',0,1,0),('company','plan','2017-12-28 07:42:34',0,1,0),('company','production','2017-12-28 07:42:34',0,1,0),('company','release','2017-12-28 07:42:34',0,1,0),('company','repair','2017-12-28 07:42:34',0,1,0),('company','request','2017-12-28 07:42:34',0,1,0),('company','review','2017-12-28 07:42:34',0,1,0),('company','service','2017-12-28 07:42:34',0,1,0),('company','source','2017-12-28 07:42:34',0,1,0),('company','test','2017-12-28 07:42:34',0,1,0),('company','work','2017-12-28 07:42:34',0,1,0),('debt','creditor','2017-12-28 09:03:02',0,1,1),('debt','jurisdiction','2017-12-28 09:03:02',0,1,1),('education','url','2017-12-29 08:05:49',18,1,0),('file','infor','2017-12-28 07:42:33',0,1,0),('fish_scales','contract','2017-12-28 09:03:14',0,1,1),('fish_scales','contractor','2017-12-28 09:03:14',0,1,1),('fish_scales','franchise','2017-12-28 09:03:14',0,1,0),('fish_scales','records','2017-12-28 09:03:14',0,1,1),('hwdc','capacitance','2017-12-28 07:42:34',0,1,0),('hwdc','chipset','2017-12-28 07:42:34',0,1,0),('hwdc','clock','2017-12-28 07:42:34',0,1,0),('hwdc','inductance','2017-12-28 07:42:34',0,1,0),('hwdc','pin','2017-12-28 07:42:34',0,1,0),('hwdc','resistance','2017-12-28 07:42:34',0,1,0),('hwdc','voltage','2017-12-28 07:42:35',0,1,0),('iwant','demand','2017-12-28 07:42:33',2,1,0),('knowledge','k_links','2017-12-28 07:42:34',60,1,0),('knowledge','k_type','2017-12-28 07:42:33',0,1,0),('law','law','2017-12-28 07:42:34',0,1,0),('law','url','2017-12-28 07:42:44',6,1,0),('life','url','2017-12-29 05:41:52',0,1,0),('medical','url','2017-12-29 05:41:52',0,1,0),('mysql','gtid_executed','2017-12-13 08:38:01',0,1,0),('patent','project','2017-12-28 07:42:33',0,1,0),('question','question','2017-12-28 07:42:33',0,1,0),('radar','data','2017-12-28 07:42:33',0,1,1),('search','method','2017-12-29 08:08:42',34,1,1),('sys','sys_config','2017-12-13 08:38:02',2,1,0),('template','url','2017-12-29 05:41:52',3,1,0),('tool','url','2017-12-29 09:12:35',2,1,0),('user','login','2017-12-28 07:42:34',4,1,0),('video','url','2017-12-29 05:41:52',9,1,0);
 /*!40000 ALTER TABLE `innodb_table_stats` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2374,7 +3429,7 @@ CREATE TABLE `method` (
   `author` varchar(45) NOT NULL,
   PRIMARY KEY (`idmethod`,`name`,`base`),
   UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COMMENT='Different websites search method\n';
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8 COMMENT='Different websites search method\n';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2383,7 +3438,7 @@ CREATE TABLE `method` (
 
 LOCK TABLES `method` WRITE;
 /*!40000 ALTER TABLE `method` DISABLE KEYS */;
-INSERT INTO `method` VALUES (1,'Google',100,'search','http://www.google.com/search?q=+','','&ie=UTF-8+&oe=UTF-8','2017-12-27 06:18:14','hunter'),(2,'Bing',99,'search','https://www.bing.com/search?q=','','','2017-12-27 06:19:27','hunter'),(3,'ZhiHu',98,'search','https://www.zhihu.com/search?type=content&q=','','','2017-12-27 06:20:52','hunter'),(4,'Baidu',97,'search','https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&wd=','','','2017-12-27 06:27:42','hunter'),(5,'Github',96,'code','https://github.com/search?utf8=%E2%9C%93&q=','','&type=','2017-12-27 06:38:08','hunter'),(6,'Sina',0,'news','http://search.sina.com.cn/?q=','','&c=news&from=index','2017-12-27 16:03:10','hunter'),(7,'Tmail',0,'shopping','https://list.tmall.com/search_product.htm?q=','','','2017-12-27 16:10:42','hunter'),(8,'JingDong',0,'shopping','https://search.jd.com/Search?keyword=','','&enc=utf-8','2017-12-27 16:13:34','hunter'),(9,'Taobao',0,'shopping','https://s.taobao.com/search?q=','','','2017-12-27 16:16:31','hunter'),(10,'Vip',0,'shopping','https://category.vip.com/suggest.php?keyword=','','','2017-12-27 16:18:26','hunter'),(11,'Yahoo',99,'search','https://search.yahoo.com/search?p=','','','2017-12-27 17:43:45','hunter'),(12,'CSDN',0,'technology','http://so.csdn.net/so/search/s.do?q=','','','2017-12-27 16:19:49','hunter'),(13,'Amazon',0,'shopping','https://www.amazon.cn/s/field-keywords=','','','2017-12-27 16:22:15','hunter'),(14,'MSDN_CN',0,'technology','https://social.msdn.microsoft.com/Search/zh-CN?query=','','','2017-12-27 16:32:03','hunter'),(15,'PHP',0,'technology','http://php.net/manual-lookup.php?pattern=','','','2017-12-27 16:34:34','hunter'),(16,'Oracle',0,'technology','https://www.oracle.com/search/results?Nty=1&Ntk=S3&Ntt=','','','2017-12-27 16:39:46','hunter'),(17,'Mysql',0,'technology','https://www.oracle.com/search/results?cat=mysql&Ntk=SI-ALL5&Ntt=','','','2017-12-27 16:42:01','hunter'),(18,'C++',0,'technology','http://www.cplusplus.com/search.do?q=','','','2017-12-27 16:44:24','hunter'),(19,'Java',0,'technology','https://docs.oracle.com/apps/search/search.jsp?q=','','&category=all','2017-12-27 17:31:33','hunter'),(20,'Python',0,'technology','https://www.python.org/search/?q=','','','2017-12-27 17:35:06','hunter'),(21,'Amap',0,'map','http://ditu.amap.com/search?query=','','','2017-12-27 18:32:24','hunter'),(22,'Englsh-CN',0,'translate','https://translate.google.cn/#en/zh-CN/','','','2017-12-27 18:37:52','hunter'),(23,'CN-Englsh',0,'translate','https://translate.google.cn/#zh-CN/en/','','','2017-12-27 18:39:33','hunter'),(24,'Ximalaya',0,'audio','http://www.ximalaya.com/search/all/kw/','','/page/1/sc/true','2017-12-27 18:56:23','hunter'),(25,'Soku',0,'vedio','http://www.soku.com/search_video/q_','','','2017-12-27 18:58:40','hunter'),(26,'sogo',0,'search','https://www.sogou.com/web?query=','','','2017-12-28 11:28:13','hunter');
+INSERT INTO `method` VALUES (1,'Google',100,'search','http://www.google.com/search?q=+','','&ie=UTF-8+&oe=UTF-8','2017-12-27 06:18:14','hunter'),(2,'Bing',99,'search','https://www.bing.com/search?q=','','','2017-12-27 06:19:27','hunter'),(3,'ZhiHu',96,'search','https://www.zhihu.com/search?type=content&q=','','','2017-12-27 06:20:52','hunter'),(4,'Baidu',99,'search','https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&wd=','','','2017-12-27 06:27:42','hunter'),(5,'Github',82,'code','https://github.com/search?utf8=%E2%9C%93&q=','','&type=','2017-12-27 06:38:08','hunter'),(6,'Sina',52,'news','http://search.sina.com.cn/?q=','','&c=news&from=index','2017-12-27 16:03:10','hunter'),(7,'Tmail',49,'shopping','https://list.tmall.com/search_product.htm?q=','','','2017-12-27 16:10:42','hunter'),(8,'JingDong',48,'shopping','https://search.jd.com/Search?keyword=','','&enc=utf-8','2017-12-27 16:13:34','hunter'),(9,'Taobao',50,'shopping','https://s.taobao.com/search?q=','','','2017-12-27 16:16:31','hunter'),(10,'Vip',47,'shopping','https://category.vip.com/suggest.php?keyword=','','','2017-12-27 16:18:26','hunter'),(11,'Yahoo',98,'search','https://search.yahoo.com/search?p=','','','2017-12-27 17:43:45','hunter'),(12,'CSDN',72,'technology','http://so.csdn.net/so/search/s.do?q=','','','2017-12-27 16:19:49','hunter'),(13,'Amazon',45,'shopping','https://www.amazon.cn/s/field-keywords=','','','2017-12-27 16:22:15','hunter'),(14,'MSDN_CN',81,'technology','https://social.msdn.microsoft.com/Search/zh-CN?query=','','','2017-12-27 16:32:03','hunter'),(15,'PHP',77,'technology','http://php.net/manual-lookup.php?pattern=','','','2017-12-27 16:34:34','hunter'),(16,'Oracle',75,'technology','https://www.oracle.com/search/results?Nty=1&Ntk=S3&Ntt=','','','2017-12-27 16:39:46','hunter'),(17,'Mysql',76,'technology','https://www.oracle.com/search/results?cat=mysql&Ntk=SI-ALL5&Ntt=','','','2017-12-27 16:42:01','hunter'),(18,'C++',80,'technology','http://www.cplusplus.com/search.do?q=','','','2017-12-27 16:44:24','hunter'),(19,'Java',79,'technology','https://docs.oracle.com/apps/search/search.jsp?q=','','&category=all','2017-12-27 17:31:33','hunter'),(20,'Python',78,'technology','https://www.python.org/search/?q=','','','2017-12-27 17:35:06','hunter'),(21,'Amap',95,'map','http://ditu.amap.com/search?query=','','','2017-12-27 10:32:02','hunter'),(22,'QiChaCha',10,'information','http://www.qichacha.com/search?key=','','','2017-12-28 17:50:14','hunter'),(23,'Cmake',74,'technology','https://cmake.org/?s=','','','2017-12-28 18:29:02','hunter'),(24,'ubuntu',73,'technology','https://www.ubuntu.com/search?q=','','','2017-12-28 18:33:18','hunter'),(25,'ebay',44,'shopping','https://www.ebay.com/sch/i.html?&_nkw=','','','2017-12-28 18:44:36','hunter'),(26,'Biyao',46,'shopping','http://www.biyao.com/classify/search.html?query=','','','2017-12-28 18:47:06','hunter'),(27,'中国政府采购',11,'shopping','http://search.ccgp.gov.cn/bxsearch?searchtype=2&kw=','','','2017-12-28 18:51:44','hunter'),(28,'Alibaba',51,'shopping','https://s.1688.com/selloffer/offer_search.htm?keywords=','','','2017-12-28 18:57:23','hunter'),(29,'国家企业信用',11,'gov','http://www.gsxt.gov.cn/?','','','2017-12-28 19:15:23','hunter'),(30,'UEFI',82,'technology','http://www.uefi.org/search/node/','','','2017-12-29 10:57:39','hunter'),(31,'x-code',79,'technology','https://developer.apple.com/search/?q=','','','2017-12-29 11:07:26','hunter'),(32,'U-Boot',82,'technology','http://www.denx.de/wiki/view/U-Boot/WebSearch?search=','','&scope=all','2017-12-29 11:12:05','hunter'),(33,'wiki',100,'search','https://en.wikipedia.org/wiki/','','','2017-12-29 11:17:05','hunter'),(34,'runoob',81,'technology','http://www.runoob.com/?s=','','','2017-12-29 16:08:42','hunter');
 /*!40000 ALTER TABLE `method` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2420,8 +3475,9 @@ CREATE TABLE `url` (
   `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
   `status` varchar(45) DEFAULT NULL,
   `remark` varchar(45) DEFAULT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2430,7 +3486,47 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (61,'patent_sys','深圳市鸿鹏进出口有限公司','website','http://www.szhongpeng.com/','template/img/szhongpeng.jpg','2017-12-26 07:42:01','normal','utf8'),(62,'patent_sys','室内专修设计网站参考模板','website','template/Interior-design/index.html','template/img/shineisheji.jpg','2017-12-26 07:47:46','normal','utf8'),(63,'patent_sys','台州辰泽自动化设备有限公司','website','http://czautomation.com/','template/img/czautomation.jpg','2017-12-26 07:51:06','normal','utf8');
+INSERT INTO `url` VALUES (61,'patent_sys','深圳市鸿鹏进出口有限公司','website','http://www.szhongpeng.com/','template/img/szhongpeng.jpg','2017-12-26 07:42:01','normal','utf8',0),(62,'patent_sys','室内专修设计网站参考模板','website','template/Interior-design/index.html','template/img/shineisheji.jpg','2017-12-26 07:47:46','normal','utf8',0),(63,'patent_sys','台州辰泽自动化设备有限公司','website','http://czautomation.com/','template/img/czautomation.jpg','2017-12-26 07:51:06','normal','utf8',0),(64,'hunter','runoob','website','https://c.runoob.com/','template/img/runoob.jpg','2017-12-29 16:55:39','normal','utf8',0);
+/*!40000 ALTER TABLE `url` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `tool`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `tool` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `tool`;
+
+--
+-- Table structure for table `url`
+--
+
+DROP TABLE IF EXISTS `url`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `url` (
+  `idurl` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
+  `what_type` varchar(45) DEFAULT NULL,
+  `where` varchar(200) NOT NULL COMMENT 'where the URL address',
+  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`idurl`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `url`
+--
+
+LOCK TABLES `url` WRITE;
+/*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (1,'hunter','runoob','website','https://c.runoob.com/','img/runoob_word.jpg','2017-12-29 17:01:41','normal','utf8',0),(2,'hunter','tortoisesvn','website','https://tortoisesvn.net/','img/tortoisesvn.jpg','2017-12-29 17:12:35','normal','utf8',0),(3,'hunter','git','website','https://git-scm.com/','img/git.jpg','2017-12-29 17:14:29','normal','utf8',0);
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2474,12 +3570,12 @@ INSERT INTO `login` VALUES (1,'Dan-dan_Xue','dan-dan_xue@asus.com','b03c6e18072d
 UNLOCK TABLES;
 
 --
--- Current Database: `vedio`
+-- Current Database: `video`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `vedio` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `video` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
-USE `vedio`;
+USE `video`;
 
 --
 -- Table structure for table `url`
@@ -2498,8 +3594,9 @@ CREATE TABLE `url` (
   `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
   `status` varchar(45) DEFAULT NULL,
   `remark` varchar(45) DEFAULT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2508,7 +3605,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (61,'hunter','youtube','vedio','https://www.youtube.com/','img/youtube.jpg','2017-12-20 19:00:05','normal','utf8'),(62,'hunter','youku','vedio','http://www.youku.com/','img/youku.jpg','2017-12-20 19:15:41','normal','utf8'),(63,'hunter','tudou','vedio','http://www.tudou.com/','img/tudou.jpg','2017-12-20 19:16:52','normal','utf8'),(64,'hunter','sina','vedio','http://video.sina.com.cn/','img/sina_vedio.jpg','2017-12-20 19:17:48','normal','utf8'),(65,'hunter','iqiyi','vedio','http://www.iqiyi.com/','img/qq_vedio.jpg','2017-12-20 19:18:38','normal','utf8'),(66,'hunter','ifeng','vedio','http://v.ifeng.com/','img/ifeng_vedio.jpg','2017-12-20 19:19:45','normal','utf8'),(67,'hunter','baidu','vedio','http://video.baidu.com/','img/baidu_vedio.jpg','2017-12-20 19:21:13','normal','utf8'),(68,'hunter','CCTV','vedio','http://tv.cctv.com/','img/cctv-vedio.jpg','2017-12-21 16:16:17','normal','utf8');
+INSERT INTO `url` VALUES (61,'hunter','youtube','video','https://www.youtube.com/','img/youtube.jpg','2017-12-20 19:00:05','normal','utf8',0),(62,'hunter','youku','video','http://www.youku.com/','img/youku.jpg','2017-12-20 19:15:41','normal','utf8',0),(63,'hunter','tudou','video','http://www.tudou.com/','img/tudou.jpg','2017-12-20 19:16:52','normal','utf8',0),(64,'hunter','sina','video','http://video.sina.com.cn/','img/sina_vedio.jpg','2017-12-20 19:17:48','normal','utf8',0),(65,'hunter','iqiyi','video','http://www.iqiyi.com/','img/qq_vedio.jpg','2017-12-20 19:18:38','normal','utf8',0),(66,'hunter','ifeng','video','http://v.ifeng.com/','img/ifeng_vedio.jpg','2017-12-20 19:19:45','normal','utf8',0),(67,'hunter','baidu','video','http://video.baidu.com/','img/baidu_vedio.jpg','2017-12-20 19:21:13','normal','utf8',0),(68,'hunter','CCTV','video','http://tv.cctv.com/','img/cctv-video.jpg','2017-12-21 16:16:17','normal','utf8',0),(69,'hunter','imooc','website','https://www.imooc.com/','img/imooc.jpg','2017-12-29 11:56:49','normal','utf8',0);
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -2521,4 +3618,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-28 15:28:40
+-- Dump completed on 2017-12-29 22:24:25

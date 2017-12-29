@@ -32,6 +32,7 @@ CREATE TABLE `url` (
   `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
   `status` varchar(45) DEFAULT NULL,
   `remark` varchar(45) DEFAULT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idurl`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -54,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-28 15:29:21
+-- Dump completed on 2017-12-29 22:25:17
