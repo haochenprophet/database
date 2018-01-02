@@ -41,7 +41,7 @@ CREATE TABLE `file` (
   `cpsw` varchar(45) DEFAULT NULL COMMENT 'Compress password',
   `secret` int(11) NOT NULL DEFAULT '0' COMMENT 'Secret level',
   `spsw` varchar(45) DEFAULT NULL COMMENT 'Secret level''s password',
-  `decrypt` datetime DEFAULT NULL COMMENT 'decrypt =decrypt time +password',
+  `decrypt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'decrypt =decrypt time +password',
   `status` varchar(45) DEFAULT NULL,
   `introduction` text,
   `remark` text,
@@ -69,4 +69,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-02 14:49:16
+-- Dump completed on 2018-01-02 15:43:46
