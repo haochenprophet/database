@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
 --
--- Host: localhost    Database: medical
+-- Host: localhost    Database: template
 -- ------------------------------------------------------
 -- Server version	5.7.20-0ubuntu0.16.04.1
 
@@ -34,7 +34,7 @@ CREATE TABLE `url` (
   `remark` varchar(45) DEFAULT NULL,
   `priority` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,6 +43,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (61,'patent_sys','深圳市鸿鹏进出口有限公司','website','http://www.szhongpeng.com/','template/img/szhongpeng.jpg','2017-12-26 07:42:01','normal','utf8',0),(62,'patent_sys','室内专修设计网站参考模板','website','template/Interior-design/index.html','template/img/shineisheji.jpg','2017-12-26 07:47:46','normal','utf8',0),(63,'patent_sys','台州辰泽自动化设备有限公司','website','http://czautomation.com/','template/img/czautomation.jpg','2017-12-26 07:51:06','normal','utf8',0),(64,'hunter','runoob','website','https://c.runoob.com/','template/img/runoob.jpg','2017-12-29 16:55:39','normal','utf8',0);
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-03 13:37:47
+-- Dump completed on 2018-01-03 13:38:19

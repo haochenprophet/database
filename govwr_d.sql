@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
 --
--- Host: localhost    Database: radar
+-- Host: localhost    Database: govwr
 -- ------------------------------------------------------
 -- Server version	5.7.20-0ubuntu0.16.04.1
 
@@ -16,40 +16,46 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `data`
+-- Table structure for table `file`
 --
 
-DROP TABLE IF EXISTS `data`;
+DROP TABLE IF EXISTS `file`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `data` (
-  `iddata` int(11) NOT NULL AUTO_INCREMENT,
-  `device_id` int(11) NOT NULL DEFAULT '0',
+CREATE TABLE `file` (
+  `idfile` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(45) NOT NULL COMMENT 'name=title+uuid',
+  `uuid` varchar(45) NOT NULL DEFAULT 'UUID()',
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `millisecond` int(11) NOT NULL DEFAULT '0',
-  `microsecond` int(11) NOT NULL DEFAULT '0',
-  `nanosecond` int(11) NOT NULL DEFAULT '0',
-  `data` longblob COMMENT 'radar data form Radar information collection system\n',
-  `data_type` varchar(45) NOT NULL DEFAULT 'General' COMMENT 'radar data type :General data,Meteorological data ,Flight control information,\n',
-  `data_grade` int(11) NOT NULL DEFAULT '0',
-  `status` varchar(45) NOT NULL DEFAULT 'Normal' COMMENT 'normal, error , ... ',
-  `source_from` varchar(45) DEFAULT NULL COMMENT 'data come from like device ID,IP Addr,',
-  `source_to` varchar(45) DEFAULT NULL COMMENT 'source from ,to ,source stream .',
-  `location` varchar(60) NOT NULL DEFAULT '0,0,0' COMMENT 'like GPS, Coordinate System,Geographic coordinate system ,Projection coordinate system,''x,y,z-0,0,0''',
-  `creator` varchar(45) DEFAULT NULL COMMENT 'data creator ',
+  `name` varchar(45) NOT NULL COMMENT 'name=./org/author/title+uuid',
+  `type` varchar(45) DEFAULT NULL COMMENT 'txt,doc,xml,audio,vedio,pdf ,html,',
+  `author` varchar(45) NOT NULL,
+  `tel` varchar(45) DEFAULT NULL,
+  `mail` varchar(45) DEFAULT NULL,
+  `org` varchar(45) NOT NULL,
+  `where` varchar(45) NOT NULL,
+  `md5` varchar(45) NOT NULL COMMENT 'file md5 checksum',
+  `compress` tinyint(4) NOT NULL DEFAULT '0',
+  `cpsw` varchar(45) DEFAULT NULL COMMENT 'Compress password',
+  `secret` int(11) NOT NULL DEFAULT '0' COMMENT 'Secret level',
+  `spsw` varchar(45) DEFAULT NULL COMMENT 'Secret level''s password',
+  `decrypt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'decrypt =decrypt time +password',
+  `status` varchar(45) DEFAULT NULL,
+  `introduction` text,
   `remark` text,
-  PRIMARY KEY (`iddata`),
-  UNIQUE KEY `iddata_UNIQUE` (`iddata`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`idfile`,`uuid`),
+  UNIQUE KEY `idfile_UNIQUE` (`idfile`),
+  UNIQUE KEY `uuid_UNIQUE` (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='government documents';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `data`
+-- Dumping data for table `file`
 --
 
-LOCK TABLES `data` WRITE;
-/*!40000 ALTER TABLE `data` DISABLE KEYS */;
-/*!40000 ALTER TABLE `data` ENABLE KEYS */;
+LOCK TABLES `file` WRITE;
+/*!40000 ALTER TABLE `file` DISABLE KEYS */;
+/*!40000 ALTER TABLE `file` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -61,4 +67,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-03 13:38:03
+-- Dump completed on 2018-01-03 13:37:24

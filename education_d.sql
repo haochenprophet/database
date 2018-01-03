@@ -27,14 +27,14 @@ CREATE TABLE `url` (
   `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
   `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
   `what_type` varchar(45) DEFAULT NULL,
-  `where` varchar(45) NOT NULL COMMENT 'where the URL address',
+  `where` varchar(200) NOT NULL COMMENT 'where the URL address',
   `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
   `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
   `status` varchar(45) DEFAULT NULL,
   `remark` varchar(45) DEFAULT NULL,
   `priority` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (61,'hunter','imooc','doc technical','https://www.imooc.com/','img/imooc.jpg','2017-12-29 11:59:32','normal','utf8',0),(62,'hunter','open163','website','https://open.163.com/','img/open163.jpg','2017-12-29 13:21:12','normal','utf8',0),(63,'hunter','study163','website','http://study.163.com/','img/yun163.png','2017-12-29 13:22:21','normal','utf8',0),(64,'hunter','xuetangx','website','http://www.xuetangx.com/','img/xuetangx.png','2017-12-29 13:23:09','normal','utf8',0),(65,'hunter','w3school','website','http://www.w3school.com.cn/','img/w3school.jpg','2017-12-29 13:23:53','normal','utf8',0),(66,'hunter','mysql.doc','website','https://dev.mysql.com/doc/','img/mysql.jpg','2017-12-29 13:24:43','normal','utf8',0),(67,'hunter','python.doc','website','https://www.python.org/doc/','img/python.jpg','2017-12-29 13:25:14','normal','utf8',0),(68,'hunter','apple.doc','website','https://developer.apple.com/documentation/','img/apple.jpg','2017-12-29 13:26:02','normal','utf8',0),(69,'hunter','javase','website','https://docs.oracle.com/javase/','img/java.png','2017-12-29 13:26:45','normal','utf8',0),(70,'hunter','tutorialspoint','website','https://www.tutorialspoint.com/','img/tutorial.png','2017-12-29 13:27:28','normal','utf8',0),(71,'hunter','first_edu','website','http://www.aajc.com/','img/first_edu.jpg','2017-12-29 13:28:34','normal','utf8',0),(72,'hunter','icourse','website','http://www.icourses.cn','img/icourse.jpg','2017-12-29 13:29:11','normal','utf8',0),(73,'hunter','php','website','http://php.net/','img/php.jpg','2017-12-29 13:30:10','normal','utf8',0),(74,'hunter','linuxdocs','website','http://linuxdocs.org/','img/linux.png','2017-12-29 15:12:27','normal','utf8',0);
+INSERT INTO `url` VALUES (1,'hunter','imooc','doc technical','https://www.imooc.com/','img/imooc.jpg','2017-12-29 11:59:32','normal','utf8',0),(2,'hunter','open163','website','https://open.163.com/','img/open163.jpg','2017-12-29 13:21:12','normal','utf8',0),(3,'hunter','study163','website','http://study.163.com/','img/yun163.png','2017-12-29 13:22:21','normal','utf8',0),(4,'hunter','xuetangx','website','http://www.xuetangx.com/','img/xuetangx.png','2017-12-29 13:23:09','normal','utf8',0),(5,'hunter','w3school','website','http://www.w3school.com.cn/','img/w3school.jpg','2017-12-29 13:23:53','normal','utf8',0),(6,'hunter','mysql.doc','website','https://dev.mysql.com/doc/','img/mysql.jpg','2017-12-29 13:24:43','normal','utf8',0),(7,'hunter','python.doc','website','https://www.python.org/doc/','img/python.jpg','2017-12-29 13:25:14','normal','utf8',0),(8,'hunter','apple.doc','website','https://developer.apple.com/documentation/','img/apple.jpg','2017-12-29 13:26:02','normal','utf8',0),(9,'hunter','javase','website','https://docs.oracle.com/javase/','img/java.png','2017-12-29 13:26:45','normal','utf8',0),(10,'hunter','tutorialspoint','website','https://www.tutorialspoint.com/','img/tutorial.png','2017-12-29 13:27:28','normal','utf8',0),(11,'hunter','first_edu','website','http://www.aajc.com/','img/first_edu.jpg','2017-12-29 13:28:34','normal','utf8',0),(12,'hunter','icourse','website','http://www.icourses.cn','img/icourse.jpg','2017-12-29 13:29:11','normal','utf8',0),(13,'hunter','php','website','http://php.net/','img/php.jpg','2017-12-29 13:30:10','normal','utf8',0),(14,'hunter','linuxdocs','website','http://linuxdocs.org/','img/linux.png','2017-12-29 15:12:27','normal','utf8',0),(15,'hunter','visualstudio','website','https://www.visualstudio.com/zh-hans/vs/getting-started/','img/microsoft.jpg','2017-12-29 07:27:57','normal','utf8',0),(16,'hunter','w3resource','website','https://www.w3resource.com/index.php','img/w3resource.jpg','2017-12-29 15:37:53','normal','utf8',0),(17,'hunter','CPP','website','http://www.cplusplus.com/reference/','img/cpp.jpg','2017-12-29 15:52:14','normal','utf8',0),(18,'hunter','mongodb','website','http://www.runoob.com/mongodb/mongodb-tutorial.html',' img/mongodb.png','2017-12-29 16:05:49','normal','utf8',0),(19,'hunter','runoob','website','http://www.runoob.com/','img/runoob.jpg','2017-12-29 16:17:29','normal','utf8',0),(20,'hunter','perl','website','https://www.perl.org/','img/perl.jpg','2017-12-29 17:20:29','normal','utf8',0),(21,'hunter','uefi','website','http://www.uefi.org/learning_center','img/uefi.jpg','2017-12-29 17:27:41','normal','utf8',0),(22,'hunter','Git','website','https://git-scm.com/book/zh/v2','img/git.jpg','2018-01-02 17:20:47','normal','utf8',0),(23,'hunter','ACPI','website','http://www.acpi.info/spec.htm','img/acpi.jpg','2018-01-02 17:29:19','normal','utf8',0);
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-29 15:21:22
+-- Dump completed on 2018-01-03 13:37:12
