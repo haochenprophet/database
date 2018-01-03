@@ -53,7 +53,7 @@ mysqldump -u root -p task >task_d.sql
 echo template
 mysqldump -u root -p template >template_d.sql
 echo tool
-mysqldump -u root -p template >tool_d.sql
+mysqldump -u root -p tool >tool_d.sql
 echo user
 mysqldump -u root -p user >user_d.sql
 echo video
