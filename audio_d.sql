@@ -34,7 +34,7 @@ CREATE TABLE `url` (
   `remark` varchar(45) DEFAULT NULL,
   `priority` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,6 +43,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (1,'hunter','ximalaya','audio','http://www.ximalaya.com/','img/ximalaya.jpg','2017-12-30 01:33:21','normal','utf8',0),(2,'hunter','music.163','music','http://music.163.com/','img/music.163.jpg','2017-12-30 01:44:04','normal','',0),(3,'hunter','kugou','music','http://www.kugou.com/','img/kugo.jpg','2017-12-30 01:48:15','normal','utf8',0),(4,'hunter','qqmusic','music','https://y.qq.com/','img/qqmusic.jpg','2017-12-30 02:03:27','normal','utf8',0);
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-29 22:24:36
+-- Dump completed on 2018-01-03 13:13:31
