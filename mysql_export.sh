@@ -4,16 +4,30 @@ echo aiproject
 mysqldump -u root -p aiproject >aiproject_d.sql
 echo audio
 mysqldump -u root -p audio >audio_d.sql
+echo bluetooth
+mysqldump -u root -p bluetooth >bluetooth_d.sql
 echo bookmark
 mysqldump -u root -p bookmark >bookmark_d.sql
 echo chip
 mysqldump -u root -p chip >chip_d.sql
+echo cloud
+mysqldump -u root -p cloud >cloud_d.sql
 echo code
 mysqldump -u root -p code >code_d.sql
 echo company
 mysqldump -u root -p company >company_d.sql
+echo debt
+mysqldump -u root -p debt >debt_d.sql
+echo education
+mysqldump -u root -p education >education_d.sql
 echo file
 mysqldump -u root -p file >file_d.sql
+echo fish_scales
+mysqldump -u root -p fish_scales >fish_scales_d.sql
+echo govwr
+mysqldump -u root -p govwr >govwr_d.sql
+echo hwdc
+mysqldump -u root -p hwdc >hwdc_d.sql
 echo iwant
 mysqldump -u root -p iwant >iwant_d.sql
 echo knowledge
@@ -38,11 +52,9 @@ echo task
 mysqldump -u root -p task >task_d.sql
 echo template
 mysqldump -u root -p template >template_d.sql
+echo tool
+mysqldump -u root -p template >tool_d.sql
 echo user
 mysqldump -u root -p user >user_d.sql
-echo vedio
-mysqldump -u root -p vedio >vedio_d.sql
-echo debt
-mysqldump -u root -p debt >debt_d.sql
 echo video
 mysqldump -u root -p video >video_d.sql
