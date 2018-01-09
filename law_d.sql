@@ -75,7 +75,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'中华人民共和国宪法-2004','law/中华人民共和国宪法-2004.pdf','local','normal','2017-04-27 11:53:15','china','patent_sys',0,'宪法'),(2,'中华人民共和国专利法-2008','law/中华人民共和国专利法-2008.pdf','local','normal','2017-04-27 11:55:05','china','patent_sys',0,'专利法'),(3,'中华人民共和国专利法实施细则-2003','law/中华人民共和国专利法实施细则-2003.pdf','local','normal','2017-04-27 11:55:49','china','patent_sys',0,'专利法实施细则'),(4,'中华人民共和国民事诉讼法-2012','law/中华人民共和国民事诉讼法-2012.pdf','local','normal','2017-04-27 11:56:33','china','patent_sys',0,'民事诉讼法'),(5,'中华人民共和国专利法实施细则-2010','law/中华人民共和国专利法实施细则-2010.pdf','local','normal','2017-06-01 19:48:17','china','patent_sys',0,''),(6,'中华人民共和国劳动法','law/中华人民共和国劳动法.pdf','local','normal','2017-12-24 22:38:17','china','patent_sys',0,'');
+INSERT INTO `url` VALUES (1,'中华人民共和国宪法-2004','law/中华人民共和国宪法-2004.pdf','local','normal','2017-04-27 11:53:15','china','patent_sys',100,'宪法'),(2,'中华人民共和国专利法-2008','law/中华人民共和国专利法-2008.pdf','local','normal','2017-04-27 11:55:05','china','patent_sys',96,'专利法'),(3,'中华人民共和国专利法实施细则-2003','law/中华人民共和国专利法实施细则-2003.pdf','local','normal','2017-04-27 11:55:49','china','patent_sys',98,'专利法实施细则'),(4,'中华人民共和国民事诉讼法-2012','law/中华人民共和国民事诉讼法-2012.pdf','local','normal','2017-04-27 11:56:33','china','patent_sys',99,'民事诉讼法'),(5,'中华人民共和国专利法实施细则-2010','law/中华人民共和国专利法实施细则-2010.pdf','local','normal','2017-06-01 19:48:17','china','patent_sys',97,''),(6,'中华人民共和国劳动法','law/中华人民共和国劳动法.pdf','local','normal','2017-12-24 22:38:17','china','patent_sys',95,'');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -88,4 +88,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-03 13:37:40
+-- Dump completed on 2018-01-08 17:38:38
