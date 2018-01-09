@@ -27,13 +27,14 @@ CREATE TABLE `url` (
   `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
   `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
   `what_type` varchar(45) DEFAULT NULL,
-  `where` varchar(45) NOT NULL COMMENT 'where the URL address',
+  `where` varchar(200) NOT NULL COMMENT 'where the URL address',
   `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
   `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
   `status` varchar(45) DEFAULT NULL,
   `remark` varchar(45) DEFAULT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COMMENT='Ai Project URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +43,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (1,'hunter','act-r','website','http://act-r.psy.cmu.edu/','img/act_r.png','2018-01-09 17:09:59','normal','china',0),(2,'hunter','caffe','website','http://caffe.berkeleyvision.org/','img/caffe.png','2018-01-09 17:15:19','normal','china',0),(3,'hunter','deepmind','website','https://deepmind.com/','img/deepmind.png','2018-01-09 17:27:31','normal','china',0),(4,'hunter','convnetjs','website','http://cs.stanford.edu/people/karpathy/convnetjs/','img/convnetjs.png','2018-01-09 17:37:45','normal','china',0),(5,'hunter','deepdetect','website','https://deepdetect.com/','img/deepdetect.png','2018-01-09 17:42:24','normal','china',0),(6,'hunter','deeplearning4j','website','https://deeplearning4j.org/','img/DL4J.png','2018-01-09 17:53:44','normal','china',0),(7,'hunter','h2oai','website','https://www.h2o.ai/','img/h2oai.png','2018-01-09 17:58:15','normal','china',0),(8,'hunter','tensorflow','website','https://www.tensorflow.org/','img/tensorflow.jpg','2018-01-09 18:04:05','normal','china',0),(9,'hunter','mycroft','website','https://mycroft.ai/','img/mycroft.jpg','2018-01-09 18:11:01','normal','china',0),(10,'hunter','sonnet','website','https://deepmind.github.io/sonnet/','img/sonnet.png','2018-01-09 18:15:59','normal','china',0),(11,'hunter','opennn','website','http://www.opennn.net/','img/opennn.png','2018-01-09 18:19:26','normal','china',0),(12,'hunter','dynet','website','https://dynet.readthedocs.io','img/DyNet.png','2018-01-09 18:23:28','normal','china',0),(13,'hunter','OpenNLP','website','https://opennlp.apache.org/','img/OpenNLP.png','2018-01-09 18:27:28','normal','china',0),(14,'hunter','systemml','website','http://systemml.apache.org/','img/systemML.png','2018-01-09 18:33:45','normal','china',0),(15,'hunter','smile','website','http://haifengl.github.io/','img/smile.png','2018-01-09 18:38:56','normal','china',0),(16,'hunter','prophet','website','https://facebook.github.io/prophet/','img/prophet.png','2018-01-09 18:42:09','normal','china',0),(17,'hunter','clips','website','https://www.clips.uantwerpen.be/','img/clips.png','2018-01-09 18:45:52','normal','china',0),(18,'hunter','sparkml','website','https://spark.apache.org/','img/sparkml.png','2018-01-09 18:49:39','normal','china',0);
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-08 17:37:30
+-- Dump completed on 2018-01-09 18:51:28
