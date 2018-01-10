@@ -18,31 +18,6 @@ USE `code`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `code_type`
---
-
-DROP TABLE IF EXISTS `code_type`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `code_type` (
-  `idcode_type` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) NOT NULL,
-  PRIMARY KEY (`idcode_type`),
-  UNIQUE KEY `idcode_type_UNIQUE` (`idcode_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COMMENT='code_type';
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `code_type`
---
-
-LOCK TABLES `code_type` WRITE;
-/*!40000 ALTER TABLE `code_type` DISABLE KEYS */;
-INSERT INTO `code_type` VALUES (1,'c'),(2,'c++'),(3,'c#'),(4,'object-c'),(5,'java'),(6,'php'),(7,'js'),(8,'python'),(9,'asp'),(10,'perl'),(11,'bat'),(12,'sql'),(13,'pascal'),(14,'vb'),(15,'delphi'),(16,'html'),(17,'xml'),(18,'asm'),(19,'asl'),(20,'css'),(21,'shell'),(22,'awk'),(23,'nmake'),(24,'make');
-/*!40000 ALTER TABLE `code_type` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `lang`
 --
 
@@ -127,6 +102,44 @@ LOCK TABLES `temp` WRITE;
 /*!40000 ALTER TABLE `temp` DISABLE KEYS */;
 /*!40000 ALTER TABLE `temp` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `type`
+--
+
+DROP TABLE IF EXISTS `type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `type` (
+  `idcode_type` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `suffix` varchar(45) NOT NULL,
+  `header` varchar(45) DEFAULT NULL,
+  `lib` varchar(45) DEFAULT NULL,
+  `inc` varchar(45) DEFAULT NULL COMMENT 'include',
+  `class` varchar(45) DEFAULT NULL,
+  `package` varchar(45) DEFAULT NULL,
+  `project` varchar(45) DEFAULT NULL,
+  `option` varchar(45) DEFAULT NULL,
+  `config` varchar(45) DEFAULT NULL,
+  `imort` varchar(45) DEFAULT NULL,
+  `export` varchar(45) DEFAULT NULL,
+  `exe` varchar(45) DEFAULT NULL,
+  `obj` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idcode_type`),
+  UNIQUE KEY `idcode_type_UNIQUE` (`idcode_type`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COMMENT='code_type';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `type`
+--
+
+LOCK TABLES `type` WRITE;
+/*!40000 ALTER TABLE `type` DISABLE KEYS */;
+INSERT INTO `type` VALUES (1,'c','c',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,'c++','cpp',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(3,'c#','cs',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4,'object-c','m',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(5,'java','java',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(6,'php','php',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(7,'js','js',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(8,'python','py',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(9,'asp','aso',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(10,'perl','pl',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(11,'bat','bat',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(12,'sql','sql',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(13,'pascal','pas',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(14,'vb','vb',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(15,'delphi','pas',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(16,'html','htm',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(17,'xml','xml',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(18,'asm','asm',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(19,'asl','asl',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(20,'css','css',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(21,'shell','sh',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(22,'awk','awk',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(23,'nmake','mak',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(24,'make','mak',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `type` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -137,4 +150,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-10 11:36:22
+-- Dump completed on 2018-01-10 11:57:01
