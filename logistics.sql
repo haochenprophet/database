@@ -76,7 +76,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='logistics URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COMMENT='logistics URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,6 +85,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (1,'hunter','ems','website','http://www.ems.com.cn/','img/ems.jpg','2018-01-11 18:07:00','normal','utf8',100,'china'),(2,'hunter','sf-express','website','http://www.sf-express.com','img/sf-express.jpg','2018-01-11 18:11:05','normal','utf8',99,'china'),(3,'hunter','yto','website','http://www.yto.net.cn','img/yto.jpg','2018-01-11 18:14:31','normal','utf8',98,'china'),(4,'hunter','sto','website','http://www.sto.cn/','img/sto.jpg','2018-01-11 18:17:06','normal','utf8',97,'china'),(5,'hunter','ttkdex','website','http://www.ttkdex.com/','img/ttkdex.jpg','2018-01-11 18:22:06','normal','utf8',96,'china'),(6,'hunter','yundaex','website','http://yundaex.com','img/yundaex.png','2018-01-11 18:25:13','normal','utf8',95,'china'),(7,'hunter','zto','website','http://www.zto.com/','img/zto.png','2018-01-11 18:27:37','normal','utf8',95,'china'),(8,'hunter','zjs','website','http://www.zjs.com.cn/','img/zjs.jpg','2018-01-11 18:31:30','normal','utf8',94,'china'),(9,'hunter','htky365','website','http://www.htky365.com/','img/bst.jpg','2018-01-11 18:34:07','normal','utf8',94,'china'),(10,'hunter','fedex','website','https://www.fedex.com/cn/index.html','img/fedex.jpg','2018-01-11 18:37:10','normal','utf8',93,'china'),(11,'hunter','ups','website','https://www.ups.com','img/ups.jpg','2018-01-11 18:39:15','normal','utf8',93,'china'),(12,'hunter','dhl','website','http://www.cn.dhl.com/','img/dhl.jpg','2018-01-11 18:42:26','normal','utf8',92,'china'),(13,'hunter','deppon','website','https://www.deppon.com/','img/deppon.jpg','2018-01-11 18:45:44','normal','utf8',93,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -97,4 +98,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-11 17:48:10
+-- Dump completed on 2018-01-11 18:47:24
