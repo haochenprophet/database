@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `table` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `table`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: table
+-- Host: localhost    Database: table
 -- ------------------------------------------------------
 -- Server version	8.0.0-dmr-log
 
@@ -16,6 +16,32 @@ USE `table`;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `type`
+--
+
+DROP TABLE IF EXISTS `type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `type` (
+  `idtype` int(11) NOT NULL AUTO_INCREMENT,
+  `typecol` varchar(45) NOT NULL,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idtype`),
+  UNIQUE KEY `idtype_UNIQUE` (`idtype`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='url_typw';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `type`
+--
+
+LOCK TABLES `type` WRITE;
+/*!40000 ALTER TABLE `type` DISABLE KEYS */;
+INSERT INTO `type` VALUES (1,'create','2018-01-15 14:38:44'),(2,'drop','2018-01-15 14:38:44'),(3,'select','2018-01-15 14:38:44'),(4,'update','2018-01-15 14:38:44'),(5,'insert','2018-01-15 14:38:44'),(6,'delete','2018-01-15 14:38:44'),(7,'alter','2018-01-15 14:38:44');
+/*!40000 ALTER TABLE `type` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `url`
@@ -37,7 +63,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,6 +72,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (1,'hunter','create_url','create','table/create_url.sql','img/url.png','2018-01-12 16:07:43','normal','utf8',0,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +85,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-12 15:05:56
+-- Dump completed on 2018-01-15 14:40:32
