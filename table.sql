@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `table` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `table`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: table
+-- Host: 127.0.0.1    Database: table
 -- ------------------------------------------------------
 -- Server version	8.0.0-dmr-log
 
@@ -26,7 +26,7 @@ DROP TABLE IF EXISTS `type`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `type` (
   `idtype` int(11) NOT NULL AUTO_INCREMENT,
-  `typecol` varchar(45) NOT NULL,
+  `name` varchar(45) NOT NULL,
   `time` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idtype`),
   UNIQUE KEY `idtype_UNIQUE` (`idtype`)
@@ -85,4 +85,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-15 14:40:32
+-- Dump completed on 2018-01-15 17:00:21
