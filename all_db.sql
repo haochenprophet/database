@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: code
+-- Host: 127.0.0.1    Database: logistics
 -- ------------------------------------------------------
 -- Server version	8.0.0-dmr-log
 
@@ -14,6 +14,86 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Current Database: `logistics`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `logistics` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `logistics`;
+
+--
+-- Table structure for table `locate`
+--
+
+DROP TABLE IF EXISTS `locate`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `locate` (
+  `idlocate` int(11) NOT NULL AUTO_INCREMENT,
+  `number` varchar(45) NOT NULL COMMENT 'Serial number',
+  `owner` varchar(45) NOT NULL COMMENT 'who thing''s  owner ',
+  `address` varchar(45) NOT NULL COMMENT 'owner address ',
+  `logistics` varchar(45) NOT NULL COMMENT 'Logistics company name',
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `locate` varchar(100) NOT NULL COMMENT 'where of things',
+  `tel` varchar(45) NOT NULL COMMENT 'telephone of ower',
+  `what` varchar(45) DEFAULT NULL COMMENT 'what thing',
+  `latitude` double DEFAULT NULL COMMENT 'Logistics company',
+  `longitude` double DEFAULT NULL COMMENT 'Logistics company',
+  `audio` varchar(45) DEFAULT NULL,
+  `img` varchar(45) DEFAULT NULL,
+  `vedio` varchar(45) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `remark` text,
+  PRIMARY KEY (`idlocate`,`number`),
+  UNIQUE KEY `idlocate_UNIQUE` (`idlocate`),
+  UNIQUE KEY `number_UNIQUE` (`number`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Location of things';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `locate`
+--
+
+LOCK TABLES `locate` WRITE;
+/*!40000 ALTER TABLE `locate` DISABLE KEYS */;
+/*!40000 ALTER TABLE `locate` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `url`
+--
+
+DROP TABLE IF EXISTS `url`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `url` (
+  `idurl` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
+  `type` varchar(45) DEFAULT NULL,
+  `url` varchar(200) NOT NULL COMMENT 'where the URL address',
+  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
+  `where` varchar(45) NOT NULL DEFAULT 'china',
+  PRIMARY KEY (`idurl`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='logistics URL links .';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `url`
+--
+
+LOCK TABLES `url` WRITE;
+/*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (1,'hunter','ems','website','http://www.ems.com.cn/','img/ems.jpg','2018-01-11 18:07:00','normal','utf8',100,'china'),(2,'hunter','sf-express','website','http://www.sf-express.com','img/sf-express.jpg','2018-01-11 18:11:05','normal','utf8',99,'china'),(3,'hunter','yto','website','http://www.yto.net.cn','img/yto.jpg','2018-01-11 18:14:31','normal','utf8',98,'china'),(4,'hunter','sto','website','http://www.sto.cn/','img/sto.jpg','2018-01-11 18:17:06','normal','utf8',97,'china'),(5,'hunter','ttkdex','website','http://www.ttkdex.com/','img/ttkdex.jpg','2018-01-11 18:22:06','normal','utf8',96,'china'),(6,'hunter','yundaex','website','http://yundaex.com','img/yundaex.png','2018-01-11 18:25:13','normal','utf8',95,'china'),(7,'hunter','zto','website','http://www.zto.com/','img/zto.png','2018-01-11 18:27:37','normal','utf8',95,'china'),(8,'hunter','zjs','website','http://www.zjs.com.cn/','img/zjs.jpg','2018-01-11 18:31:30','normal','utf8',94,'china'),(9,'hunter','htky365','website','http://www.htky365.com/','img/bst.jpg','2018-01-11 18:34:07','normal','utf8',94,'china'),(10,'hunter','fedex','website','https://www.fedex.com/cn/index.html','img/fedex.jpg','2018-01-11 18:37:10','normal','utf8',93,'china'),(11,'hunter','ups','website','https://www.ups.com','img/ups.jpg','2018-01-11 18:39:15','normal','utf8',93,'china'),(12,'hunter','dhl','website','http://www.cn.dhl.com/','img/dhl.jpg','2018-01-11 18:42:26','normal','utf8',92,'china'),(13,'hunter','deppon','website','https://www.deppon.com/','img/deppon.jpg','2018-01-11 18:45:44','normal','utf8',93,'china'),(14,'hunter','jdwl','website','http://www.jdwl.com/','img/jd.jpg','2018-01-12 13:29:47','normal','utf8',98,'china');
+/*!40000 ALTER TABLE `url` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Current Database: `code`
@@ -65,7 +145,7 @@ CREATE TABLE `string` (
   `where` text,
   `remark` text,
   PRIMARY KEY (`idstring`)
-) ENGINE=InnoDB AUTO_INCREMENT=163 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=183 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,7 +154,7 @@ CREATE TABLE `string` (
 
 LOCK TABLES `string` WRITE;
 /*!40000 ALTER TABLE `string` DISABLE KEYS */;
-INSERT INTO `string` VALUES (1,'HOME','Home','en','2017-04-09 16:26:20','hunter','china','utf8'),(2,'PROJECT','Project','en','2017-04-09 16:38:59','hunter','china','utf8'),(3,'KNOWLEDGE','Knowledge','en','2017-04-09 16:43:15','hunter','china','utf8'),(4,'TEST','Test','en','2017-04-09 16:47:37','hunter','china','utf8'),(5,'CODE','Code','en','2017-04-09 17:00:46','hunter','china','utf8'),(6,'HOME','主页','cn','2017-04-10 14:05:51','hunter','china','utf8'),(7,'PROJECT','项目','cn','2017-04-10 14:19:08','hunter','china','utf8'),(8,'BOOKMARK','BookMark','en','2017-04-10 14:20:45','hunter','china','utf8'),(9,'BOOKMARK','书签','cn','2017-04-10 14:22:02','hunter','china','utf8'),(10,'KNOWLEDGE','知识','cn','2017-04-10 15:24:30','hunter','china','utf8'),(11,'TRANSLATE','翻译','cn','2017-04-10 15:27:12','hunter','china','utf8'),(12,'TRANSLATE','Translate','en','2017-04-10 15:33:59','hunter','china','utf8'),(13,'TEST','测试','cn','2017-04-10 15:37:41','hunter','china','utf8'),(14,'LAYOUT','Layout','en','2017-04-10 15:38:48','hunter','china','utf8'),(15,'LAYOUT','布局','cn','2017-04-10 15:39:45','hunter','china','utf8'),(16,'FILE','File','en','2017-04-10 15:41:06','hunter','china','utf8'),(17,'FILE','文件','cn','2017-04-10 15:41:22','hunter','china','utf8'),(18,'DOWNLOAD','Download','en','2017-04-10 15:41:49','hunter','china','utf8'),(19,'DOWNLOAD','下载','cn','2017-04-10 15:42:05','hunter','china','utf8'),(20,'GITTEST','GitTest','en','2017-04-10 15:42:28','hunter','china','utf8'),(21,'GITTEST','Git测试','cn','2017-04-10 15:46:45','hunter','china','utf8'),(22,'CODE','代码','cn','2017-04-10 15:47:17','hunter','china','utf8'),(23,'LOGIN','登录','cn','2017-04-10 15:47:47','hunter','china','utf8'),(24,'LOGIN','Login','en','2017-04-10 15:47:59','hunter','china','utf8'),(25,'REGISTER','Register','en','2017-04-10 15:48:33','hunter','china','utf8'),(26,'REGISTER','注册','cn','2017-04-10 15:48:49','hunter','china','utf8'),(27,'MAIL','邮件','cn','2017-04-10 15:49:13','hunter','china','utf8'),(28,'MAIL','Mail','en','2017-04-10 15:49:35','hunter','china','utf8'),(29,'PATENT_SYS','Patent_SYS','en','2017-04-10 15:50:19','hunter','china','utf8'),(30,'PATENT_SYS','专利系统','cn','2017-04-10 15:50:36','hunter','china','utf8'),(31,'LANGUAGE','语言','cn','2017-04-10 18:27:30','hunter','china','utf8'),(32,'LANGUAGE','Language','en','2017-04-10 18:28:13','hunter','china','utf8'),(33,'USER_NAME','Username','en','2017-04-13 10:34:53','hunter','china','utf8'),(34,'USER_NAME','用户名','cn','2017-04-13 10:35:14','hunter','china','utf8'),(35,'PASSWORD','密码','cn','2017-04-13 10:35:41','hunter','china','utf8'),(36,'PASSWORD','Password','en','2017-04-13 10:35:56','hunter','china','utf8'),(37,'CONFIRM_PASSWORD','Confirm Password','en','2017-04-13 10:47:29','hunter','china','utf8'),(38,'CONFIRM_PASSWORD','确认密码','cn','2017-04-13 10:48:07','hunter','china','utf8'),(39,'EMAIL','Email','en','2017-04-13 10:49:43','hunter','china','utf8'),(40,'EMAIL','电子邮件','cn','2017-04-13 10:50:13','hunter','china','utf8'),(41,'PASSWORD_RECOVER_QUESTION','Password recover question','en','2017-04-13 10:52:18','hunter','china','utf8'),(42,'PASSWORD_RECOVER_QUESTION','密码恢复问题','cn','2017-04-13 10:52:32','hunter','china','utf8'),(43,'PASSWORD_RECOVER_ANSWER','Password recover answer','en','2017-04-13 10:54:21','hunter','china','utf8'),(44,'PASSWORD_RECOVER_ANSWER','密码恢复答案','cn','2017-04-13 10:54:36','hunter','china','utf8'),(45,'PASSWORD_RECOVER_MAIL','Password recover mail','en','2017-04-13 10:55:45','hunter','china','utf8'),(46,'PASSWORD_RECOVER_MAIL','密码恢复邮箱','cn','2017-04-13 10:56:14','hunter','china','utf8'),(47,'COMMIT','提交','cn','2017-04-13 11:07:59','hunter','china','utf8'),(48,'COMMIT','Commit','en','2017-04-13 11:08:14','hunter','china','utf8'),(49,'COMMIT_MESSAGE','提交信息','cn','2017-04-13 17:34:52','hunter','china','utf8'),(50,'COMMIT_MESSAGE','Commit Message','en','2017-04-13 17:35:20','hunter','china','utf8'),(51,'OPTIONS','选项','cn','2017-04-13 17:36:25','hunter','china','utf8'),(52,'OPTIONS','Options','en','2017-04-13 17:36:40','hunter','china','utf8'),(53,'TITLE','标题','cn','2017-04-14 13:39:45','hunter','china','utf8'),(54,'TITLE','Title','en','2017-04-14 13:39:59','hunter','china','utf8'),(55,'URL','URL','en','2017-04-14 13:40:33','hunter','china','utf8'),(56,'URL','URL','cn','2017-04-14 13:40:39','hunter','china','utf8'),(57,'TYPE','Type','en','2017-04-14 13:41:12','hunter','china','utf8'),(58,'TYPE','类型','cn','2017-04-14 13:41:24','hunter','china','utf8'),(59,'STATUS','状态','cn','2017-04-14 13:41:51','hunter','china','utf8'),(60,'STATUS','Status','en','2017-04-14 13:42:25','hunter','china','utf8'),(61,'REMARK','备注','cn','2017-04-14 13:42:59','hunter','china','utf8'),(62,'REMARK','Remark','en','2017-04-14 13:43:17','hunter','china','utf8'),(63,'AUTHOR','Author','en','2017-04-14 13:43:41','hunter','china','utf8'),(64,'AUTHOR','作者','cn','2017-04-14 13:43:57','hunter','china','utf8'),(65,'FILENAME','Filename','en','2017-04-14 14:45:50','hunter','china','utf8'),(66,'FILENAME','文件名','cn','2017-04-14 14:46:08','hunter','china','utf8'),(67,'INDIVIDUAL_CENTER','IndividualCenter','en','2017-04-14 17:02:17','hunter','china','utf8'),(68,'INDIVIDUAL_CENTER','个人中心','cn','2017-04-14 17:02:34','hunter','china','utf8'),(69,'EXIT','退出','cn','2017-04-14 17:02:59','hunter','china','utf8'),(70,'EXIT','Exit','en','2017-04-14 17:03:10','hunter','china','utf8'),(71,'MENU','菜单','cn','2017-04-14 19:53:59','hunter','china','utf8'),(72,'MENU','Menu','en','2017-04-14 19:54:13','hunter','china','utf8'),(73,'PROJECT_NAME','项目名称','cn','2017-04-20 22:06:31','hunter','china','utf8'),(74,'PROJECT_NAME','ProjectName','en','2017-04-20 22:06:50','hunter','china','utf8'),(75,'SUBMIT','提交','cn','2017-04-20 22:14:15','hunter','china','utf8'),(76,'SUBMIT','Submit','en','2017-04-20 22:14:34','hunter','china','utf8'),(77,'LAW','法律法规','cn','2017-04-23 16:04:30','hunter','china','utf8'),(78,'LAW','Law','en','2017-04-23 16:05:00','hunter','china','utf8'),(79,'BOOK_NAME','BookName','en','2017-04-23 16:47:22','hunter','china','utf8'),(80,'BOOK_NAME','书名','cn','2017-04-23 16:47:43','hunter','china','utf8'),(81,'ORIGINAL','Original','en','2017-04-23 16:49:38','hunter','china','utf8'),(82,'ORIGINAL','原文','cn','2017-04-23 16:49:54','hunter','china','utf8'),(83,'MARK','标注','cn','2017-04-23 16:50:29','hunter','china','utf8'),(84,'MARK','Mark','en','2017-04-23 16:50:46','hunter','china','utf8'),(85,'COMMENT','Comment','en','2017-04-23 16:52:13','hunter','china','utf8'),(86,'COMMENT','评注','cn','2017-04-23 16:53:08','hunter','china','utf8'),(87,'LOCATION','Location','en','2017-04-23 16:54:21','hunter','china','utf8'),(88,'LOCATION','区位','cn','2017-04-23 16:54:54','hunter','china','utf8'),(89,'DEVICE','Device','en','2017-04-23 16:55:32','hunter','china','utf8'),(90,'DEVICE','设备','cn','2017-04-23 16:55:45','hunter','china','utf8'),(91,'IMAGE','Image','en','2017-04-23 16:56:29','hunter','china','utf8'),(92,'IMAGE','图片','cn','2017-04-23 16:56:52','hunter','china','utf8'),(93,'AUDIO','Audio','en','2017-04-23 16:57:35','hunter','china','utf8'),(94,'AUDIO','音频','cn','2017-04-23 16:57:52','hunter','china','utf8'),(95,'VEDIO','Vedio','en','2017-04-23 16:58:22','hunter','china','utf8'),(96,'VEDIO','视频','cn','2017-04-23 16:58:37','hunter','china','utf8'),(97,'ADD','增加','cn','2017-04-27 02:12:34','hunter','china','utf8'),(98,'ADD','Add','en','2017-04-27 02:12:49','hunter','china','utf8'),(99,'INQUIRY','Inquiry','en','2017-04-27 02:15:55','hunter','china','utf8'),(100,'INQUIRY','查询','cn','2017-04-27 02:16:06','hunter','china','utf8'),(101,'SERVER_NAME','localhost','en','2017-06-01 22:27:14','hunter','china','utf8'),(102,'SERVER_NAME','localhost','cn','2017-06-01 22:27:24','hunter','china','utf8'),(103,'USER_NAME_DB','patent','en','2017-06-01 22:28:45','hunter','china','utf8'),(104,'USER_NAME_DB','patent','cn','2017-06-01 22:28:52','hunter','china','utf8'),(105,'USER_PSW_DB','patent','cn','2017-06-01 22:29:55','hunter','china','utf8'),(106,'USER_PSW_DB','patent','en','2017-06-01 22:30:01','hunter','china','utf8'),(107,'SERVER_NAME_DB','localhost','cn','2017-06-01 22:31:17','hunter','china','utf8'),(108,'SERVER_NAME_DB','localhost','en','2017-06-01 22:31:24','hunter','china','utf8'),(109,'NEWS','新闻','cn','2017-12-14 15:40:52','hunter','china','null'),(110,'NEWS','NEWS','en','2017-12-14 15:41:15','hunter','china','null'),(111,'MAP','地图','cn','2017-12-14 17:26:46','hunter','china','null'),(112,'MAP','MAP','en','2017-12-14 17:27:07','hunter','china','null'),(113,'INFO','信息','cn','2017-12-14 17:29:27','hunter','china','null'),(114,'INFO','info','en','2017-12-14 17:29:43','hunter','china','null'),(115,'CONTACT','Contact','en','2017-12-14 17:30:37','hunter','china','null'),(116,'CONTACT','联系人','cn','2017-12-14 17:30:54','hunter','china','null'),(117,'LIFE','生活','cn','2017-12-14 17:45:52','hunter','china','null'),(118,'LIFE','Life','en','2017-12-14 17:46:07','hunter','china','null'),(119,'TEMPLATE','Template','en','2017-12-15 16:32:03','hunter','china','null'),(120,'TEMPLATE','示例','cn','2017-12-15 16:32:58','hunter','china','null'),(121,'EDUCATION','教育','cn','2017-12-18 12:02:21','hunter','china','utf8'),(122,'EDUCATION','Education','en','2017-12-18 12:02:33','hunter','china','utf8'),(123,'MEDICAL','医疗','cn','2017-12-19 16:32:52','hunter','china','utf8'),(124,'MEDICAL','Medical','en','2017-12-19 16:33:12','hunter','china','utf8'),(125,'AI','AI','en','2017-12-19 16:33:47','hunter','china','utf8'),(126,'AI','人工智能','cn','2017-12-19 16:34:01','hunter','china','utf8'),(127,'LOGO','图标','cn','2017-12-20 19:41:58','hunter','china','utf8'),(128,'LOGO','Logo','en','2017-12-20 19:42:17','hunter','china','utf8'),(129,'CHIP','Chip','en','2017-12-22 17:31:03','hunter','china','utf8'),(130,'AIPROJECT','AI-Prohect','en','2017-12-22 17:31:33','hunter','china','utf8'),(131,'AIPROJECT','人工智能项目','cn','2017-12-22 17:31:51','hunter','china','utf8'),(132,'CHIP','芯片','cn','2017-12-22 17:32:09','hunter','china','utf8'),(133,'DEBT_WAGES','讨工资','cn','2017-12-23 10:59:15','hunter','china','utf8'),(134,'DEBT_WAGES','DebtWages','en','2017-12-23 10:59:27','hunter','china','utf8'),(135,'QUESTION','问题','cn','2017-12-24 23:14:13','hunter','china','utf8'),(136,'QUESTION','Question','en','2017-12-24 23:14:46','hunter','china','utf8'),(137,'BEFORE_KEY','键值前','cn','2017-12-27 14:53:28','hunter','china','utf8'),(138,'BEFORE_KEY','BeforeKey','en','2017-12-27 14:53:50','hunter','china','utf8'),(139,'AFTER_KEY','键值后','cn','2017-12-27 14:54:14','hunter','china','utf8'),(140,'AFTER_KEY','AfterKey','en','2017-12-27 14:54:33','hunter','china','utf8'),(141,'NAME','Name','en','2017-12-27 14:54:53','hunter','china','utf8'),(142,'NAME','名称','cn','2017-12-27 14:55:02','hunter','china','utf8'),(143,'SEARCH','搜索','cn','2017-12-27 14:55:28','hunter','china','utf8'),(144,'SEARCH','Search','en','2017-12-27 14:55:46','hunter','china','utf8'),(145,'VIDEO','Video','en','2017-12-28 15:02:07','hunter','china','utf8'),(146,'VIDEO','视频','cn','2017-12-28 15:02:23','hunter','china','utf8'),(147,'TOOL','工具','cn','2017-12-29 16:29:41','hunter','china','utf8'),(148,'TOOL','Tool','en','2017-12-29 16:29:53','hunter','china','utf8'),(149,'EGOV','e-gov','en','2017-12-29 23:35:28','hunter','china','utf8'),(150,'EGOV','电子政务','cn','2017-12-29 23:35:47','hunter','china','utf8'),(151,'USER','User','en','2017-12-30 00:21:12','hunter','china','utf8'),(152,'USER','用户','cn','2017-12-30 00:21:25','hunter','china','utf8'),(153,'FARMLAND','Farmland','en','2017-12-30 00:41:56','hunter','china','utf8'),(154,'FARMLAND','农田','cn','2017-12-30 00:42:29','hunter','china','utf8'),(155,'GOVWR','Government working report','en','2018-01-02 13:22:12','hunter','china','utf8'),(156,'GOVWR','政府工作报告','cn','2018-01-02 13:22:32','hunter','china','utf8'),(157,'CLOUD','Cloud','en','2018-01-02 17:10:18','hunter','china','utf8'),(158,'CLOUD','云服务','cn','2018-01-02 17:10:34','hunter','china','utf8'),(159,'BLOG','博客','cn','2018-01-02 18:28:23','hunter','china','utf8'),(160,'BLOG','Blog','en','2018-01-02 18:28:41','hunter','china','utf8'),(161,'PRIORITY','Priority','en','2018-01-10 14:17:26','hunter','china','utf8'),(162,'PRIORITY','优先级','cn','2018-01-10 14:17:38','hunter','china','utf8');
+INSERT INTO `string` VALUES (1,'HOME','Home','en','2017-04-09 16:26:20','hunter','china','utf8'),(2,'PROJECT','Project','en','2017-04-09 16:38:59','hunter','china','utf8'),(3,'KNOWLEDGE','Knowledge','en','2017-04-09 16:43:15','hunter','china','utf8'),(4,'TEST','Test','en','2017-04-09 16:47:37','hunter','china','utf8'),(5,'CODE','Code','en','2017-04-09 17:00:46','hunter','china','utf8'),(6,'HOME','主页','cn','2017-04-10 14:05:51','hunter','china','utf8'),(7,'PROJECT','项目','cn','2017-04-10 14:19:08','hunter','china','utf8'),(8,'BOOKMARK','BookMark','en','2017-04-10 14:20:45','hunter','china','utf8'),(9,'BOOKMARK','书签','cn','2017-04-10 14:22:02','hunter','china','utf8'),(10,'KNOWLEDGE','知识','cn','2017-04-10 15:24:30','hunter','china','utf8'),(11,'TRANSLATE','翻译','cn','2017-04-10 15:27:12','hunter','china','utf8'),(12,'TRANSLATE','Translate','en','2017-04-10 15:33:59','hunter','china','utf8'),(13,'TEST','测试','cn','2017-04-10 15:37:41','hunter','china','utf8'),(14,'LAYOUT','Layout','en','2017-04-10 15:38:48','hunter','china','utf8'),(15,'LAYOUT','布局','cn','2017-04-10 15:39:45','hunter','china','utf8'),(16,'FILE','File','en','2017-04-10 15:41:06','hunter','china','utf8'),(17,'FILE','文件','cn','2017-04-10 15:41:22','hunter','china','utf8'),(18,'DOWNLOAD','Download','en','2017-04-10 15:41:49','hunter','china','utf8'),(19,'DOWNLOAD','下载','cn','2017-04-10 15:42:05','hunter','china','utf8'),(20,'GITTEST','GitTest','en','2017-04-10 15:42:28','hunter','china','utf8'),(21,'GITTEST','Git测试','cn','2017-04-10 15:46:45','hunter','china','utf8'),(22,'CODE','代码','cn','2017-04-10 15:47:17','hunter','china','utf8'),(23,'LOGIN','登录','cn','2017-04-10 15:47:47','hunter','china','utf8'),(24,'LOGIN','Login','en','2017-04-10 15:47:59','hunter','china','utf8'),(25,'REGISTER','Register','en','2017-04-10 15:48:33','hunter','china','utf8'),(26,'REGISTER','注册','cn','2017-04-10 15:48:49','hunter','china','utf8'),(27,'MAIL','邮件','cn','2017-04-10 15:49:13','hunter','china','utf8'),(28,'MAIL','Mail','en','2017-04-10 15:49:35','hunter','china','utf8'),(29,'PATENT_SYS','Patent_SYS','en','2017-04-10 15:50:19','hunter','china','utf8'),(30,'PATENT_SYS','专利系统','cn','2017-04-10 15:50:36','hunter','china','utf8'),(31,'LANGUAGE','语言','cn','2017-04-10 18:27:30','hunter','china','utf8'),(32,'LANGUAGE','Language','en','2017-04-10 18:28:13','hunter','china','utf8'),(33,'USER_NAME','Username','en','2017-04-13 10:34:53','hunter','china','utf8'),(34,'USER_NAME','用户名','cn','2017-04-13 10:35:14','hunter','china','utf8'),(35,'PASSWORD','密码','cn','2017-04-13 10:35:41','hunter','china','utf8'),(36,'PASSWORD','Password','en','2017-04-13 10:35:56','hunter','china','utf8'),(37,'CONFIRM_PASSWORD','Confirm Password','en','2017-04-13 10:47:29','hunter','china','utf8'),(38,'CONFIRM_PASSWORD','确认密码','cn','2017-04-13 10:48:07','hunter','china','utf8'),(39,'EMAIL','Email','en','2017-04-13 10:49:43','hunter','china','utf8'),(40,'EMAIL','电子邮件','cn','2017-04-13 10:50:13','hunter','china','utf8'),(41,'PASSWORD_RECOVER_QUESTION','Password recover question','en','2017-04-13 10:52:18','hunter','china','utf8'),(42,'PASSWORD_RECOVER_QUESTION','密码恢复问题','cn','2017-04-13 10:52:32','hunter','china','utf8'),(43,'PASSWORD_RECOVER_ANSWER','Password recover answer','en','2017-04-13 10:54:21','hunter','china','utf8'),(44,'PASSWORD_RECOVER_ANSWER','密码恢复答案','cn','2017-04-13 10:54:36','hunter','china','utf8'),(45,'PASSWORD_RECOVER_MAIL','Password recover mail','en','2017-04-13 10:55:45','hunter','china','utf8'),(46,'PASSWORD_RECOVER_MAIL','密码恢复邮箱','cn','2017-04-13 10:56:14','hunter','china','utf8'),(47,'COMMIT','提交','cn','2017-04-13 11:07:59','hunter','china','utf8'),(48,'COMMIT','Commit','en','2017-04-13 11:08:14','hunter','china','utf8'),(49,'COMMIT_MESSAGE','提交信息','cn','2017-04-13 17:34:52','hunter','china','utf8'),(50,'COMMIT_MESSAGE','Commit Message','en','2017-04-13 17:35:20','hunter','china','utf8'),(51,'OPTIONS','选项','cn','2017-04-13 17:36:25','hunter','china','utf8'),(52,'OPTIONS','Options','en','2017-04-13 17:36:40','hunter','china','utf8'),(53,'TITLE','标题','cn','2017-04-14 13:39:45','hunter','china','utf8'),(54,'TITLE','Title','en','2017-04-14 13:39:59','hunter','china','utf8'),(55,'URL','URL','en','2017-04-14 13:40:33','hunter','china','utf8'),(56,'URL','URL','cn','2017-04-14 13:40:39','hunter','china','utf8'),(57,'TYPE','Type','en','2017-04-14 13:41:12','hunter','china','utf8'),(58,'TYPE','类型','cn','2017-04-14 13:41:24','hunter','china','utf8'),(59,'STATUS','状态','cn','2017-04-14 13:41:51','hunter','china','utf8'),(60,'STATUS','Status','en','2017-04-14 13:42:25','hunter','china','utf8'),(61,'REMARK','备注','cn','2017-04-14 13:42:59','hunter','china','utf8'),(62,'REMARK','Remark','en','2017-04-14 13:43:17','hunter','china','utf8'),(63,'AUTHOR','Author','en','2017-04-14 13:43:41','hunter','china','utf8'),(64,'AUTHOR','作者','cn','2017-04-14 13:43:57','hunter','china','utf8'),(65,'FILENAME','Filename','en','2017-04-14 14:45:50','hunter','china','utf8'),(66,'FILENAME','文件名','cn','2017-04-14 14:46:08','hunter','china','utf8'),(67,'INDIVIDUAL_CENTER','IndividualCenter','en','2017-04-14 17:02:17','hunter','china','utf8'),(68,'INDIVIDUAL_CENTER','个人中心','cn','2017-04-14 17:02:34','hunter','china','utf8'),(69,'EXIT','退出','cn','2017-04-14 17:02:59','hunter','china','utf8'),(70,'EXIT','Exit','en','2017-04-14 17:03:10','hunter','china','utf8'),(71,'MENU','菜单','cn','2017-04-14 19:53:59','hunter','china','utf8'),(72,'MENU','Menu','en','2017-04-14 19:54:13','hunter','china','utf8'),(73,'PROJECT_NAME','项目名称','cn','2017-04-20 22:06:31','hunter','china','utf8'),(74,'PROJECT_NAME','ProjectName','en','2017-04-20 22:06:50','hunter','china','utf8'),(75,'SUBMIT','提交','cn','2017-04-20 22:14:15','hunter','china','utf8'),(76,'SUBMIT','Submit','en','2017-04-20 22:14:34','hunter','china','utf8'),(77,'LAW','法律法规','cn','2017-04-23 16:04:30','hunter','china','utf8'),(78,'LAW','Law','en','2017-04-23 16:05:00','hunter','china','utf8'),(79,'BOOK_NAME','BookName','en','2017-04-23 16:47:22','hunter','china','utf8'),(80,'BOOK_NAME','书名','cn','2017-04-23 16:47:43','hunter','china','utf8'),(81,'ORIGINAL','Original','en','2017-04-23 16:49:38','hunter','china','utf8'),(82,'ORIGINAL','原文','cn','2017-04-23 16:49:54','hunter','china','utf8'),(83,'MARK','标注','cn','2017-04-23 16:50:29','hunter','china','utf8'),(84,'MARK','Mark','en','2017-04-23 16:50:46','hunter','china','utf8'),(85,'COMMENT','Comment','en','2017-04-23 16:52:13','hunter','china','utf8'),(86,'COMMENT','评注','cn','2017-04-23 16:53:08','hunter','china','utf8'),(87,'LOCATION','Location','en','2017-04-23 16:54:21','hunter','china','utf8'),(88,'LOCATION','区位','cn','2017-04-23 16:54:54','hunter','china','utf8'),(89,'DEVICE','Device','en','2017-04-23 16:55:32','hunter','china','utf8'),(90,'DEVICE','设备','cn','2017-04-23 16:55:45','hunter','china','utf8'),(91,'IMAGE','Image','en','2017-04-23 16:56:29','hunter','china','utf8'),(92,'IMAGE','图片','cn','2017-04-23 16:56:52','hunter','china','utf8'),(93,'AUDIO','Audio','en','2017-04-23 16:57:35','hunter','china','utf8'),(94,'AUDIO','音频','cn','2017-04-23 16:57:52','hunter','china','utf8'),(95,'VEDIO','Vedio','en','2017-04-23 16:58:22','hunter','china','utf8'),(96,'VEDIO','视频','cn','2017-04-23 16:58:37','hunter','china','utf8'),(97,'ADD','增加','cn','2017-04-27 02:12:34','hunter','china','utf8'),(98,'ADD','Add','en','2017-04-27 02:12:49','hunter','china','utf8'),(99,'INQUIRY','Inquiry','en','2017-04-27 02:15:55','hunter','china','utf8'),(100,'INQUIRY','查询','cn','2017-04-27 02:16:06','hunter','china','utf8'),(101,'SERVER_NAME','localhost','en','2017-06-01 22:27:14','hunter','china','utf8'),(102,'SERVER_NAME','localhost','cn','2017-06-01 22:27:24','hunter','china','utf8'),(103,'USER_NAME_DB','patent','en','2017-06-01 22:28:45','hunter','china','utf8'),(104,'USER_NAME_DB','patent','cn','2017-06-01 22:28:52','hunter','china','utf8'),(105,'USER_PSW_DB','patent','cn','2017-06-01 22:29:55','hunter','china','utf8'),(106,'USER_PSW_DB','patent','en','2017-06-01 22:30:01','hunter','china','utf8'),(107,'SERVER_NAME_DB','localhost','cn','2017-06-01 22:31:17','hunter','china','utf8'),(108,'SERVER_NAME_DB','localhost','en','2017-06-01 22:31:24','hunter','china','utf8'),(109,'NEWS','新闻','cn','2017-12-14 15:40:52','hunter','china','null'),(110,'NEWS','NEWS','en','2017-12-14 15:41:15','hunter','china','null'),(111,'MAP','地图','cn','2017-12-14 17:26:46','hunter','china','null'),(112,'MAP','MAP','en','2017-12-14 17:27:07','hunter','china','null'),(113,'INFO','信息','cn','2017-12-14 17:29:27','hunter','china','null'),(114,'INFO','info','en','2017-12-14 17:29:43','hunter','china','null'),(115,'CONTACT','Contact','en','2017-12-14 17:30:37','hunter','china','null'),(116,'CONTACT','联系人','cn','2017-12-14 17:30:54','hunter','china','null'),(117,'LIFE','生活','cn','2017-12-14 17:45:52','hunter','china','null'),(118,'LIFE','Life','en','2017-12-14 17:46:07','hunter','china','null'),(119,'TEMPLATE','Template','en','2017-12-15 16:32:03','hunter','china','null'),(120,'TEMPLATE','示例','cn','2017-12-15 16:32:58','hunter','china','null'),(121,'EDUCATION','教育','cn','2017-12-18 12:02:21','hunter','china','utf8'),(122,'EDUCATION','Education','en','2017-12-18 12:02:33','hunter','china','utf8'),(123,'MEDICAL','医疗','cn','2017-12-19 16:32:52','hunter','china','utf8'),(124,'MEDICAL','Medical','en','2017-12-19 16:33:12','hunter','china','utf8'),(125,'AI','AI','en','2017-12-19 16:33:47','hunter','china','utf8'),(126,'AI','人工智能','cn','2017-12-19 16:34:01','hunter','china','utf8'),(127,'LOGO','图标','cn','2017-12-20 19:41:58','hunter','china','utf8'),(128,'LOGO','Logo','en','2017-12-20 19:42:17','hunter','china','utf8'),(129,'CHIP','Chip','en','2017-12-22 17:31:03','hunter','china','utf8'),(130,'AIPROJECT','AI-Prohect','en','2017-12-22 17:31:33','hunter','china','utf8'),(131,'AIPROJECT','人工智能项目','cn','2017-12-22 17:31:51','hunter','china','utf8'),(132,'CHIP','芯片','cn','2017-12-22 17:32:09','hunter','china','utf8'),(133,'DEBT_WAGES','讨工资','cn','2017-12-23 10:59:15','hunter','china','utf8'),(134,'DEBT_WAGES','DebtWages','en','2017-12-23 10:59:27','hunter','china','utf8'),(135,'QUESTION','问题','cn','2017-12-24 23:14:13','hunter','china','utf8'),(136,'QUESTION','Question','en','2017-12-24 23:14:46','hunter','china','utf8'),(137,'BEFORE_KEY','键值前','cn','2017-12-27 14:53:28','hunter','china','utf8'),(138,'BEFORE_KEY','BeforeKey','en','2017-12-27 14:53:50','hunter','china','utf8'),(139,'AFTER_KEY','键值后','cn','2017-12-27 14:54:14','hunter','china','utf8'),(140,'AFTER_KEY','AfterKey','en','2017-12-27 14:54:33','hunter','china','utf8'),(141,'NAME','Name','en','2017-12-27 14:54:53','hunter','china','utf8'),(142,'NAME','名称','cn','2017-12-27 14:55:02','hunter','china','utf8'),(143,'SEARCH','搜索','cn','2017-12-27 14:55:28','hunter','china','utf8'),(144,'SEARCH','Search','en','2017-12-27 14:55:46','hunter','china','utf8'),(145,'VIDEO','Video','en','2017-12-28 15:02:07','hunter','china','utf8'),(146,'VIDEO','视频','cn','2017-12-28 15:02:23','hunter','china','utf8'),(147,'TOOL','工具','cn','2017-12-29 16:29:41','hunter','china','utf8'),(148,'TOOL','Tool','en','2017-12-29 16:29:53','hunter','china','utf8'),(149,'EGOV','e-gov','en','2017-12-29 23:35:28','hunter','china','utf8'),(150,'EGOV','电子政务','cn','2017-12-29 23:35:47','hunter','china','utf8'),(151,'USER','User','en','2017-12-30 00:21:12','hunter','china','utf8'),(152,'USER','用户','cn','2017-12-30 00:21:25','hunter','china','utf8'),(153,'FARMLAND','Farmland','en','2017-12-30 00:41:56','hunter','china','utf8'),(154,'FARMLAND','农田','cn','2017-12-30 00:42:29','hunter','china','utf8'),(155,'GOVWR','Government working report','en','2018-01-02 13:22:12','hunter','china','utf8'),(156,'GOVWR','政府工作报告','cn','2018-01-02 13:22:32','hunter','china','utf8'),(157,'CLOUD','Cloud','en','2018-01-02 17:10:18','hunter','china','utf8'),(158,'CLOUD','云服务','cn','2018-01-02 17:10:34','hunter','china','utf8'),(159,'BLOG','博客','cn','2018-01-02 18:28:23','hunter','china','utf8'),(160,'BLOG','Blog','en','2018-01-02 18:28:41','hunter','china','utf8'),(161,'PRIORITY','Priority','en','2018-01-10 14:17:26','hunter','china','utf8'),(162,'PRIORITY','优先级','cn','2018-01-10 14:17:38','hunter','china','utf8'),(163,'LOGISTICS','Logistics','en','2018-01-11 17:50:11','hunter','china','utf8'),(164,'LOGISTICS','物流','cn','2018-01-11 17:50:26','hunter','china','utf8'),(165,'TABLE','Table','en','2018-01-12 14:31:45','hunter','china','utf8'),(166,'TABLE','表','cn','2018-01-12 14:32:01','hunter','china','utf8'),(167,'CREATE','Create','en','2018-01-12 14:36:14','hunter','china','utf8'),(168,'CREATE','创建','cn','2018-01-12 14:36:32','hunter','china','utf8'),(169,'BIOS','BIOS','en','2018-01-12 14:38:02','hunter','china','utf8'),(170,'BIOS','BIOS','cn','2018-01-12 14:38:08','hunter','china','utf8'),(171,'DATABASE','数据库','cn','2018-01-15 15:02:33','hunter','china','utf8'),(172,'DATABASE','Database','en','2018-01-15 15:02:45','hunter','china','utf8'),(173,'MILITARY','Military','en','2018-01-17 15:32:00','hunter','china','utf8'),(174,'MILITARY','军事','cn','2018-01-17 15:32:11','hunter','china','utf8'),(175,'WEAPON','Weapon','en','2018-01-17 16:28:59','hunter','china','utf8'),(176,'WEAPON','武器','cn','2018-01-17 16:29:07','hunter','china','utf8'),(177,'PC','电脑','cn','2018-01-19 10:12:13','hunter','china','utf8'),(178,'PC','PersonalComputer','en','2018-01-19 10:12:32','hunter','china','utf8'),(179,'STOCK','Stock','en','2018-01-22 16:52:13','hunter','china','utf8'),(180,'STOCK','股市','cn','2018-01-22 16:52:23','hunter','china','utf8'),(181,'PATENT','专利','cn','2018-01-22 17:08:24','hunter','china','utf8'),(182,'PATENT','Patent','en','2018-01-22 17:08:37','hunter','china','utf8');
 /*!40000 ALTER TABLE `string` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -262,7 +342,7 @@ CREATE TABLE `customer` (
   `audio` varchar(45) DEFAULT NULL COMMENT 'About the customer''s audio file name.\n',
   `vedio` varchar(45) DEFAULT NULL COMMENT 'About the customer''s video file name .',
   PRIMARY KEY (`idcustomer`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf16;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -362,10 +442,11 @@ CREATE TABLE `line` (
   `status` varchar(45) DEFAULT NULL,
   `contact` varchar(45) DEFAULT NULL COMMENT 'Contact information',
   `level` int(11) DEFAULT NULL COMMENT 'The overall level of production lines',
-  PRIMARY KEY (`idline`,`guid`),
+  PRIMARY KEY (`idline`,`guid`,`number`),
   UNIQUE KEY `idline_UNIQUE` (`idline`),
-  UNIQUE KEY `guid_UNIQUE` (`guid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+  UNIQUE KEY `guid_UNIQUE` (`guid`),
+  UNIQUE KEY `number_UNIQUE` (`number`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf16;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -374,6 +455,7 @@ CREATE TABLE `line` (
 
 LOCK TABLES `line` WRITE;
 /*!40000 ALTER TABLE `line` DISABLE KEYS */;
+INSERT INTO `line` VALUES (2,'748cf4ba-68ee-4875-9065-ddf614f7af02','1','2','3','5','2018-01-19 15:30:22','2018-01-19 15:30:22','2018-01-19 15:30:22','5','5','5','5',4);
 /*!40000 ALTER TABLE `line` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -390,7 +472,7 @@ CREATE TABLE `mac` (
   PRIMARY KEY (`mac`),
   UNIQUE KEY `mac_UNIQUE` (`mac`),
   UNIQUE KEY `idmac_UNIQUE` (`idmac`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf16;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -399,6 +481,7 @@ CREATE TABLE `mac` (
 
 LOCK TABLES `mac` WRITE;
 /*!40000 ALTER TABLE `mac` DISABLE KEYS */;
+INSERT INTO `mac` VALUES (1,1),(2,2),(3,3),(4,4),(5,5),(6,6),(7,7),(8,8),(9,9),(10,16);
 /*!40000 ALTER TABLE `mac` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -460,7 +543,7 @@ CREATE TABLE `order` (
   `status` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idorder`,`number`),
   KEY `index` (`idstatus`,`deliverytime`,`idorder`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf16;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -469,6 +552,7 @@ CREATE TABLE `order` (
 
 LOCK TABLES `order` WRITE;
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
+INSERT INTO `order` VALUES (1,0,0,'1233','电子秤',11,'2018-01-19 15:37:11','2018-01-19 15:37:11','2018-01-19 15:37:48','11',11,11,'未生产');
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -665,7 +749,7 @@ CREATE TABLE `worker` (
   `idstatus` int(11) NOT NULL,
   PRIMARY KEY (`idworker`),
   UNIQUE KEY `idworker_UNIQUE` (`idworker`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf16;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -674,6 +758,7 @@ CREATE TABLE `worker` (
 
 LOCK TABLES `worker` WRITE;
 /*!40000 ALTER TABLE `worker` DISABLE KEYS */;
+INSERT INTO `worker` VALUES (1,'zhangsan','2018-01-19 15:34:14','在职',0);
 /*!40000 ALTER TABLE `worker` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -840,6 +925,73 @@ CREATE TABLE `infor` (
 LOCK TABLES `infor` WRITE;
 /*!40000 ALTER TABLE `infor` DISABLE KEYS */;
 /*!40000 ALTER TABLE `infor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `table`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `table` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `table`;
+
+--
+-- Table structure for table `type`
+--
+
+DROP TABLE IF EXISTS `type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `type` (
+  `idtype` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idtype`),
+  UNIQUE KEY `idtype_UNIQUE` (`idtype`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='url_typw';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `type`
+--
+
+LOCK TABLES `type` WRITE;
+/*!40000 ALTER TABLE `type` DISABLE KEYS */;
+INSERT INTO `type` VALUES (1,'create','2018-01-15 14:38:44'),(2,'drop','2018-01-15 14:38:44'),(3,'select','2018-01-15 14:38:44'),(4,'update','2018-01-15 14:38:44'),(5,'insert','2018-01-15 14:38:44'),(6,'delete','2018-01-15 14:38:44'),(7,'alter','2018-01-15 14:38:44');
+/*!40000 ALTER TABLE `type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `url`
+--
+
+DROP TABLE IF EXISTS `url`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `url` (
+  `idurl` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
+  `type` varchar(45) DEFAULT NULL,
+  `url` varchar(200) NOT NULL COMMENT 'where the URL address',
+  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
+  `where` varchar(45) NOT NULL DEFAULT 'china',
+  PRIMARY KEY (`idurl`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `url`
+--
+
+LOCK TABLES `url` WRITE;
+/*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (1,'hunter','create_url','create','table/create_url.sql','img/url.png','2018-01-12 16:07:43','normal','utf8',0,'china');
+/*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1062,6 +1214,47 @@ LOCK TABLES `k_type` WRITE;
 UNLOCK TABLES;
 
 --
+-- Current Database: `bios`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `bios` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `bios`;
+
+--
+-- Table structure for table `url`
+--
+
+DROP TABLE IF EXISTS `url`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `url` (
+  `idurl` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
+  `type` varchar(45) DEFAULT NULL,
+  `url` varchar(200) NOT NULL COMMENT 'where the URL address',
+  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
+  `where` varchar(45) NOT NULL DEFAULT 'china',
+  PRIMARY KEY (`idurl`)
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `url`
+--
+
+LOCK TABLES `url` WRITE;
+/*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (1,'hunter','uefi','website','http://www.uefi.org/','img/uefi.jpg','2018-01-19 16:59:29','normal','utf8',100,'china'),(2,'hunter','uboot','website','http://www.denx.de','img/uboot.png','2018-01-19 17:05:13','normal','utf8',99,'china'),(3,'hunter','redboot','website','https://sourceware.org/redboot/','img/redboot.png','2018-01-19 17:09:06','normal','utf8',98,'china'),(4,'hunter','armboot','website','http://armboot.sourceforge.net/','img/armboot.gif','2018-01-19 17:11:14','normal','utf8',97,'china'),(5,'hunter','openbmc','website','https://github.com/openbmc','img/openbmc.png','2018-01-19 17:17:47','normal','utf8',96,'china'),(6,'hunter','open-power','website','https://github.com/open-power','img/open-power.png','2018-01-19 17:20:33','normal','utf8',95,'china'),(7,'hunter','yoctoproject','website','https://www.yoctoproject.org/','img/yocto.png','2018-01-19 17:26:13','normal','utf8',94,'china'),(8,'hunter','openembedded','website','https://www.openembedded.org','img/open-embedded.png','2018-01-19 17:33:06','normal','utf8',93,'china'),(9,'hunter','buildroot','website','https://buildroot.org/','img/buildroot.png','2018-01-19 17:35:49','normal','utf8',92,'china'),(10,'hunter','openmoko','website','http://openmoko.org/','img/openmoko.png','2018-01-19 17:38:47','normal','utf8',91,'china'),(11,'hunter','ami','website','https://ami.com','img/AMI.png','2018-01-19 17:41:41','normal','utf8',90,'china'),(12,'hunter','pcisig','website','https://pcisig.com/','img/pcisig.png','2018-01-19 17:46:10','normal','utf8',90,'china'),(13,'hunter','i2c-bus','website','https://www.i2c-bus.org/','img/i2c.jpg','2018-01-22 13:30:11','normal','utf8',89,'china'),(14,'hunter','jedec','website','https://www.jedec.org/','img/jedec.jpg','2018-01-22 13:37:26','normal','utf8',88,'china'),(15,'hunter','ietf','website','https://www.ietf.org/','img/ietf.gif','2018-01-22 13:41:57','normal','utf8',87,'china'),(16,'hunter','usb','website','https://www.intel.com/content/www/us/en/io/universal-serial-bus/universal-serial-bus.html','img/usb.jpg','2018-01-22 13:46:08','normal','utf8',86,'china'),(17,'hunter','skyfree','website','http://www.skyfree.org/','img/skyfree.gif','2018-01-22 14:04:58','normal','utf8',85,'china'),(18,'hunter','fileformat','website','http://www.fileformat.info/','img/fileformat.jpg','2018-01-22 14:19:11','normal','utf8',84,'china'),(19,'hunter','nmake','website','https://msdn.microsoft.com/en-us/library/dd9y37ha.aspx','img/nmake.jpg','2018-01-22 14:25:13','normal','utf8',83,'china'),(20,'hunter','gnu-make','website','https://www.gnu.org/software/make/manual/make.html','img/gnu-make.jpg','2018-01-22 14:28:24','normal','utf8',82,'china'),(21,'hunter','gcc','website','http://gcc.gnu.org/','img/gcc.png','2018-01-22 14:32:00','normal','utf8',81,'china'),(22,'hunter','CL','website','https://msdn.microsoft.com/en-us/library/9s7c9wdw.aspx','img/cl.jpg','2018-01-22 14:36:36','normal','utf8',80,'china'),(23,'hunter','masm32','website','http://www.masm32.com/','img/masm32.jpg','2018-01-22 14:40:03','normal','utf8',79,'china'),(24,'hunter','c++','website','https://gcc.gnu.org/projects/cxx-status.html','img/cpp.jpg','2018-01-22 14:45:05','normal','utf8',78,'china'),(25,'hunter','acpi','website','http://www.acpi.info/','img/acpi.jpg','2018-01-22 14:46:20','normal','utf8',77,'china'),(26,'hunter','smbios','website','https://www.dmtf.org/standards/smbios','img/dmtf.png','2018-01-22 14:49:44','normal','utf8',76,'china'),(27,'hunter','intle-menu','website','https://software.intel.com/en-us/articles/intel-sdm','img/intle-menu.png','2018-01-22 15:02:24','normal','utf8',99,'china'),(28,'hunter','matroska','website','https://www.matroska.org/technical/specs/codecid/index.html','img/matroska.png','2018-01-22 15:07:20','normal','utf8',77,'china'),(29,'hunter','sata','website','https://sata-io.org/','img/sata.jpg','2018-01-22 15:09:09','normal','utf8',73,'china'),(30,'hunter','rweverything','website','http://rweverything.com/','img/rweverything.png','2018-01-22 15:14:50','normal','utf8',72,'china'),(31,'hunter','memtest','website','http://www.memtest.org/','img/memtest86.png','2018-01-22 15:16:17','normal','utf8',71,'china'),(32,'hunter','skia','website','https://skia.org/','img/skia.png','2018-01-22 16:02:54','normal','utf8',69,'china'),(33,'hunter','open-bios','website','https://github.com/open-bios','img/openbios.png','2018-01-22 16:10:23','normal','utf8',68,'china'),(34,'hunter','insyde','website','https://www.insyde.com/','img/Insyde.png','2018-01-22 16:13:50','normal','utf8',67,'china'),(35,'hunter','phoenix','website','https://www.phoenix.com/','img/phoenix.png','2018-01-22 16:16:03','normal','utf8',66,'china'),(36,'hunter','member-roster','website','https://solutionsdirectory.intel.com/member-roster','img/solutions.jpg','2018-01-22 16:31:32','normal','utf8',65,'china');
+/*!40000 ALTER TABLE `url` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Current Database: `bookmark`
 --
 
@@ -1211,6 +1404,32 @@ LOCK TABLES `create` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `table`
+--
+
+DROP TABLE IF EXISTS `table`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `table` (
+  `idtable` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `source` text NOT NULL,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idtable`,`name`),
+  UNIQUE KEY `idtable_UNIQUE` (`idtable`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='store table sql';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `table`
+--
+
+LOCK TABLES `table` WRITE;
+/*!40000 ALTER TABLE `table` DISABLE KEYS */;
+/*!40000 ALTER TABLE `table` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Current Database: `question`
 --
 
@@ -1278,7 +1497,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='Ai Project URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='Ai Project URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1287,7 +1506,48 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'hunter','facebook','website','http://www.facebook.com/','img/facebook.jpg','2018-01-10 14:27:07','normal','china',0,'china'),(2,'hunter','twitter','website','http://twitter.com/','img/twitter.jpg','2018-01-10 14:27:45','normal','china',0,'china'),(3,'hunter','weibo','website','http://weibo.com','img/sina_blog.jpg','2018-01-10 14:29:16','normal','china',0,'china'),(4,'hunter','qq_blog','website','http://blog.qq.com/','img/qq_blog.jpg','2018-01-10 14:29:52','normal','china',0,'china'),(5,'hunter','sohu_blog','website','http://t.sohu.com/','img/sohu_blog.jpg','2018-01-10 14:32:21','normal','china',0,'china'),(6,'hunter','csdn','website','http://blog.csdn.net/','img/csdn.jpg','2018-01-10 14:36:10','normal','china',0,'china'),(7,'hunter','wangyi','website','http://blog.163.com/','img/163_blog.jpg','2018-01-10 14:37:32','normal','china',0,'china');
+INSERT INTO `url` VALUES (1,'hunter','facebook','website','http://www.facebook.com/','img/facebook.jpg','2018-01-10 14:27:07','normal','china',0,'china'),(2,'hunter','twitter','website','http://twitter.com/','img/twitter.jpg','2018-01-10 14:27:45','normal','china',0,'china'),(3,'hunter','weibo','website','http://weibo.com','img/sina_blog.jpg','2018-01-10 14:29:16','normal','china',0,'china'),(4,'hunter','qq_blog','website','http://blog.qq.com/','img/qq_blog.jpg','2018-01-10 14:29:52','normal','china',0,'china'),(5,'hunter','sohu_blog','website','http://t.sohu.com/','img/sohu_blog.jpg','2018-01-10 14:32:21','normal','china',0,'china'),(6,'hunter','csdn','website','http://blog.csdn.net/','img/csdn.jpg','2018-01-10 14:36:10','normal','china',0,'china'),(7,'hunter','wangyi','website','http://blog.163.com/','img/163_blog.jpg','2018-01-10 14:37:32','normal','china',0,'china'),(8,'hunter','tianya','website','http://blog.tianya.cn/','img/tianya.jpg','2018-01-11 16:33:25','normal','utf8',94,'china');
+/*!40000 ALTER TABLE `url` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `pc`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `pc` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `pc`;
+
+--
+-- Table structure for table `url`
+--
+
+DROP TABLE IF EXISTS `url`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `url` (
+  `idurl` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
+  `type` varchar(45) DEFAULT NULL,
+  `url` varchar(200) NOT NULL COMMENT 'where the URL address',
+  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
+  `where` varchar(45) NOT NULL DEFAULT 'china',
+  PRIMARY KEY (`idurl`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `url`
+--
+
+LOCK TABLES `url` WRITE;
+/*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (1,'hunter','HP','website','http://www8.hp.com','img/hp.jpg','2018-01-19 10:22:10','normal','utf8',100,'china'),(2,'hunter','DELL','website','http://www.dell.com','img/dell.jpg','2018-01-19 10:23:31','normal','utf8',99,'china'),(3,'hunter','ASUS','website','https://www.asus.com','img/asus.jpg','2018-01-19 10:25:44','normal','utf8',98,'china'),(4,'hunter','apple','website','https://www.apple.com','img/apple.jpg','2018-01-19 10:26:33','normal','utf8',97,'china'),(5,'hunter','lenovo','website','https://www.lenovo.com.cn/','img/lenovo.jpg','2018-01-19 10:28:38','normal','utf8',96,'china'),(6,'hunter','acer','website','https://www.acer.com','img/acer.jpg','2018-01-19 10:37:00','normal','utf8',95,'china'),(7,'hunter','toshiba','website','http://www.toshiba.com.cn/','img/toshiba.jpg','2018-01-19 10:41:23','normal','utf8',94,'china'),(8,'hunter','samsung','website','http://www.samsung.com','img/samsung.jpg','2018-01-19 10:43:14','normal','utf8',93,'china'),(9,'hunter','tongfangpc','website','http://www.tongfangpc.com/','img/tongfangpc.jpg','2018-01-19 10:45:03','normal','utf8',92,'china'),(10,'hunter','hasee','website','http://www.hasee.com','img/hasee.jpg','2018-01-19 10:47:30','normal','utf8',91,'china'),(11,'hunter','haseefujitsu','website','http://www.fujitsu.com','img/fujitsu.jpg','2018-01-19 10:49:26','normal','utf8',90,'china'),(12,'hunter','huawei','website','http://www.huawei.com','img/huawei.png','2018-01-19 10:50:24','normal','utf8',89,'china'),(13,'hunter','mi','website','https://www.mi.com','img/mi.jpg','2018-01-19 10:53:56','normal','utf8',88,'china'),(14,'hunter','sony','website','http://www.sony.com.cn/','img/sony.jpg','2018-01-19 10:59:24','normal','utf8',93,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1333,6 +1593,57 @@ INSERT INTO `url` VALUES (1,'patent_sys','深圳市鸿鹏进出口有限公司',
 UNLOCK TABLES;
 
 --
+-- Current Database: `govwr`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `govwr` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `govwr`;
+
+--
+-- Table structure for table `file`
+--
+
+DROP TABLE IF EXISTS `file`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `file` (
+  `idfile` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(45) NOT NULL COMMENT 'name=title+uuid',
+  `uuid` varchar(45) NOT NULL DEFAULT 'UUID()',
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `name` varchar(45) NOT NULL COMMENT 'name=./org/author/title+uuid',
+  `type` varchar(45) DEFAULT NULL COMMENT 'txt,doc,xml,audio,vedio,pdf ,html,',
+  `author` varchar(45) NOT NULL,
+  `tel` varchar(45) DEFAULT NULL,
+  `mail` varchar(45) DEFAULT NULL,
+  `org` varchar(45) NOT NULL,
+  `where` varchar(45) NOT NULL,
+  `md5` varchar(45) NOT NULL COMMENT 'file md5 checksum',
+  `compress` tinyint(4) NOT NULL DEFAULT '0',
+  `cpsw` varchar(45) DEFAULT NULL COMMENT 'Compress password',
+  `secret` int(11) NOT NULL DEFAULT '0' COMMENT 'Secret level',
+  `spsw` varchar(45) DEFAULT NULL COMMENT 'Secret level''s password',
+  `decrypt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'decrypt =decrypt time +password',
+  `status` varchar(45) DEFAULT NULL,
+  `introduction` text,
+  `remark` text,
+  PRIMARY KEY (`idfile`,`uuid`),
+  UNIQUE KEY `idfile_UNIQUE` (`idfile`),
+  UNIQUE KEY `uuid_UNIQUE` (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='government documents';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `file`
+--
+
+LOCK TABLES `file` WRITE;
+/*!40000 ALTER TABLE `file` DISABLE KEYS */;
+/*!40000 ALTER TABLE `file` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Current Database: `test`
 --
 
@@ -1370,6 +1681,47 @@ CREATE TABLE `url` (
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
 INSERT INTO `url` VALUES (1,'hunter','facebook','website','http://www.facebook.com/','img/facebook.jpg','2018-01-10 14:27:07','normal','china',0,'china'),(2,'hunter','twitter','website','http://twitter.com/','img/twitter.jpg','2018-01-10 14:27:45','normal','china',0,'china'),(3,'hunter','weibo','website','http://weibo.com','img/sina_test.jpg','2018-01-10 14:29:16','normal','china',0,'china'),(4,'hunter','qq_test','website','http://test.qq.com/','img/qq_test.jpg','2018-01-10 14:29:52','normal','china',0,'china'),(5,'hunter','sohu_test','website','http://t.sohu.com/','img/sohu_test.jpg','2018-01-10 14:32:21','normal','china',0,'china'),(6,'hunter','csdn','website','http://test.csdn.net/','img/csdn.jpg','2018-01-10 14:36:10','normal','china',0,'china'),(7,'hunter','wangyi','website','http://test.163.com/','img/163_test.jpg','2018-01-10 14:37:32','normal','china',0,'china');
+/*!40000 ALTER TABLE `url` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `mail`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `mail` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `mail`;
+
+--
+-- Table structure for table `url`
+--
+
+DROP TABLE IF EXISTS `url`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `url` (
+  `idurl` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
+  `type` varchar(45) DEFAULT NULL,
+  `url` varchar(200) NOT NULL COMMENT 'where the URL address',
+  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
+  `where` varchar(45) NOT NULL DEFAULT 'china',
+  PRIMARY KEY (`idurl`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `url`
+--
+
+LOCK TABLES `url` WRITE;
+/*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (1,'hunter','postfix','website','http://www.postfix.org/','img/postfix.gif','2018-01-15 18:10:32','normal','utf8',100,'china'),(2,'hunter','squirrelmail','website','http://squirrelmail.org/','img/squirrelmail.jpg','2018-01-15 18:15:39','normal','utf8',99,'china'),(3,'hunter','openwebmail','website','http://openwebmail.org/','img/openwebmail.gif','2018-01-15 18:17:50','normal','utf8',99,'china'),(4,'hunter','dovecot','website','https://www.dovecot.org/','img/dovecot.gif','2018-01-15 18:21:12','normal','utf8',98,'china'),(5,'hunter','mailman','website','http://www.list.org/','img/mailman.jpg','2018-01-15 18:24:33','normal','utf8',97,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2143,6 +2495,46 @@ LOCK TABLES `work` WRITE;
 UNLOCK TABLES;
 
 --
+-- Current Database: `stock`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `stock` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `stock`;
+
+--
+-- Table structure for table `url`
+--
+
+DROP TABLE IF EXISTS `url`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `url` (
+  `idurl` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
+  `type` varchar(45) DEFAULT NULL,
+  `url` varchar(200) NOT NULL COMMENT 'where the URL address',
+  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
+  `where` varchar(45) NOT NULL DEFAULT 'china',
+  PRIMARY KEY (`idurl`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='URL links .';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `url`
+--
+
+LOCK TABLES `url` WRITE;
+/*!40000 ALTER TABLE `url` DISABLE KEYS */;
+/*!40000 ALTER TABLE `url` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Current Database: `map`
 --
 
@@ -2170,7 +2562,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='Ai Project URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='Ai Project URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2179,7 +2571,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'hunter','google','map','http://ditu.google.cn/','img/google.jpg','2018-01-10 14:52:04','normal','china',0,'china'),(2,'hunter','amap','map','http://ditu.amap.com/','img/amap.jpg','2018-01-10 14:52:40','normal','china',0,'china'),(3,'hunter','bing_map','map','https://www.bing.com/ditu/','img/bing.jpg','2018-01-10 14:53:24','normal','china',0,'china'),(4,'hunter','baidu','map','http://map.baidu.com/','img/baidu.jpg','2018-01-10 14:54:04','normal','china',0,'china'),(5,'hunter','sogou','map','http://map.sogou.com/','img/sogou.jpg','2018-01-10 14:54:50','normal','china',0,'china');
+INSERT INTO `url` VALUES (1,'hunter','google','map','http://ditu.google.cn/','img/google.jpg','2018-01-10 14:52:04','normal','china',0,'china'),(2,'hunter','amap','map','http://ditu.amap.com/','img/amap.jpg','2018-01-10 14:52:40','normal','china',0,'china'),(3,'hunter','bing_map','map','https://www.bing.com/ditu/','img/bing.jpg','2018-01-10 14:53:24','normal','china',0,'china'),(4,'hunter','baidu','map','http://map.baidu.com/','img/baidu.jpg','2018-01-10 14:54:04','normal','china',0,'china'),(5,'hunter','sogou','map','http://map.sogou.com/','img/sogou.jpg','2018-01-10 14:54:50','normal','china',0,'china'),(6,'hunter','map.qq','map','http://map.qq.com/','img/qq.jpg','2018-01-11 16:50:09','normal','utf8',94,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2628,7 +3020,7 @@ CREATE TABLE `method` (
   `author` varchar(45) NOT NULL,
   PRIMARY KEY (`idmethod`,`name`,`base`),
   UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8 COMMENT='Different websites search method\n';
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COMMENT='Different websites search method\n';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2637,7 +3029,7 @@ CREATE TABLE `method` (
 
 LOCK TABLES `method` WRITE;
 /*!40000 ALTER TABLE `method` DISABLE KEYS */;
-INSERT INTO `method` VALUES (1,'Google',100,'search','http://www.google.com/search?q=+','','&ie=UTF-8+&oe=UTF-8','2017-12-27 06:18:14','hunter'),(2,'Bing',99,'search','https://www.bing.com/search?q=','','','2017-12-27 06:19:27','hunter'),(3,'ZhiHu',96,'search','https://www.zhihu.com/search?type=content&q=','','','2017-12-27 06:20:52','hunter'),(4,'Baidu',99,'search','https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&wd=','','','2017-12-27 06:27:42','hunter'),(5,'Github',82,'code','https://github.com/search?utf8=%E2%9C%93&q=','','&type=','2017-12-27 06:38:08','hunter'),(6,'Sina',52,'news','http://search.sina.com.cn/?q=','','&c=news&from=index','2017-12-27 16:03:10','hunter'),(7,'Tmail',49,'shopping','https://list.tmall.com/search_product.htm?q=','','','2017-12-27 16:10:42','hunter'),(8,'JingDong',48,'shopping','https://search.jd.com/Search?keyword=','','&enc=utf-8','2017-12-27 16:13:34','hunter'),(9,'Taobao',50,'shopping','https://s.taobao.com/search?q=','','','2017-12-27 16:16:31','hunter'),(10,'Vip',47,'shopping','https://category.vip.com/suggest.php?keyword=','','','2017-12-27 16:18:26','hunter'),(11,'Yahoo',98,'search','https://search.yahoo.com/search?p=','','','2017-12-27 17:43:45','hunter'),(12,'CSDN',72,'technology','http://so.csdn.net/so/search/s.do?q=','','','2017-12-27 16:19:49','hunter'),(13,'Amazon',45,'shopping','https://www.amazon.cn/s/field-keywords=','','','2017-12-27 16:22:15','hunter'),(14,'MSDN_CN',81,'technology','https://social.msdn.microsoft.com/Search/zh-CN?query=','','','2017-12-27 16:32:03','hunter'),(15,'PHP',77,'technology','http://php.net/manual-lookup.php?pattern=','','','2017-12-27 16:34:34','hunter'),(16,'Oracle',75,'technology','https://www.oracle.com/search/results?Nty=1&Ntk=S3&Ntt=','','','2017-12-27 16:39:46','hunter'),(17,'Mysql',76,'technology','https://www.oracle.com/search/results?cat=mysql&Ntk=SI-ALL5&Ntt=','','','2017-12-27 16:42:01','hunter'),(18,'C++',80,'technology','http://www.cplusplus.com/search.do?q=','','','2017-12-27 16:44:24','hunter'),(19,'Java',79,'technology','https://docs.oracle.com/apps/search/search.jsp?q=','','&category=all','2017-12-27 17:31:33','hunter'),(20,'Python',78,'technology','https://www.python.org/search/?q=','','','2017-12-27 17:35:06','hunter'),(21,'Amap',95,'map','http://ditu.amap.com/search?query=','','','2017-12-27 10:32:02','hunter'),(22,'QiChaCha',10,'information','http://www.qichacha.com/search?key=','','','2017-12-28 17:50:14','hunter'),(23,'Cmake',74,'technology','https://cmake.org/?s=','','','2017-12-28 18:29:02','hunter'),(24,'ubuntu',73,'technology','https://www.ubuntu.com/search?q=','','','2017-12-28 18:33:18','hunter'),(25,'ebay',44,'shopping','https://www.ebay.com/sch/i.html?&_nkw=','','','2017-12-28 18:44:36','hunter'),(26,'Biyao',46,'shopping','http://www.biyao.com/classify/search.html?query=','','','2017-12-28 18:47:06','hunter'),(27,'中国政府采购',11,'shopping','http://search.ccgp.gov.cn/bxsearch?searchtype=2&kw=','','','2017-12-28 18:51:44','hunter'),(28,'Alibaba',51,'shopping','https://s.1688.com/selloffer/offer_search.htm?keywords=','','','2017-12-28 18:57:23','hunter'),(29,'国家企业信用',11,'gov','http://www.gsxt.gov.cn/?','','','2017-12-28 19:15:23','hunter'),(30,'UEFI',82,'technology','http://www.uefi.org/search/node/','','','2017-12-29 10:57:39','hunter'),(31,'x-code',79,'technology','https://developer.apple.com/search/?q=','','','2017-12-29 11:07:26','hunter'),(32,'U-Boot',82,'technology','http://www.denx.de/wiki/view/U-Boot/WebSearch?search=','','&scope=all','2017-12-29 11:12:05','hunter'),(33,'wiki',100,'search','https://en.wikipedia.org/wiki/','','','2017-12-29 11:17:05','hunter'),(34,'runoob',81,'technology','http://www.runoob.com/?s=','','','2017-12-29 16:08:42','hunter'),(35,'EN-CN',0,'translate','https://translate.google.cn/#en/zh-CN/','','','2017-12-30 01:18:25','hunter'),(36,'CN->EN',0,'translate','https://translate.google.cn/#zh-CN/en/','','','2017-12-30 01:19:34','hunter'),(37,'ximalaya',0,'audio','http://www.ximalaya.com/search/all/kw/','','','2017-12-30 01:29:51','hunter'),(38,'music.163',0,'audio','http://music.163.com/#/search/m/?s=','','','2017-12-30 01:51:31','hunter'),(39,'kugou',0,'audio','http://www.kugou.com/yy/html/search.html#searchType=song&searchKeyWord=','','','2017-12-30 01:53:38','hunter'),(40,'qq.music',0,'audio','https://y.qq.com/portal/search.html#t=song&w=','','','2017-12-30 01:57:07','hunter');
+INSERT INTO `method` VALUES (1,'Google',100,'search','http://www.google.com/search?q=+','','&ie=UTF-8+&oe=UTF-8','2017-12-27 06:18:14','hunter'),(2,'Bing',99,'search','https://www.bing.com/search?q=','','','2017-12-27 06:19:27','hunter'),(3,'ZhiHu',96,'search','https://www.zhihu.com/search?type=content&q=','','','2017-12-27 06:20:52','hunter'),(4,'Baidu',99,'search','https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&wd=','','','2017-12-27 06:27:42','hunter'),(5,'Github',82,'code','https://github.com/search?utf8=%E2%9C%93&q=','','&type=','2017-12-27 06:38:08','hunter'),(6,'Sina',52,'news','http://search.sina.com.cn/?q=','','&c=news&from=index','2017-12-27 16:03:10','hunter'),(7,'Tmail',49,'shopping','https://list.tmall.com/search_product.htm?q=','','','2017-12-27 16:10:42','hunter'),(8,'JingDong',48,'shopping','https://search.jd.com/Search?keyword=','','&enc=utf-8','2017-12-27 16:13:34','hunter'),(9,'Taobao',50,'shopping','https://s.taobao.com/search?q=','','','2017-12-27 16:16:31','hunter'),(10,'Vip',47,'shopping','https://category.vip.com/suggest.php?keyword=','','','2017-12-27 16:18:26','hunter'),(11,'Yahoo',98,'search','https://search.yahoo.com/search?p=','','','2017-12-27 17:43:45','hunter'),(12,'CSDN',72,'technology','http://so.csdn.net/so/search/s.do?q=','','','2017-12-27 16:19:49','hunter'),(13,'Amazon',45,'shopping','https://www.amazon.cn/s/field-keywords=','','','2017-12-27 16:22:15','hunter'),(14,'MSDN_CN',81,'technology','https://social.msdn.microsoft.com/Search/zh-CN?query=','','','2017-12-27 16:32:03','hunter'),(15,'PHP',77,'technology','http://php.net/manual-lookup.php?pattern=','','','2017-12-27 16:34:34','hunter'),(16,'Oracle',75,'technology','https://www.oracle.com/search/results?Nty=1&Ntk=S3&Ntt=','','','2017-12-27 16:39:46','hunter'),(17,'Mysql',76,'technology','https://www.oracle.com/search/results?cat=mysql&Ntk=SI-ALL5&Ntt=','','','2017-12-27 16:42:01','hunter'),(18,'C++',80,'technology','http://www.cplusplus.com/search.do?q=','','','2017-12-27 16:44:24','hunter'),(19,'Java',79,'technology','https://docs.oracle.com/apps/search/search.jsp?q=','','&category=all','2017-12-27 17:31:33','hunter'),(20,'Python',78,'technology','https://www.python.org/search/?q=','','','2017-12-27 17:35:06','hunter'),(21,'Amap',95,'map','http://ditu.amap.com/search?query=','','','2017-12-27 10:32:02','hunter'),(22,'QiChaCha',10,'information','http://www.qichacha.com/search?key=','','','2017-12-28 17:50:14','hunter'),(23,'Cmake',74,'technology','https://cmake.org/?s=','','','2017-12-28 18:29:02','hunter'),(24,'ubuntu',73,'technology','https://www.ubuntu.com/search?q=','','','2017-12-28 18:33:18','hunter'),(25,'ebay',44,'shopping','https://www.ebay.com/sch/i.html?&_nkw=','','','2017-12-28 18:44:36','hunter'),(26,'Biyao',46,'shopping','http://www.biyao.com/classify/search.html?query=','','','2017-12-28 18:47:06','hunter'),(27,'中国政府采购',11,'shopping','http://search.ccgp.gov.cn/bxsearch?searchtype=2&kw=','','','2017-12-28 18:51:44','hunter'),(28,'Alibaba',51,'shopping','https://s.1688.com/selloffer/offer_search.htm?keywords=','','','2017-12-28 18:57:23','hunter'),(29,'国家企业信用',11,'gov','http://www.gsxt.gov.cn/?','','','2017-12-28 19:15:23','hunter'),(30,'UEFI',82,'technology','http://www.uefi.org/search/node/','','','2017-12-29 10:57:39','hunter'),(31,'x-code',79,'technology','https://developer.apple.com/search/?q=','','','2017-12-29 11:07:26','hunter'),(32,'U-Boot',82,'technology','http://www.denx.de/wiki/view/U-Boot/WebSearch?search=','','&scope=all','2017-12-29 11:12:05','hunter'),(33,'wiki',100,'search','https://en.wikipedia.org/wiki/','','','2017-12-29 11:17:05','hunter'),(34,'runoob',81,'technology','http://www.runoob.com/?s=','','','2017-12-29 16:08:42','hunter'),(35,'EN-CN',0,'translate','https://translate.google.cn/#en/zh-CN/','','','2017-12-30 01:18:25','hunter'),(36,'CN->EN',0,'translate','https://translate.google.cn/#zh-CN/en/','','','2017-12-30 01:19:34','hunter'),(37,'ximalaya',0,'audio','http://www.ximalaya.com/search/all/kw/','','','2017-12-30 01:29:51','hunter'),(38,'music.163',0,'audio','http://music.163.com/#/search/m/?s=','','','2017-12-30 01:51:31','hunter'),(39,'kugou',0,'audio','http://www.kugou.com/yy/html/search.html#searchType=song&searchKeyWord=','','','2017-12-30 01:53:38','hunter'),(40,'qq.music',0,'audio','https://y.qq.com/portal/search.html#t=song&w=','','','2017-12-30 01:57:07','hunter'),(41,'wiki.ubuntu',98,'search','http://wiki.ubuntu.com.cn/index.php?search=','','&fulltext=%E6%90%9C%E7%B4%A2','2018-01-15 17:55:17','hunter');
 /*!40000 ALTER TABLE `method` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2915,12 +3307,12 @@ LOCK TABLES `voltage` WRITE;
 UNLOCK TABLES;
 
 --
--- Current Database: `medical`
+-- Current Database: `weapon`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `medical` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `weapon` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
-USE `medical`;
+USE `weapon`;
 
 --
 -- Table structure for table `url`
@@ -2942,7 +3334,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2951,6 +3343,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (1,'hunter','spacex','website','http://www.spacex.com/','img/spacex.jpg','2018-01-18 14:10:49','normal','utf8',100,'china'),(2,'hunter','lockheedmartin','website','http://www.lockheedmartin.com/','img/LM-logo.png','2018-01-18 14:19:17','normal','utf8',99,'china'),(3,'hunter','boeing','website','http://www.boeing.com/','img/boeing.png','2018-01-18 14:22:41','normal','utf8',98,'china'),(4,'hunter','nasa','website','https://www.nasa.gov/','img/nasa.jpg','2018-01-18 14:25:36','normal','utf8',97,'china'),(5,'hunter','raytheon','website','https://www.raytheon.com/','img/rtn_logo.gif','2018-01-18 14:33:14','normal','utf8',96,'china'),(6,'hunter','northropgrumman','website','http://www.northropgrumman.com','img/northropgrumman.png','2018-01-18 14:43:49','normal','utf8',95,'china'),(7,'hunter','generaldynamics','website','http://www.generaldynamics.com/','img/generaldynamics.jpg','2018-01-18 14:51:03','normal','utf8',94,'china'),(8,'hunter','l3t','website','https://www.l3t.com/','img/l3-logo.png','2018-01-18 14:56:20','normal','utf8',93,'china'),(9,'hunter','utc','website','http://www.utc.com','img/utc.jpg','2018-01-18 14:59:48','normal','utf8',92,'china'),(10,'hunter','baesystems','website','https://www.baesystems.com','img/baesystems.png','2018-01-18 15:03:21','normal','utf8',92,'china'),(11,'hunter','baesystems','website','http://www.airbus.com/','img/Airbus.png','2018-01-18 15:07:16','normal','utf8',91,'china'),(12,'hunter','ge','website','https://www.ge.com/','img/ge.jpg','2018-01-18 15:14:43','normal','utf8',90,'china'),(13,'hunter','mhi','website','https://www.mhi.com/','img/mhi.png','2018-01-18 15:20:03','normal','utf8',89,'china'),(14,'hunter','rheinmetall','website','https://www.rheinmetall.com','img/rheinmetall.jpg','2018-01-18 15:27:23','normal','utf8',88,'china'),(15,'hunter','heckler-koch','website','https://www.heckler-koch.com','img/heckler-koch.jpg','2018-01-18 15:30:50','normal','utf8',87,'china'),(16,'hunter','dassault-aviation','website','https://www.dassault-aviation.com','img/Dassault-Aviation.png','2018-01-18 15:35:11','normal','utf8',86,'china'),(17,'hunter','OKA','website','http://www.uacrussia.ru','img/OKA.png','2018-01-18 15:44:53','normal','utf8',101,'china'),(18,'hunter','rafael','website','http://www.rafael.co.il','img/rafael.png','2018-01-18 15:58:10','normal','utf8',86,'china'),(19,'hunter','iai','website','http://www.iai.co.il/','img/iai.png','2018-01-18 16:02:02','normal','utf8',86,'china'),(20,'hunter','imisystems','website','http://www.imisystems.com/','img/IMISystems.png','2018-01-18 16:05:03','normal','utf8',86,'china'),(21,'hunter','elbitsystems','website','http://elbitsystems.com/','img/elbitsystems.png','2018-01-18 16:07:16','normal','utf8',86,'china'),(22,'hunter','Leonardo','website','http://www.leonardocompany.com','img/Leonardo.png','2018-01-18 16:18:18','normal','utf8',85,'china'),(23,'hunter','bel','website','http://bel-india.com/','img/bel.jpg','2018-01-18 16:25:11','normal','utf8',84,'china'),(24,'hunter','electricdatasystems','website','http://www.electricdatasystems.com/','img/EDS-logo.png','2018-01-18 16:28:53','normal','utf8',83,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2998,6 +3391,39 @@ CREATE TABLE `project` (
 LOCK TABLES `project` WRITE;
 /*!40000 ALTER TABLE `project` DISABLE KEYS */;
 /*!40000 ALTER TABLE `project` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `url`
+--
+
+DROP TABLE IF EXISTS `url`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `url` (
+  `idurl` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
+  `type` varchar(45) DEFAULT NULL,
+  `url` varchar(200) NOT NULL COMMENT 'where the URL address',
+  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
+  `where` varchar(45) NOT NULL DEFAULT 'china',
+  PRIMARY KEY (`idurl`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `url`
+--
+
+LOCK TABLES `url` WRITE;
+/*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (1,'hunter','sipo','website','http://cpquery.sipo.gov.cn/','img/gjzscqj.png','2018-01-22 17:14:53','normal','utf8',100,'china'),(2,'hunter','epo','website','http://www.epo.org/','img/epo.gif','2018-01-22 17:20:40','normal','utf8',99,'china'),(3,'hunter','uspto','website','https://www.uspto.gov/','img/uspto.png','2018-01-22 17:23:05','normal','utf8',98,'china'),(4,'hunter','jpo','website','http://www.jpo.go.jp/','img/jpo.png','2018-01-22 17:24:49','normal','utf8',97,'china'),(5,'hunter','kipris','website','http://kipris.or.kr/enghome/main.jsp','img/kiiris.gif','2018-01-22 17:29:13','normal','utf8',96,'china'),(6,'hunter','dpma','website','https://www.dpma.de/','img/patent-dpma.gif','2018-01-22 17:31:57','normal','utf8',95,'china'),(7,'hunter','ipd','website','http://www.ipd.gov.hk/','img/hk_po.jpg','2018-01-22 17:33:42','normal','utf8',94,'china'),(8,'hunter','wpio','website','http://www.wipo.int','img/wpio.png','2018-01-22 17:37:24','normal','utf8',93,'china'),(9,'hunter','oapl','website','http://www.oapi.int/','img/oapl.jpg','2018-01-22 17:39:38','normal','utf8',92,'china'),(10,'hunter','ipindia','website','http://www.ipindia.nic.in/','img/ipindia.png','2018-01-22 17:41:55','normal','utf8',91,'china'),(11,'hunter','rupto','website','http://www.rupto.ru/rupto/portal/start?lang=en','img/rupto.png','2018-01-22 17:43:35','normal','utf8',90,'china'),(12,'hunter','ipaustralia','website','https://www.ipaustralia.gov.au/','img/ipaustralia.png','2018-01-22 17:45:15','normal','utf8',89,'china'),(13,'hunter','uibm','website','http://www.uibm.gov.it/','img/uibm.jpg','2018-01-22 17:47:01','normal','utf8',88,'china'),(14,'hunter','Canada','website','http://www.ic.gc.ca','img/Canada.jpg','2018-01-22 17:49:23','normal','utf8',87,'china'),(15,'hunter','inpi','website','https://www.inpi.fr/fr','img/inpi.jpg','2018-01-22 17:51:15','normal','utf8',86,'china'),(16,'hunter','patent','website','http://www.sipo.gov.cn/xglj/201509/t20150917_1177472.html','img/otherpo.jpg','2018-01-22 17:52:32','normal','utf8',85,'china');
+/*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -3069,6 +3495,47 @@ CREATE TABLE `url` (
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
 INSERT INTO `url` VALUES (1,'WeChat','https://web.wechat.com/','local','normal','2017-06-03 20:50:12','china','patent_sys',0,'utf8'),(2,'QQ','http://w.qq.com/','local','normal','2017-06-03 20:52:29','china','patent_sys',0,'utf8'),(3,'Skype','https://login.skype.com','local','normal','2017-06-03 20:55:34','china','patent_sys',0,'utf8'),(4,'qq-Weibo','http://t.qq.com/','local','normal','2017-06-03 21:02:55','china','patent_sys',0,'utf8'),(5,'facebook','https://www.facebook.com','local','normal','2017-06-03 21:06:08','china','patent_sys',0,'utf8'),(6,'MSN','https://www.msn.com/','local','normal','2017-06-03 21:18:41','china','patent_sys',0,'utf8');
+/*!40000 ALTER TABLE `url` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `military`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `military` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `military`;
+
+--
+-- Table structure for table `url`
+--
+
+DROP TABLE IF EXISTS `url`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `url` (
+  `idurl` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
+  `type` varchar(45) DEFAULT NULL,
+  `url` varchar(200) NOT NULL COMMENT 'where the URL address',
+  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
+  `where` varchar(45) NOT NULL DEFAULT 'china',
+  PRIMARY KEY (`idurl`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `url`
+--
+
+LOCK TABLES `url` WRITE;
+/*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (1,'hunter','china','website','http://www.mod.gov.cn/','img/china.jpg','2018-01-17 16:40:58','normal','utf8',100,'china'),(2,'hunter','USA','website','https://www.defense.gov/',' img/usa.jpg','2018-01-17 16:45:55','normal','utf8',99,'china'),(3,'hunter','russia','website','http://www.mil.ru/ ','img/russia.png','2018-01-17 16:50:47','normal','utf8',98,'china'),(4,'hunter','UnitedKingdom','website','http://www.mod.uk/','img/UnitedKingdom.jpg','2018-01-17 16:53:06','normal','utf8',97,'china'),(5,'hunter','France','website','https://www.defense.gouv.fr/','img/france.jpg','2018-01-17 16:56:38','normal','utf8',96,'china'),(6,'hunter','Germany','website','https://www.bundeswehr.de/','img/Germany.jpg','2018-01-17 17:00:08','normal','utf8',95,'china'),(7,'hunter','India','website','https://mod.gov.in/','img/India.jpg','2018-01-17 17:03:04','normal','utf8',94,'china'),(8,'hunter','Israel','website','https://www.idf.il/','img/Israel.jpg','2018-01-17 17:05:05','normal','utf8',93,'china'),(9,'hunter','Italy','website','http://www.difesa.it/','img/Italy.jpg','2018-01-17 17:09:14','normal','utf8',92,'china'),(10,'hunter','Australia','website','http://www.defence.gov.au/','img/Australia.jpg','2018-01-17 17:11:15','normal','utf8',91,'china'),(11,'hunter','Japan','website','http://www.mod.go.jp/','img/Japan.jpg','2018-01-17 17:17:48','normal','utf8',90,'china'),(12,'hunter','Canada','website','http://www.forces.gc.ca/','img/Canada.jpg','2018-01-17 17:23:07','normal','utf8',94,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3155,54 +3622,43 @@ INSERT INTO `url` VALUES (1,'hunter','act-r','website','http://act-r.psy.cmu.edu
 UNLOCK TABLES;
 
 --
--- Current Database: `govwr`
+-- Current Database: `medical`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `govwr` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `medical` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
-USE `govwr`;
+USE `medical`;
 
 --
--- Table structure for table `file`
+-- Table structure for table `url`
 --
 
-DROP TABLE IF EXISTS `file`;
+DROP TABLE IF EXISTS `url`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `file` (
-  `idfile` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(45) NOT NULL COMMENT 'name=title+uuid',
-  `uuid` varchar(45) NOT NULL DEFAULT 'UUID()',
-  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `name` varchar(45) NOT NULL COMMENT 'name=./org/author/title+uuid',
-  `type` varchar(45) DEFAULT NULL COMMENT 'txt,doc,xml,audio,vedio,pdf ,html,',
-  `author` varchar(45) NOT NULL,
-  `tel` varchar(45) DEFAULT NULL,
-  `mail` varchar(45) DEFAULT NULL,
-  `org` varchar(45) NOT NULL,
-  `where` varchar(45) NOT NULL,
-  `md5` varchar(45) NOT NULL COMMENT 'file md5 checksum',
-  `compress` tinyint(4) NOT NULL DEFAULT '0',
-  `cpsw` varchar(45) DEFAULT NULL COMMENT 'Compress password',
-  `secret` int(11) NOT NULL DEFAULT '0' COMMENT 'Secret level',
-  `spsw` varchar(45) DEFAULT NULL COMMENT 'Secret level''s password',
-  `decrypt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'decrypt =decrypt time +password',
+CREATE TABLE `url` (
+  `idurl` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
+  `type` varchar(45) DEFAULT NULL,
+  `url` varchar(200) NOT NULL COMMENT 'where the URL address',
+  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
   `status` varchar(45) DEFAULT NULL,
-  `introduction` text,
-  `remark` text,
-  PRIMARY KEY (`idfile`,`uuid`),
-  UNIQUE KEY `idfile_UNIQUE` (`idfile`),
-  UNIQUE KEY `uuid_UNIQUE` (`uuid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='government documents';
+  `remark` varchar(45) DEFAULT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
+  `where` varchar(45) NOT NULL DEFAULT 'china',
+  PRIMARY KEY (`idurl`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `file`
+-- Dumping data for table `url`
 --
 
-LOCK TABLES `file` WRITE;
-/*!40000 ALTER TABLE `file` DISABLE KEYS */;
-/*!40000 ALTER TABLE `file` ENABLE KEYS */;
+LOCK TABLES `url` WRITE;
+/*!40000 ALTER TABLE `url` DISABLE KEYS */;
+/*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -3214,4 +3670,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-10 18:20:07
+-- Dump completed on 2018-01-22 18:01:02
