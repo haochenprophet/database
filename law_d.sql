@@ -56,17 +56,19 @@ DROP TABLE IF EXISTS `url`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `url` (
   `idurl` int(11) NOT NULL AUTO_INCREMENT,
-  `what` text NOT NULL COMMENT 'law name',
-  `url` text NOT NULL COMMENT 'law file/link  path',
-  `type` varchar(45) NOT NULL DEFAULT 'local' COMMENT 'local,file,http,https,ssh',
-  `status` varchar(45) NOT NULL DEFAULT 'normal' COMMENT 'normal ,abnormal',
-  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'create time ',
-  `where` varchar(45) NOT NULL DEFAULT 'china',
   `who` varchar(45) NOT NULL DEFAULT 'hunter',
-  `priority` int(11) NOT NULL DEFAULT '0',
+  `what` text NOT NULL COMMENT 'law name',
+  `type` varchar(45) DEFAULT NULL,
+  `url` varchar(200) NOT NULL COMMENT 'where the URL address',
+  `country` varchar(45) NOT NULL DEFAULT 'china',
+  `logo` varchar(45) DEFAULT NULL,
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'create time ',
+  `status` varchar(45) NOT NULL DEFAULT 'normal' COMMENT 'normal ,abnormal',
   `remark` text,
+  `priority` int(11) NOT NULL DEFAULT '0',
+  `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -75,7 +77,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'中华人民共和国宪法-2004','law/中华人民共和国宪法-2004.pdf','local','normal','2017-04-27 11:53:15','china','patent_sys',100,'宪法'),(2,'中华人民共和国专利法-2008','law/中华人民共和国专利法-2008.pdf','local','normal','2017-04-27 11:55:05','china','patent_sys',96,'专利法'),(3,'中华人民共和国专利法实施细则-2003','law/中华人民共和国专利法实施细则-2003.pdf','local','normal','2017-04-27 11:55:49','china','patent_sys',98,'专利法实施细则'),(4,'中华人民共和国民事诉讼法-2012','law/中华人民共和国民事诉讼法-2012.pdf','local','normal','2017-04-27 11:56:33','china','patent_sys',99,'民事诉讼法'),(5,'中华人民共和国专利法实施细则-2010','law/中华人民共和国专利法实施细则-2010.pdf','local','normal','2017-06-01 19:48:17','china','patent_sys',97,''),(6,'中华人民共和国劳动法','law/中华人民共和国劳动法.pdf','local','normal','2017-12-24 22:38:17','china','patent_sys',95,'');
+INSERT INTO `url` VALUES (1,'patent_sys','中华人民共和国宪法-2004','local','law/中华人民共和国宪法-2004.pdf','china',NULL,'2017-04-27 11:53:15','normal','宪法',100,'china'),(2,'patent_sys','中华人民共和国专利法-2008','local','law/中华人民共和国专利法-2008.pdf','china',NULL,'2017-04-27 11:55:05','normal','专利法',96,'china'),(3,'patent_sys','中华人民共和国专利法实施细则-2003','local','law/中华人民共和国专利法实施细则-2003.pdf','china',NULL,'2017-04-27 11:55:49','normal','专利法实施细则',98,'china'),(4,'patent_sys','中华人民共和国民事诉讼法-2012','local','law/中华人民共和国民事诉讼法-2012.pdf','china',NULL,'2017-04-27 11:56:33','normal','民事诉讼法',99,'china'),(5,'patent_sys','中华人民共和国专利法实施细则-2010','local','law/中华人民共和国专利法实施细则-2010.pdf','china',NULL,'2017-06-01 19:48:17','normal','',97,'china'),(6,'patent_sys','中华人民共和国劳动法','local','law/中华人民共和国劳动法.pdf','china',NULL,'2017-12-24 22:38:17','normal','',95,'china'),(7,'hunter','中华人民共和国刑法-2015修正','doc','law/中华人民共和国刑法-2015修正.pdf','china','img/law.jpg','2018-01-10 16:56:45','normal','utf8',94,'china'),(8,'hunter','中华人民共和国公司法','law','law/中华人民共和国公司法.pdf','china','img/law.jpg','2018-01-17 14:05:25','normal','utf8',94,'china'),(9,'hunter','中华人民共和国民事诉讼法','law','law/中华人民共和国民事诉讼法.pdf','china','img/law.jpg','2018-01-17 14:38:49','normal','utf8',93,'china'),(10,'hunter','中华人民共和国立法法','law','law/中华人民共和国立法法.pdf','china','img/law.jpg','2018-01-17 14:39:21','normal','utf8',99,'china'),(11,'hunter','中华人民共和国香港特别行政区基本法','law','law/中华人民共和国香港特别行政区基本法.pdf','china','img/law.jpg','2018-01-17 14:45:44','normal','utf8',92,'china'),(12,'hunter','中华人民共和国食品安全法','law','law/中华人民共和国食品安全法.pdf','china','img/law.jpg','2018-01-17 14:54:13','normal','utf8',0,'china'),(13,'hunter','中华人民共和国土地管理法','law','law/中华人民共和国土地管理法.pdf','china','img/law.jpg','2018-01-17 15:01:52','normal','utf8',0,'china'),(14,'hunter','中华人民共和国选举法','law','law/中华人民共和国选举法.pdf','china','img/law.jpg','2018-01-17 15:07:36','normal','utf8',0,'china'),(15,'hunter','中华人民共和国刑事诉讼法','law','law/中华人民共和国刑事诉讼法.pdf','china','img/law.jpg','2018-01-17 15:16:55','normal','utf8',0,'china'),(16,'hunter','中华人民共和国居民身份证法','law','law/中华人民共和国居民身份证法.pdf','china','img/law.jpg','2018-01-17 15:20:19','normal','utf8',0,'china'),(17,'hunter','中华人民共和国国家安全法','law','law/中华人民共和国国家安全法.pdf','china','img/law.jpg','2018-01-17 15:25:36','normal','utf8',0,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -88,4 +90,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-08 17:38:38
+-- Dump completed on 2018-01-23 15:25:36
