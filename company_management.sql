@@ -72,6 +72,7 @@ CREATE TABLE `bill` (
   `remark` varchar(45) DEFAULT NULL,
   `quantity` varchar(45) DEFAULT NULL,
   `univalent` varchar(45) DEFAULT NULL,
+  `department` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idbill`,`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='bill of company';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -468,4 +469,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-23 15:13:18
+-- Dump completed on 2018-01-23 15:34:37
