@@ -160,14 +160,16 @@ DROP TABLE IF EXISTS `gpio`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `gpio` (
   `idgpio` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) DEFAULT NULL,
+  `pin` varchar(45) NOT NULL,
   `useas` varchar(100) DEFAULT NULL,
   `fun` varchar(100) DEFAULT NULL,
   `setting` varchar(45) DEFAULT NULL,
   `project` varchar(45) DEFAULT NULL,
   `chip` varchar(45) DEFAULT NULL,
+  `who` varchar(45) DEFAULT NULL,
   `remark` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`idgpio`),
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idgpio`,`pin`),
   UNIQUE KEY `idgpio_UNIQUE` (`idgpio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -370,4 +372,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-24 11:07:36
+-- Dump completed on 2018-01-24 15:59:17
