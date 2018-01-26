@@ -37,7 +37,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +46,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'hunter','HP','website','http://www8.hp.com','img/hp.jpg','2018-01-19 10:22:10','normal','utf8',100,'china'),(2,'hunter','DELL','website','http://www.dell.com','img/dell.jpg','2018-01-19 10:23:31','normal','utf8',99,'china'),(3,'hunter','ASUS','website','https://www.asus.com','img/asus.jpg','2018-01-19 10:25:44','normal','utf8',98,'china'),(4,'hunter','apple','website','https://www.apple.com','img/apple.jpg','2018-01-19 10:26:33','normal','utf8',97,'china'),(5,'hunter','lenovo','website','https://www.lenovo.com.cn/','img/lenovo.jpg','2018-01-19 10:28:38','normal','utf8',96,'china'),(6,'hunter','acer','website','https://www.acer.com','img/acer.jpg','2018-01-19 10:37:00','normal','utf8',95,'china'),(7,'hunter','toshiba','website','http://www.toshiba.com.cn/','img/toshiba.jpg','2018-01-19 10:41:23','normal','utf8',94,'china'),(8,'hunter','samsung','website','http://www.samsung.com','img/samsung.jpg','2018-01-19 10:43:14','normal','utf8',93,'china'),(9,'hunter','tongfangpc','website','http://www.tongfangpc.com/','img/tongfangpc.jpg','2018-01-19 10:45:03','normal','utf8',92,'china'),(10,'hunter','hasee','website','http://www.hasee.com','img/hasee.jpg','2018-01-19 10:47:30','normal','utf8',91,'china'),(11,'hunter','haseefujitsu','website','http://www.fujitsu.com','img/fujitsu.jpg','2018-01-19 10:49:26','normal','utf8',90,'china'),(12,'hunter','huawei','website','http://www.huawei.com','img/huawei.png','2018-01-19 10:50:24','normal','utf8',89,'china'),(13,'hunter','mi','website','https://www.mi.com','img/mi.jpg','2018-01-19 10:53:56','normal','utf8',88,'china'),(14,'hunter','sony','website','http://www.sony.com.cn/','img/sony.jpg','2018-01-19 10:59:24','normal','utf8',93,'china');
+INSERT INTO `url` VALUES (1,'hunter','HP','website','http://www8.hp.com','img/hp.jpg','2018-01-19 10:22:10','normal','utf8',100,'china'),(2,'hunter','DELL','website','http://www.dell.com','img/dell.jpg','2018-01-19 10:23:31','normal','utf8',99,'china'),(3,'hunter','ASUS','website','https://www.asus.com','img/asus.jpg','2018-01-19 10:25:44','normal','utf8',98,'china'),(4,'hunter','apple','website','https://www.apple.com','img/apple.jpg','2018-01-19 10:26:33','normal','utf8',97,'china'),(5,'hunter','lenovo','website','https://www.lenovo.com.cn/','img/lenovo.jpg','2018-01-19 10:28:38','normal','utf8',96,'china'),(6,'hunter','acer','website','https://www.acer.com','img/acer.jpg','2018-01-19 10:37:00','normal','utf8',95,'china'),(7,'hunter','toshiba','website','http://www.toshiba.com.cn/','img/toshiba.jpg','2018-01-19 10:41:23','normal','utf8',94,'china'),(8,'hunter','samsung','website','http://www.samsung.com','img/samsung.jpg','2018-01-19 10:43:14','normal','utf8',93,'china'),(9,'hunter','tongfangpc','website','http://www.tongfangpc.com/','img/tongfangpc.jpg','2018-01-19 10:45:03','normal','utf8',92,'china'),(10,'hunter','hasee','website','http://www.hasee.com','img/hasee.jpg','2018-01-19 10:47:30','normal','utf8',91,'china'),(11,'hunter','haseefujitsu','website','http://www.fujitsu.com','img/fujitsu.jpg','2018-01-19 10:49:26','normal','utf8',90,'china'),(12,'hunter','huawei','website','http://www.huawei.com','img/huawei.png','2018-01-19 10:50:24','normal','utf8',89,'china'),(13,'hunter','mi','website','https://www.mi.com','img/mi.jpg','2018-01-19 10:53:56','normal','utf8',88,'china'),(14,'hunter','sony','website','http://www.sony.com.cn/','img/sony.jpg','2018-01-19 10:59:24','normal','utf8',93,'china'),(15,'hunter','getac','website','http://us.getac.com','img/Getac.jpg','2018-01-26 15:14:32','normal','utf8',75,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-19 11:01:02
+-- Dump completed on 2018-01-26 15:20:34
