@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `table` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `table`;
+CREATE DATABASE  IF NOT EXISTS `item` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `item`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: table
+-- Host: 127.0.0.1    Database: item
 -- ------------------------------------------------------
 -- Server version	8.0.0-dmr-log
 
@@ -18,29 +18,52 @@ USE `table`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `type`
+-- Table structure for table `item`
 --
 
-DROP TABLE IF EXISTS `type`;
+DROP TABLE IF EXISTS `item`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `type` (
-  `idtype` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) NOT NULL,
-  `time` datetime DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`idtype`),
-  UNIQUE KEY `idtype_UNIQUE` (`idtype`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='url_typw';
+CREATE TABLE `item` (
+  `iditem` int(11) NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(45) NOT NULL,
+  `item` varchar(45) DEFAULT NULL,
+  `info` text,
+  `status` varchar(45) DEFAULT NULL,
+  `remark` text,
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `owner` varchar(45) NOT NULL,
+  `creator` varchar(45) NOT NULL,
+  `group` text COMMENT 'team group',
+  `father` int(11) NOT NULL DEFAULT '0' COMMENT 'depend father item iid',
+  `child` int(11) NOT NULL DEFAULT '0' COMMENT 'child itme id',
+  `priority` int(11) NOT NULL DEFAULT '0',
+  `start` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'star time',
+  `end` datetime DEFAULT NULL COMMENT 'end time',
+  `worth` varchar(200) NOT NULL,
+  `request` text,
+  `price` double NOT NULL DEFAULT '0',
+  `method` text NOT NULL,
+  `url` varchar(200) NOT NULL COMMENT 'url ',
+  `workspace` varchar(45) NOT NULL COMMENT 'path of workspace',
+  `size` bigint(20) NOT NULL DEFAULT '107374182400' COMMENT 'path space size ',
+  `image` varchar(45) DEFAULT NULL COMMENT 'file name ',
+  `audio` varchar(45) DEFAULT NULL COMMENT 'file name',
+  `video` varchar(45) DEFAULT NULL COMMENT 'file name',
+  `earn` double NOT NULL DEFAULT '0' COMMENT 'Donor income',
+  PRIMARY KEY (`iditem`,`uuid`),
+  UNIQUE KEY `uuid_UNIQUE` (`uuid`),
+  UNIQUE KEY `iditem_UNIQUE` (`iditem`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `type`
+-- Dumping data for table `item`
 --
 
-LOCK TABLES `type` WRITE;
-/*!40000 ALTER TABLE `type` DISABLE KEYS */;
-INSERT INTO `type` VALUES (1,'create','2018-01-15 14:38:44'),(2,'drop','2018-01-15 14:38:44'),(3,'select','2018-01-15 14:38:44'),(4,'update','2018-01-15 14:38:44'),(5,'insert','2018-01-15 14:38:44'),(6,'delete','2018-01-15 14:38:44'),(7,'alter','2018-01-15 14:38:44');
-/*!40000 ALTER TABLE `type` ENABLE KEYS */;
+LOCK TABLES `item` WRITE;
+/*!40000 ALTER TABLE `item` DISABLE KEYS */;
+/*!40000 ALTER TABLE `item` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -52,18 +75,18 @@ DROP TABLE IF EXISTS `url`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `url` (
   `idurl` int(11) NOT NULL AUTO_INCREMENT,
-  `who` varchar(45) NOT NULL DEFAULT 'hunter' COMMENT 'who create the link item .',
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
   `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
-  `type` varchar(45) NOT NULL,
+  `type` varchar(45) DEFAULT NULL,
   `url` varchar(200) NOT NULL COMMENT 'where the URL address',
   `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
   `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
-  `status` varchar(45) NOT NULL DEFAULT 'normal',
+  `status` varchar(45) DEFAULT NULL,
   `remark` varchar(45) DEFAULT NULL,
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,7 +95,6 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'hunter','create_url','create','table/create_url.sql','img/url.png','2018-01-12 16:07:43','normal','utf8',0,'china'),(2,'hunter','create_item','create','table/create_item.sql','img/item.jpg','2018-02-06 18:40:17','normal','utf8',0,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -85,4 +107,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-06 18:53:05
+-- Dump completed on 2018-02-06 18:52:33
