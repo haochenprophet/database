@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `company_management` /*!40100 DEFAULT CHARACTER S
 USE `company_management`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: company_management
+-- Host: localhost    Database: company_management
 -- ------------------------------------------------------
 -- Server version	8.0.0-dmr-log
 
@@ -233,6 +233,109 @@ CREATE TABLE `director` (
 LOCK TABLES `director` WRITE;
 /*!40000 ALTER TABLE `director` DISABLE KEYS */;
 /*!40000 ALTER TABLE `director` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `item`
+--
+
+DROP TABLE IF EXISTS `item`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `item` (
+  `iditem` int(11) NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(45) NOT NULL,
+  `item` varchar(45) DEFAULT NULL,
+  `info` text,
+  `status` varchar(45) DEFAULT NULL,
+  `remark` text,
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `owner` varchar(45) NOT NULL,
+  `creator` varchar(45) NOT NULL,
+  `group` text COMMENT 'team group',
+  `father` int(11) NOT NULL DEFAULT '0' COMMENT 'depend father item iid',
+  `child` int(11) NOT NULL DEFAULT '0' COMMENT 'child itme id',
+  `priority` int(11) NOT NULL DEFAULT '0',
+  `start` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'star time',
+  `end` datetime DEFAULT NULL COMMENT 'end time',
+  `worth` varchar(200) NOT NULL,
+  `request` text,
+  `price` double NOT NULL DEFAULT '0',
+  `method` text NOT NULL,
+  `url` varchar(200) NOT NULL COMMENT 'url ',
+  `workspace` varchar(45) NOT NULL COMMENT 'path of workspace',
+  `size` bigint(20) NOT NULL DEFAULT '107374182400' COMMENT 'path space size ',
+  `image` varchar(45) DEFAULT NULL COMMENT 'file name ',
+  `audio` varchar(45) DEFAULT NULL COMMENT 'file name',
+  `video` varchar(45) DEFAULT NULL COMMENT 'file name',
+  `earn` double NOT NULL DEFAULT '0' COMMENT 'Donor income',
+  PRIMARY KEY (`iditem`,`uuid`),
+  UNIQUE KEY `uuid_UNIQUE` (`uuid`),
+  UNIQUE KEY `iditem_UNIQUE` (`iditem`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `item`
+--
+
+LOCK TABLES `item` WRITE;
+/*!40000 ALTER TABLE `item` DISABLE KEYS */;
+/*!40000 ALTER TABLE `item` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `program`
+--
+
+DROP TABLE IF EXISTS `program`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `program` (
+  `iditem` int(11) NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(45) NOT NULL DEFAULT 'UUID()',
+  `when` datetime DEFAULT CURRENT_TIMESTAMP,
+  `address` varchar(45) DEFAULT NULL,
+  `author` varchar(45) DEFAULT NULL,
+  `what` varchar(200) DEFAULT NULL,
+  `description` varchar(200) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(200) DEFAULT NULL,
+  `priority` varchar(45) DEFAULT NULL,
+  `father` int(11) NOT NULL DEFAULT '0',
+  `child` int(11) NOT NULL DEFAULT '0',
+  `enable` int(11) NOT NULL DEFAULT '1',
+  `hide` int(11) NOT NULL DEFAULT '0',
+  `depend` int(11) NOT NULL DEFAULT '0',
+  `expression` text COMMENT 'depend expression c style\nkey(ID),UUID()\nint main(int argc,char *argv[])\n{\n     if(ex){}\n     else{}\n     for(;;){}\n     while(){}\n     do{}while();\n     return 0;\n}',
+  `namespace` varchar(45) DEFAULT NULL COMMENT 'item name space',
+  `name` varchar(45) DEFAULT NULL COMMENT 'item name',
+  `declare` varchar(100) DEFAULT NULL,
+  `define` text,
+  `include` text,
+  `libary` varchar(45) DEFAULT NULL,
+  `type` varchar(45) DEFAULT NULL COMMENT 'item type:class func var mac',
+  `class` int(11) DEFAULT NULL,
+  `function` int(11) DEFAULT NULL,
+  `variable` int(11) DEFAULT NULL,
+  `macro` int(11) DEFAULT NULL,
+  `compile` varchar(200) DEFAULT NULL COMMENT 'command',
+  `link` varchar(200) DEFAULT NULL COMMENT 'command',
+  `OS` varchar(45) DEFAULT NULL,
+  `language` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`iditem`,`uuid`),
+  UNIQUE KEY `iditem_UNIQUE` (`iditem`),
+  UNIQUE KEY `uuid_UNIQUE` (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `program`
+--
+
+LOCK TABLES `program` WRITE;
+/*!40000 ALTER TABLE `program` DISABLE KEYS */;
+/*!40000 ALTER TABLE `program` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -469,4 +572,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-23 15:34:37
+-- Dump completed on 2018-02-06 18:29:08
