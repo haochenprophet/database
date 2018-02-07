@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `company_management` /*!40100 DEFAULT CHARACTER S
 USE `company_management`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: company_management
+-- Host: 127.0.0.1    Database: company_management
 -- ------------------------------------------------------
 -- Server version	8.0.0-dmr-log
 
@@ -245,30 +245,34 @@ DROP TABLE IF EXISTS `item`;
 CREATE TABLE `item` (
   `iditem` int(11) NOT NULL AUTO_INCREMENT,
   `uuid` varchar(45) NOT NULL,
-  `item` varchar(45) DEFAULT NULL,
-  `info` text,
-  `status` varchar(45) DEFAULT NULL,
-  `remark` text,
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `owner` varchar(45) NOT NULL,
-  `creator` varchar(45) NOT NULL,
-  `group` text COMMENT 'team group',
-  `father` int(11) NOT NULL DEFAULT '0' COMMENT 'depend father item iid',
-  `child` int(11) NOT NULL DEFAULT '0' COMMENT 'child itme id',
+  `item` varchar(1024) DEFAULT NULL,
+  `type` varchar(45) DEFAULT NULL,
+  `goal` varchar(1024) NOT NULL,
+  `earn` double NOT NULL DEFAULT '0' COMMENT 'Donor income',
   `priority` int(11) NOT NULL DEFAULT '0',
+  `creator` varchar(1024) NOT NULL,
+  `executor` varchar(1024) NOT NULL,
+  `info` varchar(1024) DEFAULT NULL,
   `start` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'star time',
   `end` datetime DEFAULT NULL COMMENT 'end time',
-  `worth` varchar(200) NOT NULL,
-  `request` text,
+  `request` varchar(1024) DEFAULT NULL,
+  `method` varchar(1024) NOT NULL,
   `price` double NOT NULL DEFAULT '0',
-  `method` text NOT NULL,
-  `url` varchar(200) NOT NULL COMMENT 'url ',
-  `workspace` varchar(45) NOT NULL COMMENT 'path of workspace',
+  `father` int(11) NOT NULL DEFAULT '0' COMMENT 'depend father item iid',
+  `child` int(11) NOT NULL DEFAULT '0' COMMENT 'child itme id',
+  `url` varchar(1024) NOT NULL COMMENT 'url ',
+  `path` varchar(1024) DEFAULT NULL COMMENT 'path of workspace',
   `size` bigint(20) NOT NULL DEFAULT '107374182400' COMMENT 'path space size ',
-  `image` varchar(45) DEFAULT NULL COMMENT 'file name ',
-  `audio` varchar(45) DEFAULT NULL COMMENT 'file name',
-  `video` varchar(45) DEFAULT NULL COMMENT 'file name',
-  `earn` double NOT NULL DEFAULT '0' COMMENT 'Donor income',
+  `image` varchar(1024) DEFAULT NULL COMMENT 'file name ',
+  `audio` varchar(1024) DEFAULT NULL COMMENT 'file name',
+  `video` varchar(1024) DEFAULT NULL COMMENT 'file name',
+  `group` varchar(1024) DEFAULT NULL COMMENT 'work group',
+  `address` varchar(1024) DEFAULT NULL,
+  `mail` varchar(1024) DEFAULT NULL,
+  `tel` varchar(1024) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(2048) DEFAULT NULL,
   PRIMARY KEY (`iditem`,`uuid`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`),
   UNIQUE KEY `iditem_UNIQUE` (`iditem`)
@@ -572,4 +576,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-06 18:29:08
+-- Dump completed on 2018-02-07 18:26:21
