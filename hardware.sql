@@ -169,6 +169,7 @@ CREATE TABLE `gpio` (
   `who` varchar(45) DEFAULT NULL,
   `remark` varchar(200) DEFAULT NULL,
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `priority` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idgpio`,`pin`),
   UNIQUE KEY `idgpio_UNIQUE` (`idgpio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16;
@@ -316,7 +317,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -325,6 +326,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (1,'hunter','quanergy','website','http://quanergy.com/','img/quanergy.jpg','2018-02-08 18:52:36','normal','utf8',100,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -372,4 +374,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-24 15:59:17
+-- Dump completed on 2018-02-08 18:53:45
