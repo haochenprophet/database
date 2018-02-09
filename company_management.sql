@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `company_management` /*!40100 DEFAULT CHARACTER S
 USE `company_management`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: company_management
+-- Host: localhost    Database: company_management
 -- ------------------------------------------------------
 -- Server version	8.0.0-dmr-log
 
@@ -73,6 +73,7 @@ CREATE TABLE `bill` (
   `quantity` varchar(45) DEFAULT NULL,
   `univalent` varchar(45) DEFAULT NULL,
   `department` varchar(45) DEFAULT NULL,
+  `approve` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idbill`,`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='bill of company';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -576,4 +577,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-07 18:26:21
+-- Dump completed on 2018-02-09 14:54:26

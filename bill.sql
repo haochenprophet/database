@@ -18,6 +18,100 @@ USE `bill`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `bill`
+--
+
+DROP TABLE IF EXISTS `bill`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bill` (
+  `idbill` int(11) NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(45) NOT NULL,
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `where` varchar(45) DEFAULT NULL,
+  `who` varchar(45) DEFAULT NULL,
+  `type` varchar(45) DEFAULT NULL COMMENT 'IN/OUT',
+  `item` varchar(45) DEFAULT NULL,
+  `amount` double DEFAULT NULL,
+  `file` varchar(45) DEFAULT NULL,
+  `imgage` varchar(45) DEFAULT NULL,
+  `vedio` varchar(45) DEFAULT NULL,
+  `audio` varchar(45) DEFAULT NULL,
+  `from` varchar(45) DEFAULT NULL COMMENT 'source',
+  `to` varchar(45) DEFAULT NULL COMMENT 'dir',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  `quantity` varchar(45) DEFAULT NULL,
+  `univalent` varchar(45) DEFAULT NULL,
+  `department` varchar(45) DEFAULT NULL,
+  `approve` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idbill`,`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='bill of company';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bill`
+--
+
+LOCK TABLES `bill` WRITE;
+/*!40000 ALTER TABLE `bill` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bill` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `item`
+--
+
+DROP TABLE IF EXISTS `item`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `item` (
+  `iditem` int(11) NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(45) NOT NULL,
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `item` varchar(1024) DEFAULT NULL,
+  `type` varchar(45) DEFAULT NULL,
+  `goal` varchar(1024) NOT NULL,
+  `earn` double NOT NULL DEFAULT '0' COMMENT 'Donor income',
+  `priority` int(11) NOT NULL DEFAULT '0',
+  `creator` varchar(1024) NOT NULL,
+  `executor` varchar(1024) NOT NULL,
+  `info` varchar(1024) DEFAULT NULL,
+  `start` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'star time',
+  `end` datetime DEFAULT NULL COMMENT 'end time',
+  `request` varchar(1024) DEFAULT NULL,
+  `method` varchar(1024) NOT NULL,
+  `price` double NOT NULL DEFAULT '0',
+  `father` varchar(45) NOT NULL DEFAULT '0' COMMENT 'depend father item uuid',
+  `child` varchar(45) NOT NULL DEFAULT '0' COMMENT 'child itme uuid',
+  `url` varchar(1024) NOT NULL COMMENT 'url ',
+  `path` varchar(1024) DEFAULT NULL COMMENT 'path of workspace',
+  `size` bigint(20) NOT NULL DEFAULT '107374182400' COMMENT 'path space size ',
+  `image` varchar(1024) DEFAULT NULL COMMENT 'file name ',
+  `audio` varchar(1024) DEFAULT NULL COMMENT 'file name',
+  `video` varchar(1024) DEFAULT NULL COMMENT 'file name',
+  `group` varchar(1024) DEFAULT NULL COMMENT 'work group',
+  `address` varchar(1024) DEFAULT NULL,
+  `mail` varchar(1024) DEFAULT NULL,
+  `tel` varchar(1024) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(2048) DEFAULT NULL,
+  PRIMARY KEY (`iditem`,`uuid`),
+  UNIQUE KEY `uuid_UNIQUE` (`uuid`),
+  UNIQUE KEY `iditem_UNIQUE` (`iditem`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `item`
+--
+
+LOCK TABLES `item` WRITE;
+/*!40000 ALTER TABLE `item` DISABLE KEYS */;
+/*!40000 ALTER TABLE `item` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `url`
 --
 
@@ -58,4 +152,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-09 14:46:09
+-- Dump completed on 2018-02-09 15:13:57

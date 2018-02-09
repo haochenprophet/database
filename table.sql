@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `table` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `table`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: table
+-- Host: localhost    Database: table
 -- ------------------------------------------------------
 -- Server version	8.0.0-dmr-log
 
@@ -63,7 +63,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,7 +72,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'hunter','create_url','create','table/create_url.sql','img/url.png','2018-01-12 16:07:43','normal','utf8',0,'china'),(2,'hunter','create_item','create','table/create_item.sql','img/item.jpg','2018-02-06 18:40:17','normal','utf8',0,'china');
+INSERT INTO `url` VALUES (1,'hunter','create_url','create','table/create_url.sql','img/url.png','2018-01-12 16:07:43','normal','utf8',0,'china'),(2,'hunter','create_item','create','table/create_item.sql','img/item.jpg','2018-02-06 18:40:17','normal','utf8',0,'china'),(3,'hunter','create_bill','create','table/create_bill.sql','img/bill.jpg','2018-02-09 15:11:07','normal','utf8',0,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -85,4 +85,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-06 18:53:05
+-- Dump completed on 2018-02-09 15:14:25
