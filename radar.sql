@@ -53,6 +53,39 @@ LOCK TABLES `data` WRITE;
 /*!40000 ALTER TABLE `data` DISABLE KEYS */;
 /*!40000 ALTER TABLE `data` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `url`
+--
+
+DROP TABLE IF EXISTS `url`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `url` (
+  `idurl` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
+  `type` varchar(45) DEFAULT NULL,
+  `url` varchar(200) NOT NULL COMMENT 'where the URL address',
+  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
+  `where` varchar(45) NOT NULL DEFAULT 'china',
+  PRIMARY KEY (`idurl`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `url`
+--
+
+LOCK TABLES `url` WRITE;
+/*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (1,'hunter','quanergy','website','http://quanergy.com/','img/quanergy.jpg','2018-02-09 15:39:26','normal','utf8',100,'china'),(2,'hunter','faselase','website','http://www.faselase.com/','img/faselase.png','2018-02-09 15:44:08','normal','utf8',99,'china'),(3,'hunter','ARC','website','http://advancedradarcompany.com/','img/arc.png','2018-02-09 15:49:01','normal','utf8',99,'china');
+/*!40000 ALTER TABLE `url` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -63,4 +96,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-28 18:31:11
+-- Dump completed on 2018-02-09 16:03:00
