@@ -25,8 +25,8 @@ DROP TABLE IF EXISTS `ID`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ID` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `number` varchar(45) DEFAULT NULL,
+  `idID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` varchar(45) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
   `url` varchar(200) NOT NULL,
   `country` varchar(45) DEFAULT NULL,
@@ -36,10 +36,10 @@ CREATE TABLE `ID` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `status` varchar(45) DEFAULT NULL,
   `remark` text,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `idID_UNIQUE` (`id`),
-  UNIQUE KEY `number_UNIQUE` (`number`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`idID`,`ID`),
+  UNIQUE KEY `number_UNIQUE` (`ID`),
+  UNIQUE KEY `idID_UNIQUE` (`idID`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,6 +48,7 @@ CREATE TABLE `ID` (
 
 LOCK TABLES `ID` WRITE;
 /*!40000 ALTER TABLE `ID` DISABLE KEYS */;
+INSERT INTO `ID` VALUES (1,'sh000001','上证指数','http://www.sse.com.cn/','cn','上证','2018-02-13 20:20:30','hunter',0,'nomal',''),(2,'sh000006','地产指数','http://www.sse.com.cn/','cn','上证','2018-02-13 20:30:36','hunter',0,'nomal',''),(3,'sh000003','B股指数','http://www.sse.com.cn/','cn','上证','2018-02-13 20:32:28','hunter',0,'nomal',''),(4,'sh000005','商业指数','http://www.sse.com.cn/','cn','上证','2018-02-13 20:45:48','hunter',0,'nomal',''),(5,'sh000015','上证50','http://www.sse.com.cn/','cn','上证','2018-02-13 20:46:43','hunter',0,'nomal',''),(6,'sz399001','深证成指','http://www.szse.cn/','cn','深证','2018-02-13 20:50:16','hunter',0,'nomal',''),(7,'sz399005','中小板指','http://www.sse.com.cn/','cn','深证','2018-02-13 20:52:59','hunter',0,'nomal',''),(8,'sz399006','创业板指','http://www.sse.com.cn/','cn','深证','2018-02-13 20:54:21','hunter',0,'nomal','');
 /*!40000 ALTER TABLE `ID` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -92,4 +93,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-13 11:54:48
+-- Dump completed on 2018-02-13 20:57:47
