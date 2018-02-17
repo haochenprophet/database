@@ -53,6 +53,270 @@ INSERT INTO `ID` VALUES (1,'sh000001','上证指数','http://www.sse.com.cn/','c
 UNLOCK TABLES;
 
 --
+-- Table structure for table `sh000001`
+--
+
+DROP TABLE IF EXISTS `sh000001`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sh000001` (
+  `idprice` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `y_close` double NOT NULL,
+  `open` double NOT NULL,
+  `close` double NOT NULL,
+  `high` double NOT NULL,
+  `low` double NOT NULL,
+  `volume` double NOT NULL,
+  `turnover` double NOT NULL,
+  PRIMARY KEY (`idprice`,`date`),
+  UNIQUE KEY `idprice_UNIQUE` (`idprice`),
+  UNIQUE KEY `date_UNIQUE` (`date`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sh000001`
+--
+
+LOCK TABLES `sh000001` WRITE;
+/*!40000 ALTER TABLE `sh000001` DISABLE KEYS */;
+INSERT INTO `sh000001` VALUES (1,'2018-02-14',3184.9587,3188.2475,3199.1589,3203.4967,3171.3836,100322827,114552202959);
+/*!40000 ALTER TABLE `sh000001` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sh000003`
+--
+
+DROP TABLE IF EXISTS `sh000003`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sh000003` (
+  `idprice` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `y_close` double NOT NULL,
+  `open` double NOT NULL,
+  `close` double NOT NULL,
+  `high` double NOT NULL,
+  `low` double NOT NULL,
+  `volume` double NOT NULL,
+  `turnover` double NOT NULL,
+  PRIMARY KEY (`idprice`,`date`),
+  UNIQUE KEY `idprice_UNIQUE` (`idprice`),
+  UNIQUE KEY `date_UNIQUE` (`date`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sh000003`
+--
+
+LOCK TABLES `sh000003` WRITE;
+/*!40000 ALTER TABLE `sh000003` DISABLE KEYS */;
+INSERT INTO `sh000003` VALUES (1,'2018-02-14',322.8953,322.9535,324.0193,324.315,321.2193,182892,119528588);
+/*!40000 ALTER TABLE `sh000003` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sh000005`
+--
+
+DROP TABLE IF EXISTS `sh000005`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sh000005` (
+  `idprice` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `y_close` double NOT NULL,
+  `open` double NOT NULL,
+  `close` double NOT NULL,
+  `high` double NOT NULL,
+  `low` double NOT NULL,
+  `volume` double NOT NULL,
+  `turnover` double NOT NULL,
+  PRIMARY KEY (`idprice`,`date`),
+  UNIQUE KEY `idprice_UNIQUE` (`idprice`),
+  UNIQUE KEY `date_UNIQUE` (`date`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sh000005`
+--
+
+LOCK TABLES `sh000005` WRITE;
+/*!40000 ALTER TABLE `sh000005` DISABLE KEYS */;
+INSERT INTO `sh000005` VALUES (1,'2018-02-14',2975.134,2969.5797,2966.096,2979.1071,2952.4416,5288968,6624939971);
+/*!40000 ALTER TABLE `sh000005` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sh000006`
+--
+
+DROP TABLE IF EXISTS `sh000006`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sh000006` (
+  `idprice` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `y_close` double NOT NULL,
+  `open` double NOT NULL,
+  `close` double NOT NULL,
+  `high` double NOT NULL,
+  `low` double NOT NULL,
+  `volume` double NOT NULL,
+  `turnover` double NOT NULL,
+  PRIMARY KEY (`idprice`,`date`),
+  UNIQUE KEY `idprice_UNIQUE` (`idprice`),
+  UNIQUE KEY `date_UNIQUE` (`date`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sh000006`
+--
+
+LOCK TABLES `sh000006` WRITE;
+/*!40000 ALTER TABLE `sh000006` DISABLE KEYS */;
+INSERT INTO `sh000006` VALUES (1,'2018-02-14',7322.0722,7328.9073,7319.3204,7361.3232,7235.1219,3370329,4075365359);
+/*!40000 ALTER TABLE `sh000006` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sh000015`
+--
+
+DROP TABLE IF EXISTS `sh000015`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sh000015` (
+  `idprice` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `y_close` double NOT NULL,
+  `open` double NOT NULL,
+  `close` double NOT NULL,
+  `high` double NOT NULL,
+  `low` double NOT NULL,
+  `volume` double NOT NULL,
+  `turnover` double NOT NULL,
+  PRIMARY KEY (`idprice`,`date`),
+  UNIQUE KEY `idprice_UNIQUE` (`idprice`),
+  UNIQUE KEY `date_UNIQUE` (`date`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sh000015`
+--
+
+LOCK TABLES `sh000015` WRITE;
+/*!40000 ALTER TABLE `sh000015` DISABLE KEYS */;
+INSERT INTO `sh000015` VALUES (1,'2018-02-14',3015.5912,3016.7122,3018.6628,3027.1553,2993.0853,20032853,19134593325);
+/*!40000 ALTER TABLE `sh000015` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sz399001`
+--
+
+DROP TABLE IF EXISTS `sz399001`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sz399001` (
+  `idprice` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `y_close` double NOT NULL,
+  `open` double NOT NULL,
+  `close` double NOT NULL,
+  `high` double NOT NULL,
+  `low` double NOT NULL,
+  `volume` double NOT NULL,
+  `turnover` double NOT NULL,
+  PRIMARY KEY (`idprice`,`date`),
+  UNIQUE KEY `idprice_UNIQUE` (`idprice`),
+  UNIQUE KEY `date_UNIQUE` (`date`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sz399001`
+--
+
+LOCK TABLES `sz399001` WRITE;
+/*!40000 ALTER TABLE `sz399001` DISABLE KEYS */;
+INSERT INTO `sz399001` VALUES (1,'2018-02-14',10362.432,10381.158,10431.914,10433.092,10319.146,10008243895,122306758735.473);
+/*!40000 ALTER TABLE `sz399001` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sz399005`
+--
+
+DROP TABLE IF EXISTS `sz399005`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sz399005` (
+  `idprice` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `y_close` double NOT NULL,
+  `open` double NOT NULL,
+  `close` double NOT NULL,
+  `high` double NOT NULL,
+  `low` double NOT NULL,
+  `volume` double NOT NULL,
+  `turnover` double NOT NULL,
+  PRIMARY KEY (`idprice`,`date`),
+  UNIQUE KEY `idprice_UNIQUE` (`idprice`),
+  UNIQUE KEY `date_UNIQUE` (`date`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sz399005`
+--
+
+LOCK TABLES `sz399005` WRITE;
+/*!40000 ALTER TABLE `sz399005` DISABLE KEYS */;
+INSERT INTO `sz399005` VALUES (1,'2018-02-14',7054.73,7074.095,7087.032,7096.37,7022.249,1076649207,19454597674.2);
+/*!40000 ALTER TABLE `sz399005` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sz399006`
+--
+
+DROP TABLE IF EXISTS `sz399006`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sz399006` (
+  `idprice` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `y_close` double NOT NULL,
+  `open` double NOT NULL,
+  `close` double NOT NULL,
+  `high` double NOT NULL,
+  `low` double NOT NULL,
+  `volume` double NOT NULL,
+  `turnover` double NOT NULL,
+  PRIMARY KEY (`idprice`,`date`),
+  UNIQUE KEY `idprice_UNIQUE` (`idprice`),
+  UNIQUE KEY `date_UNIQUE` (`date`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sz399006`
+--
+
+LOCK TABLES `sz399006` WRITE;
+/*!40000 ALTER TABLE `sz399006` DISABLE KEYS */;
+INSERT INTO `sz399006` VALUES (1,'2018-02-14',1648.582,1649.573,1646.771,1652.009,1633.762,1002437795,14837087755.68);
+/*!40000 ALTER TABLE `sz399006` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `url`
 --
 
@@ -93,4 +357,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-13 20:57:47
+-- Dump completed on 2018-02-17 21:03:46
