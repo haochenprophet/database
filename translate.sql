@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `translate` /*!40100 DEFAULT CHARACTER SET utf8 *
 USE `translate`;
 -- MySQL dump 10.13  Distrib 5.7.13, for linux-glibc2.5 (x86_64)
 --
--- Host: 127.0.0.1    Database: translate
+-- Host: localhost    Database: translate
 -- ------------------------------------------------------
 -- Server version	5.7.21-0ubuntu0.16.04.1
 
@@ -46,7 +46,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'hunter','google','website','http://translate.google.cn/','img/google.jpg','2018-01-10 17:06:21','normal','china',100,'china'),(2,'hunter','iciba','website','http://www.iciba.com/','img/jinshan.jpg','2018-01-10 17:07:36','normal','china',99,'china'),(3,'hunter','dict.bing','website','http://dict.bing.com.cn/','img/bing.jpg','2018-01-10 17:08:19','normal','china',98,'china'),(4,'hunter','youdao','website','http://fanyi.youdao.com/','img/youdao.jpg','2018-01-10 17:08:53','normal','china',97,'china'),(5,'hunter','chengyu','website','http://chengyu.itlearner.com/','img/proverb.jpg','2018-01-10 17:09:28','normal','china',96,'china'),(6,'hunter','zdic','website','http://www.zdic.net/','img/dictionary.jpg','2018-01-10 17:10:15','normal','china',95,'china'),(7,'hunter','shicimingju','website','http://www.shicimingju.com/','img/poetry.jpg','2018-01-10 17:10:52','normal','china',94,'china'),(8,'hunter','history','website','http://www.lsqn.cn/story/BOOK/','img/history.jpg','2018-01-10 17:11:25','normal','china',93,'china');
+INSERT INTO `url` VALUES (1,'hunter','google','website','http://translate.google.cn/','img/google.jpg','2018-01-10 17:06:21','normal','china',100,'china'),(2,'hunter','iciba','website','http://www.iciba.com/','img/jinshan.jpg','2018-01-10 17:07:36','normal','china',99,'china'),(3,'hunter','dict.bing','website','http://dict.bing.com.cn/','img/bing.jpg','2018-01-10 17:08:19','normal','china',98,'china'),(4,'hunter','youdao','website','http://fanyi.youdao.com/','img/youdao.jpg','2018-01-10 17:08:53','normal','china',97,'china'),(5,'hunter','chengyu','website','http://cy.5156edu.com/','img/proverb.jpg','2018-01-10 17:09:28','normal','china',96,'china'),(6,'hunter','zdic','website','http://www.zdic.net/','img/dictionary.jpg','2018-01-10 17:10:15','normal','china',95,'china'),(7,'hunter','shicimingju','website','http://www.shicimingju.com/','img/poetry.jpg','2018-01-10 17:10:52','normal','china',94,'china'),(8,'hunter','history','website','http://www.lsqn.cn/story/BOOK/','img/history.jpg','2018-01-10 17:11:25','normal','china',93,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-25 16:00:23
+-- Dump completed on 2018-02-25 16:08:30
