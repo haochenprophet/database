@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `bmc` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `bmc`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: bmc
+-- Host: localhost    Database: bmc
 -- ------------------------------------------------------
 -- Server version	8.0.0-dmr-log
 
@@ -99,7 +99,7 @@ CREATE TABLE `item` (
   PRIMARY KEY (`iditem`,`uuid`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`),
   UNIQUE KEY `iditem_UNIQUE` (`iditem`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,7 +131,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -140,7 +140,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'hunter','openbmc','website','https://github.com/openbmc','img/openbmc.png','2018-02-09 16:18:51','normal','utf8',100,'china'),(2,'hunter','facebook openbmc','website','https://github.com/facebook/openbmc','img/facebook.png','2018-02-09 16:20:13','normal','utf8',99,'china'),(3,'hunter','yoctoproject','website','https://www.yoctoproject.org/','img/yocto.png','2018-02-09 16:22:20','normal','utf8',98,'china'),(4,'hunter','intel-bmc','website','https://downloadcenter.intel.com/download/26968/BMC-Source-Code-for-Intel-62X-Series-Server-Boards-and-Systems','img/intel.jpg','2018-02-09 16:24:20','normal','utf8',97,'china');
+INSERT INTO `url` VALUES (1,'hunter','openbmc','website','https://github.com/openbmc','img/openbmc.png','2018-02-09 16:18:51','normal','utf8',100,'china'),(2,'hunter','facebook openbmc','website','https://github.com/facebook/openbmc','img/facebook.png','2018-02-09 16:20:13','normal','utf8',99,'china'),(3,'hunter','yoctoproject','website','https://www.yoctoproject.org/','img/yocto.png','2018-02-09 16:22:20','normal','utf8',98,'china'),(4,'hunter','intel-bmc','website','https://downloadcenter.intel.com/download/26968/BMC-Source-Code-for-Intel-62X-Series-Server-Boards-and-Systems','img/intel.jpg','2018-02-09 16:24:20','normal','utf8',97,'china'),(5,'hunter','redfish','website','https://github.com/DMTF/','img/redfish.jpg','2018-02-24 17:56:41','normal','utf8',99,'china'),(6,'hunter','AST2400 UI','website','https://www.thomas-krenn.com/en/wiki/ASPEED_AST2400_IPMI_Chip_with_ATEN-Software#IPMI_Screenshots_Webinterface','img/aspeed.jpeg','2018-03-05 14:47:36','normal','utf8',90,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -153,4 +153,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-09 16:25:59
+-- Dump completed on 2018-03-06  7:41:23
