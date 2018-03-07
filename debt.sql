@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `debt` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `debt`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: debt
+-- Host: localhost    Database: debt
 -- ------------------------------------------------------
 -- Server version	8.0.0-dmr-log
 
@@ -25,6 +25,7 @@ DROP TABLE IF EXISTS `creditor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `creditor` (
+  `uuid` varchar(45) NOT NULL,
   `idcreditor` int(11) NOT NULL AUTO_INCREMENT,
   `idnumber` varchar(45) NOT NULL COMMENT 'ID number 身份证号',
   `name` varchar(45) NOT NULL COMMENT 'creditor name 债权人姓名',
@@ -61,8 +62,8 @@ CREATE TABLE `creditor` (
   `agent_address` varchar(45) DEFAULT NULL,
   `agent_relationship` varchar(45) DEFAULT NULL COMMENT 'Relationship between agent and agent',
   `is_debt_agent` tinyint(4) NOT NULL DEFAULT '0',
-  `d_agent_name` varchar(45) DEFAULT NULL,
   `d_agent_id` varchar(45) DEFAULT NULL,
+  `d_agent_name` varchar(45) DEFAULT NULL,
   `d_agent_tel` varchar(45) DEFAULT NULL,
   `d_agent_mail` varchar(45) DEFAULT NULL,
   `d_agent_address` varchar(45) DEFAULT NULL,
@@ -77,8 +78,9 @@ CREATE TABLE `creditor` (
   `gov_aid` varchar(45) DEFAULT NULL COMMENT 'Government aid',
   `court_rescue` varchar(45) DEFAULT NULL COMMENT 'Court rescue',
   `solution` text,
-  PRIMARY KEY (`idcreditor`,`idnumber`),
-  UNIQUE KEY `idcreditor_UNIQUE` (`idcreditor`)
+  PRIMARY KEY (`idcreditor`,`idnumber`,`uuid`),
+  UNIQUE KEY `idcreditor_UNIQUE` (`idcreditor`),
+  UNIQUE KEY `uuid_UNIQUE` (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='creditor';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -99,6 +101,7 @@ DROP TABLE IF EXISTS `jurisdiction`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `jurisdiction` (
+  `uuid` varchar(45) NOT NULL,
   `idjurisdiction` int(11) NOT NULL AUTO_INCREMENT,
   `country` varchar(45) NOT NULL COMMENT 'country 国家',
   `province` varchar(45) NOT NULL COMMENT 'province level :省,直辖市 ,特区',
@@ -117,8 +120,9 @@ CREATE TABLE `jurisdiction` (
   `entry` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `start` datetime NOT NULL,
   `end` datetime DEFAULT NULL,
-  PRIMARY KEY (`idjurisdiction`),
-  UNIQUE KEY `idjurisdiction_UNIQUE` (`idjurisdiction`)
+  PRIMARY KEY (`uuid`,`idjurisdiction`),
+  UNIQUE KEY `idjurisdiction_UNIQUE` (`idjurisdiction`),
+  UNIQUE KEY `uuid_UNIQUE` (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Jurisdiction information 辖区信息';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -140,4 +144,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-28 16:30:42
+-- Dump completed on 2018-03-07 10:42:42
