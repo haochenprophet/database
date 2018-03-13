@@ -18,6 +18,39 @@ USE `code`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `class`
+--
+
+DROP TABLE IF EXISTS `class`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `class` (
+  `idclass` int(11) NOT NULL AUTO_INCREMENT,
+  `namespace` text COLLATE utf8_danish_ci,
+  `template` text COLLATE utf8_danish_ci,
+  `name` text COLLATE utf8_danish_ci,
+  `base_list` text COLLATE utf8_danish_ci,
+  ` member_list` text COLLATE utf8_danish_ci,
+  `declarators` text COLLATE utf8_danish_ci,
+  `url` text COLLATE utf8_danish_ci,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  `status` varchar(45) COLLATE utf8_danish_ci DEFAULT NULL,
+  `remark` text COLLATE utf8_danish_ci,
+  PRIMARY KEY (`idclass`),
+  UNIQUE KEY `idclass_UNIQUE` (`idclass`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_danish_ci COMMENT='[template-spec]  \nclass [ms-decl-spec] [tag [: base-list ]]  \n{  \n   member-list  \n} [declarators];  \n[ class ] tag declarators; ';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `class`
+--
+
+LOCK TABLES `class` WRITE;
+/*!40000 ALTER TABLE `class` DISABLE KEYS */;
+/*!40000 ALTER TABLE `class` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `lang`
 --
 
@@ -104,6 +137,60 @@ LOCK TABLES `temp` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `token`
+--
+
+DROP TABLE IF EXISTS `token`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `token` (
+  `idtoken` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) COLLATE utf8_danish_ci NOT NULL,
+  `token_type` varchar(45) COLLATE utf8_danish_ci NOT NULL COMMENT 'token_type',
+  `lang_type` varchar(45) COLLATE utf8_danish_ci DEFAULT NULL COMMENT 'c/c++ php python java ....',
+  `class` varchar(45) COLLATE utf8_danish_ci DEFAULT NULL,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  `remark` text COLLATE utf8_danish_ci,
+  PRIMARY KEY (`idtoken`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_danish_ci COMMENT='token:{identifier,keyword,literal,operator,punctuator}\ntokens: identifiers, keywords, literals,14 operators, and other separators';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `token`
+--
+
+LOCK TABLES `token` WRITE;
+/*!40000 ALTER TABLE `token` DISABLE KEYS */;
+/*!40000 ALTER TABLE `token` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `token_type`
+--
+
+DROP TABLE IF EXISTS `token_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `token_type` (
+  `idtoken_type` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) COLLATE utf8_danish_ci NOT NULL,
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idtoken_type`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_danish_ci COMMENT='{identifier,keyword,literal,operator,punctuator}';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `token_type`
+--
+
+LOCK TABLES `token_type` WRITE;
+/*!40000 ALTER TABLE `token_type` DISABLE KEYS */;
+INSERT INTO `token_type` VALUES (1,'identifier','2018-03-14 03:43:03'),(2,'keyword','2018-03-14 03:43:03'),(3,'literal','2018-03-14 03:43:03'),(4,'operator','2018-03-14 03:43:03'),(5,'punctuator','2018-03-14 03:43:03');
+/*!40000 ALTER TABLE `token_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `type`
 --
 
@@ -150,4 +237,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-08 10:23:51
+-- Dump completed on 2018-03-14  5:09:39
