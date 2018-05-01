@@ -4,7 +4,7 @@ USE `radar`;
 --
 -- Host: localhost    Database: radar
 -- ------------------------------------------------------
--- Server version	8.0.0-dmr-log
+-- Server version	5.7.14-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -74,7 +74,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -83,7 +83,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'hunter','quanergy','website','http://quanergy.com/','img/quanergy.jpg','2018-02-09 15:39:26','normal','utf8',100,'china'),(2,'hunter','faselase','website','http://www.faselase.com/','img/faselase.png','2018-02-09 15:44:08','normal','utf8',99,'china'),(3,'hunter','ARC','website','http://advancedradarcompany.com/','img/arc.png','2018-02-09 15:49:01','normal','utf8',99,'china');
+INSERT INTO `url` VALUES (1,'hunter','quanergy','website','http://quanergy.com/','img/quanergy.jpg','2018-02-09 15:39:26','normal','utf8',100,'china'),(2,'hunter','faselase','website','http://www.faselase.com/','img/faselase.png','2018-02-09 15:44:08','normal','utf8',99,'china'),(3,'hunter','ARC','website','http://advancedradarcompany.com/','img/arc.png','2018-02-09 15:49:01','normal','utf8',99,'china'),(4,'hunter','Velodyne','website','http://velodynelidar.com/','img/velodyne.jpg','2018-05-01 21:51:15','nomal','utf8',96,'china'),(5,'hunter','innoviz','website','https://innoviz.tech/','img/innoviz.jpg','2018-05-01 21:55:28','nomal','utf8',95,'china'),(6,'hunter','waymo','website','https://waymo.com/','img/waymo.jpg','2018-05-01 21:59:17','nomal','utf8',101,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -96,4 +96,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-09 16:03:00
+-- Dump completed on 2018-05-01 22:02:39
