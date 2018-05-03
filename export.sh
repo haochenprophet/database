@@ -1,0 +1,1 @@
+mysqldump -u root -p --add-drop-database --add-drop-table $1 >$1_d.sql
