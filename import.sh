@@ -1,1 +1,1 @@
-mysql -u root -p --add-drop-database <$1
+mysql -u root -p  <$1
