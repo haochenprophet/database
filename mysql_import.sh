@@ -1,9 +1,0 @@
-mysql -u root -p <all_db.sql
-mysql -u root -p <code.sql
-mysql -u root -p <company.sql
-mysql -u root -p <iwant.sql
-mysql -u root -p <knowledge.sql
-mysql -u root -p <patent.sql
-mysql -u root -p <question.sql
-mysql -u root -p <task.sql
-mysql -u root -p <user.sql
