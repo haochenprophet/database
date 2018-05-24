@@ -63,7 +63,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,7 +72,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'hunter','create_url','create','table/create_url.sql','img/url.png','2018-01-12 16:07:43','normal','utf8',0,'china'),(2,'hunter','create_item','create','table/create_item.sql','img/item.jpg','2018-02-06 18:40:17','normal','utf8',0,'china'),(3,'hunter','create_bill','create','table/create_bill.sql','img/bill.jpg','2018-02-09 15:11:07','normal','utf8',0,'china');
+INSERT INTO `url` VALUES (1,'hunter','create_url','create','table/create_url.sql','img/url.png','2018-01-12 16:07:43','normal','utf8',0,'china'),(2,'hunter','create_item','create','table/create_item.sql','img/item.jpg','2018-02-06 18:40:17','normal','utf8',0,'china'),(3,'hunter','create_bill','create','table/create_bill.sql','img/bill.jpg','2018-02-09 15:11:07','normal','utf8',0,'china'),(4,'hunter','create_order','sql','table/create_order.sql','img/order.jpg','2018-05-08 18:17:26','normal','utf8',0,'china'),(5,'hunter','create_sequence','sql','table/create_sequence.sql','img/table.jpg','2018-05-24 09:53:13','normal','utf8',0,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -85,4 +85,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-09 15:14:25
+-- Dump completed on 2018-05-24 17:57:21
