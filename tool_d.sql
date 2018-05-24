@@ -1,8 +1,10 @@
--- MySQL dump 10.13  Distrib 5.7.22, for Linux (x86_64)
+CREATE DATABASE  IF NOT EXISTS `task` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `task`;
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: tool
+-- Host: localhost    Database: task
 -- ------------------------------------------------------
--- Server version	5.7.22-0ubuntu0.16.04.1
+-- Server version	8.0.0-dmr-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,36 +18,103 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `url`
+-- Table structure for table `schedule`
 --
 
-DROP TABLE IF EXISTS `url`;
+DROP TABLE IF EXISTS `schedule`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `url` (
-  `idurl` int(11) NOT NULL AUTO_INCREMENT,
-  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
-  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
-  `type` varchar(45) DEFAULT NULL,
-  `url` varchar(200) NOT NULL COMMENT 'where the URL address',
-  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
-  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
-  `status` varchar(45) DEFAULT NULL,
-  `remark` varchar(45) DEFAULT NULL,
-  `priority` int(11) NOT NULL DEFAULT '0',
-  `where` varchar(45) NOT NULL DEFAULT 'china',
-  PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
+CREATE TABLE `schedule` (
+  `idschedule` int(11) NOT NULL AUTO_INCREMENT,
+  `taskid` int(11) NOT NULL,
+  `uuid` varchar(45) NOT NULL,
+  `when` datetime DEFAULT CURRENT_TIMESTAMP COMMENT 'When to complete this task?',
+  `who` varchar(45) DEFAULT NULL COMMENT 'Who accomplishes this task?',
+  `what` text COMMENT 'What is this task?\n',
+  `where` text COMMENT 'Where to finish the task?',
+  `remark` text,
+  PRIMARY KEY (`idschedule`,`taskid`,`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `url`
+-- Dumping data for table `schedule`
 --
 
-LOCK TABLES `url` WRITE;
-/*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'hunter','runoob','website','https://c.runoob.com/','img/runoob_word.jpg','2017-12-29 17:01:41','normal','utf8',0,'china'),(2,'hunter','tortoisesvn','website','https://tortoisesvn.net/','img/tortoisesvn.jpg','2017-12-29 17:12:35','normal','utf8',0,'china'),(3,'hunter','git','website','https://git-scm.com/','img/git.jpg','2017-12-29 17:14:29','normal','utf8',0,'china'),(4,'hunter','intel','website','https://downloadcenter.intel.com/','img/intel.jpg','2018-01-02 17:46:49','normal','utf8',0,'china'),(5,'hunter','asus','website','https://www.asus.com/support/','img/asus.jpg','2018-01-02 17:53:39','normal','utf8',0,'china'),(6,'hunter','visualstudio','website','https://www.visualstudio.com','img/visualstudio.jpg','2018-01-02 18:02:01','normal','utf8',0,'china'),(7,'hunter','apache','website','https://www.apache.org/index.html#projects-list','img/asf_logo.png','2018-01-02 18:09:19','normal','utf8',0,'china'),(8,'hunter','eclipse','website','http://www.eclipse.org/','img/eclipse.png','2018-01-02 18:16:05','normal','utf8',0,'china'),(9,'hunter','sublime','website','https://www.sublimetext.com/','img/sublime.jpg','2018-01-02 18:23:03','normal','utf8',0,'china'),(10,'hunter','solidworks','website','http://www.solidworks.com/','img/solidworks.png','2018-01-08 18:04:08','normal','china',0,'china'),(11,'hunter','cadence','website','https://www.cadence.com/','img/cadence.jpg','2018-01-08 18:10:56','normal','china',0,'china'),(12,'hunter','xcmgmall','website','http://www.xcmgmall.com','img/xcmg.jpg','2018-01-08 18:16:58','normal','china',0,'china'),(13,'hunter','openssl','website','https://www.openssl.org/','img/openssl.jpg','2018-01-09 10:47:00','normal','china',0,'china'),(14,'hunter','xilinx','website','http://www.xilinx.com/','img/xilinx.jpeg','2018-01-10 14:08:29','normal','china',0,'china');
-/*!40000 ALTER TABLE `url` ENABLE KEYS */;
+LOCK TABLES `schedule` WRITE;
+/*!40000 ALTER TABLE `schedule` DISABLE KEYS */;
+/*!40000 ALTER TABLE `schedule` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sequence`
+--
+
+DROP TABLE IF EXISTS `sequence`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sequence` (
+  `idsequence` int(11) NOT NULL COMMENT 'uuid idsequence',
+  `uuid` varchar(45) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `depend` int(11) NOT NULL DEFAULT '0',
+  `depend_list` text COMMENT 'depend uuid list ',
+  `manpower` int(11) NOT NULL DEFAULT '1' COMMENT 'manpower cost',
+  `owner` text NOT NULL COMMENT 'executor  or owner',
+  `money` double NOT NULL DEFAULT '0' COMMENT 'money cost',
+  `time_cost` int(11) NOT NULL DEFAULT '1',
+  `delay` int(11) NOT NULL DEFAULT '0' COMMENT 'Allowed delay',
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'record time ',
+  `priority` int(11) DEFAULT NULL,
+  `start` datetime NOT NULL,
+  `end` datetime NOT NULL,
+  `input` varchar(45) DEFAULT NULL COMMENT 'input uuid',
+  `output` varchar(45) DEFAULT NULL COMMENT 'output uuid ',
+  `author` varchar(45) NOT NULL DEFAULT 'hunter' COMMENT 'author or initiator',
+  `region` varchar(45) NOT NULL DEFAULT 'CN',
+  `status` varchar(45) NOT NULL DEFAULT 'create' COMMENT 'create,begin,process,error,finish,',
+  `remark` text COMMENT 'output: index,who[x],start,current,end,cost,money,time,status,remark',
+  PRIMARY KEY (`idsequence`,`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='task sequence';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sequence`
+--
+
+LOCK TABLES `sequence` WRITE;
+/*!40000 ALTER TABLE `sequence` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sequence` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tasks`
+--
+
+DROP TABLE IF EXISTS `tasks`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tasks` (
+  `idtake` int(11) NOT NULL,
+  `uuid` varchar(45) NOT NULL,
+  `content` text COMMENT 'What is the task content?',
+  `owner` varchar(45) DEFAULT NULL COMMENT 'Who is the owner of the task',
+  `sponsor` varchar(45) DEFAULT NULL COMMENT 'Task sponsor',
+  `start` datetime DEFAULT NULL COMMENT 'Task start time.',
+  `end` datetime DEFAULT NULL COMMENT 'Task end time',
+  `where` text COMMENT 'Where the task. ',
+  `remark` text,
+  PRIMARY KEY (`idtake`,`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tasks`
+--
+
+LOCK TABLES `tasks` WRITE;
+/*!40000 ALTER TABLE `tasks` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tasks` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -57,4 +126,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-09 16:58:15
+-- Dump completed on 2018-05-24 15:53:10
