@@ -2,9 +2,9 @@ CREATE DATABASE  IF NOT EXISTS `hardware` /*!40100 DEFAULT CHARACTER SET utf8 */
 USE `hardware`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: hardware
+-- Host: localhost    Database: hardware
 -- ------------------------------------------------------
--- Server version	8.0.0-dmr-log
+-- Server version	5.7.14-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -317,7 +317,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -326,7 +326,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'hunter','quanergy','website','http://quanergy.com/','img/quanergy.jpg','2018-02-08 18:52:36','normal','utf8',100,'china');
+INSERT INTO `url` VALUES (1,'hunter','quanergy','website','http://quanergy.com/','img/quanergy.jpg','2018-02-08 18:52:36','normal','utf8',100,'china'),(2,'198382.com','raspberrypi','website','https://www.raspberrypi.org/','img/raspberry-pi.gif','2018-06-01 17:13:34','normal','utf8',0,'china'),(3,'198382.com','open-hardware','website','https://www.ohwr.org/','img/hardware.jpg','2018-07-28 08:38:59','normal','utf8',0,'china'),(4,'198382.com','open-hardware-monitor','website','https://openhardwaremonitor.org/','img/hardware.png','2018-07-28 09:28:08','normal','utf8',0,'china'),(5,'198382.com','Open Hardware Association','website','https://www.oshwa.org/','img/hardware.png','2018-07-28 09:36:08','normal','utf8',0,'china'),(6,'198382.com','open-pnp','website','http://openpnp.org/','img/hardware.png','2018-07-28 09:43:36','normal','utf8',0,'china'),(7,'198382.com','open-switch','website','http://www.openswitch.net/','img/hardware.png','2018-07-28 09:51:16','normal','utf8',0,'china'),(8,'198382.com','sierrawireless(iot)','website','https://www.sierrawireless.com/','img/hardware.png','2018-07-28 09:56:55','normal','utf8',0,'china'),(9,'198382.com','open-hardware.ro','website','http://openhardware.ro','img/hardware.png','2018-07-28 10:01:33','normal','utf8',0,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -374,4 +374,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-08 18:53:45
+-- Dump completed on 2018-07-28 12:15:28
