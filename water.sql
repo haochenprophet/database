@@ -1,8 +1,6 @@
-CREATE DATABASE  IF NOT EXISTS `code` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_danish_ci */;
-USE `code`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: code
+-- Host: localhost    Database: water
 -- ------------------------------------------------------
 -- Server version	5.7.14-log
 
@@ -16,6 +14,55 @@ USE `code`;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Current Database: `water`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `water` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `water`;
+
+--
+-- Table structure for table `url`
+--
+
+DROP TABLE IF EXISTS `url`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `url` (
+  `idurl` int(11) NOT NULL AUTO_INCREMENT,
+  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
+  `what` varchar(100) NOT NULL COMMENT 'what the link item information ?',
+  `type` varchar(45) DEFAULT NULL,
+  `url` varchar(200) NOT NULL COMMENT 'where the URL address',
+  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` varchar(45) DEFAULT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
+  `where` varchar(45) NOT NULL DEFAULT 'china',
+  PRIMARY KEY (`idurl`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `url`
+--
+
+LOCK TABLES `url` WRITE;
+/*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (1,'198382.com','SanXia','website','http://www.ctgpc.com.cn/','img/water.jpg','2018-09-01 09:59:47','normal','utf8',0,'china'),(2,'198382.com','itaipu','website','https://www.itaipu.gov.br','img/water.jpg','2018-09-01 10:03:17','normal','utf8',0,'china'),(3,'198382.com','Xiluodu','website','https://en.wikipedia.org/wiki/Xiluodu_Dam','img/water.jpg','2018-09-01 10:10:52','normal','utf8',0,'china'),(4,'198382.com','Hydroelectricity','website','https://en.wikipedia.org/wiki/Hydroelectricity','img/water.jpg','2018-09-01 10:12:06','normal','utf8',0,'china'),(5,'198382.com','Guri','website','https://en.wikipedia.org/wiki/Guri_Dam','img/water.jpg','2018-09-01 10:12:54','normal','utf8',0,'china'),(6,'198382.com','Dam','website','https://en.wikipedia.org/wiki/Dam','img/water.jpg','2018-09-01 10:14:24','normal','utf8',0,'china');
+/*!40000 ALTER TABLE `url` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `code`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `code` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_danish_ci */;
+
+USE `code`;
 
 --
 -- Table structure for table `class`
@@ -237,4 +284,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-09-01 10:16:46
+-- Dump completed on 2018-09-01 10:17:33
