@@ -37,7 +37,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +46,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'198382.com','Inquire','website','https://cn.bing.com/search?q=weather','img/weather.jpg','2018-09-01 16:41:27','normal','utf8',0,'china');
+INSERT INTO `url` VALUES (1,'198382.com','Inquire','website','https://cn.bing.com/search?q=weather','img/weather.jpg','2018-09-01 16:41:27','normal','utf8',0,'china'),(2,'198382.com','中国暴雨强度公式','website','http://www.doc88.com/p-2955980693662.html','img/weather.jpg','2018-09-01 17:03:08','normal','utf8',0,'china'),(3,'198382.com','排水管路排水能力对照表','website','http://www.doc88.com/p-5713944062566.html','img/weather.jpg','2018-09-01 17:04:22','normal','utf8',0,'china'),(4,'198382.com','管道流速对照表','website','http://www.doc88.com/p-4137048994814.html','img/weather.jpg','2018-09-01 17:06:39','normal','utf8',0,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-09-01 16:51:15
+-- Dump completed on 2018-09-01 17:16:51
