@@ -139,7 +139,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -148,6 +148,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (1,'198382.com','中国各大水库容量排名','website','http://www.doc88.com/p-4853965417336.html','img/reservoir.png','2018-09-01 15:23:06','normal','utf8',0,'china'),(2,'198382.com','太原市山洪灾害防治及防汛十二五规划','website','http://www.doc88.com/p-277338729172.html','img/reservoir.png','2018-09-01 15:27:14','normal','utf8',0,'china'),(3,'198382.com','基于GIS的太原市暴雨洪涝灾害风险区划','website','http://www.doc88.com/p-7826953911977.html','img/reservoir.png','2018-09-01 15:29:35','normal','utf8',0,'china'),(4,'198382.com','榆林地区明代洪涝灾害特征分析','website','http://www.doc88.com/p-3458094321369.html','img/reservoir.png','2018-09-01 15:30:50','normal','utf8',0,'china'),(5,'198382.com','中国水库名称代码','website','http://www.doc88.com/p-670855425851.html','img/reservoir.png','2018-09-01 15:35:17','normal','utf8',0,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -160,4 +161,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-08-26 17:26:59
+-- Dump completed on 2018-09-01 15:41:39
