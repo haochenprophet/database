@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `bios` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `bios`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: bios
+-- Host: localhost    Database: bios
 -- ------------------------------------------------------
 -- Server version	8.0.0-dmr-log
 
@@ -16,6 +16,39 @@ USE `bios`;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `checkpoint`
+--
+
+DROP TABLE IF EXISTS `checkpoint`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `checkpoint` (
+  `idcheckpoint` int(11) NOT NULL AUTO_INCREMENT,
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `item` varchar(45) NOT NULL COMMENT 'what checkpoint',
+  `info` varchar(100) DEFAULT NULL COMMENT 'checkpoint info',
+  `type` varchar(45) NOT NULL DEFAULT 'none' COMMENT 'checkpoint type',
+  `scopes` varchar(45) NOT NULL DEFAULT 'none' COMMENT 'what platform',
+  `owner` varchar(45) NOT NULL DEFAULT 'none' COMMENT 'who owner',
+  `status` varchar(45) DEFAULT NULL,
+  `remark` text,
+  `author` varchar(45) NOT NULL DEFAULT 'hunter',
+  `priority` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`idcheckpoint`,`item`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='checkpoint';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `checkpoint`
+--
+
+LOCK TABLES `checkpoint` WRITE;
+/*!40000 ALTER TABLE `checkpoint` DISABLE KEYS */;
+INSERT INTO `checkpoint` VALUES (1,'2018-11-06 17:46:08','1- 0xF','SEC  execution','website','platform','198382.com','normal','CPU Cache MTTR init ','198382.com',0),(6,'2018-11-06 17:51:22','0x10-0x2F','PEI  CAR  execution','website','platform','198382.com','normal','PEI dispatch ','198382.com',0),(7,'2018-11-06 17:53:47','0x30  -  0x4F','PEI  execution  after  memory  detection','website','platform','198382.com','normal','PEI  after  memory  detection','198382.com',0),(8,'2018-11-06 17:54:29','0x50  -  0x5F','PEI  errors','website','platform','198382.com','normal','PEI  errors','198382.com',0),(9,'2018-11-06 17:55:03','0x60  -  0xCF:  ','DXE  execution','website','platform','198382.com','normal','DXE  execution','198382.com',0),(10,'2018-11-06 17:55:36','0xD0  -  0xDF:  ','DXE  errors','website','platform','198382.com','normal','DXE  errors','198382.com',0),(11,'2018-11-06 17:56:14','0xE0  -  0xE8:  ','S3  Resume','website','platform','198382.com','normal','S3  Resume','198382.com',0),(12,'2018-11-06 17:56:43','0xE9  -  0xEF:  ','S3  Resume  errors','website','platform','198382.com','normal','S3  Resume  errors','198382.com',0),(13,'2018-11-06 17:57:04','0xF0  -  0xF8:  ','Recovery','website','platform','198382.com','normal','Recovery','198382.com',0),(14,'2018-11-06 17:57:33','0xF9  -  0xFF: ',' Recovery  errors','website','platform','198382.com','normal',' Recovery  errors','198382.com',0),(15,'2018-11-06 17:58:07','0xB4',' USB in SMI','website','platform','198382.com','normal',' USB in SMI','198382.com',0);
+/*!40000 ALTER TABLE `checkpoint` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `url`
@@ -59,4 +92,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-30 16:49:01
+-- Dump completed on 2018-11-06 17:59:36
