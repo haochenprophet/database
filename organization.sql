@@ -30,6 +30,7 @@ CREATE TABLE `organization` (
   `node` varchar(45) DEFAULT NULL COMMENT 'node name or sub-organization name',
   `type` varchar(45) DEFAULT NULL COMMENT 'node type :root, leaf',
   `parents` varchar(45) DEFAULT NULL COMMENT 'node parents uuid for organization tree ',
+  `child` varchar(45) DEFAULT NULL COMMENT 'child link child[0] to child[n]',
   `firstchild` varchar(45) DEFAULT NULL COMMENT 'firstchild uuid for organization tree ',
   `nextsibling` varchar(45) DEFAULT NULL COMMENT 'nextsibling uuid for organization tree ',
   `name` varchar(45) DEFAULT NULL,
@@ -37,6 +38,8 @@ CREATE TABLE `organization` (
   `value_uuid` varchar(45) DEFAULT NULL COMMENT 'uuid_link  link to other database or table ',
   `value_url` varchar(200) DEFAULT NULL COMMENT 'value point one url ',
   `value` varchar(200) DEFAULT NULL COMMENT 'value text ',
+  `result` varchar(45) DEFAULT NULL COMMENT 'result value :Used to store calculation results',
+  `feedback` varchar(45) DEFAULT NULL COMMENT 'feedback for result value :Used to evaluate predictions that are worthy of real results',
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `status` varchar(45) NOT NULL DEFAULT 'normal',
   `priority` int(11) DEFAULT NULL,
@@ -68,4 +71,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-20 17:20:19
+-- Dump completed on 2018-11-21 14:28:18
