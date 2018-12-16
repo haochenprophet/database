@@ -26,24 +26,27 @@ DROP TABLE IF EXISTS `message`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `message` (
   `idmessage` int(11) NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(45) NOT NULL,
   `time` datetime DEFAULT CURRENT_TIMESTAMP,
-  `when` varchar(45) DEFAULT NULL,
+  `when` datetime DEFAULT CURRENT_TIMESTAMP,
   `country` varchar(45) DEFAULT NULL,
   `where` varchar(100) DEFAULT NULL,
   `url` varchar(200) DEFAULT NULL,
   `who` varchar(45) DEFAULT NULL,
-  `what` varchar(100) DEFAULT NULL,
+  `what` varchar(200) DEFAULT NULL,
   `type` varchar(45) DEFAULT NULL,
   `priority` varchar(45) DEFAULT NULL,
   `status` varchar(45) DEFAULT NULL,
+  `why` varchar(200) DEFAULT NULL,
   `evaluate` text,
-  `remark` text,
   `logo` varchar(100) DEFAULT NULL,
   `audio` varchar(200) DEFAULT NULL,
   `video` varchar(200) DEFAULT NULL,
   `image` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`idmessage`),
-  UNIQUE KEY `idmessage_UNIQUE` (`idmessage`)
+  `remark` text,
+  PRIMARY KEY (`idmessage`,`uuid`),
+  UNIQUE KEY `idmessage_UNIQUE` (`idmessage`),
+  UNIQUE KEY `uuid_UNIQUE` (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -65,4 +68,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-15 23:44:27
+-- Dump completed on 2018-12-16 13:53:51
