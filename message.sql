@@ -44,6 +44,7 @@ CREATE TABLE `message` (
   `video` varchar(200) DEFAULT NULL,
   `image` varchar(200) DEFAULT NULL,
   `remark` text,
+  `author` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idmessage`,`uuid`),
   UNIQUE KEY `idmessage_UNIQUE` (`idmessage`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`)
@@ -68,4 +69,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-16 13:53:51
+-- Dump completed on 2018-12-16 18:33:05
