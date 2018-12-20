@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `people` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `people`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: people
+-- Host: 127.0.0.1    Database: people
 -- ------------------------------------------------------
 -- Server version	8.0.0-dmr-log
 
@@ -28,22 +28,22 @@ CREATE TABLE `people` (
   `idpeople` bigint(20) NOT NULL AUTO_INCREMENT,
   `uuid` varchar(45) NOT NULL,
   `id_card` varchar(45) DEFAULT NULL COMMENT 'ID card',
-  `time` varchar(45) NOT NULL DEFAULT 'NOW()',
-  `who` varchar(45) DEFAULT NULL COMMENT ' who is he/She?',
-  `when` varchar(45) DEFAULT NULL COMMENT 'When was born',
-  `which` varchar(45) DEFAULT NULL COMMENT 'which country',
-  `where` varchar(100) DEFAULT NULL COMMENT 'where address',
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `born` datetime DEFAULT NULL COMMENT 'When was born',
+  `name` varchar(45) DEFAULT NULL COMMENT ' who is he/She? name list',
   `gender` varchar(45) DEFAULT NULL COMMENT 'What gender',
+  `country` varchar(45) DEFAULT NULL COMMENT 'which country',
+  `address` varchar(100) DEFAULT NULL COMMENT 'where address',
   `title` varchar(100) DEFAULT NULL COMMENT 'Job title',
   `job` varchar(500) DEFAULT NULL COMMENT 'Where is the job?',
   `religion` varchar(45) DEFAULT NULL COMMENT 'What religion',
   `party` varchar(45) DEFAULT NULL COMMENT 'what political party',
   `credit` varchar(45) DEFAULT NULL COMMENT 'Social credit',
   `wish` varchar(300) DEFAULT NULL COMMENT 'What is wish?',
-  `influence` varchar(300) DEFAULT NULL COMMENT 'How big is social influence?',
   `achievement` varchar(300) DEFAULT NULL COMMENT 'What is the achievement?',
+  `influence` varchar(300) DEFAULT NULL COMMENT 'How big is social influence?',
   `email` varchar(100) DEFAULT NULL COMMENT 'What is the email address?',
-  `tel` varchar(45) DEFAULT NULL COMMENT 'telephone',
+  `telephone` varchar(45) DEFAULT NULL COMMENT 'telephone',
   `wealth` varchar(100) DEFAULT NULL COMMENT 'How much is personal wealth?',
   `priority` int(11) DEFAULT NULL,
   `status` varchar(45) DEFAULT NULL,
@@ -79,6 +79,35 @@ LOCK TABLES `people` WRITE;
 /*!40000 ALTER TABLE `people` DISABLE KEYS */;
 /*!40000 ALTER TABLE `people` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `pid`
+--
+
+DROP TABLE IF EXISTS `pid`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pid` (
+  `idpid` int(11) NOT NULL,
+  `uuid` varchar(45) NOT NULL,
+  `born` varchar(45) DEFAULT NULL COMMENT 'when',
+  `country` varchar(45) DEFAULT NULL COMMENT 'where',
+  `address` varchar(45) DEFAULT NULL COMMENT 'where',
+  `name` varchar(45) DEFAULT NULL COMMENT 'who',
+  `gender` varchar(45) DEFAULT NULL COMMENT 'what',
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idpid`,`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='people id';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pid`
+--
+
+LOCK TABLES `pid` WRITE;
+/*!40000 ALTER TABLE `pid` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pid` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -89,4 +118,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-19 16:13:18
+-- Dump completed on 2018-12-20 16:54:18
