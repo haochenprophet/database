@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `people` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `people`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: people
+-- Host: localhost    Database: people
 -- ------------------------------------------------------
 -- Server version	8.0.0-dmr-log
 
@@ -44,27 +44,29 @@ CREATE TABLE `people` (
   `influence` varchar(300) DEFAULT NULL COMMENT 'How big is social influence?',
   `email` varchar(100) DEFAULT NULL COMMENT 'What is the email address?',
   `telephone` varchar(45) DEFAULT NULL COMMENT 'telephone',
+  `mobile` varchar(45) DEFAULT NULL,
   `wealth` varchar(100) DEFAULT NULL COMMENT 'How much is personal wealth?',
-  `priority` int(11) DEFAULT NULL,
-  `status` varchar(45) DEFAULT NULL,
-  `evaluate` varchar(300) DEFAULT NULL,
   `record` text COMMENT 'Bad or good record',
-  `remark` text,
   `url` varchar(200) DEFAULT NULL COMMENT 'Personal website',
   `photo` varchar(200) DEFAULT NULL COMMENT 'photo url',
   `blog` varchar(200) DEFAULT NULL COMMENT 'blog url',
-  `audio` varchar(200) DEFAULT NULL COMMENT 'audio url ',
-  `video` varchar(200) DEFAULT NULL COMMENT 'video url',
   `living` tinyint(4) NOT NULL DEFAULT '1',
   `death_time` datetime DEFAULT NULL COMMENT 'What time of death',
   `testament` text,
   `testament_time` datetime DEFAULT NULL,
-  `history` text COMMENT ' history',
   `case_history` text COMMENT 'case history',
   `insurance` text,
   `family` varchar(500) DEFAULT NULL,
-  `organization` varchar(300) DEFAULT NULL,
-  `land` varchar(300) DEFAULT NULL,
+  `organization` varchar(45) DEFAULT NULL,
+  `evaluate` varchar(300) DEFAULT NULL,
+  `audio` varchar(200) DEFAULT NULL COMMENT 'audio url ',
+  `video` varchar(200) DEFAULT NULL COMMENT 'video url',
+  `history` varchar(45) DEFAULT NULL COMMENT ' history',
+  `remark` text,
+  `land` varchar(45) DEFAULT NULL COMMENT 'land uud ',
+  `priority` int(11) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `author` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idpeople`,`uuid`),
   UNIQUE KEY `idpeople_UNIQUE` (`idpeople`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`)
@@ -118,4 +120,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-20 16:54:18
+-- Dump completed on 2018-12-24 17:54:11
