@@ -70,7 +70,7 @@ CREATE TABLE `people` (
   PRIMARY KEY (`idpeople`,`uuid`),
   UNIQUE KEY `idpeople_UNIQUE` (`idpeople`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='people';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='people';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -79,6 +79,7 @@ CREATE TABLE `people` (
 
 LOCK TABLES `people` WRITE;
 /*!40000 ALTER TABLE `people` DISABLE KEYS */;
+INSERT INTO `people` VALUES (1,'96b96bca-4e15-41c8-86eb-9b734d33f503','96b96bca-4e15-41c8-86eb-9b734d33f503','2018-12-27 08:54:43','1971-12-27 08:51:19','Elon_Musk','male','US','null','null','none','none','none','1000','null','null','null','null','null','null','null','null','https://en.wikipedia.org/wiki/Elon_Musk','null','null',0,'9999-12-27 08:51:19','null','2018-12-27 08:51:19','','null','null','null','Tesla, SpaceX ','null','null','','','null',0,'normal','hunter'),(2,'7e80f7a7-912e-483b-bdae-2c19034aea6d','7e80f7a7-912e-483b-bdae-2c19034aea6d','2018-12-27 08:59:12','1969-12-27 08:56:59','Linus_Torvalds','male','US','null','null','none','none','none','1000','null','null','null','null','null','null','null','null','https://en.wikipedia.org/wiki/Linus_Torvalds','null','null',0,'9999-12-27 08:56:59','null','2018-12-27 08:56:59','','null','null','null','Linux,git','null','null','','','null',0,'normal','hunter');
 /*!40000 ALTER TABLE `people` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -120,4 +121,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-24 17:54:11
+-- Dump completed on 2018-12-27 17:02:19
