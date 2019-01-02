@@ -1,15 +1,15 @@
 CREATE DATABASE  IF NOT EXISTS `company` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `company`;
--- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: company
 -- ------------------------------------------------------
--- Server version	8.0.13-commercial
+-- Server version	8.0.0-dmr-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
- SET NAMES utf8 ;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,7 +23,7 @@ USE `company`;
 
 DROP TABLE IF EXISTS `account`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `account` (
   `idaccount` int(11) NOT NULL,
   `item` text,
@@ -60,7 +60,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `attendance`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `attendance` (
   `idattendance` int(11) NOT NULL,
   `who` varchar(45) DEFAULT NULL,
@@ -95,7 +95,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `code`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `code` (
   `idcode` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL,
@@ -127,7 +127,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `commit`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `commit` (
   `idcommit` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) NOT NULL,
@@ -155,7 +155,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `creative`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `creative` (
   `idcreative` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL COMMENT 'Who''s creative',
@@ -185,7 +185,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `customer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `customer` (
   `idcustomer` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL,
@@ -217,7 +217,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `device`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `device` (
   `iddevice` int(11) NOT NULL AUTO_INCREMENT,
   `serial_number` text NOT NULL,
@@ -255,7 +255,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `feedback`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `feedback` (
   `idfeedback` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL COMMENT 'Who''s feedback ,user name ,or login id ',
@@ -287,7 +287,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `idea`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `idea` (
   `ididea` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(45) NOT NULL,
@@ -317,7 +317,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `issue`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `issue` (
   `idissue` int(11) NOT NULL AUTO_INCREMENT,
   `worker_number` int(11) DEFAULT NULL COMMENT 'Find the problem worker number',
@@ -349,7 +349,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `market`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `market` (
   `idmarket` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL,
@@ -381,7 +381,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `person`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `person` (
   `idperson` int(11) NOT NULL AUTO_INCREMENT,
   `worker_number` int(11) NOT NULL,
@@ -429,7 +429,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `plan`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `plan` (
   `idplan` int(11) NOT NULL AUTO_INCREMENT,
   `worker_number` int(11) DEFAULT NULL,
@@ -459,7 +459,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `production`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `production` (
   `idproduction` int(11) NOT NULL AUTO_INCREMENT COMMENT 'production management',
   `what` varchar(45) DEFAULT NULL,
@@ -490,7 +490,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `release`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `release` (
   `idrelease` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL,
@@ -520,7 +520,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `repair`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `repair` (
   `idrepair` int(11) NOT NULL AUTO_INCREMENT,
   `what` varchar(45) DEFAULT NULL,
@@ -552,7 +552,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `request`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `request` (
   `idrequest` int(11) NOT NULL AUTO_INCREMENT,
   `worker_number` int(11) NOT NULL,
@@ -585,7 +585,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `review`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `review` (
   `idreview` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(45) DEFAULT NULL COMMENT '#0. idea/creative->\n#1. issue/request->\n#2. plan/source->\n#3. code/action->\n#4. commit/schedule->\n#5. test/Quality->\n#6. review/repair->\n',
@@ -616,7 +616,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `service`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `service` (
   `idservice` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL COMMENT 'Who made a service request',
@@ -650,7 +650,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `source`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `source` (
   `idsource` int(11) NOT NULL AUTO_INCREMENT,
   `worker_number` int(11) DEFAULT NULL,
@@ -683,14 +683,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `stock`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `stock` (
   `idstock` int(11) NOT NULL AUTO_INCREMENT,
   `uuid` varchar(45) NOT NULL,
   `number` varchar(45) NOT NULL COMMENT 'stock number',
-  `time` varchar(45) NOT NULL DEFAULT 'NOW()',
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `idcard` varchar(45) DEFAULT NULL COMMENT 'ID card',
-  `who` varchar(45) DEFAULT NULL COMMENT 'name',
+  `owner` varchar(45) DEFAULT NULL COMMENT 'name',
   `amount` varchar(45) DEFAULT NULL,
   `url` varchar(200) DEFAULT NULL,
   `value` double unsigned DEFAULT '1' COMMENT 'Trading price',
@@ -699,10 +699,11 @@ CREATE TABLE `stock` (
   `status` varchar(45) NOT NULL DEFAULT 'locked',
   `remark` text,
   `priority` int(11) NOT NULL DEFAULT '0',
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idstock`,`uuid`,`number`),
   UNIQUE KEY `idstock_UNIQUE` (`idstock`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -711,6 +712,7 @@ CREATE TABLE `stock` (
 
 LOCK TABLES `stock` WRITE;
 /*!40000 ALTER TABLE `stock` DISABLE KEYS */;
+INSERT INTO `stock` VALUES (1,'65d30733-172c-40c6-ac41-236e153b32aa','2018122801','2019-01-02 18:09:50','120103198409256713','穆天','7000','company/stock/2018122801-120103198409256713.pdf',1,1,0,'locked','专利+著作权申请',0,'2019-01-02 09:57:20'),(2,'976e040e-66de-4c92-9289-913ff316d1c5','2018122802','2019-01-02 18:18:36','320323198712070018','陈陆陆','7000','company/stock/976e040e-66de-4c92-9289-913ff316d1c5',1,1,0,'locked','专利+著作权',0,'2019-01-02 10:16:54');
 /*!40000 ALTER TABLE `stock` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -720,7 +722,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `test`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `test` (
   `idtest` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL,
@@ -750,7 +752,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `url`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `url` (
   `idurl` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
@@ -783,7 +785,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `work`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `work` (
   `idwork` int(11) NOT NULL,
   `work_content` text,
@@ -816,4 +818,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-01 14:36:32
+-- Dump completed on 2019-01-02 18:20:16
