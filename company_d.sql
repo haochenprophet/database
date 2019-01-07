@@ -312,6 +312,45 @@ LOCK TABLES `idea` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `invest`
+--
+
+DROP TABLE IF EXISTS `invest`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `invest` (
+  `idinvest` int(11) NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(45) NOT NULL,
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `where` varchar(100) DEFAULT NULL,
+  `url` varchar(200) DEFAULT NULL,
+  `who` varchar(45) DEFAULT NULL,
+  `id_card` varchar(45) DEFAULT NULL COMMENT 'who_id',
+  `what` varchar(200) DEFAULT NULL,
+  `amount` double DEFAULT NULL COMMENT 'how Amount',
+  `status` varchar(45) NOT NULL DEFAULT 'normal',
+  `remark` text,
+  `priority` int(11) NOT NULL DEFAULT '0',
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `author` varchar(45) NOT NULL DEFAULT 'hunter',
+  `md5` varchar(45) DEFAULT NULL COMMENT 'file md 5 for verify url point file',
+  PRIMARY KEY (`idinvest`,`uuid`),
+  UNIQUE KEY `idinvest_UNIQUE` (`idinvest`),
+  UNIQUE KEY `uuid_UNIQUE` (`uuid`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `invest`
+--
+
+LOCK TABLES `invest` WRITE;
+/*!40000 ALTER TABLE `invest` DISABLE KEYS */;
+INSERT INTO `invest` VALUES (1,'05cb13a0-34c9-4e53-8978-0cf56e69d4fc','2018-06-22 08:04:27','Suzhou, Jiangsu, China','company/invest/05cb13a0-34c9-4e53-8978-0cf56e69d4fc','hunter','320323198306180035','Create ：Red-Arrow Intelligent Technology Co. Ltd. ',12000,'normal','创立公司花费资本金',0,'2019-01-07 16:17:37','hunter',NULL),(2,'2654cd80-8903-47c4-aec0-8bb84ffecb6d','2018-07-10 08:18:48','Suzhou, Jiangsu, China','company/invest/2654cd80-8903-47c4-aec0-8bb84ffecb6d','hunter','320323198306180035','存入运营资金',10000,'normal','第一次注资入资本金',0,'2019-01-07 16:20:08','hunter',NULL),(3,'c67618ff-1469-4be1-8041-ae31cdc0c73c','2018-12-29 08:20:43','Suzhou, Jiangsu, China	','company/invest/c67618ff-1469-4be1-8041-ae31cdc0c73c','hunter','320323198712070018','营收注资',2000,'normal','第二次注资入资本金',0,'2019-01-07 16:21:41','hunter',NULL);
+/*!40000 ALTER TABLE `invest` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `issue`
 --
 
@@ -818,4 +857,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-02 18:20:39
+-- Dump completed on 2019-01-07 16:30:48
