@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.21, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.24, for Linux (x86_64)
 --
 -- Host: localhost    Database: book
 -- ------------------------------------------------------
--- Server version	5.7.21-0ubuntu0.16.04.1
+-- Server version	5.7.24-0ubuntu0.18.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -35,7 +35,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'hunter','gitbook','website','https://www.gitbook.com','img/gitbook.png','2018-01-30 16:31:42','normal','utf8',100,'china'),(2,'hunter','redbooks','website','http://www.redbooks.ibm.com/','img/redbooks.gif','2018-01-30 16:38:50','normal','utf8',99,'china'),(3,'hunter','deeplearningbook','website','http://www.deeplearningbook.org/','img/deep-learning.png','2018-01-30 16:44:23','normal','utf8',98,'china'),(4,'hunter','daodejing','website','http://www.daodejing.org/','img/daodejing.jpg','2018-02-10 13:17:40','normal','utf8',97,'china'),(5,'hunter','lunyu','website','http://www.guoxue.com/?book=lunyu','img/lunyu.jpg','2018-02-10 13:30:03','normal','utf8',95,'china'),(6,'hunter','sunzibingf','website','http://www.guoxue.com/?book=szbf','img/szbf.jpg','2018-02-10 13:50:11','normal','utf8',95,'china'),(7,'hunter','sunbinbingfa','website','http://www.gushiwen.org/guwen/sunbin.aspx','img/sunbinbingfa.jpg','2018-02-10 13:59:21','normal','utf8',92,'china'),(8,'hunter','zhouyi','website','http://www.gushiwen.org/guwen/zhouyi.aspx','img/zhouyi.jpg','2018-02-10 14:11:32','normal','utf8',91,'china'),(9,'hunter','daxue','website','http://www.gushiwen.org/guwen/daxue.aspx','img/daxue.jpg','2018-02-10 14:26:40','normal','utf8',91,'china'),(10,'hunter','sanzijing','website','http://www.yuwenmi.com/guoxue/sanzijing/','img/sanzijing.jpg','2018-02-10 14:41:16','normal','utf8',90,'china'),(11,'hunter','shiji','website','http://www.gushiwen.org/guwen/shiji.aspx','img/shiji.jpg','2018-02-10 14:48:38','normal','utf8',90,'china'),(12,'hunter','bencaogangmu','website','http://so.gushiwen.org/guwen/book_12.aspx','img/bencaogangmu.jpg','2018-02-10 14:52:16','normal','utf8',89,'china'),(13,'hunter','linuxtopia-online_books','website','https://www.linuxtopia.org/online_books/index.html','img/linuxtopia.jpg','2018-04-24 16:56:14','normal','utf8',0,'china'),(14,'hunter','linux kernel','website','https://www.kernel.org/doc/html/latest/','img/linux.png','2018-04-24 17:04:36','normal','utf8',0,'china'),(15,'hunter','wowebook','website','http://www.wowebook.org/','img/wowebook.jpg','2018-04-26 16:54:56','normal','utf8',0,'china');
+INSERT INTO `url` VALUES (1,'hunter','gitbook','website','https://www.gitbook.com','img/gitbook.png','2018-01-30 16:31:42','normal','utf8',100,'china'),(2,'hunter','redbooks','website','http://www.redbooks.ibm.com/','img/redbooks.gif','2018-01-30 16:38:50','normal','utf8',99,'china'),(3,'hunter','deeplearningbook','website','http://www.deeplearningbook.org/','img/deep-learning.png','2018-01-30 16:44:23','normal','utf8',98,'china'),(4,'hunter','daodejing','website','http://www.daodejing.org/','img/daodejing.jpg','2018-02-10 13:17:40','normal','utf8',97,'china'),(5,'hunter','lunyu','website','http://www.guoxue.com/?book=lunyu','img/lunyu.jpg','2018-02-10 13:30:03','normal','utf8',95,'china'),(6,'hunter','sunzibingf','website','http://www.guoxue.com/?book=szbf','img/szbf.jpg','2018-02-10 13:50:11','normal','utf8',95,'china'),(7,'hunter','sunbinbingfa','website','http://www.gushiwen.org/guwen/sunbin.aspx','img/sunbinbingfa.jpg','2018-02-10 13:59:21','normal','utf8',92,'china'),(8,'hunter','zhouyi','website','http://www.gushiwen.org/guwen/zhouyi.aspx','img/zhouyi.jpg','2018-02-10 14:11:32','normal','utf8',91,'china'),(9,'hunter','daxue','website','http://www.gushiwen.org/guwen/daxue.aspx','img/daxue.jpg','2018-02-10 14:26:40','normal','utf8',91,'china'),(10,'hunter','sanzijing','website','http://www.yuwenmi.com/guoxue/sanzijing/','img/sanzijing.jpg','2018-02-10 14:41:16','normal','utf8',90,'china'),(11,'hunter','shiji','website','http://www.gushiwen.org/guwen/shiji.aspx','img/shiji.jpg','2018-02-10 14:48:38','normal','utf8',90,'china'),(12,'hunter','bencaogangmu','website','http://so.gushiwen.org/guwen/book_12.aspx','img/bencaogangmu.jpg','2018-02-10 14:52:16','normal','utf8',89,'china'),(13,'hunter','linuxtopia-online_books','website','https://www.linuxtopia.org/online_books/index.html','img/linuxtopia.jpg','2018-04-24 16:56:14','normal','utf8',0,'china'),(14,'hunter','linux kernel','website','https://www.kernel.org/doc/html/latest/','img/linux.png','2018-04-24 17:04:36','normal','utf8',0,'china'),(15,'hunter','wowebook','website','http://www.wowebook.org/','img/wowebook.jpg','2018-04-26 16:54:56','normal','utf8',0,'china'),(16,'198382.com','苏辙集','website','http://www.eywedu.com/Ts8/html06/06index.htm','img/book.jpg','2018-12-10 17:10:33','normal','utf8',0,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-26 16:58:01
+-- Dump completed on 2019-01-09 14:03:26
