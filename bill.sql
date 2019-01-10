@@ -43,6 +43,7 @@ CREATE TABLE `bill` (
   `organization` varchar(100) DEFAULT NULL,
   `department` varchar(100) DEFAULT NULL,
   `authorize` varchar(100) NOT NULL DEFAULT 'approved',
+  `url` varchar(200) DEFAULT NULL,
   `imgage` varchar(200) DEFAULT NULL,
   `audio` varchar(200) DEFAULT NULL,
   `video` varchar(200) DEFAULT NULL,
@@ -64,6 +65,29 @@ LOCK TABLES `bill` WRITE;
 /*!40000 ALTER TABLE `bill` DISABLE KEYS */;
 /*!40000 ALTER TABLE `bill` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `type`
+--
+
+DROP TABLE IF EXISTS `type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `type` (
+  `idtype` int(11) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idtype`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `type`
+--
+
+LOCK TABLES `type` WRITE;
+/*!40000 ALTER TABLE `type` DISABLE KEYS */;
+/*!40000 ALTER TABLE `type` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -74,4 +98,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-10 17:11:26
+-- Dump completed on 2019-01-10 17:52:48
