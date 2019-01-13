@@ -1,15 +1,15 @@
 CREATE DATABASE  IF NOT EXISTS `map` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `map`;
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: map
+-- Host: localhost    Database: map
 -- ------------------------------------------------------
--- Server version	8.0.0-dmr-log
+-- Server version	8.0.13-commercial
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+ SET NAMES utf8 ;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,20 +23,21 @@ USE `map`;
 
 DROP TABLE IF EXISTS `url`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `url` (
   `idurl` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
-  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
-  `what_type` varchar(45) DEFAULT NULL,
-  `where` varchar(200) NOT NULL COMMENT 'where the URL address',
+  `what` varchar(100) NOT NULL COMMENT 'what the link item information ?',
+  `type` varchar(45) DEFAULT NULL,
+  `url` varchar(200) NOT NULL COMMENT 'where the URL address',
   `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
   `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
   `status` varchar(45) DEFAULT NULL,
   `remark` varchar(45) DEFAULT NULL,
   `priority` int(11) NOT NULL DEFAULT '0',
+  `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='Ai Project URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +46,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'hunter','google','map','http://ditu.google.cn/','img/google.jpg','2018-01-10 14:52:04','normal','china',0),(2,'hunter','amap','map','http://ditu.amap.com/','img/amap.jpg','2018-01-10 14:52:40','normal','china',0),(3,'hunter','bing_map','map','https://www.bing.com/ditu/','img/bing.jpg','2018-01-10 14:53:24','normal','china',0),(4,'hunter','baidu','map','http://map.baidu.com/','img/baidu.jpg','2018-01-10 14:54:04','normal','china',0),(5,'hunter','sogou','map','http://map.sogou.com/','img/sogou.jpg','2018-01-10 14:54:50','normal','china',0);
+INSERT INTO `url` VALUES (1,'198382.com','google','website','http://www.google.cn/maps','img/google.jpg','2019-01-13 21:37:21','normal','utf8',0,'china'),(2,'198382.com','amap','website','https://ditu.amap.com/','img/amap.jpg','2019-01-13 21:38:43','normal','utf8',0,'china'),(3,'198382.com','bing','website','https://www.bing.com/ditu','img/bing.jpg','2019-01-13 21:39:26','normal','utf8',0,'china'),(4,'198382.com','baidu','website','http://map.baidu.com/','img/baidu.jpg','2019-01-13 21:40:04','normal','utf8',0,'china'),(5,'198382.com','sogou','website','http://map.sogou.com/','img/sogou.jpg','2019-01-13 21:41:25','normal','utf8',0,'china'),(6,'198382.com','qq','website','https://map.qq.com/','img/qq.jpg','2019-01-13 21:42:10','normal','utf8',0,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-10 14:56:17
+-- Dump completed on 2019-01-13 21:43:24
