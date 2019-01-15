@@ -1,8 +1,10 @@
--- MySQL dump 10.13  Distrib 5.7.24, for Linux (x86_64)
+CREATE DATABASE  IF NOT EXISTS `bill` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `bill`;
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: bill
 -- ------------------------------------------------------
--- Server version	5.7.24-0ubuntu0.18.04.1
+-- Server version	8.0.0-dmr-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -32,12 +34,15 @@ CREATE TABLE `bill` (
   `idcard` varchar(45) DEFAULT NULL,
   `what` varchar(200) DEFAULT NULL,
   `type` varchar(45) DEFAULT NULL COMMENT 'IN/OUT',
+  `invoice_number` varchar(45) DEFAULT NULL,
   `amount` double DEFAULT NULL,
   `quantity` double NOT NULL DEFAULT '1',
   `univalent` double NOT NULL DEFAULT '1',
   `from` varchar(200) DEFAULT NULL COMMENT 'source',
   `to` varchar(200) DEFAULT NULL COMMENT 'dir',
   `archive` varchar(200) DEFAULT NULL,
+  `archive_type` varchar(100) DEFAULT NULL,
+  `archive_md5` varchar(45) DEFAULT NULL,
   `organization` varchar(100) DEFAULT NULL,
   `department` varchar(100) DEFAULT NULL,
   `authorize` varchar(100) NOT NULL DEFAULT 'approved',
@@ -61,7 +66,7 @@ CREATE TABLE `bill` (
 
 LOCK TABLES `bill` WRITE;
 /*!40000 ALTER TABLE `bill` DISABLE KEYS */;
-INSERT INTO `bill` VALUES (1,'0feeb35d-8083-4c47-be8a-a06f364523e4 ','2019-01-13 21:54:36','2019-01-13 21:50:12',' 苏州 ',' Hunter ',' 320323198306180035 ',' 洽谈投资融资和技术合作 ',' 餐饮 ',-227.9,1,1,' 苏州赤箭智能科技有限公司 ',' 苏州骨气家餐饮管理有限公司 ',' bill/archive/0feeb35d-8083-4c47-be8a-a06f364523e4 ','  Red-Arrow Intelligent Technology Co. Ltd. ',' 董事局 ',' approved ',' bill/file/0feeb35d-8083-4c47-be8a-a06f364523e4 ',' bill/image/0feeb35d-8083-4c47-be8a-a06f364523e4 ',' bill/audio/0feeb35d-8083-4c47-be8a-a06f364523e4 ',' bill/video/0feeb35d-8083-4c47-be8a-a06f364523e4 ',0,' check in ','  ',' hunter'),(2,'bff64f6c-b535-419c-bd0e-034aee8cab64 ','2019-01-14 10:37:01','2019-01-14 10:34:29',' 苏州赤箭智能科技有限公司 ',' Hunter ',' 320323198306180035 ',' 投资赤箭智能科技有限公司5万元人民币 ',' 注资 ',50000,1,1,' 上海招商银行 ',' 苏州中国银行苏州赤箭智能科技有限公司 ',' bill/archive/bff64f6c-b535-419c-bd0e-034aee8cab64 ',' 苏州赤箭智能科技有限公司 ',' 董事局 ',' approved ',' bill/file/bff64f6c-b535-419c-bd0e-034aee8cab64 ',' bill/image/bff64f6c-b535-419c-bd0e-034aee8cab64 ',' bill/audio/bff64f6c-b535-419c-bd0e-034aee8cab64 ',' bill/video/bff64f6c-b535-419c-bd0e-034aee8cab64 ',0,' check in ','  ',' hunter');
+INSERT INTO `bill` VALUES (1,'0feeb35d-8083-4c47-be8a-a06f364523e4 ','2019-01-13 21:54:36','2019-01-13 21:50:12',' 苏州 ',' Hunter ',' 320323198306180035 ',' 洽谈投资融资和技术合作 ',' 餐饮 ','032001800107-31560295',-227.9,1,1,' 苏州赤箭智能科技有限公司 ',' 苏州骨气家餐饮管理有限公司 ',' bill/archive/0feeb35d-8083-4c47-be8a-a06f364523e4 ',' image/jpeg ',NULL,'  Red-Arrow Intelligent Technology Co. Ltd. ',' 董事局 ',' approved ',' bill/file/0feeb35d-8083-4c47-be8a-a06f364523e4 ',' bill/image/0feeb35d-8083-4c47-be8a-a06f364523e4 ',' bill/audio/0feeb35d-8083-4c47-be8a-a06f364523e4 ',' bill/video/0feeb35d-8083-4c47-be8a-a06f364523e4 ',0,' check in ','  ',' hunter'),(2,'bff64f6c-b535-419c-bd0e-034aee8cab64 ','2019-01-14 10:37:01','2019-01-14 10:34:29',' 苏州赤箭智能科技有限公司 ',' Hunter ',' 320323198306180035 ',' 投资赤箭智能科技有限公司5万元人民币 ',' 注资 ','PI19AEB516930348',50000,1,1,' 上海招商银行 ',' 苏州中国银行苏州赤箭智能科技有限公司 ',' bill/archive/bff64f6c-b535-419c-bd0e-034aee8cab64 ',' image/jpeg ',NULL,' 苏州赤箭智能科技有限公司 ',' 董事局 ',' approved ',' bill/file/bff64f6c-b535-419c-bd0e-034aee8cab64 ',' bill/image/bff64f6c-b535-419c-bd0e-034aee8cab64 ',' bill/audio/bff64f6c-b535-419c-bd0e-034aee8cab64 ',' bill/video/bff64f6c-b535-419c-bd0e-034aee8cab64 ',0,' check in ','  ',' hunter');
 /*!40000 ALTER TABLE `bill` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -126,10 +131,13 @@ DROP TABLE IF EXISTS `type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `type` (
-  `idtype` int(11) NOT NULL,
-  `name` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idtype`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `idtype` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idtype`,`name`),
+  UNIQUE KEY `idtype_UNIQUE` (`idtype`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -138,6 +146,7 @@ CREATE TABLE `type` (
 
 LOCK TABLES `type` WRITE;
 /*!40000 ALTER TABLE `type` DISABLE KEYS */;
+INSERT INTO `type` VALUES (1,'餐饮','2019-01-15 15:55:40'),(2,'投资','2019-01-15 15:59:31'),(3,'test','2019-01-15 17:49:19'),(6,'technology','2019-01-15 17:58:01');
 /*!40000 ALTER TABLE `type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -182,4 +191,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-15 15:40:47
+-- Dump completed on 2019-01-15 19:04:55
