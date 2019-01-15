@@ -52,7 +52,7 @@ CREATE TABLE `bill` (
   PRIMARY KEY (`idbill`,`uuid`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`),
   UNIQUE KEY `idbill_UNIQUE` (`idbill`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='bill of company';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='bill of company';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -61,7 +61,7 @@ CREATE TABLE `bill` (
 
 LOCK TABLES `bill` WRITE;
 /*!40000 ALTER TABLE `bill` DISABLE KEYS */;
-INSERT INTO `bill` VALUES (1,'0feeb35d-8083-4c47-be8a-a06f364523e4 ','2019-01-13 21:54:36','2019-01-13 21:50:12',' 苏州 ',' Hunter ',' 320323198306180035 ',' 洽谈投资融资和技术合作 ',' 餐饮 ',-227.9,1,1,' 苏州赤箭智能科技有限公司 ',' 苏州骨气家餐饮管理有限公司 ',' bill/archive/0feeb35d-8083-4c47-be8a-a06f364523e4 ','  Red-Arrow Intelligent Technology Co. Ltd. ',' 董事局 ',' approved ',' bill/file/0feeb35d-8083-4c47-be8a-a06f364523e4 ',' bill/image/0feeb35d-8083-4c47-be8a-a06f364523e4 ',' bill/audio/0feeb35d-8083-4c47-be8a-a06f364523e4 ',' bill/video/0feeb35d-8083-4c47-be8a-a06f364523e4 ',0,' check in ','  ',' hunter');
+INSERT INTO `bill` VALUES (1,'0feeb35d-8083-4c47-be8a-a06f364523e4 ','2019-01-13 21:54:36','2019-01-13 21:50:12',' 苏州 ',' Hunter ',' 320323198306180035 ',' 洽谈投资融资和技术合作 ',' 餐饮 ',-227.9,1,1,' 苏州赤箭智能科技有限公司 ',' 苏州骨气家餐饮管理有限公司 ',' bill/archive/0feeb35d-8083-4c47-be8a-a06f364523e4 ','  Red-Arrow Intelligent Technology Co. Ltd. ',' 董事局 ',' approved ',' bill/file/0feeb35d-8083-4c47-be8a-a06f364523e4 ',' bill/image/0feeb35d-8083-4c47-be8a-a06f364523e4 ',' bill/audio/0feeb35d-8083-4c47-be8a-a06f364523e4 ',' bill/video/0feeb35d-8083-4c47-be8a-a06f364523e4 ',0,' check in ','  ',' hunter'),(2,'bff64f6c-b535-419c-bd0e-034aee8cab64 ','2019-01-14 10:37:01','2019-01-14 10:34:29',' 苏州赤箭智能科技有限公司 ',' Hunter ',' 320323198306180035 ',' 投资赤箭智能科技有限公司5万元人民币 ',' 注资 ',50000,1,1,' 上海招商银行 ',' 苏州中国银行苏州赤箭智能科技有限公司 ',' bill/archive/bff64f6c-b535-419c-bd0e-034aee8cab64 ',' 苏州赤箭智能科技有限公司 ',' 董事局 ',' approved ',' bill/file/bff64f6c-b535-419c-bd0e-034aee8cab64 ',' bill/image/bff64f6c-b535-419c-bd0e-034aee8cab64 ',' bill/audio/bff64f6c-b535-419c-bd0e-034aee8cab64 ',' bill/video/bff64f6c-b535-419c-bd0e-034aee8cab64 ',0,' check in ','  ',' hunter');
 /*!40000 ALTER TABLE `bill` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -182,4 +182,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-13 22:02:36
+-- Dump completed on 2019-01-15 15:40:47
