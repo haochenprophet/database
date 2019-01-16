@@ -27,8 +27,8 @@ DROP TABLE IF EXISTS `sop`;
 CREATE TABLE `sop` (
   `idsop` int(11) NOT NULL AUTO_INCREMENT,
   `uuid` varchar(45) NOT NULL,
+  `item` varchar(256) NOT NULL,
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `item` varchar(1024) DEFAULT NULL,
   `step` double DEFAULT NULL,
   `input` varchar(1024) DEFAULT NULL,
   `operate` varchar(1024) DEFAULT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE `sop` (
   `author` varchar(45) DEFAULT 'hunter',
   `status` varchar(45) DEFAULT 'normal',
   `priority` int(11) DEFAULT '0',
-  PRIMARY KEY (`idsop`,`uuid`),
+  PRIMARY KEY (`idsop`,`uuid`,`item`),
   UNIQUE KEY `idsop_UNIQUE` (`idsop`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='sop';
@@ -64,10 +64,13 @@ DROP TABLE IF EXISTS `uuid`;
 CREATE TABLE `uuid` (
   `iduuid` bigint(20) NOT NULL AUTO_INCREMENT,
   `uuid` varchar(45) NOT NULL,
-  `name` varchar(1024) DEFAULT NULL,
-  PRIMARY KEY (`iduuid`,`uuid`),
+  `name` varchar(256) NOT NULL,
+  `class` varchar(45) DEFAULT NULL,
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`iduuid`,`uuid`,`name`),
   UNIQUE KEY `idsop_item_UNIQUE` (`iduuid`),
-  UNIQUE KEY `uuid_UNIQUE` (`uuid`)
+  UNIQUE KEY `uuid_UNIQUE` (`uuid`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='uuid';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -89,4 +92,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-16 15:57:56
+-- Dump completed on 2019-01-16 17:53:44
