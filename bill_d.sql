@@ -57,7 +57,7 @@ CREATE TABLE `bill` (
   PRIMARY KEY (`idbill`,`uuid`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`),
   UNIQUE KEY `idbill_UNIQUE` (`idbill`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='bill of company';
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='bill of company';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +66,7 @@ CREATE TABLE `bill` (
 
 LOCK TABLES `bill` WRITE;
 /*!40000 ALTER TABLE `bill` DISABLE KEYS */;
-INSERT INTO `bill` VALUES (1,'0feeb35d-8083-4c47-be8a-a06f364523e4 ','2019-01-13 21:54:36','2019-01-13 21:50:12',' 苏州 ',' Hunter ',' 320323198306180035 ',' 洽谈投资融资和技术合作 ',' 餐饮 ','032001800107-31560295',-227.9,1,1,' 苏州赤箭智能科技有限公司 ',' 苏州骨气家餐饮管理有限公司 ',' bill/archive/0feeb35d-8083-4c47-be8a-a06f364523e4 ',' image/jpeg ',NULL,'  Red-Arrow Intelligent Technology Co. Ltd. ',' 董事局 ',' approved ',' bill/file/0feeb35d-8083-4c47-be8a-a06f364523e4 ',' bill/image/0feeb35d-8083-4c47-be8a-a06f364523e4 ',' bill/audio/0feeb35d-8083-4c47-be8a-a06f364523e4 ',' bill/video/0feeb35d-8083-4c47-be8a-a06f364523e4 ',0,' check in ','  ',' hunter'),(2,'bff64f6c-b535-419c-bd0e-034aee8cab64 ','2019-01-14 10:37:01','2019-01-14 10:34:29',' 苏州赤箭智能科技有限公司 ',' Hunter ',' 320323198306180035 ',' 投资赤箭智能科技有限公司5万元人民币 ',' 注资 ','PI19AEB516930348',50000,1,1,' 上海招商银行 ',' 苏州中国银行苏州赤箭智能科技有限公司 ',' bill/archive/bff64f6c-b535-419c-bd0e-034aee8cab64 ',' image/jpeg ',NULL,' 苏州赤箭智能科技有限公司 ',' 董事局 ',' approved ',' bill/file/bff64f6c-b535-419c-bd0e-034aee8cab64 ',' bill/image/bff64f6c-b535-419c-bd0e-034aee8cab64 ',' bill/audio/bff64f6c-b535-419c-bd0e-034aee8cab64 ',' bill/video/bff64f6c-b535-419c-bd0e-034aee8cab64 ',0,' check in ','  ',' hunter');
+INSERT INTO `bill` VALUES (1,'0feeb35d-8083-4c47-be8a-a06f364523e4 ','2019-01-13 21:54:36','2019-01-13 21:50:12',' 苏州 ',' Hunter ',' 320323198306180035 ',' 洽谈投资融资和技术合作 ',' 餐饮 ','032001800107-31560295',-227.9,1,1,' 苏州赤箭智能科技有限公司 ',' 苏州骨气家餐饮管理有限公司 ',' bill/archive/0feeb35d-8083-4c47-be8a-a06f364523e4 ',' image/jpeg ',NULL,'  Red-Arrow Intelligent Technology Co. Ltd. ',' 董事局 ',' approved ',' bill/file/0feeb35d-8083-4c47-be8a-a06f364523e4 ',' bill/image/0feeb35d-8083-4c47-be8a-a06f364523e4 ',' bill/audio/0feeb35d-8083-4c47-be8a-a06f364523e4 ',' bill/video/0feeb35d-8083-4c47-be8a-a06f364523e4 ',0,' check in ','  ',' hunter'),(2,'bff64f6c-b535-419c-bd0e-034aee8cab64 ','2019-01-14 10:37:01','2019-01-14 10:34:29',' 苏州赤箭智能科技有限公司 ',' Hunter ',' 320323198306180035 ',' 投资赤箭智能科技有限公司5万元人民币 ',' 注资 ','PI19AEB516930348',50000,1,1,' 上海招商银行 ',' 苏州中国银行苏州赤箭智能科技有限公司 ',' bill/archive/bff64f6c-b535-419c-bd0e-034aee8cab64 ',' image/jpeg ',NULL,' 苏州赤箭智能科技有限公司 ',' 董事局 ',' approved ',' bill/file/bff64f6c-b535-419c-bd0e-034aee8cab64 ',' bill/image/bff64f6c-b535-419c-bd0e-034aee8cab64 ',' bill/audio/bff64f6c-b535-419c-bd0e-034aee8cab64 ',' bill/video/bff64f6c-b535-419c-bd0e-034aee8cab64 ',0,' check in ','  ',' hunter'),(3,'fc478555-ea83-4849-b2d8-aca9fd52ad3a ','2019-01-16 11:14:09','2019-01-16 03:11:17',' 苏州赤箭智能科技有限公司 ',' hunter ',' 320323198306180035 ',' 支付2018太平人寿保单 ',' 保险 ',' 032001600511-87385314 ',-7474,1,1,' 苏州赤箭智能科技有限公司 ',' 太平人寿保险有限公司苏州分公司 ',' bill/archive/fc478555-ea83-4849-b2d8-aca9fd52ad3a.2018-8-8-太平人寿保单发票.pdf ',' application/pdf ',' eca26d821986dc575c43a8ba1babcb5b ',' 苏州赤箭智能科技有限公司 ',' 董事局 ',' approved ',' bill/file/fc478555-ea83-4849-b2d8-aca9fd52ad3a ',' bill/image/fc478555-ea83-4849-b2d8-aca9fd52ad3a ',' bill/audio/fc478555-ea83-4849-b2d8-aca9fd52ad3a ',' bill/video/fc478555-ea83-4849-b2d8-aca9fd52ad3a ',0,' check in ',' 保险单号:002305692127008 ',' hunter'),(10,'3c548c27-1db6-47d2-a66e-9852b65b67e1 ','2019-01-16 12:00:26','2018-11-12 00:00:00',' 苏州赤箭智能科技有限公司 ',' hunter ',' 320323198306180035 ',' 苏州站-G7101-上海虹桥 ',' 火车票 ',' N052962 ',-41.5,1,1,' 苏州赤箭智能科技有限公司 ',' 中国铁路总公司 ',' bill/archive/3c548c27-1db6-47d2-a66e-9852b65b67e1.20181112.jpg ',' image/jpeg ',' ecc5309508ebb37e5e3db345c7c768e9 ',' 苏州赤箭智能科技有限公司 ',' 董事局 ',' approved ',' bill/file/3c548c27-1db6-47d2-a66e-9852b65b67e1 ',' bill/image/3c548c27-1db6-47d2-a66e-9852b65b67e1 ',' bill/audio/3c548c27-1db6-47d2-a66e-9852b65b67e1 ',' bill/video/3c548c27-1db6-47d2-a66e-9852b65b67e1 ',0,' check in ',' 上海南局补 ',' hunter'),(11,'07fa7f19-a8d9-49e9-9497-5de247054333 ','2019-01-16 12:04:22','2019-01-04 04:00:44',' 苏州赤箭智能科技有限公司 ',' hunter ',' 320323198306180035 ',' 上海-G7062-苏州 19:32开 ',' 火车票 ',' Z25A052255 ',-39.5,1,1,' 苏州赤箭智能科技有限公司 ',' 中国铁路总公司 ',' bill/archive/07fa7f19-a8d9-49e9-9497-5de247054333.20190104.jpg ',' image/jpeg ',' fe29b12a070d32a2ff6af80357b8c166 ',' 苏州赤箭智能科技有限公司 ',' 董事局 ',' approved ',' bill/file/07fa7f19-a8d9-49e9-9497-5de247054333 ',' bill/image/07fa7f19-a8d9-49e9-9497-5de247054333 ',' bill/audio/07fa7f19-a8d9-49e9-9497-5de247054333 ',' bill/video/07fa7f19-a8d9-49e9-9497-5de247054333 ',0,' check in ','  ',' hunter'),(12,'2e206e27-838b-4ac7-8106-f91aa870627b ','2019-01-16 12:07:18','2019-01-07 04:05:30',' 苏州赤箭智能科技有限公司 ',' hunter ',' 320323198306180035 ',' 昆山南-G7101-上海虹桥 ',' 火车票 ',' A052410 ',-26.5,1,1,' 苏州赤箭智能科技有限公司 ',' 中国铁路总公司 ',' bill/archive/2e206e27-838b-4ac7-8106-f91aa870627b.20190107.jpg ',' image/jpeg ',' 2f9b524876ed283a6c036a1858d0b260 ',' 苏州赤箭智能科技有限公司 ',' 董事局 ',' approved ',' bill/file/2e206e27-838b-4ac7-8106-f91aa870627b ',' bill/image/2e206e27-838b-4ac7-8106-f91aa870627b ',' bill/audio/2e206e27-838b-4ac7-8106-f91aa870627b ',' bill/video/2e206e27-838b-4ac7-8106-f91aa870627b ',0,' check in ',' 上海南客补 ',' hunter');
 /*!40000 ALTER TABLE `bill` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -137,7 +137,7 @@ CREATE TABLE `type` (
   PRIMARY KEY (`idtype`,`name`),
   UNIQUE KEY `idtype_UNIQUE` (`idtype`),
   UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -146,7 +146,7 @@ CREATE TABLE `type` (
 
 LOCK TABLES `type` WRITE;
 /*!40000 ALTER TABLE `type` DISABLE KEYS */;
-INSERT INTO `type` VALUES (1,'餐饮','2019-01-15 15:55:40'),(2,'投资','2019-01-15 15:59:31'),(3,'test','2019-01-15 17:49:19'),(6,'technology','2019-01-15 17:58:01');
+INSERT INTO `type` VALUES (1,'餐饮','2019-01-15 15:55:40'),(2,'投资','2019-01-15 15:59:31'),(3,'保险','2019-01-16 11:14:10'),(4,'火车票','2019-01-16 12:00:26');
 /*!40000 ALTER TABLE `type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -191,4 +191,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-15 19:04:55
+-- Dump completed on 2019-01-16 12:08:33
