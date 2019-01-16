@@ -55,7 +55,6 @@ CREATE TABLE `bill` (
   `remark` varchar(200) DEFAULT NULL,
   `author` varchar(45) NOT NULL DEFAULT 'hunter',
   PRIMARY KEY (`idbill`,`uuid`),
-  UNIQUE KEY `uuid_UNIQUE` (`uuid`),
   UNIQUE KEY `idbill_UNIQUE` (`idbill`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='bill of company';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -137,7 +136,7 @@ CREATE TABLE `type` (
   PRIMARY KEY (`idtype`,`name`),
   UNIQUE KEY `idtype_UNIQUE` (`idtype`),
   UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -146,7 +145,7 @@ CREATE TABLE `type` (
 
 LOCK TABLES `type` WRITE;
 /*!40000 ALTER TABLE `type` DISABLE KEYS */;
-INSERT INTO `type` VALUES (1,'餐饮','2019-01-15 15:55:40'),(2,'投资','2019-01-15 15:59:31'),(3,'保险','2019-01-16 11:14:10'),(4,'火车票','2019-01-16 12:00:26'),(5,'technology','2019-01-16 12:51:11');
+INSERT INTO `type` VALUES (1,'餐饮','2019-01-15 15:55:40'),(2,'投资','2019-01-15 15:59:31'),(3,'保险','2019-01-16 11:14:10'),(4,'火车票','2019-01-16 12:00:26');
 /*!40000 ALTER TABLE `type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -191,4 +190,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-16 13:00:57
+-- Dump completed on 2019-01-16 17:59:58
