@@ -805,7 +805,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -814,7 +814,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'198382.com','cn.china.cn','website','https://cn.china.cn/','img/company.jpg','2018-12-27 03:40:00','normal','utf8',0,'china');
+INSERT INTO `url` VALUES (1,'198382.com','cn.china.cn','website','https://cn.china.cn/','img/company.jpg','2018-12-27 03:40:00','normal','utf8',0,'china'),(2,'198382.com','sop','website','sop.php','img/company.jpg','2019-01-17 17:48:24','normal','utf8',0,'china'),(3,'198382.com','bill','website','bill.php','img/company.jpg','2019-01-17 17:48:39','normal','utf8',0,'china'),(4,'198382.com','item','website','item.php','img/company.jpg','2019-01-17 17:48:52','normal','utf8',0,'china'),(5,'198382.com','BIOS','website','bios.php','img/company.jpg','2019-01-17 17:50:40','normal','utf8',0,'china'),(6,'198382.com','BMC','website','bmc.php','img/company.jpg','2019-01-17 17:50:52','normal','utf8',0,'china'),(7,'198382.com','knowledge','website','knowledge.php','img/company.jpg','2019-01-17 17:51:17','normal','utf8',0,'china'),(8,'198382.com','tool','website','tool.php','img/company.jpg','2019-01-17 17:51:38','normal','utf8',0,'china'),(9,'198382.com','red_arrows','website','red_arrows.php','img/company.jpg','2019-01-17 17:51:56','normal','utf8',0,'china'),(10,'198382.com','howtodo','website','howtodo.php','img/company.jpg','2019-01-17 17:52:15','normal','utf8',0,'china'),(11,'198382.com','mindmap','website','mindmap.php','img/company.jpg','2019-01-17 17:52:32','normal','utf8',0,'china'),(12,'198382.com','spec','website','spec.php','img/company.jpg','2019-01-17 17:52:45','normal','utf8',0,'china'),(13,'198382.com','sdk','website','sdk.php','img/company.jpg','2019-01-17 17:52:58','normal','utf8',0,'china'),(14,'198382.com','book','website','book.php','img/company.jpg','2019-01-17 17:53:21','normal','utf8',0,'china'),(15,'198382.com','patent','website','patent.php','img/company.jpg','2019-01-17 17:53:36','normal','utf8',0,'china'),(16,'198382.com','law','website','law.php','img/company.jpg','2019-01-17 17:53:48','normal','utf8',0,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -857,4 +857,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-07 16:30:48
+-- Dump completed on 2019-01-17 17:55:26
