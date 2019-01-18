@@ -1,15 +1,15 @@
 CREATE DATABASE  IF NOT EXISTS `bill` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `bill`;
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
 --
 -- Host: localhost    Database: bill
 -- ------------------------------------------------------
--- Server version	8.0.0-dmr-log
+-- Server version	8.0.13-commercial
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+ SET NAMES utf8 ;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,7 +23,7 @@ USE `bill`;
 
 DROP TABLE IF EXISTS `bill`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `bill` (
   `idbill` int(11) NOT NULL AUTO_INCREMENT,
   `uuid` varchar(45) NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE `bill` (
   `what` varchar(200) DEFAULT NULL,
   `type` varchar(45) DEFAULT NULL COMMENT 'IN/OUT',
   `invoice_number` varchar(45) DEFAULT NULL,
-  `amount` double DEFAULT NULL,
+  `amount` decimal(65,2) DEFAULT NULL,
   `quantity` double NOT NULL DEFAULT '1',
   `univalent` double NOT NULL DEFAULT '1',
   `from` varchar(200) DEFAULT NULL COMMENT 'source',
@@ -56,7 +56,7 @@ CREATE TABLE `bill` (
   `author` varchar(45) NOT NULL DEFAULT 'hunter',
   PRIMARY KEY (`idbill`,`uuid`),
   UNIQUE KEY `idbill_UNIQUE` (`idbill`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='bill of company';
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='bill of company';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,7 +65,7 @@ CREATE TABLE `bill` (
 
 LOCK TABLES `bill` WRITE;
 /*!40000 ALTER TABLE `bill` DISABLE KEYS */;
-INSERT INTO `bill` VALUES (1,'0feeb35d-8083-4c47-be8a-a06f364523e4','2019-01-13 21:54:36','2019-01-13 21:50:12','苏州','Hunter','320323198306180035','洽谈投资融资和技术合作','餐饮','032001800107-31560295',-227.9,1,1,'苏州赤箭智能科技有限公司','苏州骨气家餐饮管理有限公司','bill/archive/0feeb35d-8083-4c47-be8a-a06f364523e4.webwxgetmsgimg.jpg','image/jpeg',NULL,' Red-Arrow Intelligent Technology Co. Ltd.','董事局','approved','bill/file/0feeb35d-8083-4c47-be8a-a06f364523e4','bill/image/0feeb35d-8083-4c47-be8a-a06f364523e4','bill/audio/0feeb35d-8083-4c47-be8a-a06f364523e4','bill/video/0feeb35d-8083-4c47-be8a-a06f364523e4',0,'check in','','hunter'),(2,'bff64f6c-b535-419c-bd0e-034aee8cab64','2019-01-14 10:37:01','2019-01-14 10:34:29','苏州赤箭智能科技有限公司','Hunter','320323198306180035','投资赤箭智能科技有限公司5万元人民币','注资','PI19AEB516930348',50000,1,1,'上海招商银行','苏州中国银行苏州赤箭智能科技有限公司','bill/archive/bff64f6c-b535-419c-bd0e-034aee8cab64.1725937385.jpg','image/jpeg',NULL,'苏州赤箭智能科技有限公司','董事局','approved','bill/file/bff64f6c-b535-419c-bd0e-034aee8cab64','bill/image/bff64f6c-b535-419c-bd0e-034aee8cab64','bill/audio/bff64f6c-b535-419c-bd0e-034aee8cab64','bill/video/bff64f6c-b535-419c-bd0e-034aee8cab64',0,'check in','','hunter'),(3,'fc478555-ea83-4849-b2d8-aca9fd52ad3a','2019-01-16 11:14:09','2019-01-16 03:11:17','苏州赤箭智能科技有限公司','hunter','320323198306180035','支付2018太平人寿保单','保险','032001600511-87385314',-7474,1,1,'苏州赤箭智能科技有限公司','太平人寿保险有限公司苏州分公司','bill/archive/fc478555-ea83-4849-b2d8-aca9fd52ad3a.2018-8-8-太平人寿保单发票.pdf','application/pdf','eca26d821986dc575c43a8ba1babcb5b','苏州赤箭智能科技有限公司','董事局','approved','bill/file/fc478555-ea83-4849-b2d8-aca9fd52ad3a','bill/image/fc478555-ea83-4849-b2d8-aca9fd52ad3a','bill/audio/fc478555-ea83-4849-b2d8-aca9fd52ad3a','bill/video/fc478555-ea83-4849-b2d8-aca9fd52ad3a',0,'check in','保险单号:002305692127008','hunter'),(4,'3c548c27-1db6-47d2-a66e-9852b65b67e1','2019-01-16 12:00:26','2018-11-12 00:00:00','苏州赤箭智能科技有限公司','hunter','320323198306180035','苏州站-G7101-上海虹桥','火车票','N052962',-41.5,1,1,'苏州赤箭智能科技有限公司','中国铁路总公司','bill/archive/3c548c27-1db6-47d2-a66e-9852b65b67e1.20181112.jpg','image/jpeg','ecc5309508ebb37e5e3db345c7c768e9','苏州赤箭智能科技有限公司','董事局','approved','bill/file/3c548c27-1db6-47d2-a66e-9852b65b67e1','bill/image/3c548c27-1db6-47d2-a66e-9852b65b67e1','bill/audio/3c548c27-1db6-47d2-a66e-9852b65b67e1','bill/video/3c548c27-1db6-47d2-a66e-9852b65b67e1',0,'check in','上海南局补','hunter'),(5,'07fa7f19-a8d9-49e9-9497-5de247054333','2019-01-16 12:04:22','2019-01-04 04:00:44','苏州赤箭智能科技有限公司','hunter','320323198306180035','上海-G7062-苏州 19:32开','火车票','Z25A052255',-39.5,1,1,'苏州赤箭智能科技有限公司','中国铁路总公司','bill/archive/07fa7f19-a8d9-49e9-9497-5de247054333.20190104.jpg','image/jpeg','fe29b12a070d32a2ff6af80357b8c166','苏州赤箭智能科技有限公司','董事局','approved','bill/file/07fa7f19-a8d9-49e9-9497-5de247054333','bill/image/07fa7f19-a8d9-49e9-9497-5de247054333','bill/audio/07fa7f19-a8d9-49e9-9497-5de247054333','bill/video/07fa7f19-a8d9-49e9-9497-5de247054333',0,'check in','','hunter'),(6,'2e206e27-838b-4ac7-8106-f91aa870627b','2019-01-16 12:07:18','2019-01-07 04:05:30','苏州赤箭智能科技有限公司','hunter','320323198306180035','昆山南-G7101-上海虹桥','火车票','A052410',-26.5,1,1,'苏州赤箭智能科技有限公司','中国铁路总公司','bill/archive/2e206e27-838b-4ac7-8106-f91aa870627b.20190107.jpg','image/jpeg','2f9b524876ed283a6c036a1858d0b260','苏州赤箭智能科技有限公司','董事局','approved','bill/file/2e206e27-838b-4ac7-8106-f91aa870627b','bill/image/2e206e27-838b-4ac7-8106-f91aa870627b','bill/audio/2e206e27-838b-4ac7-8106-f91aa870627b','bill/video/2e206e27-838b-4ac7-8106-f91aa870627b',0,'check in','上海南客补','hunter'),(7,'93956300-9b1a-467b-9bfc-6e25f55b4d5b','2019-01-17 13:15:03','2019-01-16 05:12:59','苏州赤箭智能科技有限公司','Hunter','320323198306180035','出差-KFC餐饮发票','餐饮','031001700311-98889321',-20,1,1,'苏州赤箭智能科技有限公司','上海肯德基有限公司','bill/archive/93956300-9b1a-467b-9bfc-6e25f55b4d5b.20190116.pdf','application/pdf','b85421d7fb332b9935e040ca51b18c3a','苏州赤箭智能科技有限公司','董事局','approved','bill/file/93956300-9b1a-467b-9bfc-6e25f55b4d5b','bill/image/93956300-9b1a-467b-9bfc-6e25f55b4d5b','bill/audio/93956300-9b1a-467b-9bfc-6e25f55b4d5b','bill/video/93956300-9b1a-467b-9bfc-6e25f55b4d5b',0,'check in','上海市杨浦区双辽路768号 021-24268000\r\n上海银行江苏路支行 316434-00006750417','hunter'),(8,'6943cef8-1f12-46c5-84c8-599919ef5bc2','2019-01-17 13:22:55','2019-01-17 13:19:39','苏州赤箭智能科技有限公司','Hunter','320323198306180035','定制两人名片','名片','035021800111-16079891',-280,1,1,'苏州赤箭智能科技有限公司','时光七号厦门印制有限公司','bill/archive/6943cef8-1f12-46c5-84c8-599919ef5bc2.D710159D-913F-4796-9066-2F4FDB2F323D.png','image/png','cd7ef189da887a9d7485f1f99c8f0d02','苏州赤箭智能科技有限公司','董事局','approved','bill/file/6943cef8-1f12-46c5-84c8-599919ef5bc2','bill/image/6943cef8-1f12-46c5-84c8-599919ef5bc2','bill/audio/6943cef8-1f12-46c5-84c8-599919ef5bc2','bill/video/6943cef8-1f12-46c5-84c8-599919ef5bc2',0,'check in','厦门市湖里区','hunter');
+INSERT INTO `bill` VALUES (1,'0feeb35d-8083-4c47-be8a-a06f364523e4','2019-01-13 21:54:36','2019-01-13 21:50:12','苏州','Hunter','320323198306180035','洽谈投资融资和技术合作','餐饮','032001800107-31560295',-227.90,1,1,'苏州赤箭智能科技有限公司','苏州骨气家餐饮管理有限公司','bill/archive/0feeb35d-8083-4c47-be8a-a06f364523e4.webwxgetmsgimg.jpg','image/jpeg',NULL,' Red-Arrow Intelligent Technology Co. Ltd.','董事局','approved','bill/file/0feeb35d-8083-4c47-be8a-a06f364523e4','bill/image/0feeb35d-8083-4c47-be8a-a06f364523e4','bill/audio/0feeb35d-8083-4c47-be8a-a06f364523e4','bill/video/0feeb35d-8083-4c47-be8a-a06f364523e4',0,'check in','','hunter'),(2,'bff64f6c-b535-419c-bd0e-034aee8cab64','2019-01-14 10:37:01','2019-01-14 10:34:29','苏州赤箭智能科技有限公司','Hunter','320323198306180035','投资赤箭智能科技有限公司5万元人民币','注资','PI19AEB516930348',50000.00,1,1,'上海招商银行','苏州中国银行苏州赤箭智能科技有限公司','bill/archive/bff64f6c-b535-419c-bd0e-034aee8cab64.1725937385.jpg','image/jpeg',NULL,'苏州赤箭智能科技有限公司','董事局','approved','bill/file/bff64f6c-b535-419c-bd0e-034aee8cab64','bill/image/bff64f6c-b535-419c-bd0e-034aee8cab64','bill/audio/bff64f6c-b535-419c-bd0e-034aee8cab64','bill/video/bff64f6c-b535-419c-bd0e-034aee8cab64',0,'check in','','hunter'),(3,'fc478555-ea83-4849-b2d8-aca9fd52ad3a','2019-01-16 11:14:09','2019-01-16 03:11:17','苏州赤箭智能科技有限公司','hunter','320323198306180035','支付2018太平人寿保单','保险','032001600511-87385314',-7474.00,1,1,'苏州赤箭智能科技有限公司','太平人寿保险有限公司苏州分公司','bill/archive/fc478555-ea83-4849-b2d8-aca9fd52ad3a.2018-8-8-太平人寿保单发票.pdf','application/pdf','eca26d821986dc575c43a8ba1babcb5b','苏州赤箭智能科技有限公司','董事局','approved','bill/file/fc478555-ea83-4849-b2d8-aca9fd52ad3a','bill/image/fc478555-ea83-4849-b2d8-aca9fd52ad3a','bill/audio/fc478555-ea83-4849-b2d8-aca9fd52ad3a','bill/video/fc478555-ea83-4849-b2d8-aca9fd52ad3a',0,'check in','保险单号:002305692127008','hunter'),(4,'3c548c27-1db6-47d2-a66e-9852b65b67e1','2019-01-16 12:00:26','2018-11-12 00:00:00','苏州赤箭智能科技有限公司','hunter','320323198306180035','苏州站-G7101-上海虹桥','火车票','N052962',-41.50,1,1,'苏州赤箭智能科技有限公司','中国铁路总公司','bill/archive/3c548c27-1db6-47d2-a66e-9852b65b67e1.20181112.jpg','image/jpeg','ecc5309508ebb37e5e3db345c7c768e9','苏州赤箭智能科技有限公司','董事局','approved','bill/file/3c548c27-1db6-47d2-a66e-9852b65b67e1','bill/image/3c548c27-1db6-47d2-a66e-9852b65b67e1','bill/audio/3c548c27-1db6-47d2-a66e-9852b65b67e1','bill/video/3c548c27-1db6-47d2-a66e-9852b65b67e1',0,'check in','上海南局补','hunter'),(5,'07fa7f19-a8d9-49e9-9497-5de247054333','2019-01-16 12:04:22','2019-01-04 04:00:44','苏州赤箭智能科技有限公司','hunter','320323198306180035','上海-G7062-苏州 19:32开','火车票','Z25A052255',-39.50,1,1,'苏州赤箭智能科技有限公司','中国铁路总公司','bill/archive/07fa7f19-a8d9-49e9-9497-5de247054333.20190104.jpg','image/jpeg','fe29b12a070d32a2ff6af80357b8c166','苏州赤箭智能科技有限公司','董事局','approved','bill/file/07fa7f19-a8d9-49e9-9497-5de247054333','bill/image/07fa7f19-a8d9-49e9-9497-5de247054333','bill/audio/07fa7f19-a8d9-49e9-9497-5de247054333','bill/video/07fa7f19-a8d9-49e9-9497-5de247054333',0,'check in','','hunter'),(6,'2e206e27-838b-4ac7-8106-f91aa870627b','2019-01-16 12:07:18','2019-01-07 04:05:30','苏州赤箭智能科技有限公司','hunter','320323198306180035','昆山南-G7101-上海虹桥','火车票','A052410',-26.50,1,1,'苏州赤箭智能科技有限公司','中国铁路总公司','bill/archive/2e206e27-838b-4ac7-8106-f91aa870627b.20190107.jpg','image/jpeg','2f9b524876ed283a6c036a1858d0b260','苏州赤箭智能科技有限公司','董事局','approved','bill/file/2e206e27-838b-4ac7-8106-f91aa870627b','bill/image/2e206e27-838b-4ac7-8106-f91aa870627b','bill/audio/2e206e27-838b-4ac7-8106-f91aa870627b','bill/video/2e206e27-838b-4ac7-8106-f91aa870627b',0,'check in','上海南客补','hunter'),(7,'93956300-9b1a-467b-9bfc-6e25f55b4d5b','2019-01-17 13:15:03','2019-01-16 05:12:59','苏州赤箭智能科技有限公司','Hunter','320323198306180035','出差-KFC餐饮发票','餐饮','031001700311-98889321',-20.00,1,1,'苏州赤箭智能科技有限公司','上海肯德基有限公司','bill/archive/93956300-9b1a-467b-9bfc-6e25f55b4d5b.20190116.pdf','application/pdf','b85421d7fb332b9935e040ca51b18c3a','苏州赤箭智能科技有限公司','董事局','approved','bill/file/93956300-9b1a-467b-9bfc-6e25f55b4d5b','bill/image/93956300-9b1a-467b-9bfc-6e25f55b4d5b','bill/audio/93956300-9b1a-467b-9bfc-6e25f55b4d5b','bill/video/93956300-9b1a-467b-9bfc-6e25f55b4d5b',0,'check in','上海市杨浦区双辽路768号 021-24268000\r\n上海银行江苏路支行 316434-00006750417','hunter'),(8,'6943cef8-1f12-46c5-84c8-599919ef5bc2','2019-01-17 13:22:55','2019-01-17 13:19:39','苏州赤箭智能科技有限公司','Hunter','320323198306180035','定制两人名片','名片','035021800111-16079891',-280.00,1,1,'苏州赤箭智能科技有限公司','时光七号厦门印制有限公司','bill/archive/6943cef8-1f12-46c5-84c8-599919ef5bc2.D710159D-913F-4796-9066-2F4FDB2F323D.png','image/png','cd7ef189da887a9d7485f1f99c8f0d02','苏州赤箭智能科技有限公司','董事局','approved','bill/file/6943cef8-1f12-46c5-84c8-599919ef5bc2','bill/image/6943cef8-1f12-46c5-84c8-599919ef5bc2','bill/audio/6943cef8-1f12-46c5-84c8-599919ef5bc2','bill/video/6943cef8-1f12-46c5-84c8-599919ef5bc2',0,'check in','厦门市湖里区','hunter'),(9,'aaba7cd3-f0b6-4831-a21f-707a0203305c','2019-01-18 22:25:21','2019-01-18 14:22:22','苏州赤箭智能科技有限公司','Hunter','320323198306180035','滴滴客运服务费','出租车','012001800311-03245718',-1818.13,1,1,'苏州赤箭智能科技有限公司','滴滴出行科技有限公司','bill/archive/aaba7cd3-f0b6-4831-a21f-707a0203305c.20190118.pdf','application/pdf','6b3bb31357aa3bf82c98117e89d330cd','苏州赤箭智能科技有限公司','董事局','approved','bill/file/aaba7cd3-f0b6-4831-a21f-707a0203305c','bill/image/aaba7cd3-f0b6-4831-a21f-707a0203305c','bill/audio/aaba7cd3-f0b6-4831-a21f-707a0203305c','bill/video/aaba7cd3-f0b6-4831-a21f-707a0203305c',0,'check in','天津经济技术开发区南港工业区综合服务区办公楼C座103室12单元022-59002850\r\n招商银行股份有限公司天津自由贸易试验区分行122905939910401','hunter');
 /*!40000 ALTER TABLE `bill` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -75,7 +75,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `item`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `item` (
   `iditem` int(11) NOT NULL AUTO_INCREMENT,
   `uuid` varchar(45) NOT NULL,
@@ -128,7 +128,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `type` (
   `idtype` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
@@ -136,7 +136,7 @@ CREATE TABLE `type` (
   PRIMARY KEY (`idtype`,`name`),
   UNIQUE KEY `idtype_UNIQUE` (`idtype`),
   UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -145,7 +145,7 @@ CREATE TABLE `type` (
 
 LOCK TABLES `type` WRITE;
 /*!40000 ALTER TABLE `type` DISABLE KEYS */;
-INSERT INTO `type` VALUES (1,'餐饮','2019-01-15 15:55:40'),(2,'投资','2019-01-15 15:59:31'),(3,'保险','2019-01-16 11:14:10'),(4,'火车票','2019-01-16 12:00:26'),(5,'名片','2019-01-17 13:22:55');
+INSERT INTO `type` VALUES (1,'餐饮','2019-01-15 15:55:40'),(2,'投资','2019-01-15 15:59:31'),(3,'保险','2019-01-16 11:14:10'),(4,'火车票','2019-01-16 12:00:26'),(5,'名片','2019-01-17 13:22:55'),(6,'出租车','2019-01-18 22:25:21');
 /*!40000 ALTER TABLE `type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -155,7 +155,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `url`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `url` (
   `idurl` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
@@ -190,4 +190,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-18 17:27:43
+-- Dump completed on 2019-01-18 22:35:40
