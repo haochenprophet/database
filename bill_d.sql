@@ -1,8 +1,10 @@
--- MySQL dump 10.13  Distrib 5.7.24, for Linux (x86_64)
+CREATE DATABASE  IF NOT EXISTS `bill` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `bill`;
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: bill
 -- ------------------------------------------------------
--- Server version	5.7.24-0ubuntu0.18.04.1
+-- Server version	8.0.0-dmr-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -170,7 +172,7 @@ CREATE TABLE `type` (
 
 LOCK TABLES `type` WRITE;
 /*!40000 ALTER TABLE `type` DISABLE KEYS */;
-INSERT INTO `type` VALUES (1,'餐饮','2019-01-15 15:55:40'),(2,'投资','2019-01-15 15:59:31'),(3,'保险','2019-01-16 11:14:10'),(4,'火车票','2019-01-16 12:00:26'),(5,'名片','2019-01-17 13:22:55'),(6,'出租车','2019-01-18 22:25:21'),(7,'云服务','2019-01-19 09:57:45'),(8,'注资','2019-01-19 10:07:12'),(9,'银行资费','2019-01-19 10:11:21'),(10,'利息','2019-01-19 11:05:57'),(11,'业务支出','2019-01-19 16:07:18'),(12,'财务代理','2019-01-21 13:43:15');
+INSERT INTO `type` VALUES (1,'餐饮','2019-01-15 15:55:40'),(2,'保险','2019-01-16 11:14:10'),(3,'火车票','2019-01-16 12:00:26'),(4,'名片','2019-01-17 13:22:55'),(5,'出租车','2019-01-18 22:25:21'),(6,'云服务','2019-01-19 09:57:45'),(7,'注资','2019-01-19 10:07:12'),(8,'银行资费','2019-01-19 10:11:21'),(9,'利息','2019-01-19 11:05:57'),(10,'业务支出','2019-01-19 16:07:18'),(11,'财务代理','2019-01-21 13:43:15');
 /*!40000 ALTER TABLE `type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -215,4 +217,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-21 15:17:48
+-- Dump completed on 2019-01-21 15:27:31
