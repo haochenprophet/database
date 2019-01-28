@@ -44,7 +44,7 @@ CREATE TABLE `sop` (
   PRIMARY KEY (`idsop`,`uuid`,`item`),
   UNIQUE KEY `idsop_UNIQUE` (`idsop`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='sop';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='sop';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -53,7 +53,7 @@ CREATE TABLE `sop` (
 
 LOCK TABLES `sop` WRITE;
 /*!40000 ALTER TABLE `sop` DISABLE KEYS */;
-INSERT INTO `sop` VALUES (1,'3071e9af-a6b4-47bf-945c-4cab3c418a72','账单发票票据表单填写提交流程','all','2019-01-17 16:10:53',1,'准备条件','发票的电子文件，图片，照片\r\n发票号码，申请人身份证号码','','','','','','hunter','normal',0),(2,'432b8df3-f769-4781-9adf-a220584d71ce','账单发票票据表单填写提交流程','all','2019-01-17 16:12:11',2,'进入网址','http://www.red-arrows.cn/bill_add.php','','','','','','hunter','normal',0),(3,'c32854dc-6c76-486b-8b8d-7f697bf17e1f','账单发票票据表单填写提交流程','all','2019-01-17 16:22:23',3,'填写表单','选择发票文件，填写发票日期，发票号码InvoiceNumber，\r\n姓名who，身份证号码IDcard,发票产生地址where，大概事由what，\r\n资金流向to，\r\n发票金额amount 注意+-，备注','','','','','发票金额amount 流入公司为正+，否则为负','hunter','normal',0),(4,'059e077a-173e-4ecc-9eef-66865b9abe7a','账单发票票据表单填写提交流程','all','2019-01-17 16:27:24',4,'提交表单','1.点击提交按钮提交表单\r\n','查看是否生成记录','','','','如果遇到错误刷新填写页面重新填写','hunter','normal',0);
+INSERT INTO `sop` VALUES (1,'3071e9af-a6b4-47bf-945c-4cab3c418a72','账单发票票据表单填写提交流程','all','2019-01-17 16:10:53',1,'准备条件','发票的电子文件，图片，照片\r\n发票号码，申请人身份证号码','','','','','','hunter','normal',0),(2,'432b8df3-f769-4781-9adf-a220584d71ce','账单发票票据表单填写提交流程','all','2019-01-17 16:12:11',2,'进入网址','http://www.red-arrows.cn/bill_add.php','','','','','','hunter','normal',0),(3,'c32854dc-6c76-486b-8b8d-7f697bf17e1f','账单发票票据表单填写提交流程','all','2019-01-17 16:22:23',3,'填写表单','选择发票文件，填写发票日期，发票号码InvoiceNumber，\r\n姓名who，身份证号码IDcard,发票产生地址where，大概事由what，\r\n资金流向to，\r\n发票金额amount 注意+-，备注','','','','','发票金额amount 流入公司为正+，否则为负','hunter','normal',0),(4,'059e077a-173e-4ecc-9eef-66865b9abe7a','账单发票票据表单填写提交流程','all','2019-01-17 16:27:24',4,'提交表单','1.点击提交按钮提交表单\r\n','查看是否生成记录','','','','如果遇到错误刷新填写页面重新填写','hunter','normal',0),(5,'a3fc3dbb-058d-4ffb-85e5-7a0f66f9bc08','创建新SOP流程','all','2019-01-28 15:12:20',1,'打开URL增加一个SOP项目','https://www.red-arrows.cn/sop_add_item.php','查看是否生成记录','','','','','hunter','normal',0),(6,'f856d0dc-8847-41b5-973d-a7575fb03200','创建新SOP流程','all','2019-01-28 15:20:12',2,'在浏览器打开URL增加SOP STEP','https://www.red-arrows.cn/sop_add.php','','','','','','hunter','normal',0),(7,'2293aa2e-60d9-4779-9ac1-b98e2397848d','创建新SOP流程','all','2019-01-28 15:27:20',2.1,'填写表单','1.选择ExistItem 如果所需要的item存在，则在 CreateItem 直接输入一个新item.\r\n2.填写类型 Class ，默认all\r\n3.修改Step 默认为1\r\n4.填写相应step 输入条件Input Condition\r\n5.填写相应操作Operate\r\n6.填写输出结果Output Result\r\n7.填写备注Remark，Status 状态，Priority优先级，Author作者，上传的文档Archive\r\n','','','','','','hunter','normal',0),(8,'8529d406-be6d-47f2-b477-983fb55dd4cc','创建新SOP流程','all','2019-01-28 15:28:28',3,'提交表单','点击提交表单','检测输出结果','','','','','hunter','normal',0);
 /*!40000 ALTER TABLE `sop` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,7 +161,7 @@ CREATE TABLE `uuid` (
   PRIMARY KEY (`iduuid`,`uuid`,`name`),
   UNIQUE KEY `idsop_item_UNIQUE` (`iduuid`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='uuid';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='uuid';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -170,7 +170,7 @@ CREATE TABLE `uuid` (
 
 LOCK TABLES `uuid` WRITE;
 /*!40000 ALTER TABLE `uuid` DISABLE KEYS */;
-INSERT INTO `uuid` VALUES (1,'3071e9af-a6b4-47bf-945c-4cab3c418a72','账单发票票据表单填写提交流程','all','2019-01-17 16:10:53',NULL,NULL,NULL,NULL);
+INSERT INTO `uuid` VALUES (1,'3071e9af-a6b4-47bf-945c-4cab3c418a72','账单发票票据表单填写提交流程','all','2019-01-17 16:10:53',NULL,NULL,NULL,NULL),(2,'f8039627-3691-4357-9b83-880ad84c3b51','创建新SOP流程','all','2019-01-21 18:29:35','cn','hunter','normal',0);
 /*!40000 ALTER TABLE `uuid` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -183,4 +183,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-21 17:46:10
+-- Dump completed on 2019-01-28 15:30:58
