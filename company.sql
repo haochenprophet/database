@@ -1,15 +1,15 @@
 CREATE DATABASE  IF NOT EXISTS `company` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `company`;
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
 --
 -- Host: localhost    Database: company
 -- ------------------------------------------------------
--- Server version	8.0.0-dmr-log
+-- Server version	8.0.13-commercial
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+ SET NAMES utf8 ;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,7 +23,7 @@ USE `company`;
 
 DROP TABLE IF EXISTS `account`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `account` (
   `idaccount` int(11) NOT NULL,
   `item` text,
@@ -60,7 +60,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `attendance`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `attendance` (
   `idattendance` int(11) NOT NULL,
   `who` varchar(45) DEFAULT NULL,
@@ -95,7 +95,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `code`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `code` (
   `idcode` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL,
@@ -127,7 +127,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `commit`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `commit` (
   `idcommit` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) NOT NULL,
@@ -155,7 +155,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `creative`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `creative` (
   `idcreative` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL COMMENT 'Who''s creative',
@@ -185,7 +185,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `customer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `customer` (
   `idcustomer` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL,
@@ -217,7 +217,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `device`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `device` (
   `iddevice` int(11) NOT NULL AUTO_INCREMENT,
   `serial_number` text NOT NULL,
@@ -255,7 +255,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `feedback`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `feedback` (
   `idfeedback` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL COMMENT 'Who''s feedback ,user name ,or login id ',
@@ -287,7 +287,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `idea`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `idea` (
   `ididea` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(45) NOT NULL,
@@ -317,7 +317,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `invest`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `invest` (
   `idinvest` int(11) NOT NULL AUTO_INCREMENT,
   `uuid` varchar(45) NOT NULL,
@@ -356,7 +356,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `issue`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `issue` (
   `idissue` int(11) NOT NULL AUTO_INCREMENT,
   `worker_number` int(11) DEFAULT NULL COMMENT 'Find the problem worker number',
@@ -388,7 +388,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `market`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `market` (
   `idmarket` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL,
@@ -420,7 +420,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `person`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `person` (
   `idperson` int(11) NOT NULL AUTO_INCREMENT,
   `worker_number` int(11) NOT NULL,
@@ -468,7 +468,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `plan`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `plan` (
   `idplan` int(11) NOT NULL AUTO_INCREMENT,
   `worker_number` int(11) DEFAULT NULL,
@@ -498,7 +498,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `production`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `production` (
   `idproduction` int(11) NOT NULL AUTO_INCREMENT COMMENT 'production management',
   `what` varchar(45) DEFAULT NULL,
@@ -529,7 +529,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `release`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `release` (
   `idrelease` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL,
@@ -559,7 +559,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `repair`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `repair` (
   `idrepair` int(11) NOT NULL AUTO_INCREMENT,
   `what` varchar(45) DEFAULT NULL,
@@ -591,7 +591,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `request`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `request` (
   `idrequest` int(11) NOT NULL AUTO_INCREMENT,
   `worker_number` int(11) NOT NULL,
@@ -624,7 +624,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `review`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `review` (
   `idreview` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(45) DEFAULT NULL COMMENT '#0. idea/creative->\n#1. issue/request->\n#2. plan/source->\n#3. code/action->\n#4. commit/schedule->\n#5. test/Quality->\n#6. review/repair->\n',
@@ -655,7 +655,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `service`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `service` (
   `idservice` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL COMMENT 'Who made a service request',
@@ -689,7 +689,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `source`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `source` (
   `idsource` int(11) NOT NULL AUTO_INCREMENT,
   `worker_number` int(11) DEFAULT NULL,
@@ -722,7 +722,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `stock`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `stock` (
   `idstock` int(11) NOT NULL AUTO_INCREMENT,
   `uuid` varchar(45) NOT NULL,
@@ -741,8 +741,9 @@ CREATE TABLE `stock` (
   `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idstock`,`uuid`,`number`),
   UNIQUE KEY `idstock_UNIQUE` (`idstock`),
-  UNIQUE KEY `uuid_UNIQUE` (`uuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  UNIQUE KEY `uuid_UNIQUE` (`uuid`),
+  UNIQUE KEY `number_UNIQUE` (`number`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -751,7 +752,7 @@ CREATE TABLE `stock` (
 
 LOCK TABLES `stock` WRITE;
 /*!40000 ALTER TABLE `stock` DISABLE KEYS */;
-INSERT INTO `stock` VALUES (1,'65d30733-172c-40c6-ac41-236e153b32aa','2018122801','2019-01-02 18:09:50','120103198409256713','穆天','7000','company/stock/2018122801-120103198409256713.pdf',1,1,0,'locked','专利+著作权申请',0,'2019-01-02 09:57:20'),(2,'976e040e-66de-4c92-9289-913ff316d1c5','2018122802','2019-01-02 18:18:36','320323198712070018','陈陆陆','7000','company/stock/976e040e-66de-4c92-9289-913ff316d1c5',1,1,0,'locked','专利+著作权',0,'2019-01-02 10:16:54');
+INSERT INTO `stock` VALUES (1,'65d30733-172c-40c6-ac41-236e153b32aa','2018122801','2019-01-02 18:09:50','120103198409256713','穆天','7000','company/stock/2018122801-120103198409256713.pdf',1,1,0,'locked','专利+著作权申请',0,'2019-01-02 09:57:20'),(2,'976e040e-66de-4c92-9289-913ff316d1c5','2018122802','2019-01-02 18:18:36','320323198712070018','陈陆陆','7000','company/stock/976e040e-66de-4c92-9289-913ff316d1c5',1,1,0,'locked','专利+著作权',0,'2019-01-02 10:16:54'),(3,'e13ec232-ab0a-42ac-b8bd-8e0ce4a58025','2019030301','2019-03-08 20:15:21','410305197812013584','武哲','100000','company/stock/e13ec232-ab0a-42ac-b8bd-8e0ce4a58025',1,1,0,'locked','人力资源',0,'2019-03-08 12:09:47');
 /*!40000 ALTER TABLE `stock` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -761,7 +762,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `test`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `test` (
   `idtest` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL,
@@ -791,7 +792,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `url`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `url` (
   `idurl` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
@@ -805,7 +806,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -814,7 +815,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'198382.com','cn.china.cn','website','https://cn.china.cn/','img/company.jpg','2018-12-27 03:40:00','normal','utf8',0,'china'),(2,'198382.com','sop','website','sop.php','img/company.jpg','2019-01-17 17:48:24','normal','utf8',0,'china'),(3,'198382.com','bill','website','bill.php','img/company.jpg','2019-01-17 17:48:39','normal','utf8',0,'china'),(4,'198382.com','item','website','item.php','img/company.jpg','2019-01-17 17:48:52','normal','utf8',0,'china'),(5,'198382.com','BIOS','website','bios.php','img/company.jpg','2019-01-17 17:50:40','normal','utf8',0,'china'),(6,'198382.com','BMC','website','bmc.php','img/company.jpg','2019-01-17 17:50:52','normal','utf8',0,'china'),(7,'198382.com','knowledge','website','knowledge.php','img/company.jpg','2019-01-17 17:51:17','normal','utf8',0,'china'),(8,'198382.com','tool','website','tool.php','img/company.jpg','2019-01-17 17:51:38','normal','utf8',0,'china'),(9,'198382.com','red_arrows','website','red_arrows.php','img/company.jpg','2019-01-17 17:51:56','normal','utf8',0,'china'),(10,'198382.com','howtodo','website','howtodo.php','img/company.jpg','2019-01-17 17:52:15','normal','utf8',0,'china'),(11,'198382.com','mindmap','website','mindmap.php','img/company.jpg','2019-01-17 17:52:32','normal','utf8',0,'china'),(12,'198382.com','spec','website','spec.php','img/company.jpg','2019-01-17 17:52:45','normal','utf8',0,'china'),(13,'198382.com','sdk','website','sdk.php','img/company.jpg','2019-01-17 17:52:58','normal','utf8',0,'china'),(14,'198382.com','book','website','book.php','img/company.jpg','2019-01-17 17:53:21','normal','utf8',0,'china'),(15,'198382.com','patent','website','patent.php','img/company.jpg','2019-01-17 17:53:36','normal','utf8',0,'china'),(16,'198382.com','law','website','law.php','img/company.jpg','2019-01-17 17:53:48','normal','utf8',0,'china');
+INSERT INTO `url` VALUES (1,'198382.com','cn.china.cn','website','https://cn.china.cn/','img/company.jpg','2018-12-27 03:40:00','normal','utf8',0,'china'),(2,'198382.com','sop','website','sop.php','img/company.jpg','2019-01-17 17:48:24','normal','utf8',0,'china'),(3,'198382.com','bill','website','bill.php','img/company.jpg','2019-01-17 17:48:39','normal','utf8',0,'china'),(4,'198382.com','item','website','item.php','img/company.jpg','2019-01-17 17:48:52','normal','utf8',0,'china'),(5,'198382.com','BIOS','website','bios.php','img/company.jpg','2019-01-17 17:50:40','normal','utf8',0,'china'),(6,'198382.com','BMC','website','bmc.php','img/company.jpg','2019-01-17 17:50:52','normal','utf8',0,'china'),(7,'198382.com','knowledge','website','knowledge.php','img/company.jpg','2019-01-17 17:51:17','normal','utf8',0,'china'),(8,'198382.com','tool','website','tool.php','img/company.jpg','2019-01-17 17:51:38','normal','utf8',0,'china'),(9,'198382.com','red_arrows','website','red_arrows.php','img/company.jpg','2019-01-17 17:51:56','normal','utf8',0,'china'),(10,'198382.com','howtodo','website','howtodo.php','img/company.jpg','2019-01-17 17:52:15','normal','utf8',0,'china'),(11,'198382.com','mindmap','website','mindmap.php','img/company.jpg','2019-01-17 17:52:32','normal','utf8',0,'china'),(12,'198382.com','spec','website','spec.php','img/company.jpg','2019-01-17 17:52:45','normal','utf8',0,'china'),(13,'198382.com','sdk','website','sdk.php','img/company.jpg','2019-01-17 17:52:58','normal','utf8',0,'china'),(14,'198382.com','book','website','book.php','img/company.jpg','2019-01-17 17:53:21','normal','utf8',0,'china'),(15,'198382.com','patent','website','patent.php','img/company.jpg','2019-01-17 17:53:36','normal','utf8',0,'china'),(16,'198382.com','law','website','law.php','img/company.jpg','2019-01-17 17:53:48','normal','utf8',0,'china'),(17,'198382.com','company_stock','website','company_stock.php','img/company.jpg','2019-03-08 20:09:27','normal','utf8',0,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -824,7 +825,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `work`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `work` (
   `idwork` int(11) NOT NULL,
   `work_content` text,
@@ -857,4 +858,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-17 17:55:08
+-- Dump completed on 2019-03-08 20:18:26
