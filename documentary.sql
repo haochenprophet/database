@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `blog` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `blog`;
+CREATE DATABASE  IF NOT EXISTS `documentary` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `documentary`;
 -- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
 --
--- Host: localhost    Database: blog
+-- Host: localhost    Database: documentary
 -- ------------------------------------------------------
 -- Server version	8.0.13-commercial
 
@@ -27,17 +27,17 @@ DROP TABLE IF EXISTS `url`;
 CREATE TABLE `url` (
   `idurl` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
-  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
+  `what` varchar(100) NOT NULL COMMENT 'what the link item information ?',
   `type` varchar(45) DEFAULT NULL,
   `url` varchar(200) NOT NULL COMMENT 'where the URL address',
-  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
+  `logo` varchar(200) NOT NULL COMMENT 'where the URL logo path',
   `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
   `status` varchar(45) DEFAULT NULL,
-  `remark` varchar(45) DEFAULT NULL,
+  `remark` varchar(200) DEFAULT NULL,
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='Ai Project URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +46,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'hunter','facebook','website','http://www.facebook.com/','img/facebook.jpg','2018-01-10 14:27:07','normal','china',0,'china'),(2,'hunter','twitter','website','http://twitter.com/','img/twitter.jpg','2018-01-10 14:27:45','normal','china',0,'china'),(3,'hunter','weibo','website','http://weibo.com','img/sina_blog.jpg','2018-01-10 14:29:16','normal','china',0,'china'),(4,'hunter','qq_blog','website','http://blog.qq.com/','img/qq_blog.jpg','2018-01-10 14:29:52','normal','china',0,'china'),(5,'hunter','sohu_blog','website','http://t.sohu.com/','img/sohu_blog.jpg','2018-01-10 14:32:21','normal','china',0,'china'),(6,'hunter','csdn','website','http://blog.csdn.net/','img/csdn.jpg','2018-01-10 14:36:10','normal','china',0,'china'),(7,'hunter','wangyi','website','http://blog.163.com/','img/163_blog.jpg','2018-01-10 14:37:32','normal','china',0,'china'),(8,'hunter','tianya','website','http://blog.tianya.cn/','img/tianya.jpg','2018-01-11 16:33:25','normal','utf8',94,'china');
+INSERT INTO `url` VALUES (1,'198382.com','CCTV-9','website','http://tv.cctv.com/live/cctvjilu/?spm=C28340.PezlfowbXwdI.EnwLEh2NqmuU.13','img/documentary.png','2019-03-09 14:53:27','normal','utf8',0,'china'),(2,'198382.com','记实','website','http://jishi.cctv.com/index.shtml','img/documentary.png','2019-03-09 15:25:34','normal','utf8',0,'china'),(3,'198382.com','创新中国','website','http://jishi.cctv.com/special/djsb/cxzgdjsb/index.shtml','img/documentary.png','2019-03-09 15:27:57','normal','utf8',0,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-09 15:40:28
+-- Dump completed on 2019-03-09 15:41:25
