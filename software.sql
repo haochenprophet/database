@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `software` /*!40100 DEFAULT CHARACTER SET utf8 */
 USE `software`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: software
+-- Host: localhost    Database: software
 -- ------------------------------------------------------
 -- Server version	8.0.0-dmr-log
 
@@ -37,7 +37,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +46,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'hunter','openstack','website','https://www.openstack.org/','img/openstack.jpg','2018-01-31 17:32:29','normal','utf8',100,'china'),(2,'hunter','processon','website','https://www.processon.com/','img/process_on.png','2018-01-31 17:45:03','normal','utf8',99,'china'),(3,'hunter','opencv','website','https://opencv.org/','img/opencv.png','2018-01-31 17:50:59','normal','utf8',98,'china'),(4,'hunter','nvidia-opencl','website','https://developer.nvidia.com/opencl','img/nv-opencl.png','2018-01-31 17:56:48','normal','utf8',98,'china'),(5,'hunter','intel-opencl','website','https://software.intel.com/en-us/intel-opencl','img/Intel-OpenCL.png','2018-01-31 17:59:26','normal','utf8',97,'china'),(6,'hunter','opencl','website','https://www.khronos.org/opencl/','img/opencl.png','2018-01-31 18:00:32','normal','utf8',96,'china'),(7,'hunter','amd-opencl','website','https://developer.amd.com/tools-and-sdks/opencl-zone/','img/amd-opencl.png','2018-01-31 18:19:40','normal','utf8',94,'china'),(8,'hunter','capi-snap','website','https://developer.ibm.com/linuxonpower/capi/snap/','img/capi-snap.png','2018-01-31 18:32:47','normal','utf8',93,'china'),(9,'hunter','cmake','website','https://cmake.org/','img/cmake.png','2018-01-31 18:37:51','normal','utf8',92,'china'),(10,'hunter','qt','website','https://www.qt.io/','img/qt.jpg','2018-01-31 18:46:20','normal','utf8',90,'china');
+INSERT INTO `url` VALUES (1,'hunter','openstack','website','https://www.openstack.org/','img/openstack.jpg','2018-01-31 17:32:29','normal','utf8',100,'china'),(2,'hunter','processon','website','https://www.processon.com/','img/process_on.png','2018-01-31 17:45:03','normal','utf8',99,'china'),(3,'hunter','opencv','website','https://opencv.org/','img/opencv.png','2018-01-31 17:50:59','normal','utf8',98,'china'),(4,'hunter','nvidia-opencl','website','https://developer.nvidia.com/opencl','img/nv-opencl.png','2018-01-31 17:56:48','normal','utf8',98,'china'),(5,'hunter','intel-opencl','website','https://software.intel.com/en-us/intel-opencl','img/Intel-OpenCL.png','2018-01-31 17:59:26','normal','utf8',97,'china'),(6,'hunter','opencl','website','https://www.khronos.org/opencl/','img/opencl.png','2018-01-31 18:00:32','normal','utf8',96,'china'),(7,'hunter','amd-opencl','website','https://developer.amd.com/tools-and-sdks/opencl-zone/','img/amd-opencl.png','2018-01-31 18:19:40','normal','utf8',94,'china'),(8,'hunter','capi-snap','website','https://developer.ibm.com/linuxonpower/capi/snap/','img/capi-snap.png','2018-01-31 18:32:47','normal','utf8',93,'china'),(9,'hunter','cmake','website','https://cmake.org/','img/cmake.png','2018-01-31 18:37:51','normal','utf8',92,'china'),(10,'hunter','qt','website','https://www.qt.io/','img/qt.jpg','2018-01-31 18:46:20','normal','utf8',90,'china'),(11,'hunter','3DS','website','https://www.3ds.com/','img/3ds.jpg','2018-02-24 14:32:08','normal','utf8',100,'china'),(12,'hunter','autodesk','website','https://www.autodesk.com/','img/autodesk.png','2018-02-24 14:45:43','normal','utf8',100,'china'),(13,'hunter','solidworks','website','http://www.solidworks.com/','img/solidworks.png','2018-02-24 14:49:22','normal','utf8',100,'china'),(14,'198382.com','arduino','website','https://www.arduino.cc/','img/arduino.jpg','2019-03-28 10:31:57','normal','utf8',0,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-31 18:48:13
+-- Dump completed on 2019-03-28 10:34:33
