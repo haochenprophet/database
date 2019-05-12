@@ -26,11 +26,11 @@ DROP TABLE IF EXISTS `address`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `address` (
   `idaddress` int(11) NOT NULL AUTO_INCREMENT,
-  `address` varchar(200) NOT NULL,
+  `name` varchar(200) NOT NULL,
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`idaddress`,`address`),
+  PRIMARY KEY (`idaddress`,`name`),
   UNIQUE KEY `idaddress_UNIQUE` (`idaddress`),
-  UNIQUE KEY `address_UNIQUE` (`address`)
+  UNIQUE KEY `address_UNIQUE` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -52,11 +52,11 @@ DROP TABLE IF EXISTS `org`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `org` (
   `idorg` int(11) NOT NULL AUTO_INCREMENT,
-  `org` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`idorg`,`org`),
+  PRIMARY KEY (`idorg`,`name`),
   UNIQUE KEY `idorg_UNIQUE` (`idorg`),
-  UNIQUE KEY `org_UNIQUE` (`org`)
+  UNIQUE KEY `org_UNIQUE` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -172,11 +172,11 @@ DROP TABLE IF EXISTS `what`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `what` (
   `idwhat` int(11) NOT NULL AUTO_INCREMENT,
-  `what` varchar(200) NOT NULL,
+  `name` varchar(200) NOT NULL,
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`idwhat`,`what`),
+  PRIMARY KEY (`idwhat`,`name`),
   UNIQUE KEY `idwhat_UNIQUE` (`idwhat`),
-  UNIQUE KEY `what_UNIQUE` (`what`)
+  UNIQUE KEY `what_UNIQUE` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -226,4 +226,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-10 12:25:10
+-- Dump completed on 2019-05-12 11:28:17
