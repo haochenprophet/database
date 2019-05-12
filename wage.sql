@@ -130,23 +130,23 @@ DROP TABLE IF EXISTS `wage`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `wage` (
   `idwage` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `uuid` varchar(45) COLLATE utf8_bin NOT NULL,
-  `ID` varchar(45) COLLATE utf8_bin NOT NULL COMMENT 'identity number',
-  `who` varchar(45) COLLATE utf8_bin NOT NULL COMMENT 'name',
+  `uuid` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ID` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT 'identity number',
+  `who` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT 'name',
   `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `where` varchar(200) COLLATE utf8_bin NOT NULL,
-  `org` varchar(100) COLLATE utf8_bin DEFAULT NULL COMMENT 'organization, department,team',
-  `type` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT 'what_type',
-  `what` varchar(200) COLLATE utf8_bin NOT NULL,
-  `why` varchar(200) COLLATE utf8_bin DEFAULT NULL COMMENT 'how to do ',
-  `how` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `where` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `org` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL COMMENT 'organization, department,team',
+  `type` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL COMMENT 'what_type',
+  `what` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `why` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL COMMENT 'how to do ',
+  `how` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `amount` decimal(65,2) NOT NULL COMMENT 'amount',
-  `status` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `remark` varchar(300) COLLATE utf8_bin DEFAULT NULL,
-  `archive_type` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `archive_md5` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `archive` varchar(300) COLLATE utf8_bin DEFAULT NULL,
+  `status` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `remark` varchar(300) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `archive_type` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `archive_md5` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `archive` varchar(300) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`idwage`,`uuid`,`ID`),
   UNIQUE KEY `idwage_UNIQUE` (`idwage`),
   UNIQUE KEY `ID_UNIQUE` (`ID`),
@@ -198,14 +198,16 @@ DROP TABLE IF EXISTS `who`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `who` (
   `idwho` int(11) NOT NULL AUTO_INCREMENT,
-  `ID` varchar(45) COLLATE utf8_bin NOT NULL,
-  `name` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `org` varchar(45) COLLATE utf8_bin NOT NULL DEFAULT 'organization',
+  `ID` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `name_en` varchar(45) COLLATE utf8_bin NOT NULL,
+  `name_cn` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `org` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT 'organization',
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`idwho`,`ID`),
+  PRIMARY KEY (`idwho`,`ID`,`name_en`,`name_cn`),
   UNIQUE KEY `idwho_UNIQUE` (`idwho`),
-  UNIQUE KEY `ID_UNIQUE` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  UNIQUE KEY `ID_UNIQUE` (`ID`),
+  UNIQUE KEY `name_en_UNIQUE` (`name_en`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -214,6 +216,7 @@ CREATE TABLE `who` (
 
 LOCK TABLES `who` WRITE;
 /*!40000 ALTER TABLE `who` DISABLE KEYS */;
+INSERT INTO `who` VALUES (1,'320323198306180035','Hunter','陈浩','董事局','2019-05-12 20:20:03');
 /*!40000 ALTER TABLE `who` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -226,4 +229,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-12 11:28:17
+-- Dump completed on 2019-05-12 20:26:17
