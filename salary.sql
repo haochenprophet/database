@@ -37,6 +37,7 @@ CREATE TABLE `salary` (
   `what` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `why` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL COMMENT 'how to do ',
   `how` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `count` decimal(65,2) NOT NULL DEFAULT '1.00',
   `amount` decimal(65,2) NOT NULL COMMENT 'amount',
   `status` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `priority` int(11) NOT NULL DEFAULT '0',
@@ -69,4 +70,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-13 11:46:39
+-- Dump completed on 2019-05-16 17:59:53

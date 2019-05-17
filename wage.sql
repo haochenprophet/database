@@ -145,6 +145,7 @@ CREATE TABLE `wage` (
   `what` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `why` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL COMMENT 'how to do ',
   `how` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `count` decimal(65,2) NOT NULL DEFAULT '1.00',
   `amount` decimal(65,2) NOT NULL COMMENT 'amount',
   `status` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `priority` int(11) NOT NULL DEFAULT '0',
@@ -152,7 +153,7 @@ CREATE TABLE `wage` (
   `archive_type` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `archive_md5` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `archive` varchar(300) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  PRIMARY KEY (`idwage`,`uuid`,`ID`,`who`,`when`,`org`,`what`,`type`,`time`),
+  PRIMARY KEY (`idwage`,`uuid`,`ID`,`who`,`when`,`time`,`org`,`type`,`what`),
   UNIQUE KEY `idwage_UNIQUE` (`idwage`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -181,7 +182,7 @@ CREATE TABLE `what` (
   PRIMARY KEY (`idwhat`,`name`),
   UNIQUE KEY `idwhat_UNIQUE` (`idwhat`),
   UNIQUE KEY `what_UNIQUE` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -190,7 +191,7 @@ CREATE TABLE `what` (
 
 LOCK TABLES `what` WRITE;
 /*!40000 ALTER TABLE `what` DISABLE KEYS */;
-INSERT INTO `what` VALUES (1,'基本工资','2019-05-13 15:00:08'),(2,'年终奖金','2019-05-13 15:00:35'),(3,'季度奖金','2019-05-13 15:00:45'),(4,'项目奖金','2019-05-13 15:00:53'),(5,'职位津贴','2019-05-13 15:01:06'),(6,'住房津贴','2019-05-13 15:01:16'),(7,'餐饮补贴','2019-05-13 15:02:11'),(8,'交通补贴','2019-05-13 15:02:28'),(9,'通信补贴','2019-05-13 15:02:38'),(10,'教育津贴','2019-05-13 15:03:58'),(11,'重疾保险','2019-05-13 15:04:31'),(12,'养老保险','2019-05-13 15:05:10'),(13,'医疗保险','2019-05-13 15:05:29'),(14,'失业保险','2019-05-13 15:06:03'),(15,'工伤保险','2019-05-13 15:06:31'),(16,'生育保险','2019-05-13 15:06:47'),(17,'住房公积金','2019-05-13 15:07:05'),(18,'意外保险','2019-05-13 15:08:10'),(19,'加班工资','2019-05-13 15:12:28'),(20,'股份分红','2019-05-13 15:15:06'),(21,'业绩奖金','2019-05-13 15:24:24'),(22,'个税扣减','2019-05-13 15:39:28'),(23,'其他','2019-05-13 15:40:22');
+INSERT INTO `what` VALUES (1,'基本工资','2019-05-13 15:00:08'),(2,'年终奖金','2019-05-13 15:00:35'),(3,'季度奖金','2019-05-13 15:00:45'),(4,'项目奖金','2019-05-13 15:00:53'),(5,'职位津贴','2019-05-13 15:01:06'),(6,'住房津贴','2019-05-13 15:01:16'),(7,'餐饮补贴','2019-05-13 15:02:11'),(8,'交通补贴','2019-05-13 15:02:28'),(9,'通信补贴','2019-05-13 15:02:38'),(10,'教育津贴','2019-05-13 15:03:58'),(11,'重疾保险','2019-05-13 15:04:31'),(12,'养老保险','2019-05-13 15:05:10'),(13,'医疗保险','2019-05-13 15:05:29'),(14,'失业保险','2019-05-13 15:06:03'),(15,'工伤保险','2019-05-13 15:06:31'),(16,'生育保险','2019-05-13 15:06:47'),(17,'住房公积金','2019-05-13 15:07:05'),(18,'意外保险','2019-05-13 15:08:10'),(19,'加班工资','2019-05-13 15:12:28'),(20,'股份分红','2019-05-13 15:15:06'),(21,'业绩奖金','2019-05-13 15:24:24'),(22,'个税扣减','2019-05-13 15:39:28'),(23,'计时工资','2019-05-13 15:40:22'),(24,'记次工资','2019-05-16 17:45:58'),(25,'计件工资','2019-05-16 17:46:20'),(26,'计分工资','2019-05-16 17:46:34'),(27,'计项工资','2019-05-16 17:46:44'),(28,'其他','2019-05-16 17:46:59');
 /*!40000 ALTER TABLE `what` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -234,4 +235,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-13 18:55:25
+-- Dump completed on 2019-05-16 17:57:44
