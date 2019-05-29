@@ -18,6 +18,32 @@ USE `training`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `status`
+--
+
+DROP TABLE IF EXISTS `status`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `status` (
+  `idstatus` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idstatus`,`name`),
+  UNIQUE KEY `idstatus_UNIQUE` (`idstatus`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `status`
+--
+
+LOCK TABLES `status` WRITE;
+/*!40000 ALTER TABLE `status` DISABLE KEYS */;
+/*!40000 ALTER TABLE `status` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `training`
 --
 
@@ -33,15 +59,17 @@ CREATE TABLE `training` (
   `what` varchar(45) NOT NULL,
   `text` varchar(300) DEFAULT NULL,
   `url` varchar(300) DEFAULT NULL,
-  `file` varchar(300) DEFAULT NULL COMMENT 'image path',
-  `file_md5` varchar(45) DEFAULT NULL,
-  `file_type` varchar(45) DEFAULT NULL,
   `priority` int(11) NOT NULL DEFAULT '0',
   `status` varchar(45) DEFAULT NULL,
   `remark` varchar(300) DEFAULT NULL,
+  `video` varchar(300) DEFAULT NULL,
+  `audio` varchar(300) DEFAULT NULL,
+  `image` varchar(300) DEFAULT NULL,
+  `who` varchar(100) DEFAULT NULL,
+  `where` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`idtraining`,`uuid`,`time`,`title`,`priority`,`type`,`what`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -50,6 +78,7 @@ CREATE TABLE `training` (
 
 LOCK TABLES `training` WRITE;
 /*!40000 ALTER TABLE `training` DISABLE KEYS */;
+INSERT INTO `training` VALUES (1,'f949f1e9-a7bb-478b-9af1-a12d57c8d092','2019-05-29 20:55:20','莫尔斯电码.MP4','computer','工程师培训课程','摩尔斯电码（又译为摩斯密码，Morse code）是一种时通时断的信号代码，通过不同的排列顺序来表达不同的英文字母、数字和标点符号。','https://baike.baidu.com/item/%E6%91%A9%E5%B0%94%E6%96%AF%E7%94%B5%E7%A0%81/1527853?fromtitle=%E8%8E%AB%E5%B0%94%E6%96%AF%E7%94%B5%E7%A0%81&fromid=1969326',0,'check in','','teaching/vedio/莫尔斯电码.MP4','teaching/audio/audio.txt','teaching/image/标准摩尔斯电码对照表.jpg','Hunter','苏州赤箭智能科技有限公司');
 /*!40000 ALTER TABLE `training` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -114,4 +143,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-24 20:48:45
+-- Dump completed on 2019-05-29 22:05:50
