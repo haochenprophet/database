@@ -4,7 +4,7 @@ USE `manual`;
 --
 -- Host: localhost    Database: manual
 -- ------------------------------------------------------
--- Server version	8.0.0-dmr-log
+-- Server version	5.7.14-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -37,7 +37,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +46,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'198382.com','postfix-manual','mail','http://www.postfix.org/postfix-manuals.html','img/manual.png','2018-09-14 08:40:53','normal','utf8',0,'china');
+INSERT INTO `url` VALUES (1,'198382.com','postfix-manual','mail','http://www.postfix.org/postfix-manuals.html','img/manual.png','2018-09-14 08:40:53','normal','utf8',0,'china'),(2,'198382.com','linux-man','website','https://linux.die.net/man/','img/manual.png','2018-09-26 16:42:43','normal','utf8',0,'china'),(3,'198382.com','squirrelmail','website','https://www.squirrelmail.org/documentation/','img/manual.png','2018-09-29 10:30:26','normal','utf8',0,'china'),(4,'198382.com','linuxidc','website','https://linux.linuxidc.com/','img/manual.png','2018-12-20 18:07:40','normal','utf8',0,'china'),(5,'198382.com','PHP_ZH','website','http://php.net/manual/zh/','img/manual.png','2019-02-14 13:50:49','normal','utf8',0,'china'),(6,'198382.com','python','website','https://www.python.org/doc/','img/manual.png','2019-04-25 14:17:14','normal','utf8',0,'china'),(7,'198382.com','ipaperclip.net','website','https://ipaperclip.net/','img/manual.png','2019-06-20 23:55:44','normal','utf8',0,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-09-14 16:48:34
+-- Dump completed on 2019-06-21 16:51:56
