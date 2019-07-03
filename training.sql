@@ -57,7 +57,7 @@ CREATE TABLE `training` (
   `title` varchar(200) NOT NULL,
   `type` varchar(45) NOT NULL,
   `what` varchar(45) NOT NULL,
-  `text` varchar(300) DEFAULT NULL,
+  `text` varchar(500) DEFAULT NULL,
   `url` varchar(300) DEFAULT NULL,
   `priority` int(11) NOT NULL DEFAULT '0',
   `status` varchar(45) DEFAULT NULL,
@@ -69,7 +69,7 @@ CREATE TABLE `training` (
   `where` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`idtraining`,`uuid`,`time`,`title`,`priority`,`type`,`what`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -78,7 +78,7 @@ CREATE TABLE `training` (
 
 LOCK TABLES `training` WRITE;
 /*!40000 ALTER TABLE `training` DISABLE KEYS */;
-INSERT INTO `training` VALUES (1,'f949f1e9-a7bb-478b-9af1-a12d57c8d092','2019-05-29 20:55:20','莫尔斯电码.MP4','computer','信息编码','摩尔斯电码（又译为摩斯密码，Morse code）是一种时通时断的信号代码，通过不同的排列顺序来表达不同的英文字母、数字和标点符号。','https://baike.baidu.com/item/%E6%91%A9%E5%B0%94%E6%96%AF%E7%94%B5%E7%A0%81/1527853?fromtitle=%E8%8E%AB%E5%B0%94%E6%96%AF%E7%94%B5%E7%A0%81&fromid=1969326',0,'check in','','teaching/vedio/莫尔斯电码.MP4','teaching/audio/audio.txt','teaching/image/标准摩尔斯电码对照表.jpg','Hunter','苏州赤箭智能科技有限公司'),(2,'e51009f9-aee8-4596-84c7-64151aa37729','2019-05-31 16:51:11','ASCII（American Standard Code for Information Interchange:美国信息交换标准代码）','computer','信息编码','是基于拉丁字母的一套电脑编码系统，主要用于显示现代英语和其他西欧语言。它是现今最通用的信息交换标准，并等同于国际标准ISO/IEC 646','https://baike.baidu.com/item/ASCII/309296',0,'check in','','','','teaching/image/ASCII.jpg','Hunter','苏州赤箭智能科技有限公司'),(3,'7d60d9b1-10fe-45e3-9fc5-3e9c171a7826','2019-05-31 17:00:28','Unicode 统一字符集','computer','信息编码','它为每种语言中的每个字符设定了统一而且唯一的二进制编码，以满足跨语言、跨平台进行文本转换、处理的要求。1990年开始研发，1994年正式公布','https://unicode-table.com/cn/',0,'check in','','','','','Hunter','苏州赤箭智能科技有限公司'),(4,'58f7fbc4-6b2e-44e6-8e0b-653fa4016929','2019-07-02 16:58:12','磁盘如何存储数据和信息的','computer','硬盘工作原理','利用磁性材料，的N极和S极分别表示0/1 ','https://www.bilibili.com/video/av23292731?from=search&seid=1776348324633341622',0,'check in','','','','','Hunter','苏州赤箭智能科技有限公司'),(5,'4420c553-8d0b-4491-b559-d012d5d0ddbb','2019-07-02 17:16:19','CPU 是如何被生产制造的？','computer','CPU','1.设计电路 2.生产晶片 3.光刻电路 4.制造晶体管 5.注铜形成集成电路 6.封装测试','https://www.bilibili.com/video/av22768580?from=search&seid=10458902702751761659',0,'check in','','','','','Hunter','苏州赤箭智能科技有限公司'),(6,'36ad1dd6-2dfa-4789-9651-baca12680b4a','2019-07-02 17:24:05','如何组装一台台式机','computer','电脑组装','1.机箱 2.主板 3.CPU 4.内存 5. 硬盘 6.电源 7.连接线','https://www.bilibili.com/video/av36071622?from=search&seid=5305596244694996071',0,'check in','','','','','Hunter','苏州赤箭智能科技有限公司'),(7,'d45f0586-9b5e-4ca5-8b0d-bf0a171a20a5','2019-07-02 18:02:53','C语言程序设计','computer','计算机程序设计','关键字， 数据类型、运算符与表达式 ，函数，文件，数组，结构体，指针，类','teaching/archive/c语言.pdf',0,'check in','','','','','Hunter','苏州赤箭智能科技有限公司'),(8,'2b826908-66b5-4b4e-b32b-6620a415968f','2019-07-02 18:05:48','C# 和 Visual Studio Code 入门','computer','计算机程序设计','.NET Core 提供了快速运行的模块化平台，用于创建在 Windows、Linux 和 macOS 上运行的应用程序。','https://docs.microsoft.com/zh-cn/dotnet/core/tutorials/with-visual-studio-code',0,'check in','','','','','Hunter','苏州赤箭智能科技有限公司');
+INSERT INTO `training` VALUES (1,'f949f1e9-a7bb-478b-9af1-a12d57c8d092','2019-05-29 20:55:20','莫尔斯电码.MP4','computer','信息编码','摩尔斯电码（又译为摩斯密码，Morse code）是一种时通时断的信号代码，通过不同的排列顺序来表达不同的英文字母、数字和标点符号。','https://baike.baidu.com/item/%E6%91%A9%E5%B0%94%E6%96%AF%E7%94%B5%E7%A0%81/1527853?fromtitle=%E8%8E%AB%E5%B0%94%E6%96%AF%E7%94%B5%E7%A0%81&fromid=1969326',0,'check in','','teaching/vedio/莫尔斯电码.MP4','teaching/audio/audio.txt','teaching/image/标准摩尔斯电码对照表.jpg','Hunter','苏州赤箭智能科技有限公司'),(2,'e51009f9-aee8-4596-84c7-64151aa37729','2019-05-31 16:51:11','ASCII（American Standard Code for Information Interchange:美国信息交换标准代码）','computer','信息编码','是基于拉丁字母的一套电脑编码系统，主要用于显示现代英语和其他西欧语言。它是现今最通用的信息交换标准，并等同于国际标准ISO/IEC 646','https://baike.baidu.com/item/ASCII/309296',0,'check in','','','','teaching/image/ASCII.jpg','Hunter','苏州赤箭智能科技有限公司'),(3,'7d60d9b1-10fe-45e3-9fc5-3e9c171a7826','2019-05-31 17:00:28','Unicode 统一字符集','computer','信息编码','它为每种语言中的每个字符设定了统一而且唯一的二进制编码，以满足跨语言、跨平台进行文本转换、处理的要求。1990年开始研发，1994年正式公布','https://unicode-table.com/cn/',0,'check in','','','','','Hunter','苏州赤箭智能科技有限公司'),(4,'58f7fbc4-6b2e-44e6-8e0b-653fa4016929','2019-07-02 16:58:12','磁盘如何存储数据和信息的','computer','硬盘工作原理','利用磁性材料，的N极和S极分别表示0/1 ','https://www.bilibili.com/video/av23292731?from=search&seid=1776348324633341622',0,'check in','','','','','Hunter','苏州赤箭智能科技有限公司'),(5,'4420c553-8d0b-4491-b559-d012d5d0ddbb','2019-07-02 17:16:19','CPU 是如何被生产制造的？','computer','CPU','1.设计电路 2.生产晶片 3.光刻电路 4.制造晶体管 5.注铜形成集成电路 6.封装测试','https://www.bilibili.com/video/av22768580?from=search&seid=10458902702751761659',0,'check in','','','','','Hunter','苏州赤箭智能科技有限公司'),(6,'36ad1dd6-2dfa-4789-9651-baca12680b4a','2019-07-02 17:24:05','如何组装一台台式机','computer','电脑组装','1.机箱 2.主板 3.CPU 4.内存 5. 硬盘 6.电源 7.连接线','https://www.bilibili.com/video/av36071622?from=search&seid=5305596244694996071',0,'check in','','','','','Hunter','苏州赤箭智能科技有限公司'),(7,'d45f0586-9b5e-4ca5-8b0d-bf0a171a20a5','2019-07-02 18:02:53','C语言程序设计','computer','C Language','关键字， 数据类型、运算符与表达式 ，函数，文件，数组，结构体，指针，类','teaching/archive/c语言.pdf',0,'check in','','','','','Hunter','苏州赤箭智能科技有限公司'),(8,'2b826908-66b5-4b4e-b32b-6620a415968f','2019-07-02 18:05:48','C# 和 Visual Studio Code 入门','computer','计算机程序设计','.NET Core 提供了快速运行的模块化平台，用于创建在 Windows、Linux 和 macOS 上运行的应用程序。','https://docs.microsoft.com/zh-cn/dotnet/core/tutorials/with-visual-studio-code',0,'check in','','','','','Hunter','苏州赤箭智能科技有限公司'),(9,'7c8fe528-40da-4b0a-b224-e13fba533037','2019-07-03 15:09:26','C Language keyword','computer','C Language','auto,break,case,char,const,continue,default,do,double,else,enum,extern,float,for,goto,if,inline,int,long,register,restrict,return,short,signed,sizeof,static,struct,switch,typedef,union,unsigned,void,volatile,while','https://en.cppreference.com/w/c/keyword',0,'check in','','','','','Hunter','苏州赤箭智能科技有限公司'),(10,'72fae08d-2f9a-4459-9a3a-f6a4273f309b','2019-07-03 15:19:48','The GNU C Reference Manual','computer','C Language','GNU C 参考手册','https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html',0,'check in','','','','','Hunter','苏州赤箭智能科技有限公司');
 /*!40000 ALTER TABLE `training` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -96,7 +96,7 @@ CREATE TABLE `type` (
   PRIMARY KEY (`idtype`,`name`),
   UNIQUE KEY `idtype_UNIQUE` (`idtype`),
   UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -105,6 +105,7 @@ CREATE TABLE `type` (
 
 LOCK TABLES `type` WRITE;
 /*!40000 ALTER TABLE `type` DISABLE KEYS */;
+INSERT INTO `type` VALUES (1,'computer','2019-07-03 14:35:17');
 /*!40000 ALTER TABLE `type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -122,7 +123,7 @@ CREATE TABLE `what` (
   PRIMARY KEY (`idwhat`,`name`),
   UNIQUE KEY `idwhat_UNIQUE` (`idwhat`),
   UNIQUE KEY `what_UNIQUE` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,7 +132,7 @@ CREATE TABLE `what` (
 
 LOCK TABLES `what` WRITE;
 /*!40000 ALTER TABLE `what` DISABLE KEYS */;
-INSERT INTO `what` VALUES (1,'信息编码','2019-05-31 16:42:26'),(2,'硬盘工作原理','2019-07-02 16:41:43'),(3,'CPU','2019-07-02 17:04:22'),(4,'电脑组装','2019-07-02 17:20:44'),(5,'计算机程序设计','2019-07-02 17:58:53');
+INSERT INTO `what` VALUES (1,'信息编码','2019-05-31 16:42:26'),(2,'硬盘工作原理','2019-07-02 16:41:43'),(3,'CPU','2019-07-02 17:04:22'),(4,'电脑组装','2019-07-02 17:20:44'),(5,'计算机程序设计','2019-07-02 17:58:53'),(6,'C Language','2019-07-03 15:00:56'),(7,'C++ Language','2019-07-03 15:01:11');
 /*!40000 ALTER TABLE `what` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -144,4 +145,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-02 18:17:54
+-- Dump completed on 2019-07-03 15:21:55
