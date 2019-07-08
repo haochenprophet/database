@@ -34,6 +34,7 @@ CREATE TABLE `standard` (
   `owner` varchar(45) DEFAULT 'Hunter',
   `author` varchar(45) NOT NULL DEFAULT 'Hunter',
   `what` varchar(200) DEFAULT NULL,
+  `url` varchar(200) DEFAULT NULL,
   `type` varchar(45) DEFAULT NULL,
   `why` varchar(200) DEFAULT NULL,
   `how` varchar(45) DEFAULT NULL COMMENT 'how to do ,how about',
@@ -45,12 +46,14 @@ CREATE TABLE `standard` (
   `level` varchar(45) DEFAULT NULL,
   `priority` int(11) DEFAULT '0',
   `status` varchar(45) DEFAULT NULL,
+  `authotize` varchar(45) DEFAULT NULL,
   `remark` varchar(300) DEFAULT NULL,
-  `file_type` varchar(45) DEFAULT NULL,
-  `file` varchar(300) DEFAULT NULL,
   `image` varchar(200) DEFAULT NULL COMMENT 'url',
   `audio` varchar(200) DEFAULT NULL COMMENT 'url',
   `video` varchar(200) DEFAULT NULL COMMENT 'url',
+  `file` varchar(300) DEFAULT NULL,
+  `file_type` varchar(45) DEFAULT NULL,
+  `file_md5` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idstandard`,`uuid`,`time`,`when`),
   UNIQUE KEY `idstandard_UNIQUE` (`idstandard`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`)
@@ -183,4 +186,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-04 23:18:31
+-- Dump completed on 2019-07-08 10:58:42
