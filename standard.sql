@@ -18,6 +18,60 @@ USE `standard`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `authorize`
+--
+
+DROP TABLE IF EXISTS `authorize`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `authorize` (
+  `idauthorize` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL,
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idauthorize`,`name`),
+  UNIQUE KEY `idauthorize_UNIQUE` (`idauthorize`),
+  UNIQUE KEY `authorize_UNIQUE` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `authorize`
+--
+
+LOCK TABLES `authorize` WRITE;
+/*!40000 ALTER TABLE `authorize` DISABLE KEYS */;
+INSERT INTO `authorize` VALUES (1,'approved','2019-07-08 12:16:35'),(2,'reject','2019-07-08 12:16:35'),(3,'transfer','2019-07-08 12:16:35');
+/*!40000 ALTER TABLE `authorize` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `level`
+--
+
+DROP TABLE IF EXISTS `level`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `level` (
+  `idlevel` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL,
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idlevel`,`name`),
+  UNIQUE KEY `idlevel_UNIQUE` (`idlevel`),
+  UNIQUE KEY `level_UNIQUE` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `level`
+--
+
+LOCK TABLES `level` WRITE;
+/*!40000 ALTER TABLE `level` DISABLE KEYS */;
+INSERT INTO `level` VALUES (1,'All-Project','2019-07-08 12:00:17'),(2,'Hardware','2019-07-08 12:00:17'),(3,'Software','2019-07-08 12:00:17'),(4,'Project','2019-07-08 12:00:17'),(5,'Funtion','2019-07-08 12:00:17');
+/*!40000 ALTER TABLE `level` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `standard`
 --
 
@@ -109,7 +163,7 @@ CREATE TABLE `type` (
   PRIMARY KEY (`idtype`,`name`),
   UNIQUE KEY `idtype_UNIQUE` (`idtype`),
   UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -118,6 +172,7 @@ CREATE TABLE `type` (
 
 LOCK TABLES `type` WRITE;
 /*!40000 ALTER TABLE `type` DISABLE KEYS */;
+INSERT INTO `type` VALUES (1,'Hardware','2019-07-08 11:15:19'),(2,'Firmware','2019-07-08 11:15:19'),(3,'Software','2019-07-08 11:15:19'),(4,'Test','2019-07-08 11:16:11');
 /*!40000 ALTER TABLE `type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -186,4 +241,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-08 10:58:42
+-- Dump completed on 2019-07-08 12:48:20
