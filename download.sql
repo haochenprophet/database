@@ -2,9 +2,9 @@ CREATE DATABASE  IF NOT EXISTS `download` /*!40100 DEFAULT CHARACTER SET utf8 */
 USE `download`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: download
+-- Host: localhost    Database: download
 -- ------------------------------------------------------
--- Server version	8.0.0-dmr-log
+-- Server version	5.7.14-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -37,7 +37,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +46,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'198382.com','Windows Serial Port Utility','website','download/win-serial.zip','img/download.png','2019-04-09 17:35:49','normal','utf8',0,'china'),(2,'198382.com','Windows-Multiple File Find Utility','website','download/win_find.zip','img/download.png','2019-04-09 17:46:12','normal','utf8',0,'china');
+INSERT INTO `url` VALUES (1,'198382.com','Windows Serial Port Utility','website','download/win-serial.zip','img/download.png','2019-04-09 17:35:49','normal','utf8',0,'china'),(2,'198382.com','Windows-Multiple File Find Utility','website','download/win_find.zip','img/download.png','2019-04-09 17:46:12','normal','utf8',0,'china'),(3,'198382.com','download.flvcd','website','http://download.flvcd.com/','img/download.png','2019-07-02 16:46:50','normal','utf8',0,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-09 17:50:13
+-- Dump completed on 2019-07-18  8:37:06
