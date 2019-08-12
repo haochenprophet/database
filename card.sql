@@ -28,13 +28,13 @@ CREATE TABLE `card` (
   `idcard` bigint(20) NOT NULL AUTO_INCREMENT,
   `uuid` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `who` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `owner` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `number` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `end` datetime DEFAULT NULL,
   `where` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `who` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `owner` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `what` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `number` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `type` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `from` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `to` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
@@ -43,10 +43,10 @@ CREATE TABLE `card` (
   `status` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `priority` int(11) NOT NULL DEFAULT '0',
   `remark` varchar(300) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  PRIMARY KEY (`idcard`,`uuid`,`time`,`when`,`who`,`owner`,`number`),
+  PRIMARY KEY (`idcard`,`uuid`,`time`,`who`,`owner`,`number`,`when`),
   UNIQUE KEY `idcard_UNIQUE` (`idcard`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -55,6 +55,7 @@ CREATE TABLE `card` (
 
 LOCK TABLES `card` WRITE;
 /*!40000 ALTER TABLE `card` DISABLE KEYS */;
+INSERT INTO `card` VALUES (1,'1ef2122f-5afc-44b0-aedc-f4a3956192b3','2019-08-12 17:11:48','郭建华','中国银行苏州科技城支行','6217906101006580349','2019-08-12 00:00:00','0000-00-00 00:00:00','苏州科技城','劳务费支付账户','bank','苏州赤箭智能科技有限公司','郭建华','BMC技术咨询','转账支付','check in',0,''),(4,'c53a6d8e-4605-4a15-9052-d4e7debfc7d8','2019-08-12 17:18:04','许丹念','上海浦发银行漕河泾支行','6217920118801773','2019-08-12 00:00:00','0000-00-00 00:00:00','上海漕河泾经济开发区','劳务费支付账户','bank','苏州赤箭智能科技有限公司','许丹念','业务拓展','转账支付','check in',0,''),(5,'a0da5814-7b6f-4935-b28b-28c3b6b8991f','2019-08-12 17:25:34','武哲','招商银行吴中支行','6214835219645841','2019-08-12 00:00:00','0000-00-00 00:00:00','苏州吴中','劳务费支付账户','bank','苏州赤箭智能科技有限公司','武哲','业务拓展','转账支付','check in',0,'');
 /*!40000 ALTER TABLE `card` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -175,4 +176,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-10 14:41:40
+-- Dump completed on 2019-08-12 17:27:44
