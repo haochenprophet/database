@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `audio` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `audio`;
+CREATE DATABASE  IF NOT EXISTS `image` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `image`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: audio
+-- Host: localhost    Database: image
 -- ------------------------------------------------------
 -- Server version	5.7.14-log
 
@@ -18,14 +18,14 @@ USE `audio`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `audio`
+-- Table structure for table `image`
 --
 
-DROP TABLE IF EXISTS `audio`;
+DROP TABLE IF EXISTS `image`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `audio` (
-  `idaudio` bigint(20) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `image` (
+  `idimage` bigint(20) NOT NULL AUTO_INCREMENT,
   `uuid` varchar(45) NOT NULL,
   `name` varchar(450) NOT NULL,
   `type` varchar(45) NOT NULL DEFAULT 'text' COMMENT 'what type',
@@ -36,25 +36,25 @@ CREATE TABLE `audio` (
   `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Last time',
   `where` varchar(450) DEFAULT NULL COMMENT 'location information',
   `who` varchar(450) DEFAULT NULL,
-  `what` varchar(450) DEFAULT NULL COMMENT 'what audio description',
+  `what` varchar(450) DEFAULT NULL COMMENT 'what image description',
   `why` varchar(450) DEFAULT NULL,
   `how` varchar(450) DEFAULT NULL COMMENT 'how to use:like Open mode url',
   `status` varchar(45) NOT NULL,
   `priority` int(11) DEFAULT '0',
   `remark` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`idaudio`,`uuid`,`name`,`type`,`md5`,`size`,`time`,`when`,`status`),
-  UNIQUE KEY `idaudio_UNIQUE` (`idaudio`),
+  PRIMARY KEY (`idimage`,`uuid`,`name`,`type`,`md5`,`size`,`time`,`when`,`status`),
+  UNIQUE KEY `idimage_UNIQUE` (`idimage`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `audio`
+-- Dumping data for table `image`
 --
 
-LOCK TABLES `audio` WRITE;
-/*!40000 ALTER TABLE `audio` DISABLE KEYS */;
-/*!40000 ALTER TABLE `audio` ENABLE KEYS */;
+LOCK TABLES `image` WRITE;
+/*!40000 ALTER TABLE `image` DISABLE KEYS */;
+/*!40000 ALTER TABLE `image` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -82,39 +82,6 @@ LOCK TABLES `type` WRITE;
 /*!40000 ALTER TABLE `type` DISABLE KEYS */;
 /*!40000 ALTER TABLE `type` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `url`
---
-
-DROP TABLE IF EXISTS `url`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `url` (
-  `idurl` int(11) NOT NULL AUTO_INCREMENT,
-  `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
-  `what` varchar(45) NOT NULL COMMENT 'what the link item information ?',
-  `type` varchar(45) DEFAULT NULL,
-  `url` varchar(200) NOT NULL COMMENT 'where the URL address',
-  `logo` varchar(45) NOT NULL COMMENT 'where the URL logo path',
-  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'the link create time .',
-  `status` varchar(45) DEFAULT NULL,
-  `remark` varchar(45) DEFAULT NULL,
-  `priority` int(11) NOT NULL DEFAULT '0',
-  `where` varchar(45) NOT NULL DEFAULT 'china',
-  PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `url`
---
-
-LOCK TABLES `url` WRITE;
-/*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'hunter','ximalaya','audio','http://www.ximalaya.com/','img/ximalaya.jpg','2017-12-30 01:33:21','normal','utf8',0,'china'),(2,'hunter','music.163','music','http://music.163.com/','img/music.163.jpg','2017-12-30 01:44:04','normal','',0,'china'),(3,'hunter','kugou','music','http://www.kugou.com/','img/kugo.jpg','2017-12-30 01:48:15','normal','utf8',0,'china'),(4,'hunter','qqmusic','music','https://y.qq.com/','img/qqmusic.jpg','2017-12-30 02:03:27','normal','utf8',0,'china');
-/*!40000 ALTER TABLE `url` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -125,4 +92,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-02 10:55:49
+-- Dump completed on 2019-09-02 10:56:53
