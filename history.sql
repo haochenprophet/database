@@ -28,11 +28,15 @@ CREATE TABLE `history` (
   `idhistory` bigint(20) NOT NULL AUTO_INCREMENT,
   `uuid` varchar(45) NOT NULL,
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `when` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'start',
+  `end` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `what` varchar(500) NOT NULL,
   `title` varchar(200) NOT NULL,
   `type` varchar(45) NOT NULL,
-  `when` datetime DEFAULT CURRENT_TIMESTAMP,
-  `what` varchar(500) NOT NULL,
   `text` varchar(500) DEFAULT NULL,
+  `where` varchar(100) DEFAULT NULL,
+  `nation` varchar(100) DEFAULT NULL COMMENT 'country',
+  `region` varchar(200) DEFAULT NULL COMMENT 'area',
   `url` varchar(300) DEFAULT NULL,
   `priority` int(11) NOT NULL DEFAULT '0',
   `status` varchar(45) DEFAULT NULL,
@@ -42,16 +46,14 @@ CREATE TABLE `history` (
   `image` varchar(300) DEFAULT NULL,
   `who` varchar(100) DEFAULT NULL,
   `file` varchar(500) DEFAULT NULL,
-  `where` varchar(100) DEFAULT NULL,
-  `nation` varchar(100) DEFAULT NULL COMMENT 'country',
-  `region` varchar(200) DEFAULT NULL COMMENT 'area',
   `why` varchar(500) DEFAULT NULL,
   `how` varchar(500) DEFAULT NULL COMMENT 'how to do',
   `evaluate` varchar(500) DEFAULT NULL,
   `author` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idhistory`,`uuid`,`time`,`title`,`type`,`what`,`priority`),
+  `coordinate` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idhistory`,`uuid`,`time`,`when`,`end`,`what`,`title`,`type`,`priority`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -60,6 +62,7 @@ CREATE TABLE `history` (
 
 LOCK TABLES `history` WRITE;
 /*!40000 ALTER TABLE `history` DISABLE KEYS */;
+INSERT INTO `history` VALUES (1,'458f4335-75bf-41dc-b976-fe080c54753f','2019-09-24 17:37:44','2019-09-24 09:33:32','2019-09-24 09:33:32','建立全球统一记录历史数据库','记录历史','经济','用数据库记录历史','苏州','中国','江苏','https://www.red-arrows.cn/history.php',0,'','Hunter','','','','苏州赤箭智能科技有限公司','','人类历史和事件记录混乱','推广给历史记录需求用户使用','帮助人类更加准确的记录历史','Hunter','');
 /*!40000 ALTER TABLE `history` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -151,4 +154,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-23 23:28:34
+-- Dump completed on 2019-09-24 19:01:10
