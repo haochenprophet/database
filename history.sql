@@ -37,23 +37,23 @@ CREATE TABLE `history` (
   `where` varchar(100) DEFAULT NULL,
   `nation` varchar(100) DEFAULT NULL COMMENT 'country',
   `region` varchar(200) DEFAULT NULL COMMENT 'area',
-  `url` varchar(300) DEFAULT NULL,
+  `who` varchar(100) DEFAULT NULL,
+  `why` varchar(500) DEFAULT NULL,
+  `evaluate` varchar(500) DEFAULT NULL,
+  `how` varchar(500) DEFAULT NULL COMMENT 'how to do',
   `priority` int(11) NOT NULL DEFAULT '0',
   `status` varchar(45) DEFAULT NULL,
   `remark` varchar(500) DEFAULT NULL,
+  `author` varchar(45) DEFAULT NULL,
+  `url` varchar(300) DEFAULT NULL,
+  `coordinate` varchar(45) DEFAULT NULL,
   `video` varchar(300) DEFAULT NULL,
   `audio` varchar(300) DEFAULT NULL,
   `image` varchar(300) DEFAULT NULL,
-  `who` varchar(100) DEFAULT NULL,
   `file` varchar(500) DEFAULT NULL,
-  `why` varchar(500) DEFAULT NULL,
-  `how` varchar(500) DEFAULT NULL COMMENT 'how to do',
-  `evaluate` varchar(500) DEFAULT NULL,
-  `author` varchar(45) DEFAULT NULL,
-  `coordinate` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idhistory`,`uuid`,`time`,`when`,`end`,`what`,`title`,`type`,`priority`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -62,7 +62,7 @@ CREATE TABLE `history` (
 
 LOCK TABLES `history` WRITE;
 /*!40000 ALTER TABLE `history` DISABLE KEYS */;
-INSERT INTO `history` VALUES (1,'458f4335-75bf-41dc-b976-fe080c54753f','2019-09-24 17:37:44','2019-09-24 09:33:32','2019-09-24 09:33:32','建立全球统一记录历史数据库','记录历史','经济','用数据库记录历史','苏州','中国','江苏','https://www.red-arrows.cn/history.php',0,'','Hunter','','','','苏州赤箭智能科技有限公司','','人类历史和事件记录混乱','推广给历史记录需求用户使用','帮助人类更加准确的记录历史','Hunter','');
+INSERT INTO `history` VALUES (1,'458f4335-75bf-41dc-b976-fe080c54753f','2019-09-24 17:37:44','2019-09-24 09:33:32','2019-09-24 09:33:32','建立全球统一记录历史数据库','记录历史','科技','用数据库记录历史','苏州','中国','江苏','赤箭智能科技','人类历史和事件记录混乱','帮助人类更加准确的记录历史','推动使用全球统一历史记录数据库应用',0,'check in','','Hunter','https://www.red-arrows.cn/history.php','','','','',''),(2,'767b5e19-590c-4f7a-800e-4758b738eca4','2019-09-25 13:42:20','2019-09-25 13:36:35','2019-09-25 13:36:35','北京大兴国际机场正式投运','北京大兴国际机场','经济','北京大兴国际机场正式投运','北京大兴国际机场','中国','北京','中国','北京国际航班众多，提升北京航空运载能力','加速北京航空运输能力','加强中国多用途机场建设，提升航运能力',0,'check in','','Hunter','https://www.thepaper.cn/newsDetail_forward_4519795','','','','','');
 /*!40000 ALTER TABLE `history` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -154,4 +154,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-24 19:01:10
+-- Dump completed on 2019-09-25 14:03:43
