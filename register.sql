@@ -29,13 +29,13 @@ CREATE TABLE `register` (
   `uuid` varchar(45) NOT NULL,
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `mail` varchar(200) NOT NULL,
-  `telephone` varchar(45) NOT NULL,
+  `telephone` varchar(45) DEFAULT NULL,
   `login` varchar(45) NOT NULL COMMENT 'login name',
-  `identification` varchar(100) NOT NULL,
-  `id_type` varchar(45) NOT NULL,
+  `identification` varchar(100) DEFAULT NULL,
+  `id_type` varchar(45) DEFAULT NULL,
   `password` varchar(45) NOT NULL,
-  `name` varchar(45) NOT NULL,
-  `gender` varchar(45) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `gender` varchar(45) DEFAULT NULL,
   `head` varchar(300) DEFAULT NULL COMMENT 'head portrait',
   `head_md5` varchar(45) DEFAULT NULL,
   `birthday` datetime DEFAULT NULL,
@@ -53,11 +53,10 @@ CREATE TABLE `register` (
   `position` varchar(200) DEFAULT NULL,
   `hobby` varchar(200) DEFAULT NULL,
   `speciality` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`idregister`,`uuid`,`time`,`mail`,`telephone`,`login`,`identification`),
+  PRIMARY KEY (`idregister`,`uuid`,`time`,`mail`,`login`),
   UNIQUE KEY `idregister_UNIQUE` (`idregister`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`),
   UNIQUE KEY `mail_UNIQUE` (`mail`),
-  UNIQUE KEY `telephone_UNIQUE` (`telephone`),
   UNIQUE KEY `login_UNIQUE` (`login`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -80,4 +79,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-30  5:52:28
+-- Dump completed on 2019-11-22 13:53:59
