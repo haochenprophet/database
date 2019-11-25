@@ -30,7 +30,7 @@ CREATE TABLE `register` (
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `mail` varchar(200) NOT NULL,
   `telephone` varchar(45) DEFAULT NULL,
-  `login` varchar(45) NOT NULL COMMENT 'login name',
+  `login` varchar(45) DEFAULT NULL COMMENT 'login name',
   `identification` varchar(100) DEFAULT NULL,
   `id_type` varchar(45) DEFAULT NULL,
   `password` varchar(45) NOT NULL,
@@ -53,7 +53,7 @@ CREATE TABLE `register` (
   `position` varchar(200) DEFAULT NULL,
   `hobby` varchar(200) DEFAULT NULL,
   `speciality` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`idregister`,`uuid`,`time`,`mail`,`login`),
+  PRIMARY KEY (`idregister`,`uuid`,`time`,`mail`),
   UNIQUE KEY `idregister_UNIQUE` (`idregister`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`),
   UNIQUE KEY `mail_UNIQUE` (`mail`),
@@ -79,4 +79,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-22 13:53:59
+-- Dump completed on 2019-11-25 16:32:23
