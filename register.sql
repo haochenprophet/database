@@ -53,6 +53,7 @@ CREATE TABLE `register` (
   `position` varchar(200) DEFAULT NULL,
   `hobby` varchar(200) DEFAULT NULL,
   `speciality` varchar(200) DEFAULT NULL,
+  `action` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`idregister`,`uuid`,`time`,`mail`),
   UNIQUE KEY `idregister_UNIQUE` (`idregister`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`),
@@ -79,4 +80,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-25 16:32:23
+-- Dump completed on 2019-12-03 14:57:37
