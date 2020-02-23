@@ -39,7 +39,7 @@ CREATE TABLE `file` (
   `what` varchar(450) DEFAULT NULL COMMENT 'what file description',
   `why` varchar(450) DEFAULT NULL,
   `how` varchar(450) DEFAULT NULL COMMENT 'how to use:like Open mode url',
-  `status` varchar(45) NOT NULL,
+  `status` varchar(45) NOT NULL DEFAULT 'normal',
   `priority` int(11) DEFAULT '0',
   `remark` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`idfile`,`uuid`,`name`,`type`,`md5`,`size`,`time`,`when`,`status`),
@@ -100,7 +100,7 @@ CREATE TABLE `type` (
   PRIMARY KEY (`idtype`,`name`),
   UNIQUE KEY `idtype_UNIQUE` (`idtype`),
   UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -121,4 +121,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-02 10:44:06
+-- Dump completed on 2020-02-23 17:20:31
