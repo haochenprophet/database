@@ -37,7 +37,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,6 +46,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
+INSERT INTO `url` VALUES (1,'198382.com','CDC_GOV','website','https://www.cdc.gov/','img/biosecurity.jpg','2020-03-21 14:02:02','normal','utf8',0,'china'),(2,'198382.com','CDC_CN','website','http://www.chinacdc.cn/','img/biosecurity.jpg','2020-03-21 14:04:12','normal','utf8',0,'china'),(3,'198382.com','WHO','website','https://www.who.int/','img/who.jpg','2020-03-21 14:10:19','normal','utf8',0,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-03-21 13:32:06
+-- Dump completed on 2020-03-21 14:10:54
