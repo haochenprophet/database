@@ -1,8 +1,10 @@
--- MySQL dump 10.13  Distrib 5.7.21, for Linux (x86_64)
+CREATE DATABASE  IF NOT EXISTS `life` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `life`;
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: life
 -- ------------------------------------------------------
--- Server version	5.7.21-0ubuntu0.16.04.1
+-- Server version	5.7.14-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -35,7 +37,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='konwledge URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +46,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'hunter','contract','website','http://www.law-lib.com/htfb/','img/contract.png','2018-01-08 16:37:09','normal','china',0,'china'),(2,'hunter','huolala','website','https://www.huolala.cn/','img/lala.png','2018-02-01 15:57:11','normal','utf8',0,'china');
+INSERT INTO `url` VALUES (1,'hunter','contract','website','http://www.law-lib.com/htfb/','img/contract.png','2018-01-08 16:37:09','normal','china',0,'china'),(2,'hunter','huolala','website','https://www.huolala.cn/','img/lala.png','2018-02-01 15:57:11','normal','utf8',0,'china'),(3,'198382.com','UU跑腿','website','https://www.uupt.com/','img/uupt.jpg','2020-04-10 12:23:42','normal','utf8',0,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-01 16:00:02
+-- Dump completed on 2020-04-10 12:25:08
