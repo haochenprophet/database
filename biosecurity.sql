@@ -1,15 +1,15 @@
 CREATE DATABASE  IF NOT EXISTS `biosecurity` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `biosecurity`;
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
 --
 -- Host: localhost    Database: biosecurity
 -- ------------------------------------------------------
--- Server version	5.7.14-log
+-- Server version	8.0.13-commercial
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+ SET NAMES utf8 ;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,7 +23,7 @@ USE `biosecurity`;
 
 DROP TABLE IF EXISTS `report`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `report` (
   `idreport` int(11) NOT NULL AUTO_INCREMENT,
   `uuid` varchar(45) NOT NULL,
@@ -77,7 +77,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `url`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `url` (
   `idurl` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
@@ -91,7 +91,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,7 +100,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'198382.com','CDC_GOV','website','https://www.cdc.gov/','img/biosecurity.jpg','2020-03-21 14:02:02','normal','utf8',0,'china'),(2,'198382.com','CDC_CN','website','http://www.chinacdc.cn/','img/biosecurity.jpg','2020-03-21 14:04:12','normal','utf8',0,'china'),(3,'198382.com','WHO','website','https://www.who.int/','img/who.jpg','2020-03-21 14:10:19','normal','utf8',0,'china'),(4,'198382.com','中草药(Chinese Herbal Antidote)','website','http://www.tiprpress.com','img/herbs.jpg','2020-03-24 18:54:53','normal','utf8',0,'china');
+INSERT INTO `url` VALUES (1,'198382.com','CDC_GOV','website','https://www.cdc.gov/','img/biosecurity.jpg','2020-03-21 14:02:02','normal','utf8',0,'china'),(2,'198382.com','CDC_CN','website','http://www.chinacdc.cn/','img/biosecurity.jpg','2020-03-21 14:04:12','normal','utf8',0,'china'),(3,'198382.com','WHO','website','https://www.who.int/','img/who.jpg','2020-03-21 14:10:19','normal','utf8',0,'china'),(4,'198382.com','中草药(Chinese Herbal Antidote)','website','http://www.tiprpress.com','img/herbs.jpg','2020-03-24 18:54:53','normal','utf8',0,'china'),(5,'198382.com','Epidemiology Direct Reporting System','website','biosecurity_report.php','img/biosecurity.jpg','2020-06-10 17:26:06','normal','utf8',0,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,7 +110,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `virus`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `virus` (
   `idvirus` int(11) NOT NULL AUTO_INCREMENT,
   `uuid` varchar(45) NOT NULL,
@@ -151,4 +151,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-24 11:42:52
+-- Dump completed on 2020-06-10 21:41:36
