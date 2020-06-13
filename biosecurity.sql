@@ -46,7 +46,7 @@ CREATE TABLE `report` (
   `why` varchar(800) DEFAULT NULL COMMENT 'cause of disease',
   `etiology` varchar(100) DEFAULT NULL COMMENT 'Virus name, bacteria name, ',
   `contagious` varchar(45) DEFAULT NULL COMMENT 'Is it contagious',
-  `how` varchar(800) DEFAULT NULL COMMENT 'How to deal with and solve\n',
+  `how` varchar(800) DEFAULT NULL COMMENT 'How to deal with and solve',
   `level` varchar(45) NOT NULL DEFAULT 'normal' COMMENT 'emergency level:normal,high,low',
   `amount` int(11) NOT NULL DEFAULT '1',
   `reporter` varchar(200) DEFAULT NULL COMMENT 'reporter',
@@ -56,6 +56,10 @@ CREATE TABLE `report` (
   `remark` varchar(1000) DEFAULT NULL,
   `feedback` varchar(1000) DEFAULT NULL,
   `result` varchar(1000) DEFAULT NULL,
+  `file` varchar(450) DEFAULT NULL COMMENT 'Medical records file Video url or UUID',
+  `video` varchar(450) DEFAULT NULL COMMENT 'Video url or UUID',
+  `audio` varchar(450) DEFAULT NULL COMMENT 'audio url or UUID',
+  `image` varchar(450) DEFAULT NULL COMMENT 'image url or UUID',
   PRIMARY KEY (`idreport`,`uuid`,`time`,`when`,`nation`,`province`,`city`,`organization`,`who`,`id_card`),
   UNIQUE KEY `idreport_UNIQUE` (`idreport`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`)
@@ -151,4 +155,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-10 21:41:36
+-- Dump completed on 2020-06-13 20:08:08
