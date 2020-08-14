@@ -1,13 +1,15 @@
--- MySQL dump 10.13  Distrib 5.7.24, for Linux (x86_64)
+CREATE DATABASE  IF NOT EXISTS `linux` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `linux`;
+-- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
 --
 -- Host: localhost    Database: linux
 -- ------------------------------------------------------
--- Server version	5.7.24-0ubuntu0.18.04.1
+-- Server version	8.0.13-commercial
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+ SET NAMES utf8 ;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,7 +23,7 @@
 
 DROP TABLE IF EXISTS `url`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `url` (
   `idurl` int(11) NOT NULL AUTO_INCREMENT,
   `who` varchar(45) DEFAULT NULL COMMENT 'who create the link item .',
@@ -35,7 +37,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +46,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'198382.com','ie.drivers_linux','website','http://freesoftwaremagazine.com/articles/drivers_linux/','img/linux.jpg','2018-12-20 18:41:11','normal','utf8',0,'china'),(2,'198382.com','linux.org','website','https://www.linux.org/','img/linux.jpg','2018-12-21 15:27:44','normal','utf8',100,'china'),(3,'198382.com','Linus Torvalds','website','https://github.com/torvalds','img/linux.jpg','2018-12-23 00:04:44','normal','utf8',9999,'china'),(4,'198382.com','linuxcommand.org','website','http://www.linuxcommand.org/','img/linux.jpg','2018-12-23 00:06:07','normal','utf8',99,'china'),(5,'198382.com','linux-command-manual.','website','http://www.runoob.com/linux/linux-command-manual.html','img/linux.jpg','2018-12-23 00:08:29','normal','utf8',99,'china'),(6,'198382.com','unix-tutorialspoint','website','https://www.tutorialspoint.com/unix/index.htm','img/linux.jpg','2018-12-23 00:11:19','normal','utf8',0,'china'),(7,'198382.com','kernel.org','website','https://www.kernel.org/','img/linux.jpg','2018-12-28 21:44:34','normal','utf8',100,'china');
+INSERT INTO `url` VALUES (1,'198382.com','ie.drivers_linux','website','http://freesoftwaremagazine.com/articles/drivers_linux/','img/linux.jpg','2018-12-20 18:41:11','normal','utf8',0,'china'),(2,'198382.com','linux.org','website','https://www.linux.org/','img/linux.jpg','2018-12-21 15:27:44','normal','utf8',100,'china'),(3,'198382.com','Linus Torvalds','website','https://github.com/torvalds','img/linux.jpg','2018-12-23 00:04:44','normal','utf8',9999,'china'),(4,'198382.com','linuxcommand.org','website','http://www.linuxcommand.org/','img/linux.jpg','2018-12-23 00:06:07','normal','utf8',99,'china'),(5,'198382.com','linux-command-manual.','website','http://www.runoob.com/linux/linux-command-manual.html','img/linux.jpg','2018-12-23 00:08:29','normal','utf8',99,'china'),(6,'198382.com','unix-tutorialspoint','website','https://www.tutorialspoint.com/unix/index.htm','img/linux.jpg','2018-12-23 00:11:19','normal','utf8',0,'china'),(7,'198382.com','kernel.org','website','https://www.kernel.org/','img/linux.jpg','2018-12-28 21:44:34','normal','utf8',100,'china'),(8,'198382.com','linux-commands','website','https://www.tecmint.com/linux-commands-cheat-sheet/','img/linux.jpg','2020-08-14 19:50:36','normal','utf8',0,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-28 21:45:46
+-- Dump completed on 2020-08-14 19:51:49
