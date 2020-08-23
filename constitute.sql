@@ -29,6 +29,7 @@ CREATE TABLE `constitute` (
   `uuid` varchar(45) NOT NULL,
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `product` varchar(45) DEFAULT NULL COMMENT 'What Finished product name?',
+  `type` varchar(45) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
   `url` varchar(450) DEFAULT NULL,
   `doc` varchar(450) DEFAULT NULL COMMENT 'doc url',
@@ -64,6 +65,60 @@ LOCK TABLES `constitute` WRITE;
 /*!40000 ALTER TABLE `constitute` DISABLE KEYS */;
 /*!40000 ALTER TABLE `constitute` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `type`
+--
+
+DROP TABLE IF EXISTS `type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `type` (
+  `idtype` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idtype`,`name`),
+  UNIQUE KEY `idtype_UNIQUE` (`idtype`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `type`
+--
+
+LOCK TABLES `type` WRITE;
+/*!40000 ALTER TABLE `type` DISABLE KEYS */;
+INSERT INTO `type` VALUES (1,'Engineer Computer','2020-08-23 22:50:01');
+/*!40000 ALTER TABLE `type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `what`
+--
+
+DROP TABLE IF EXISTS `what`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `what` (
+  `idwhat` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL,
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idwhat`,`name`),
+  UNIQUE KEY `idwhat_UNIQUE` (`idwhat`),
+  UNIQUE KEY `what_UNIQUE` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `what`
+--
+
+LOCK TABLES `what` WRITE;
+/*!40000 ALTER TABLE `what` DISABLE KEYS */;
+INSERT INTO `what` VALUES (1,'E-I-1:AMD 16core CPU+ASUS MATX+NVGPU+512G M.2+32G 2600DDR4+10TSATA6GG','2020-08-23 11:25:35');
+/*!40000 ALTER TABLE `what` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -74,4 +129,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-23 11:07:28
+-- Dump completed on 2020-08-23 22:52:11
