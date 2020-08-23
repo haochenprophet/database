@@ -26,31 +26,31 @@ DROP TABLE IF EXISTS `constitute`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `constitute` (
   `idconstitute` int(11) NOT NULL AUTO_INCREMENT,
-  `uuid` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `uuid` varchar(45) NOT NULL,
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `product` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'What Finished product name?',
-  `type` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `name` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `url` varchar(450) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `doc` varchar(450) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'doc url',
+  `product` varchar(45) DEFAULT NULL COMMENT 'What Finished product name?',
+  `type` varchar(45) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `url` varchar(450) DEFAULT NULL,
+  `doc` varchar(450) DEFAULT NULL COMMENT 'doc url',
   `amount` decimal(65,10) DEFAULT NULL,
   `price` decimal(65,10) DEFAULT NULL COMMENT 'univalent',
-  `measure` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'Measurement unit symbol: distance length,speed,weight,temperature',
-  `currency` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'currency:US dollar,RMB,EUR,JPY,GBP,ruble,',
-  `remark` varchar(450) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `status` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `measure` varchar(45) DEFAULT NULL COMMENT 'Measurement unit symbol: distance length,speed,weight,temperature',
+  `currency` varchar(45) DEFAULT NULL COMMENT 'currency:US dollar,RMB,EUR,JPY,GBP,ruble,',
+  `remark` varchar(450) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
   `priority` int(11) NOT NULL DEFAULT '0',
-  `supplier` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'who supplier?',
-  `author` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'who author?',
-  `image` varchar(450) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'image url',
-  `video` varchar(450) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'video url',
-  `audio` varchar(450) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'audio url',
-  `text` varchar(450) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `file` varchar(450) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'file url',
-  `website` varchar(450) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'http://www.red-arrows.cn/',
-  `telephone` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `address` varchar(450) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `person` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'Contact person',
+  `supplier` varchar(100) DEFAULT NULL COMMENT 'who supplier?',
+  `author` varchar(45) DEFAULT NULL COMMENT 'who author?',
+  `image` varchar(450) DEFAULT NULL COMMENT 'image url',
+  `video` varchar(450) DEFAULT NULL COMMENT 'video url',
+  `audio` varchar(450) DEFAULT NULL COMMENT 'audio url',
+  `text` varchar(450) DEFAULT NULL,
+  `file` varchar(450) DEFAULT NULL COMMENT 'file url',
+  `website` varchar(450) NOT NULL DEFAULT 'http://www.red-arrows.cn/',
+  `telephone` varchar(45) DEFAULT NULL,
+  `address` varchar(450) DEFAULT NULL,
+  `person` varchar(45) DEFAULT NULL COMMENT 'Contact person',
   PRIMARY KEY (`idconstitute`,`uuid`,`time`),
   UNIQUE KEY `idconstitute_UNIQUE` (`idconstitute`),
   UNIQUE KEY `uuid_UNIQUE` (`uuid`)
@@ -75,7 +75,7 @@ DROP TABLE IF EXISTS `type`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `type` (
   `idtype` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `name` varchar(45) NOT NULL,
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idtype`,`name`),
   UNIQUE KEY `idtype_UNIQUE` (`idtype`),
@@ -102,7 +102,7 @@ DROP TABLE IF EXISTS `what`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `what` (
   `idwhat` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `name` varchar(200) NOT NULL,
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idwhat`,`name`),
   UNIQUE KEY `idwhat_UNIQUE` (`idwhat`),
@@ -129,4 +129,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-23 23:03:11
+-- Dump completed on 2020-08-23 23:10:42
