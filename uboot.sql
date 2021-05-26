@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `iot` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `iot`;
+CREATE DATABASE  IF NOT EXISTS `uboot` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `uboot`;
 -- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
 --
--- Host: localhost    Database: iot
+-- Host: localhost    Database: uboot
 -- ------------------------------------------------------
 -- Server version	8.0.13-commercial
 
@@ -37,7 +37,7 @@ CREATE TABLE `url` (
   `priority` int(11) NOT NULL DEFAULT '0',
   `where` varchar(45) NOT NULL DEFAULT 'china',
   PRIMARY KEY (`idurl`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='URL links .';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='URL links .';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +46,7 @@ CREATE TABLE `url` (
 
 LOCK TABLES `url` WRITE;
 /*!40000 ALTER TABLE `url` DISABLE KEYS */;
-INSERT INTO `url` VALUES (1,'198382.com','android_things','website','https://github.com/androidthings','img/iot.jpg','2019-04-03 17:23:23','normal','utf8',100,'china'),(2,'198382.com','arduino','website','https://www.arduino.cc/','img/iot.jpg','2019-04-03 17:24:17','normal','utf8',99,'china'),(3,'198382.com','raspberrypi','website','https://www.raspberrypi.org/','img/iot.jpg','2019-04-16 17:03:56','normal','utf8',0,'china'),(4,'198382.com','ubuntu-pi-os','website','https://ubuntu.com/download/raspberry-pi','img/iot.jpg','2021-04-18 09:38:50','normal','utf8',0,'china');
+INSERT INTO `url` VALUES (1,'198382.com','U-Boot_wiki','website','http://www.denx.de/wiki/U-Boot/','img/uboot.png','2021-05-26 11:23:09','normal','utf8',0,'china'),(2,'198382.com','U-Boot_Manual','website','http://www.denx.de/wiki/DULG/Manual','img/uboot.png','2021-05-26 11:24:26','normal','utf8',0,'china'),(3,'198382.com','uboot-source-code','website','https://source.denx.de/u-boot/u-boot','img/uboot.png','2021-05-26 11:26:54','normal','utf8',0,'china');
 /*!40000 ALTER TABLE `url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-26 12:23:53
+-- Dump completed on 2021-05-26 12:22:23
